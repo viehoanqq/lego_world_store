@@ -2,7 +2,7 @@
 Nhóm: Web1-Nhom12  
 Đề tài : quản lý cửa hàng đồ chơi lego
 Thành viên  
-3122560022 - Nguyễn Việt Hoàng 
-3124410171 - Đỗ Gia Kiệt
-3121410050 - Lê Thị Phương Anh
-3124410057 - Ngô Thành Đạt
+ 3122560022 - Nguyễn Việt Hoàng 
+ 3124410171 - Đỗ Gia Kiệt
+ 3121410050 - Lê Thị Phương Anh
+ 3124410057 - Ngô Thành Đạt
