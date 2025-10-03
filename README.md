@@ -1,8 +1,42 @@
 # lego_world_store  
-Nhóm: Nhom12  
-Đề tài: quản lý cửa hàng đồ chơi lego  
-Thành viên  
-3122560022 - Nguyễn Việt Hoàng  
-3124410171 - Đỗ Gia Kiệt  
-3121410050 - Lê Thị Phương Anh  
-3124410057 - Ngô Thành Đạt  
+# Cấu trúc thư  
+lego_world_store/
+│
+├── /home
+│   ├── home.html
+│   └── home.css
+│
+├── /product
+│   ├── product.html
+│   └── product.css
+│
+├── /order
+│   ├── order.html
+│   └── order.css
+│
+├── /login
+│   ├── login.html
+│   └── login.css
+│
+├── /register
+│   ├── register.html
+│   └── register.css
+│
+├── /contact
+│   ├── contact.html
+│   └── contact.css
+│
+├── /about
+│   ├── about.html
+│   └── about.css
+│
+├── /common  # header, footer chung, dùng ifream để sử dụng
+│   ├── header.html
+│   ├── footer.html
+│   └── common.css     # style chung cho header/footer
+│
+└── assets/
+     ├── images/
+     └── font/
+
+
