@@ -1,42 +1,42 @@
-# lego_world_store  
-# Cấu trúc thư  
+# LEGO World Store
+
+## Cấu trúc thư mục
+
+```plaintext
 lego_world_store/
-│
-├── /home
+├── home/
 │   ├── home.html
 │   └── home.css
 │
-├── /product
+├── product/
 │   ├── product.html
 │   └── product.css
 │
-├── /order
+├── order/
 │   ├── order.html
 │   └── order.css
 │
-├── /login
+├── login/
 │   ├── login.html
 │   └── login.css
 │
-├── /register
+├── register/
 │   ├── register.html
 │   └── register.css
 │
-├── /contact
+├── contact/
 │   ├── contact.html
 │   └── contact.css
 │
-├── /about
+├── about/
 │   ├── about.html
 │   └── about.css
 │
-├── /common  # header, footer chung, dùng ifream để sử dụng
+├── common/              # Header, Footer chung (dùng iframe để tái sử dụng)
 │   ├── header.html
 │   ├── footer.html
-│   └── common.css     # style chung cho header/footer
+│   └── common.css       # Style chung cho header/footer
 │
 └── assets/
-     ├── images/
-     └── font/
-
-
+    ├── images/          # Hình ảnh
+    └── font/            # Font chữ
