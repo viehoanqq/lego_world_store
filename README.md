@@ -1,4 +1,4 @@
-plaintext
+```plaintext
 lego_world_store/
 │
 ├── index.html                       # Trang chủ khách hàng
