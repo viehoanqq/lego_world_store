@@ -1,87 +1,101 @@
-```plaintext
-lego_shop/
+lego_world_store/
 │
-├── index.html                            # Trang chủ
+├── index.html                       # Trang chủ khách hàng
 │
-├── about.html
-├── contact.html
-├── policy.html
+├── pages/                           # Trang hiển thị thông tin chung
+│   ├── policy.html
+│   ├── contact.html
+│   ├── about.html
+│   └── 404.html
 │
-├── /user                                 # Giao diện người dùng (khách hàng)
-│   ├── account-login.html
-│   ├── account-register.html
-│   ├── account-profile.html
-│   ├── catalog.html
-│   ├── product-detail.html
-│   ├── search-results.html
-│   ├── cart.html
-│   ├── checkout.html
-│   ├── order-confirmation.html
-│   ├── orders.html
-│   └── order-detail-user.html
+├── components/                       # HTML tái sử dụng
+│   ├── header.html
+│   └── footer.html
 │
-├── /admin                                # Giao diện quản trị viên
-│   ├── admin-login.html
+├── user/                              # Module xử lý end-user
+│   ├── account/
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── profile.html
+│   │   └── edit.html
+│   ├── product/
+│   │   ├── list.html
+│   │   ├── detail.html
+│   │   └── search.html
+│   ├── cart/
+│   │   └── cart.html
+│   └── checkout/
+│       └── checkout.html
+│
+├── admin/                            # Module xử lý Admin-panel
+│   ├── login.html
 │   ├── dashboard.html
-│   ├── users.html
-│   ├── product-types.html
-│   ├── products.html
-│   ├── product-add.html
-│   ├── product-edit.html
-│   ├── imports.html
-│   ├── import-add.html
-│   ├── import-edit.html
-│   ├── pricing.html
-│   ├── orders.html
-│   ├── order-detail.html
-│   └── inventory.html
+│   ├── users/
+│   │   ├── list.html
+│   │   ├── reset-password.html
+│   │   └── lock-unlock.html
+│   ├── product-types/
+│   │   ├── add.html
+│   │   ├── edit.html
+│   │   ├── delete.html
+│   │   └── hidden.html
+│   │    
+│   ├── products/
+│   │   ├── add.html
+│   │   ├── edit.html
+│   │   ├── delete.html
+│   │   └── hidden.html
+│   ├── import/
+│   │   ├── list.html
+│   │   ├── add.html
+│   │   └── edit.html
+│   ├── pricing/
+│   │   ├── list.html
+│   │   └── edit.html
+│   ├── orders/
+│   │   ├── list.html
+│   │   └── details.html
+│   └── inventory/
+│       ├── stock.html
+│       ├── warning.html
+│       └── history.html
 │
-├── /components                           # Chứa phần tái sử dụng
-│   ├── header.html                       # Header chung (user)
-│   ├── footer.html                       # Footer chung (user)
-│   ├── admin-header.html                 # Header riêng cho admin
-│   └── admin-sidebar.html                # Menu trái (admin)
-│
-├── /css                                  # Mỗi trang có CSS riêng
-│   ├── index.css
-│   ├── about.css
-│   ├── contact.css
-│   ├── policy.css
-│   ├── account-login.css
-│   ├── account-register.css
-│   ├── account-profile.css
-│   ├── catalog.css
-│   ├── product-detail.css
-│   ├── search-results.css
-│   ├── cart.css
-│   ├── checkout.css
-│   ├── order-confirmation.css
-│   ├── orders.css
-│   ├── order-detail-user.css
-│   ├── admin-login.css
-│   ├── dashboard.css
-│   ├── users.css
-│   ├── product-types.css
-│   ├── products.css
-│   ├── product-add.css
-│   ├── product-edit.css
-│   ├── imports.css
-│   ├── import-add.css
-│   ├── import-edit.css
-│   ├── pricing.css
-│   ├── admin-orders.css
-│   ├── order-detail.css
-│   └── inventory.css
-│
-├── /assets
-│   ├── /images                           # Hình sản phẩm, logo
+├── assets/
+│   ├── css/                         # Tất cả CSS
+│   │   ├── index.css                  # CSS chung toàn site
+│   │   │
+│   │   ├── pages/                    # CSS cho các trang thông tin
+│   │   │   ├── policy.css
+│   │   │   ├── contact.css
+│   │   │   ├── about.css
+│   │   │   └── 404.css
+│   │   │
+│   │   ├── user/                     # CSS module end-user
+│   │   │   ├── account.css
+│   │   │   ├── product.css
+│   │   │   ├── cart.css
+│   │   │   └── checkout.css
+│   │   │
+│   │   ├── components/              # CSS cho header/footer
+│   │   │   ├── header.css
+│   │   │   └── footer.css
+│   │   │
+│   │   └── admin/                    # CSS module admin
+│   │       ├── login.css
+│   │       ├── dashboard.css
+│   │       ├── users.css
+│   │       ├── product-types.css
+│   │       ├── products.css
+│   │       ├── import.css
+│   │       ├── pricing.css
+│   │       ├── orders.css
+│   │       └── inventory.css
+│   │
+│   ├── images/                       # Hình ảnh
 │   │   ├── logo.png
 │   │   ├── banner1.jpg
 │   │   └── ...
-│   ├── /icons                            # Icon SVG, PNG
-│   │   ├── cart.svg
-│   │   └── search.svg
-│   └── /fonts                            # Font chữ offline
-├── CONTRIBUTING.md
-└── README.md                          
-
+│   │
+│   └── fonts/                        # Font chữ offline
+├── README.md
+└── CONTRIBUTING.md
