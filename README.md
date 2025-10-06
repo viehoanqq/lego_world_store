@@ -34,18 +34,15 @@ lego_world_store/
 │   ├── users/
 │   │   ├── list.html
 │   │   ├── reset-password.html
-│   │   └── lock-unlock.html
 │   ├── product-types/
 │   │   ├── add.html
 │   │   ├── edit.html
-│   │   ├── delete.html
-│   │   └── hidden.html
+│   │   └── list.html
 │   │    
 │   ├── products/
 │   │   ├── add.html
 │   │   ├── edit.html
-│   │   ├── delete.html
-│   │   └── hidden.html
+│   │   └── list.html
 │   ├── import/
 │   │   ├── list.html
 │   │   ├── add.html

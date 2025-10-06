@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
   <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <meta charset="UTF-8">
   <title>Trang chủ - Lego World Store</title>
 </head>
@@ -11,6 +12,52 @@
 
   <!-- Nội dung chính -->
   <main class="home-content">
+<div class="banner">
+  <button class="btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
+  <img src="./assets/images/banner.jpg" alt="Banner" />
+  <button class="btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+    <div class="new-product">
+      <h2>Hàng mới về - Bé thích mê</h2>
+      <button class="btn-view-new-product">Xem tất cả</button>
+      <p class="banner-new-product">
+        <img src="./assets/images/new-product.jpg" alt="Hàng mới về - Bé thích mê"/>
+      </p>"
+      <div class="new-product-list">
+        <ul> 
+          <li>
+            <iframe src="components/product-item.html" width="200px" height="300px" frameborder="0" scrolling="no"></iframe>
+          </li>
+          <li>
+            <iframe src="components/product-item.html" width="200px" height="300px" frameborder="0" scrolling="no"></iframe>
+          </li>
+          <li>
+            <iframe src="components/product-item.html" width="200px" height="300px" frameborder="0" scrolling="no"></iframe>
+          </li>
+        </ul>
+
+        <div class="sale">
+          <h2>Khuyến mãi hot</h2>
+          <button class="btn-view-sale">Xem tất cả</button>
+          <p class="banner-sale">
+            <img src="./assets/images/sale.jpg" alt="Khuyến mãi hot"/>
+          </p>
+          <div class="sale-product-list">
+            <ul> 
+              <li>
+                <iframe src="components/product-item.html" width="200px" height="300px" frameborder="0" scrolling="no"></iframe>
+              </li>
+              <li>
+                <iframe src="components/product-item.html" width="200px" height="300px" frameborder="0" scrolling="no"></iframe>
+              </li>
+              <li>
+                <iframe src="components/product-item.html" width="200px" height="300px" frameborder="0" scrolling="no"></iframe>
+              </li>
+            </ul>
+        </div>
+      
+    </div>
   </main>
 
   <!-- Nhúng footer -->

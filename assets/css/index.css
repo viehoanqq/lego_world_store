@@ -7,5 +7,31 @@
 }
 .home-content {
   background-color: #ffffff;
-  padding: 300px 0px;
+}
+
+.banner {
+  display: flex;
+  width: 80%;
+  margin: 20px auto;
+  justify-content: center;
+}
+.banner img {
+  width: 80%;
+  flex: 1;
+  margin: 0px 20px;
+  border-radius: 10px;
+}
+.banner button {
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.new-product{
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-top: 10px;
+  
 }
