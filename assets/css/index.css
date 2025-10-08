@@ -9,23 +9,21 @@
 ul{
   list-style: none;
 }
+.home-content{
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
 .banner {
   display: flex;
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   justify-content: center;
 }
 .banner img {
-  width: 80%;
   flex: 1;
   margin: 0px 20px;
-  border-radius: 10px;
-}
-
-.new-product{
-  width: 70%;
-  margin: 20px auto;  
-  text-align: center;
+  border-radius: 20px;
 }
 
 .home-content h2{
@@ -41,22 +39,34 @@ ul{
   border: solid 3px #a4161a;
   border-radius: 40px;
   cursor: pointer;
-  margin-bottom: 20px;
-}
+  transition: color 0.2s, background-color 0.2s;
+  }
+  .btn-view:hover {
+    color: #fff;
+    background-color: #a4161a;
+  }
 .product-box{
+  width: 90%;
+  margin: 10px auto;
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
 }
-.new-product{
+.banner-product{
   flex: 1;
 }
+
 .banner-product img{
   width: 280px;
-  height: 420px;
+  height: 470px;
   border-radius: 30px;
   object-fit: cover;
-  margin-right: 40px
-  
-}
+  transition: transform 0.4s;
+  }
+  .banner-product img:hover {
+    transform: scale(1.1);
+  }
+
 .product-list{
   flex: 3;
 }
@@ -81,7 +91,15 @@ ul{
 }
 
 .sale-product{
-  width: 70%;
   margin: 20px auto;  
   text-align: center;
+}
+.type-product-list{
+  width: 80%;
+  margin: 0 auto;
+}
+.type-product-list ul{
+  display: flex;
+  justify-content: space-between;
+
 }
