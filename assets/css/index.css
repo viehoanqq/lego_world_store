@@ -1,22 +1,34 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+@font-face {
+  font-family: 'PoppinsVH';
+  src: url('/assets/font/FzPoppins/FZ\ Poppins-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'PoppinsVH';
+  src: url('/assets/font/FzPoppins/FZ\ Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'PoppinsVH', Arial, sans-serif;
+    font-weight: 300;
+}
 ul{
   list-style: none;
 }
 .home-content{
-  width: 80%;
+  width: 90%;
   margin: 10px auto;
   text-align: center;
 }
 .banner {
   display: flex;
-  width: 100%;
+  width: 80%;
   margin: 20px auto;
   justify-content: center;
 }
@@ -109,9 +121,9 @@ ul{
   padding-bottom: 10px;
 }
 
-.type-product h2 {
+h2 {
   color: #a4161a;
-  font-size: 30px;
+  font-size: 700;
   font-weight: 700;
 }
 
@@ -178,4 +190,51 @@ ul{
 
 .type-product-list ul li:hover .name-type {
   color: #a4161a;
+}
+.news-section{
+  margin-bottom: 100px;
+}
+.news-section .news-list{
+  display:  flex;
+  align-content: space-between;
+  justify-content: center;
+}
+.news-section .news-list .news-item{
+  box-sizing: content-box;
+  width: 20%;
+  padding: 20px;
+  margin: 10px 50px;
+  text-align: left;
+  cursor: pointer;
+}
+.news-section .news-list .news-item a{
+  text-decoration: none;
+  font-size: 18px;
+}
+.news-section .news-list .news-item .time{
+    color:#595959;
+    margin: 3px 0px;
+}
+
+.news-section .news-list .news-item .inf{
+  box-sizing: content-box;
+  padding: 3px;
+  width: 100%;
+  height:350px;
+}
+.news-section .news-list .news-item button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  font-size: 16px;
+  color: #a4161a;
+  font-weight: 700;
+  cursor: pointer;
+}
+.news-section .news-list .news-item img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 30px;
+  margin: 3px,0px;
 }
