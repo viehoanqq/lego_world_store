@@ -32,7 +32,6 @@ header {
   font-size: 14px;
 }
 
-/* Thanh trên cùng */
 .top-bar {
   background-color: #0d47a1;
   padding: 8px 15%;
@@ -43,8 +42,6 @@ header {
 .top-bar i {
   margin-right: 4px;
 }
-
-/* Header chính */
 .main-header {
   padding: 20px 15%;
   display: flex;
@@ -128,7 +125,7 @@ header {
   box-shadow: 0 2px 0 #a4161a;
 }
 
-/* --- Responsive --- */
+
 @media (max-width: 1024px) {
   .top-bar,
   .main-header,
@@ -172,11 +169,12 @@ header {
   }
 .nav-bar ul li a {
   width: auto;
-  padding: 8px 20px; /* cho cân đẹp */
+  padding: 8px 20px;
 }
 }
 
 
+/* --- FOOTER --- */
 .footer-top{
     background-color: #a4161a;
     color: #ffffff;
@@ -265,8 +263,75 @@ header {
 .footer-grid a:hover{
   border-bottom: solid 1px #818181;
 }
+@media only screen and (max-width: 768px) {
+  .footer-top,
+  .footer-body,
+  .footer-bottom {
+    padding: 20px 5%;
+    text-align: center;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
+  .footer-body > div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
+  .subscribe-box input {
+    width: 60%;
+    margin-bottom: 10px;
+  }
+
+  .subscribe-box button {
+    width: 40%;
+    padding: 8px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-links a {
+    margin: 6px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer-body h4 {
+    font-size: 16px;
+  }
+
+  .subscribe-box input {
+    width: 80%;
+  }
+
+  .subscribe-box button {
+    width: 80%;
+    margin-top: 8px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+/* --- PRODUCT-ITEM --- */
 .product-item{
     box-sizing: border-box;
   width: 280px;
@@ -345,4 +410,61 @@ header {
 .product-cart .heart:hover{
   color: #ff2b32;
   transform: scale(1.2);
+}
+
+.flase-sale-item{
+  box-sizing: border-box;
+  width:175px;
+  height:270px ;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border: #55555548 solid 3px;
+  border-top:none;
+}
+.flase-sale-item .product-sale{
+  position: absolute;
+  left: 120px;
+  top: 5px;
+  font-size: 14px;
+  padding: 3px 1px;
+  width: 50px;
+}
+.flase-sale-item img{
+  display: block;
+  margin: 2px auto;
+  width: 70%;
+  max-height: 130px;
+  object-fit: contain;
+}
+.flase-sale-item .Sale-progress{
+  display: flex;
+  justify-content: space-between;
+}
+.flase-sale-item .progress-bar{
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: #ffbebe;
+}
+.flase-sale-item .Sale-progress button{
+  border: none; 
+  color:#a4161a;
+  margin-top: -4px;
+  font-size: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.flase-sale-item .progress-bar .sold{
+  width: 70%;
+  height: 18px;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 1px 4px;
+  align-items: center;
+  color:#fff;
+  background-color: #a4161a;
 }

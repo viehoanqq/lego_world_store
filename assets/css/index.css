@@ -352,3 +352,40 @@ h2 {
     font-size: 14px;
   }
 }
+
+.flash-sale {
+  width: 80%;
+  margin: 0 auto;
+  border-top: #e31a2188 solid 3px;
+}
+.flash-sale .banner{
+    width:100%;
+    height: 450px;
+    background-image: url("../images/flash-sale-banner.jpg");
+    background-size: contain;
+}
+.sale-box{
+  width: 80%;
+  margin: 0 auto;
+
+}
+.flash-sale .timming{
+  text-align: right;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #a4161a;
+}
+
+.flash-sale-list{
+  display:flex;
+  justify-content: space-between;
+   align-items: center;     /* dọc */
+   gap: 5px;
+
+}
+.flash-sale-list ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+}
