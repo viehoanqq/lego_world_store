@@ -1,14 +1,14 @@
 
 @font-face {
   font-family: 'PoppinsVH';
-  src: url('../font/FzPoppins/FZ\ Poppins-Regular.ttf') format('truetype');
+  src: url('../font/FzPoppins/FZ-Poppins-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PoppinsVH';
-  src: url('../font/FzPoppins/FZ\ Poppins-Bold.ttf') format('truetype');
+  src: url('../font/FzPoppins/FZ-Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
