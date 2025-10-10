@@ -1,14 +1,14 @@
 
 @font-face {
   font-family: 'PoppinsVH';
-  src: url('/assets/font/FzPoppins/FZ\ Poppins-Regular.ttf') format('truetype');
+  src: url('../font/FzPoppins/FZ\ Poppins-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PoppinsVH';
-  src: url('/assets/font/FzPoppins/FZ\ Poppins-Bold.ttf') format('truetype');
+  src: url('../font/FzPoppins/FZ\ Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -29,6 +29,7 @@ ul{
 .banner {
   display: flex;
   width: 80%;
+  object-fit: contain;
   margin: 20px auto;
   justify-content: center;
 }
@@ -80,18 +81,43 @@ ul{
   }
 
 .product-list{
-  flex: 3;
+  width: 70%;
 }
 .btn-next{
   border: none;
+  background-color: #ffffff00;
   font-size: 24px;
-  align-self: center;
+  align-self: center; 
 }
 .product-list ul {
   display: flex;
-  flex-wrap: wrap;
   gap: 24px;
   padding: 16px 0;
+  overflow-x: auto;      /* Cho phép cuộn ngang */
+  overflow-y: hidden;    /* Ẩn tràn dọc */
+  scroll-behavior: smooth; /* (tùy chọn) cuộn mượt */
+}
+
+.product-list ul::-webkit-scrollbar {
+  height: 8px;
+  transition: opacity 0.3s;
+  opacity: 0; /* ẩn mặc định */
+}
+
+.product-list ul:hover::-webkit-scrollbar {
+  opacity: 1; /* chỉ hiện khi rê chuột vào */
+}
+
+.product-list ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.product-list ul::-webkit-scrollbar-thumb {
+  background: rgba(164, 22, 26, 0.6);
+  border-radius: 10px;
+}
+.product-list ul::-webkit-scrollbar-thumb:hover {
+  background: rgba(164, 22, 26, 0.9);
 }
 .product-box ul li {
   border-radius: 30px;
@@ -209,6 +235,7 @@ h2 {
 }
 .news-section .news-list .news-item a{
   text-decoration: none;
+  color: #000;
   font-size: 18px;
 }
 .news-section .news-list .news-item .time{
@@ -237,6 +264,7 @@ h2 {
   object-fit: cover;
   border-radius: 30px;
   margin: 3px,0px;
+    background-color: #eee; /* hiển thị khung khi chưa có ảnh */
 }
 /* ---------- Responsive cho tablet (màn hình ≤ 1024px) ---------- */
 @media (max-width: 1024px) {
@@ -358,16 +386,22 @@ h2 {
   margin: 0 auto;
   border-top: #e31a2188 solid 3px;
 }
-.flash-sale .banner{
-    width:100%;
-    height: 450px;
-    background-image: url("../images/flash-sale-banner.jpg");
-    background-size: contain;
+.sale-box-background{
+  width: 100%;
+  height: 800px;
+  background-image: url("../images/flash-sale-banner.jpg");
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 80px;
 }
 .sale-box{
-  width: 80%;
+  position: relative;
+  top: 400px;
+  width: 90%;
   margin: 0 auto;
-
+  padding: 0 0 50px 0;
+  background-color: #ffffffd7;
+  border-radius: 30px;
 }
 .flash-sale .timming{
   text-align: right;
@@ -378,14 +412,44 @@ h2 {
 }
 
 .flash-sale-list{
+  width: 90%;
+  margin: 0 auto;
   display:flex;
-  justify-content: space-between;
-   align-items: center;     /* dọc */
+   align-items: center;    
    gap: 5px;
 
 }
 .flash-sale-list ul{
     display: flex;
-    justify-content: space-between;
+    overflow-x: auto;
+   overflow-y: hidden;
+   scroll-behavior: smooth;
     gap: 45px;
+}
+
+
+
+.flash-sale-list ul::-webkit-scrollbar {
+  height: 8px; 
+  transition: opacity 0.3s;
+  opacity: 0; 
+}
+
+.flash-sale-list ul:hover::-webkit-scrollbar {
+  opacity: 1; 
+}
+
+.flash-sale-list ul::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.flash-sale-list ul::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #a4161a, #e63946); 
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.flash-sale-list ul::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #c71f1f, #ff6b6b);
 }

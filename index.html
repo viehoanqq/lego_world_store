@@ -2,17 +2,61 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Trang chủ - Lego World Store</title>
+  <title> Trang chủ - Lego World Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/components/components.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 
 <body>
 
   <!-- Header -->
-  <iframe src="components/header.html" width="100%" height="300px" frameborder="0" scrolling="no"></iframe>
+  <header>
+    <!-- Thanh trên cùng -->
+    <div class="top-bar">
+      <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+      <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+      <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+      <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+      <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+    </div>
 
+    <!-- Header chính -->
+    <div class="main-header">
+      <div class="logo">
+        <a href="../home/home.html">
+          <img src="../assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="user-options">
+        <a href="../login/login.html" target="_parent">
+          <i class="fa-solid fa-user"></i> Đăng nhập
+        </a>
+        <a href="../order/order.html" target="_parent">
+          <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+        </a>
+      </div>
+    </div>
+
+    <!-- Menu điều hướng -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../home/home.html" target="_parent">TRANG CHỦ</a></li>
+        <li><a href="../product/product.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="#">HÀNG MỚI</a></li>
+        <li><a href="#">KHUYẾN MÃI</a></li>
+        <li><a href="#">THƯƠNG HIỆU</a></li>
+        <li><a href="#">TIN TỨC</a></li>
+      </ul>
+    </nav>
+  </header>
   <!-- Nội dung chính -->
   <main class="home-content">
     <!-- Banner chính -->
@@ -39,19 +83,88 @@
         <div class="product-list">
           <ul>
             <li>
-              <object type="text/html" data="components/product-item.html" width="100%" height="450"></object>
+                    <div class="product-item">
+                        <p class="product-sale">-15%</p>
+                        <img src="../assets/images/product1.webp" alt="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257" />
+                        <p class="product-code">SKU: 75257</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257</h5>
+                        <span class="product-price">
+                            <p id="new">2.500.000₫</p>
+                            <p id="old">2.940.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
             </li>
             <li>
-              <object type="text/html" data="components/product-item.html" width="100%" height="450"></object>
+                    <div class="product-item">
+                        <p class="product-sale">-10%</p>
+                        <img src="../assets/images/product2.webp" alt="Bộ xếp hình LEGO Technic Xe Ferrari 42143" />
+                        <p class="product-code">SKU: 42143</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Technic Xe Ferrari 42143</h5>
+                        <span class="product-price">
+                            <p id="new">3.200.000₫</p>
+                            <p id="old">3.550.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
             </li>
             <li>
-              <object type="text/html" data="components/product-item.html" width="100%" height="450"></object>
+                    <div class="product-item">
+                        <p class="product-sale">-25%</p>
+                        <img src="../assets/images/product3.webp" alt="Bộ xếp hình LEGO Friends Thành phố Heartlake 41704" />
+                        <p class="product-code">SKU: 41704</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Friends Thành phố Heartlake 41704</h5>
+                        <span class="product-price">
+                            <p id="new">1.800.000₫</p>
+                            <p id="old">2.400.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
             </li>
-                      <div class="btn-next">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
+            <li>
+                    <div class="product-item">
+                        <p class="product-sale">-30%</p>
+                        <img src="../assets/images/product4.webp" alt="Bộ xếp hình LEGO Ninjago Rồng Huyền Thoại 71753" />
+                        <p class="product-code">SKU: 71753</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Ninjago Rồng Huyền Thoại 71753</h5>
+                        <span class="product-price">
+                            <p id="new">900.000₫</p>
+                            <p id="old">1.290.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
+            </li>   
+                    <div class="product-item">
+                        <p class="product-sale">-20%</p>
+                        <img src="../assets/images/product6.webp" alt="Bộ xếp hình LEGO Duplo Thị Trấn 10933" />
+                        <p class="product-code">SKU: 10933</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Duplo Thị Trấn 10933</h5>
+                        <span class="product-price">
+                            <p id="new">1.100.000₫</p>
+                            <p id="old">1.380.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>        
           </ul>
         </div>
+                              <div class="btn-next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
       </div>
     </section>
 
@@ -72,19 +185,90 @@
         <div class="product-list">
           <ul>
             <li>
-              <object type="text/html" data="components/product-item.html" width="100%" height="450"></object>
+                    <div class="product-item">
+                        <p class="product-sale">-35%</p>
+                        <img src="../assets/images/product5.webp" alt="Bộ xếp hình LEGO Creator Xe Máy Bay 31126" />
+                        <p class="product-code">SKU: 31126</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Creator Xe Máy Bay 31126</h5>
+                        <span class="product-price">
+                            <p id="new">750.000₫</p>
+                            <p id="old">1.150.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
             </li>
             <li>
-              <object type="text/html" data="components/product-item.html" width="100%" height="450"></object>
+                    <div class="product-item">
+                        <p class="product-sale">-20%</p>
+                        <img src="../assets/images/product6.webp" alt="Bộ xếp hình LEGO Duplo Thị Trấn 10933" />
+                        <p class="product-code">SKU: 10933</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Duplo Thị Trấn 10933</h5>
+                        <span class="product-price">
+                            <p id="new">1.100.000₫</p>
+                            <p id="old">1.380.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
             </li>
             <li>
-              <object type="text/html" data="components/product-item.html" width="100%" height="450"></object>
+                    <div class="product-item">
+                        <p class="product-sale">-40%</p>
+                        <img src="../assets/images/product7.webp" alt="Bộ xếp hình LEGO Harry Potter Lâu Đài Hogwarts 71043" />
+                        <p class="product-code">SKU: 71043</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Harry Potter Lâu Đài Hogwarts 71043</h5>
+                        <span class="product-price">
+                            <p id="new">8.500.000₫</p>
+                            <p id="old">14.170.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
             </li>
-          <div class="btn-next">
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
+            <li>
+                    <div class="product-item">
+                        <p class="product-sale">-5%</p>
+                        <img src="../assets/images/product8.webp" alt="Bộ xếp hình LEGO City Xe Cứu Thương 60330" />
+                        <p class="product-code">SKU: 60330</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO City Xe Cứu Thương 60330</h5>
+                        <span class="product-price">
+                            <p id="new">950.000₫</p>
+                            <p id="old">1.000.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
+            </li>
+            <li>
+                    <div class="product-item">
+                        <p class="product-sale">-20%</p>
+                        <img src="../assets/images/product6.webp" alt="Bộ xếp hình LEGO Duplo Thị Trấn 10933" />
+                        <p class="product-code">SKU: 10933</p>
+                        <h5 class="product-name">Bộ xếp hình LEGO Duplo Thị Trấn 10933</h5>
+                        <span class="product-price">
+                            <p id="new">1.100.000₫</p>
+                            <p id="old">1.380.000₫</p>
+                        </span>
+                      <div class="product-cart">
+                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                        <p class="heart"> <i class="fa-solid fa-heart"></i></p> 
+                      </div>
+                    </div>
+            </li>
           </ul>
         </div>
+                              <div class="btn-next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
         </div>
       </div>
     </section>
@@ -93,29 +277,116 @@
 
     <section class="flash-sale">
       <h2>GIỜ VÀNG FLASH SALE</h2>
+      <div class="sale-box-background">
       <div class="sale-box">
-      <span class="banner"></span>
       <p class="timming">11h:59m:59s</p>
       <div class="flash-sale-list">
         <button class="btn-next"><i class="fa-solid fa-chevron-left"></i></button>
         <ul>
           <li>
-            <object type="text/html" data="components/flash-sale-item.html" width="100%" height="270"></object>
+            <div class="flase-sale-item">
+              <p class="product-sale">25% </br>OFF</p>
+              <img src="../assets/images/product9.webp" alt="Bộ xếp hình LEGO Marvel Avengers 76155" />
+              <p class="product-code">SKU: 76155</p>
+              <h5 class="product-name">Bộ xếp hình LEGO Marvel Avengers 76155</h5>
+              <span class="product-price">
+                  <p id="new">1.800.000₫</p>
+                  <p id="old">2.400.000₫</p>
+              </span>
+              <div class="Sale-progress">
+                <p class="progress-bar">
+                  <span class="sold">Đã bán: 15</span>
+                  <span class="unsold"></span>
+                </p>
+              <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="flase-sale-item">
+              <p class="product-sale">30% </br>OFF</p>
+              <img src="../assets/images/product10.webp" alt="Bộ xếp hình LEGO Speed Champions Lamborghini 76908" />
+              <p class="product-code">SKU: 76908</p>
+              <h5 class="product-name">Bộ xếp hình LEGO Speed Lamborghini 76908</h5>
+              <span class="product-price">
+                  <p id="new">1.050.000₫</p>
+                  <p id="old">1.500.000₫</p>
+              </span>
+              <div class="Sale-progress">
+                <p class="progress-bar">
+                  <span class="sold">Đã bán: 20</span>
+                  <span class="unsold"></span>
+                </p>
+              <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
           </li>
           <li>
-            <object type="text/html" data="components/flash-sale-item.html" width="100%" height="270"></object></li>
-          <li>
-            <object type="text/html" data="components/flash-sale-item.html" width="100%" height="270"></object>
+            <div class="flase-sale-item">
+              <p class="product-sale">15% </br>OFF</p>
+              <img src="../assets/images/product11.webp" alt="Bộ xếp hình LEGO Classic Hộp Gạch 11015" />
+              <p class="product-code">SKU: 11015</p>
+              <h5 class="product-name">Bộ xếp hình LEGO Classic Hộp Gạch 11015</h5>
+              <span class="product-price">
+                  <p id="new">680.000₫</p>
+                  <p id="old">800.000₫</p>
+              </span>
+              <div class="Sale-progress">
+                <p class="progress-bar">
+                  <span class="sold">Đã bán: 8</span>
+                  <span class="unsold"></span>
+                </p>
+              <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
           </li>
+
+
           <li>
-                        <object type="text/html" data="components/flash-sale-item.html" width="100%" height="270"></object>
+            <div class="flase-sale-item">
+              <p class="product-sale">40% </br>OFF</p>
+              <img src="../assets/images/product12.webp" alt="Bộ xếp hình LEGO Nữ Thần Tự Do 21042" />
+              <p class="product-code">SKU: 21042</p>
+              <h5 class="product-name">Bộ xếp hình LEGO Nữ Thần Tự Do 21042</h5>
+              <span class="product-price">
+                  <p id="new">2.100.000₫</p>
+                  <p id="old">3.500.000₫</p>
+              </span>
+              <div class="Sale-progress">
+                <p class="progress-bar">
+                  <span class="sold">Đã bán: 12</span>
+                  <span class="unsold"></span>
+                </p>
+              <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
           </li>
+
           <li>
-                        <object type="text/html" data="components/flash-sale-item.html" width="100%" height="270"></object>
+            <div class="flase-sale-item">
+              <p class="product-sale">10% </br>OFF</p>
+              <img src="../assets/images/product13.webp" alt="Bộ xếp hình LEGO Ideas Cây Bonsai 10281" />
+              <p class="product-code">SKU: 10281</p>
+              <h5 class="product-name">Bộ xếp hình LEGO Ideas Cây Bonsai 10281</h5>
+              <span class="product-price">
+                  <p id="new">1.350.000₫</p>
+                  <p id="old">1.500.000₫</p>
+              </span>
+              <div class="Sale-progress">
+                <p class="progress-bar">
+                  <span class="sold">Đã bán: 5</span>
+                  <span class="unsold"></span>
+                </p>
+              <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
           </li>
+          
         </ul>
         <button class="btn-next"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
+    </div>
     </div>
     </section>
    
@@ -135,36 +406,36 @@
         <div class="type-product-list">
           <ul>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category1.webp" alt="Xe ô tô mô hình"/>
+          <p class="name-type">Xe ô tô mô hình</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category2.webp" alt="Tàu vũ trụ"/>
+          <p class="name-type">Tàu vũ trụ</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category3.webp" alt="Lâu đài cổ tích"/>
+          <p class="name-type">Lâu đài cổ tích</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category4.webp" alt="Robot chiến binh"/>
+          <p class="name-type">Robot chiến binh</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category5.webp" alt="Thành phố hiện đại"/>
+          <p class="name-type">Thành phố hiện đại</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category6.webp" alt="Động vật hoang dã"/>
+          <p class="name-type">Động vật hoang dã</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category7.webp" alt="Siêu anh hùng"/>
+          <p class="name-type">Siêu anh hùng</p>
             </li>
             <li>
-          <img src="./assets/images/product2.webp" alt="Hàng mới về - Bé thích mê"/>
-          <p class="name-type">Xe oto mô hình. </p>
+          <img src="./assets/images/category8.webp" alt="Kiến trúc nổi tiếng"/>
+          <p class="name-type">Kiến trúc nổi tiếng</p>
             </li>
           </ul>
         </div>
@@ -178,28 +449,28 @@
   <div class="news-list">
     <article class="news-item">
       <div class="inf">
-      <img src="./assets/images/news1.avif" alt="Lego ra mắt bộ sưu tập mới" />
-      <a href="#" class="news-title">Lego ra mắt bộ sưu tập mới</a>
-      <P class="time"> 12h00 01/01/2025</P>
-      <p>Bộ sưu tập Lego 2024 vừa được giới thiệu với nhiều chủ đề hấp dẫn dành cho trẻ em.</p>
+      <img src="./assets/images/news1.webp" alt="LEGO giới thiệu bộ sưu tập Star Wars mới" />
+      <a href="#" class="news-title">LEGO giới thiệu bộ sưu tập Star Wars mới</a>
+      <P class="time"> 10h00 05/10/2025</P>
+      <p>LEGO vừa ra mắt bộ sưu tập Star Wars với các mô hình tàu vũ trụ và nhân vật nổi tiếng.</p>
       </div>
       <button>Đọc thêm</button>
     </article>
     <article class="news-item">
       <div class="inf">
-      <img src="./assets/images/news1.avif" alt="Lego ra mắt bộ sưu tập mới" />
-      <a href="#" class="news-title">Ưu đãi đặc biệt tháng 6</a>
-      <P class="time"> 12h00 01/01/2025</P>
-      <p>Nhận ngay ưu đãi lên đến 30% cho các sản phẩm Lego trong tháng 6 tại Lego World Store.</p>
+      <img src="./assets/images/news2.webp" alt="Khuyến mãi đặc biệt mùa Halloween" />
+      <a href="#" class="news-title">Khuyến mãi đặc biệt mùa Halloween</a>
+      <P class="time"> 14h00 10/10/2025</P>
+      <p>Giảm giá lên đến 50% cho các bộ LEGO chủ đề ma quái trong dịp Halloween tại cửa hàng.</p>
       </div>
       <button>Đọc thêm</button>
     </article>
     <article class="news-item">
       <div class="inf">
-      <img src="./assets/images/news1.avif" alt="Lego ra mắt bộ sưu tập mới" />
-      <a href="#" class="news-title">Cuộc thi xây dựng Lego sáng tạo</a>
-      <P class="time"> 12h00 01/01/2025</P>
-      <p>Tham gia cuộc thi xây dựng Lego sáng tạo và nhận nhiều phần quà hấp dẫn từ cửa hàng.</p>
+      <img src="./assets/images/news3.webp" alt="Sự kiện hội thảo xây dựng LEGO" />
+      <a href="#" class="news-title">Sự kiện hội thảo xây dựng LEGO</a>
+      <P class="time"> 09h00 15/10/2025</P>
+      <p>Tham gia hội thảo miễn phí để học cách xây dựng các mô hình LEGO sáng tạo cùng chuyên gia.</p>
       </div>
       <button>Đọc thêm</button>
     </article>
@@ -209,7 +480,84 @@
 </main>
 
 <!-- Footer -->
-<iframe src="components/footer.html" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+<footer class="main-footer">
 
-</body></article>
+  <!-- Thanh thông báo nhỏ -->
+  <div class="footer-top">
+    <div class="container">
+      <span>Miễn phí giao hàng đơn từ 500k</span>
+      <span>Giao hàng hỏa tốc 4 tiếng</span>
+      <span>Hệ thống 200 cửa hàng</span>
+    </div>
+  </div>
+
+  <div class="footer-body">
+
+    <!-- Đăng ký nhận tin -->
+    <div class="footer-subscribe">
+      <div class="logo">
+        <a href="../home/home.html">
+          <img src="../assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
+      <div class="subscribe-box">
+        <h4><p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p></h4>
+        <form>
+          <input type="email" placeholder="Nhập email của bạn" required />
+          <button type="submit">Đăng ký</button>
+        </form>
+        <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+      </div>
+    </div>
+
+    <!-- Mạng xã hội -->
+    <div class="footer-social">
+      <h4>Kết nối với chúng tôi</h4>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+      </div>
+    </div>
+
+    <!-- Thông tin liên hệ -->
+    <div class="footer-contact">
+      <h4>Thông tin liên hệ</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+      <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+      <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+    </div>
+
+    <!-- Liên kết & Chính sách -->
+    <div class="footer-grid">
+      <div class="footer-links">
+        <h4>Điều khoản & Chính sách</h4>
+        <ul>
+          <li><a href="#">Chính sách giao hàng</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+          <li><a href="#">Chính sách thanh toán</a></li>
+          <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+          <li><a href="#">Chính sách trả góp</a></li>
+          <li><a href="#">Hệ thống cửa hàng</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bản quyền -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+      <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+    </div>
+  </div>
+
+</footer>
+</body>
 </html>

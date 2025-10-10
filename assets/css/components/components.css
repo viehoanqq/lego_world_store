@@ -334,7 +334,7 @@ header {
 /* --- PRODUCT-ITEM --- */
 .product-item{
     box-sizing: border-box;
-  width: 280px;
+  width: 250px;
   height: 450px;
   border-radius: 10px;
   padding: 15px;
@@ -352,8 +352,8 @@ header {
   border-radius: 10px;
 }
 .product-item img{
-  max-width: 180px;
-  max-height: 250px;
+  width: 100%;
+  height: 250px;
   object-fit: contain;  
   display: block;
   margin: 0 auto; 
@@ -393,7 +393,7 @@ header {
   font-size: 16px;
   background-color: #a4161a;
   color: #ffffff;
-  padding: 10px 25px;
+  padding: 7px 20px;
   border-radius: 15px;
   transition: background-color 0.2s, transform 0.2s;
 }
@@ -422,10 +422,14 @@ header {
   background-color: #ffffff;
   border: #55555548 solid 3px;
   border-top:none;
+  position: relative;
+}
+.flase-sale-item ul{
+
 }
 .flase-sale-item .product-sale{
   position: absolute;
-  left: 120px;
+  left: 5px;
   top: 5px;
   font-size: 14px;
   padding: 3px 1px;
@@ -435,7 +439,7 @@ header {
   display: block;
   margin: 2px auto;
   width: 70%;
-  max-height: 130px;
+  height: 130px;
   object-fit: contain;
 }
 .flase-sale-item .Sale-progress{
