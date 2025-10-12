@@ -9,11 +9,13 @@
     margin: 0;
 }
 body{
-    background-color: #999;
+    background-image: url("../../images/login-bgr.webp");
+    background-size: cover;
     display: flex;
     justify-content: center;   
     align-items: center;     
     height: 100vh;     
+    
 }
 .login-container{
     width: 20%;
@@ -23,6 +25,9 @@ body{
     text-align: center;
     background-color: #fff;
     border-radius: 20px;
+}
+.login-container .logo{
+    width: 80%;
 }
 .login-container .login-form input:not([type="checkbox"]){
     display: block;
