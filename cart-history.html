@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch sử mua hàng - Lego World Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <!--Header-->
+    <iframe src="./components/header.html" width="100%" height="300px" frameborder="0" scrolling="no"></iframe>
+
+    <!--Main-->
+    <main class="history-page">
+        <section class="history-header">
+            <h1>Lịch sử mua hàng</h1>
+            <p>Xem lại các đơn hàng bạn đã mua tại Lego World Store</p>
+        </section>
+
+        <section class="history-list">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Ngày đặt</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody id="order-history">
+                    <!-- Dữ liệu JavaScript sẽ được thêm vào đây -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <iframe src="./components/footer.html" width="100%" height="300px" frameborder="0" scrolling="no"></iframe>
+
+    <script>
+        // Dữ liệu mẫu (có thể thay bằng dữ liệu thật từ localStorage hoặc API sau này)
+        const orders = [
+            {
+                id: "DH001",
+                date: "2025-10-10",
+                total: 2200000,
+                status: "Đã giao",
+                details: [
+                    { name: "Bộ xếp hình Lego City", qty: 1, price: 1200000 },
+                    { name: "Xe Lego Technic", qty: 1, price: 1000000 }
+                ]
+            },
+            {
+                id: "DH002",
+                date: "2025-09-25",
+                total: 1500000,
+                status: "Đang giao",
+                details: [
+                    { name: "Bộ Lego Friends", qty: 1, price: 1500000 }
+                ]
+            }
+        ];
+
+        const tbody = document.getElementById("order-history");
+
+        function formatCurrency(amount) {
+            return amount.toLocaleString("vi-VN") + "₫";
+        }
+
+        function renderOrders() {
+            tbody.innerHTML = "";
+            orders.forEach(order => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${order.id}</td>
+                    <td>${order.date}</td>
+                    <td>${formatCurrency(order.total)}</td>
+                    <td>${order.status}</td>
+                    <td><button class="btn-view" onclick="viewDetails('${order.id}')">Xem</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function viewDetails(orderId) {
+            const order = orders.find(o => o.id === orderId);
+            if (!order) return;
+
+            let detailText = `📦 Đơn hàng: ${order.id}\nNgày đặt: ${order.date}\nTrạng thái: ${order.status}\n\nChi tiết:\n`;
+            order.details.forEach(item => {
+                detailText += `- ${item.name} × ${item.qty} = ${formatCurrency(item.qty * item.price)}\n`;
+            });
+            detailText += `\nTổng cộng: ${formatCurrency(order.total)}`;
+
+            alert(detailText);
+        }
+
+        renderOrders();
+    </script>
+</body>
+</html>
