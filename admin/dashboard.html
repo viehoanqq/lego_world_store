@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
-        <link href="../assets/css/components/admin-sidebar.css" rel="stylesheet">
+        <link href="../assets/css/admin/dashboard.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
         <title>Admin sidebar</title>
     </head>
@@ -53,6 +53,7 @@
                     </span>
                 </div>
             </header>
+            <!---noi dung o day-->
             <section class="content">
                 <div class="stat-top">
                     <div class="stat-card">
@@ -112,9 +113,125 @@
                         </div>
                     </div>
                 </div>
-                <div class="your-content">
 
-                    Noi dung o day
+
+                <div class="stat-bottom">
+                    <div class="sale-performance">
+                        <div class="header">
+                            <h2>Sale Performance</h2>
+                            <div class="export">
+                                <button type="submit">Export Data<i class="fa-solid fa-chevron-down"></i></buton>
+                                <button>Last 14 Days<i class="fa-solid fa-chevron-down"></i> </btton>
+                            </div>
+                        </div>
+                        <div class="test">
+<div class="chart-container">
+  <!-- Trục Y -->
+  <div class="y-axis">
+    <span>250</span>
+    <span>200</span>
+    <span>150</span>
+    <span>100</span>
+    <span>50</span>
+    <span>0</span>
+  </div>
+
+  <!-- Nội dung biểu đồ -->
+  <div class="chart-content">
+    <div class="chart-header">
+      <div class="legend earnings">Earnings</div>
+      <div class="legend costs">Costs</div>
+    </div>
+
+    <svg viewBox="0 0 700 300" preserveAspectRatio="none">
+      <!-- Lưới -->
+      <g class="grid">
+        <line x1="0" y1="250" x2="700" y2="250" />
+        <line x1="0" y1="200" x2="700" y2="200" />
+        <line x1="0" y1="150" x2="700" y2="150" />
+        <line x1="0" y1="100" x2="700" y2="100" />
+        <line x1="0" y1="50" x2="700" y2="50" />
+      </g>
+
+      <!-- Đường Earnings -->
+      <path class="path-earnings" d="M0,180 C100,140 200,150 300,80 C400,60 500,240 600,180 C700,100 700,100 700,100" />
+
+      <!-- Đường Costs -->
+      <path class="path-costs" d="M0,130 C100,200 200,130 300,150 C400,100 500,190 600,160 C700,140 700,140 700,140" />
+
+      <!-- Điểm Earnings -->
+      <circle class="circle-earnings" cx="0" cy="180" r="5"/>
+      <circle class="circle-earnings" cx="100" cy="140" r="5"/>
+      <circle class="circle-earnings" cx="200" cy="150" r="5"/>
+      <circle class="circle-earnings" cx="300" cy="80" r="5"/>
+      <circle class="circle-earnings" cx="400" cy="60" r="5"/>
+      <circle class="circle-earnings" cx="500" cy="240" r="5"/>
+      <circle class="circle-earnings" cx="600" cy="180" r="5"/>
+      <circle class="circle-earnings" cx="700" cy="100" r="5"/>
+
+      <!-- Điểm Costs -->
+      <circle class="circle-costs" cx="0" cy="130" r="5"/>
+      <circle class="circle-costs" cx="100" cy="200" r="5"/>
+      <circle class="circle-costs" cx="200" cy="130" r="5"/>
+      <circle class="circle-costs" cx="300" cy="150" r="5"/>
+      <circle class="circle-costs" cx="400" cy="100" r="5"/>
+      <circle class="circle-costs" cx="500" cy="190" r="5"/>
+      <circle class="circle-costs" cx="600" cy="160" r="5"/>
+      <circle class="circle-costs" cx="700" cy="140" r="5"/>
+    </svg>
+
+    <!-- Nhãn trục X -->
+    <div class="labels">
+      <span>03 Wed</span>
+      <span>05 Fri</span>
+      <span>07 Sun</span>
+      <span>09 Tue</span>
+      <span>11 Thu</span>
+      <span>13 Sat</span>
+      <span>15 Mon</span>
+      <span>16 Tue</span>
+    </div>
+  </div>
+</div>
+
+                        </div>
+                    </div>
+                    <div class="right-chart">
+                        <div class="test">
+
+                        </div>
+                        <div class="right-chart">
+                                <h2>Top Categories</h2> 
+                                <div class="category-chart-container">
+                                <div class="category-ring">
+                                    <div class="category-value">$6.2k</div>
+                                </div>
+
+                                <div class="category-legend">
+                                    <div class="legend-item electronics">Lego Model cars</div>
+                                    <div class="legend-item laptops">Lego spaceship</div>
+                                    <div class="legend-item phones">Lego warrior robot</div>
+                                </div>
+                                </div>
+                                
+                                <div class="delivery-status">
+                                    <h2>Delivery status</h2>
+                                    <div class="border-ds">
+                                    <div class="status-bar">
+                                        <div class="delivered"></div>
+                                        <div class="shipping"></div>
+                                        <div class="pending"></div>
+                                    </div>
+                                    <div class="legend">
+                                        <div><span class="dot delivered"></span>delivered <span class="percent">60%</span></div>
+                                        <div><span class="dot shipping"></span> shipping <span class="percent">25%</span></div>
+                                        <div><span class="dot pending"></span> pending <span class="percent">15%</span></div>
+</div>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </header>
