@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #999;
+    display: flex;
+    justify-content: center;   
+    align-items: center;     
+    height: 100vh;     
+}
+.login-container{
+    width: 20%;
+    padding: 30px;
+    margin: 0 auto;
+    height: auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.login-container .login-form input:not([type="checkbox"]){
+    display: block;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 15px 0;
+}
+.login-container .login-form .pw-group{
+    width: 95%;
+    display: flex;
+}
+.pw-group i{
+    position: relative;
+    top: 18px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.login-container .login-subtitle{
+    margin-bottom: 30px;
+}
+
+.login-container .login-title{
+    margin-bottom: 10px;
+}
+.login-form .pw-option{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.login-form .pw-option label{
+    cursor: pointer;
+}
+
+.login-form .pw-option .forgot-link{
+    text-decoration: none;
+    color: #333;
+    border-bottom: #fff solid 2px;
+    transition: all 0s ease;
+}
+.login-form .pw-option .forgot-link:hover{
+    border-bottom: #333 solid 2px;
+}
+
+
+.login-form .login-btn{
+    cursor: pointer;
+    background-color: #333;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0;
+    border: none;
+    transition: all 0.2s ease;
+}
+.login-form .login-btn:hover{
+    background-color: #666;
+}
