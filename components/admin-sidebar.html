@@ -119,10 +119,80 @@
                     <div class="sale-performance">
                         <div class="header">
                             <h2>Sale Performance</h2>
-                            <buton>Export Data</buton>
-                            <btton>Last 14 Days</btton>
+                            <div class="export">
+                                <button type="submit">Export Data<i class="fa-solid fa-chevron-down"></i></buton>
+                                <button>Last 14 Days<i class="fa-solid fa-chevron-down"></i> </btton>
+                            </div>
                         </div>
                         <div class="test">
+<div class="chart-container">
+  <!-- Trục Y -->
+  <div class="y-axis">
+    <span>250</span>
+    <span>200</span>
+    <span>150</span>
+    <span>100</span>
+    <span>50</span>
+    <span>0</span>
+  </div>
+
+  <!-- Nội dung biểu đồ -->
+  <div class="chart-content">
+    <div class="chart-header">
+      <div class="legend earnings">Earnings</div>
+      <div class="legend costs">Costs</div>
+    </div>
+
+    <svg viewBox="0 0 700 300" preserveAspectRatio="none">
+      <!-- Lưới -->
+      <g class="grid">
+        <line x1="0" y1="250" x2="700" y2="250" />
+        <line x1="0" y1="200" x2="700" y2="200" />
+        <line x1="0" y1="150" x2="700" y2="150" />
+        <line x1="0" y1="100" x2="700" y2="100" />
+        <line x1="0" y1="50" x2="700" y2="50" />
+      </g>
+
+      <!-- Đường Earnings -->
+      <path class="path-earnings" d="M0,180 C100,140 200,150 300,80 C400,60 500,240 600,180 C700,100 700,100 700,100" />
+
+      <!-- Đường Costs -->
+      <path class="path-costs" d="M0,130 C100,200 200,130 300,150 C400,100 500,190 600,160 C700,140 700,140 700,140" />
+
+      <!-- Điểm Earnings -->
+      <circle class="circle-earnings" cx="0" cy="180" r="5"/>
+      <circle class="circle-earnings" cx="100" cy="140" r="5"/>
+      <circle class="circle-earnings" cx="200" cy="150" r="5"/>
+      <circle class="circle-earnings" cx="300" cy="80" r="5"/>
+      <circle class="circle-earnings" cx="400" cy="60" r="5"/>
+      <circle class="circle-earnings" cx="500" cy="240" r="5"/>
+      <circle class="circle-earnings" cx="600" cy="180" r="5"/>
+      <circle class="circle-earnings" cx="700" cy="100" r="5"/>
+
+      <!-- Điểm Costs -->
+      <circle class="circle-costs" cx="0" cy="130" r="5"/>
+      <circle class="circle-costs" cx="100" cy="200" r="5"/>
+      <circle class="circle-costs" cx="200" cy="130" r="5"/>
+      <circle class="circle-costs" cx="300" cy="150" r="5"/>
+      <circle class="circle-costs" cx="400" cy="100" r="5"/>
+      <circle class="circle-costs" cx="500" cy="190" r="5"/>
+      <circle class="circle-costs" cx="600" cy="160" r="5"/>
+      <circle class="circle-costs" cx="700" cy="140" r="5"/>
+    </svg>
+
+    <!-- Nhãn trục X -->
+    <div class="labels">
+      <span>03 Wed</span>
+      <span>05 Fri</span>
+      <span>07 Sun</span>
+      <span>09 Tue</span>
+      <span>11 Thu</span>
+      <span>13 Sat</span>
+      <span>15 Mon</span>
+      <span>16 Tue</span>
+    </div>
+  </div>
+</div>
 
                         </div>
                     </div>
@@ -134,7 +204,19 @@
 
                         </div>
                         <div class="so do">
-                            <p>1</p>
+<div class="category-chart-container">
+  <div class="category-title">Top Categories</div>
+
+  <div class="category-ring">
+    <div class="category-value">$6.2k</div>
+  </div>
+
+  <div class="category-legend">
+    <div class="legend-item electronics">Electronics</div>
+    <div class="legend-item laptops">Laptops</div>
+    <div class="legend-item phones">Phones</div>
+  </div>
+</div>
 
                         </div>
                     </div>
