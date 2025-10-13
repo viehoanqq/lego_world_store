@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+}
+.m-container{
+    margin: 50px 30px;
+}
+.m-box{
+    width: 100%;
+    padding: 15px 10px 5px 10px; 
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.m-title{
+    margin-bottom: 30px;
+}
+.m-box .m-header{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.m-box .m-header img{
+    width: 30px;
+    position: relative;
+    top: -5px;
+    margin-right: 10px;
+}
+.m-header .m-online-status{
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: green;
+    position: relative;
+    top: 7px;
+}
+.m-header .m-setting{
+    margin-left: auto;
+    font-weight:1000;
+    font-size: 16px; 
+    cursor: pointer;
+}
+.m-body{
+    display: flex;
+}
+.m-body .message{
+    font-weight: bold;
+    margin-right: 20px;
+}
+.m-container .m-box:nth-of-type(4) .m-online-status,
+.m-container .m-box:nth-of-type(5) .m-online-status,
+.m-container .m-box:nth-of-type(8) .m-online-status {
+    background-color: red;
+}
+.m-container .m-box:nth-of-type(n+3) .message{
+    font-weight: 300;
+}

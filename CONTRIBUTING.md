@@ -40,8 +40,8 @@ Mỗi lần làm việc mới, luôn đảm bảo bạn đang ở trên nhánh c
 ```bash
 git checkout branch-cua-toi 
 git pull origin branch-cua-toi
-git fetch origin
-git merge origin/main
+git fetch origin main
+git merge origin main
 ```
 
 Nếu có conflict, xử lý ngay tại bước này trước khi code.
