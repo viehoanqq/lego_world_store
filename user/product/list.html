@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>LEGO - Danh sách sản phẩm | Lego World Store</title>
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/user/product.css">
+  <link rel="stylesheet" href="../../assets/css/components/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../../index.html"><i class="fa-solid fa-house"></i> Sản phẩm</a>
+    <span>/</span>
+    <strong>Tất cả sản phẩm</strong>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- SIDEBAR FILTER -->
+    <aside class="sidebar">
+      <!-- Danh mục -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-layer-group"></i> Danh mục</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> Siêu anh hùng (48)</label>
+          <label><input type="checkbox"> Phương tiện giao thông (35)</label>
+          <label><input type="checkbox"> Kẹo đồ chơi (42)</label>
+          <label><input type="checkbox"> Đồ chơi lắp ghép (28)</label>
+          <label><input type="checkbox"> Đồ chơi sáng tạo (31)</label>
+          <label><input type="checkbox"> Đồ thời trang (25)</label>
+          <label><input type="checkbox"> Thế giới động vật (18)</label>
+          <label><input type="checkbox"> Búp bê (0)</label>
+          <label><input type="checkbox"> LEGO Disney (22)</label>
+          <label><input type="checkbox"> LEGO Architecture (12)</label>
+        </div>
+      </div>
+
+      <!-- Độ tuổi -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-child"></i> Độ tuổi</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> 4+ (52)</label>
+          <label><input type="checkbox"> 6+ (68)</label>
+          <label><input type="checkbox"> 8+ (45)</label>
+          <label><input type="checkbox"> 10+ (32)</label>
+          <label><input type="checkbox"> 12+ (28)</label>
+          <label><input type="checkbox"> 16+ (15)</label>
+          <label><input type="checkbox"> 18+ (8)</label>
+        </div>
+      </div>
+
+      <!-- Khoảng giá -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-filter-circle-dollar"></i> Khoảng giá</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> Dưới 500.000đ (45)</label>
+          <label><input type="checkbox"> 500.000đ - 1.000.000đ (68)</label>
+          <label><input type="checkbox"> 1.000.000đ - 2.000.000đ (52)</label>
+          <label><input type="checkbox"> 2.000.000đ - 5.000.000đ (38)</label>
+          <label><input type="checkbox"> Trên 5.000.000đ (15)</label>
+        </div>
+        <div style="margin-top: 15px;">
+          <small style="color: #666; display: block; margin-bottom: 8px;">Hoặc tự nhập khoảng giá:</small>
+          <div class="price-range">
+            <input type="number" placeholder="Từ" min="0">
+            <span>-</span>
+            <input type="number" placeholder="Đến" min="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Số mảnh ghép -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-puzzle-piece"></i> Số mảnh ghép</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> Dưới 100 mảnh (35)</label>
+          <label><input type="checkbox"> 100 - 500 mảnh (78)</label>
+          <label><input type="checkbox"> 500 - 1000 mảnh (52)</label>
+          <label><input type="checkbox"> 1000 - 2000 mảnh (28)</label>
+          <label><input type="checkbox"> Trên 2000 mảnh (12)</label>
+        </div>
+      </div>
+
+      <button class="btn-filter"><i class="fa-solid fa-filter"></i> Áp dụng bộ lọc</button>
+      <button class="btn-clear"><i class="fa-solid fa-rotate-right"></i> Xóa bộ lọc</button>
+    </aside>
+
+    <!-- PRODUCT AREA -->
+    <section class="product-area">
+      <div class="product-header">
+        <div>
+          <h1><i class="fa-solid fa-cube"></i> Tất cả sản phẩm LEGO</h1>
+          <p class="product-count">Hiển thị <strong>1-24</strong> trong <strong>248</strong> sản phẩm</p>
+        </div>
+
+        <div class="sort-options">
+          <label for="sort"><i class="fa-solid fa-arrow-down-short-wide"></i> Sắp xếp:</label>
+          <select id="sort">
+            <option value="newest">Mới nhất</option>
+            <option value="popular">Phổ biến nhất</option>
+            <option value="price-asc">Giá: Thấp đến cao</option>
+            <option value="price-desc">Giá: Cao đến thấp</option>
+            <option value="name-asc">Tên: A-Z</option>
+            <option value="name-desc">Tên: Z-A</option>
+            <option value="discount">Giảm giá nhiều nhất</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- GRID SẢN PHẨM -->
+      <div class="product-grid">
+         <!-- Product 1 -->
+        <div class="product-card">
+          <span class="product-badge new">NEW</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_0.jpg?v=1740971660&width=400" alt="LEGO TECHNIC">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO TECHNIC</div>
+              <div class="product-sku">Mã: 421</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp xe Ferrari </h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 6+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 743</span>
+            </div>
+            <div class="product-price">
+              1.299.000đ
+              <span class="product-price-old">1.599.000đ</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <span class="product-badge">-15%</span>
+          <div class="product-image">
+            <img src="https://www.mykingdom.com.vn/cdn/shop/files/60445.png?v=1759285996&width=1100" alt="LEGO CITY">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO CITY</div>
+              <div class="product-sku">Mã: 207</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp xe vận chuyển xe đua</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 10+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 920</span>
+            </div>
+            <div class="product-price">
+              2.761.650đ
+              <span class="product-price-old">3.249.000đ</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <span class="product-badge">-40%</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/products/10696_1.jpg?v=1743494980&width=400" alt="LEGO CLASSIC">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO CLASSIC</div>
+              <div class="product-sku">Mã: 451</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp thùng gạch trung classic</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 6+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 569</span>
+            </div>
+            <div class="product-price">
+              761.400đ
+              <span class="product-price-old">1.269.000đ</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <span class="product-badge new">NEW</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/mo-hinh-lap-rap-kinh-hien-vi-nat-geo-steam-ds1127h_1.jpg?v=1757646697&width=700" alt="STEAM">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">STEAM</div>
+              <div class="product-sku">Mã: 887</div>
+            </div>
+            <h3 class="product-name">Đồ chơi mô hình lắp ráp kính hiển vi Nat Geo Steam</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 16+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 7541</span>
+            </div>
+            <div class="product-price">489.000đ</div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/76277_c2c8a31d-692c-449b-bc85-f503fa0c6807.jpg?v=1725510939&width=700" alt="LEGO SUPERHEROES">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO SUPERHEROES</div>
+              <div class="product-sku">Mã: 478</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp chiến giáp WarMachine Lego Superheroes</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 8+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 456</span>
+            </div>
+            <div class="product-price">459.000đ</div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/10280_6f82d206-8386-47ba-b499-310819e0f918.jpg?v=1725527326&width=700" alt="LEGO BOTANICALS">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO BOTANICALS</div>
+              <div class="product-sku">Mã: 200</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp bó hoa lego Botanicals </h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 10+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 342</span>
+            </div>
+            <div class="product-price">1.839.000đ</div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+          <span class="product-badge">-10%</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42154_f212e1e9-a18a-4da9-a8c7-6d72dc6f8721.jpg?v=1725527511&width=400" alt="LEGO TECHNIC">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO TECHNIC</div>
+              <div class="product-sku">Mã: 599</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp siêu xe thể thao Ford</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 12+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 1125</span>
+            </div>
+            <div class="product-price">
+              3.419.100đ
+              <span class="product-price-old">3.799.000đ</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-xe-banh-donut-di-dong-lego-city-60452.jpg?v=1753684373&width=400" alt="LEGO CITY">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO CITY</div>
+              <div class="product-sku">Mã: 618</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp xe bánh donut di động</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 16+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 6020</span>
+            </div>
+            <div class="product-price">599.000đ</div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product-card">
+          <span class="product-badge hot">Hot</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71819_94278439-9325-404c-81f9-40b7ba7b700d.jpg?v=1746980382&width=400" alt="LEGO NINJAGO">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO NINJAGO</div>
+              <div class="product-sku">Mã: 220</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp ngôi đền rồng đá</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 8+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 701</span>
+            </div>
+            <div class="product-price">3.839.000đ</div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/60415_706f1fcd-a598-4b95-a8e1-e334c3a9c3a1.jpg?v=1725523765&width=400" alt="LEGO CITY">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO CITY</div>
+              <div class="product-sku">Mã: 623</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp xe cảnh sát truy đổi tội phạm</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 6+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 509</span>
+            </div>
+            <div class="product-price">
+              1.099.000đ
+              <span class="product-price-old">629.000đ</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="product-card">
+          <span class="product-badge new">NEW</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71812_7ad89424-6e99-4427-86a9-05d1ddf17864.jpg?v=1725613038&width=400" alt="LEGO NINJAGO">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO NINJAGO</div>
+              <div class="product-sku">Mã: 890</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp chiến giáp vượt địa hình</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 7+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 174</span>
+            </div>
+            <div class="product-price">2.249.000đ</div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="product-card">
+          <span class="product-badge">-30%</span>
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/31148_14a08ba2-3207-4f1a-bb5e-d9aac0e81beb.jpg?v=1725510556&width=400" alt="LEGO CREATOR">
+          </div>
+          <div class="product-info">
+            <div class="product-header-line">
+              <div class="product-category">LEGO CREATOR</div>
+              <div class="product-sku">Mã: 363</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp giày trượt patin</h3>
+            <div class="product-meta">
+              <span><i class="fa-solid fa-child"></i> 18+</span>
+              <span><i class="fa-solid fa-puzzle-piece"></i> 3696</span>
+            </div>
+            <div class="product-price">
+              629.300đ
+              <span class="product-price-old">899.000đ</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thêm các sản phẩm khác tương tự -->
+
+      <!-- Phân trang -->
+      <div class="pagination">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <!-- JS import header/footer -->
+  <script>
+    // Nhúng header
+    fetch('../../components/header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    // Nhúng footer
+    fetch('../../components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+
+<!-- JavaScript cho Header Search - Thêm vào cuối file list.html -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    
+    if (searchInput && searchButton) {
+      // Function search
+      function performSearch() {
+        const keyword = searchInput.value.trim();
+        if (keyword) {
+          window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
+        } else {
+          alert('⚠️ Vui lòng nhập từ khóa tìm kiếm!');
+          searchInput.focus();
+        }
+      }
+      
+      // Click button
+      searchButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        performSearch();
+      });
+      
+      // Enter key
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          performSearch();
+        }
+      });
+      
+      // Focus effect
+      searchInput.addEventListener('focus', function() {
+        this.parentElement.style.boxShadow = '0 0 0 3px rgba(180,63,63,0.2)';
+      });
+      
+      searchInput.addEventListener('blur', function() {
+        this.parentElement.style.boxShadow = '';
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Đợi header được fetch xong
+    fetch('../../components/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+
+        // Sau khi header đã được chèn, gắn lại sự kiện cho nút tìm kiếm
+        const searchInput = document.querySelector('.search-bar input');
+        const searchButton = document.querySelector('.search-bar button');
+        if (searchInput && searchButton) {
+          function performSearch() {
+            const keyword = searchInput.value.trim();
+            if (keyword) {
+              window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
+            } else {
+              alert('⚠️ Vui lòng nhập từ khóa tìm kiếm!');
+              searchInput.focus();
+            }
+          }
+          searchButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            performSearch();
+          });
+          searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              performSearch();
+            }
+          });
+        }
+      });
+  });
+</script>
+</body>
+</html>

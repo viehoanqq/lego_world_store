@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>LEGO - Danh sách sản phẩm | Lego World Store</title>
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/user/product.css">
+  <link rel="stylesheet" href="../../assets/css/components/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div id="header"></div>
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- ========== BREADCRUMB ========== -->
+  <div class="breadcrumb">
+    <a href="../../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+    <span>/</span>
+    <a href="list.html">Sản phẩm</a>
+    <span>/</span>
+    <strong>Đồ chơi lắp ráp xe Ferrari</strong>
+  </div>
+
+  <!-- ========== PRODUCT DETAIL ========== -->
+  <div class="product-detail-container">
+    
+    <div class="product-detail-grid">
+      
+      <!-- LEFT: Product Images -->
+      <div class="product-images">
+        <div class="main-image" id="mainImage">
+          <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_0.jpg?v=1740971660&width=400" alt="">
+        </div>
+        
+        <div class="thumbnail-images">
+          <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_0.jpg?v=1740971660&width=400" alt="View 1" class="active" onclick="changeImage(this)">
+          <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_2.png?v=1741746504&width=1100" alt="View 2" onclick="changeImage(this)">
+          <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_6.jpg?v=1741746504&width=1100" alt="View 3" onclick="changeImage(this)">
+          <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_1.png?v=1741746504&width=1100" alt="View 4" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <!-- RIGHT: Product Info -->
+      <div class="product-detail-info">
+        <div class="product-category-tag">LEGO TECHNIC</div>
+        
+        <h1>Đồ Chơi Lắp Ráp Xe Ferrari</h1>
+        
+        <div class="product-code">Mã: <strong>421</strong></div>
+        
+        <div class="product-rating">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <span class="rating-count">(4.5/5 - 127 đánh giá)</span>
+        </div>
+
+        <div class="product-price-large">
+          3.999.000đ
+          <span class="old-price">4.999.000đ</span>
+          <span class="discount-badge">-20%</span>
+        </div>
+
+        <!-- Product Specs -->
+        <div class="product-specs">
+          <h3><i class="fa-solid fa-info-circle"></i> Thông số sản phẩm</h3>
+          <div class="spec-item">
+            <span class="spec-label">Độ tuổi:</span>
+            <span class="spec-value">6+</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Số mảnh ghép:</span>
+            <span class="spec-value">1,361 chi tiết</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Kích thước xe:</span>
+            <span class="spec-value">61 cm (dài) x 27 cm (rộng)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Series:</span>
+            <span class="spec-value">LEGO Technic</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Xuất xứ:</span>
+            <span class="spec-value">Đan Mạch</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Tình trạng:</span>
+            <span class="spec-value" style="color: #4caf50; font-weight: 700;">Còn hàng</span>
+          </div>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="quantity-selector">
+          <label>Số lượng:</label>
+          <div class="quantity-controls">
+            <button onclick="decreaseQuantity()">-</button>
+            <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+            <button onclick="increaseQuantity()">+</button>
+          </div>
+          <span class="stock-info">Còn <strong>24</strong> sản phẩm</span>
+        </div>
+
+        <!-- Action Buttons -->
+        <button class="btn-add-to-cart-large">
+          <i class="fa-solid fa-cart-plus"></i> THÊM VÀO GIỎ HÀNG
+        </button>
+        <button class="btn-buy-now">
+          <i class="fa-solid fa-bolt"></i> MUA NGAY
+        </button>
+
+        <!-- Additional Info -->
+        <div class="product-features">
+          <div class="feature-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Bảo hành chính hãng 12 tháng</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Miễn phí vận chuyển toàn quốc</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-rotate"></i>
+            <span>Đổi trả trong 7 ngày</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>Hỗ trợ 24/7: 1900 1208</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== PRODUCT TABS ========== -->
+    <div class="product-tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab(event, 'description')">
+          <i class="fa-solid fa-file-lines"></i> Mô tả sản phẩm
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'specs')">
+          <i class="fa-solid fa-list-check"></i> Thông số kỹ thuật
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'reviews')">
+          <i class="fa-solid fa-star"></i> Đánh giá (127)
+        </button>
+      </div>
+
+      <!-- Tab Content: Description -->
+      <div id="description" class="tab-content active">
+        <h2>Giới thiệu sản phẩm</h2>
+        <p><strong>Đồ Chơi Lắp Ráp Xe Ferrari</strong> - Cảm nhận sự phấn khích của đường đua khi bạn lắp ráp mô hình xe đua Ferrari SF-24 F1 tỷ lệ 1:8 dành cho người lớn.</p>
+        
+        <h3>Đặc điểm nổi bật:</h3>
+        <ul>
+          <li><strong>Hệ thống lái chân thực:</strong> Điều khiển bánh xe trước với cơ chế lái chi tiết</li>
+          <li><strong>Hộp số 2 cấp:</strong> Trải nghiệm tính năng chuyển số như xe thật</li>
+          <li><strong>Cánh gió điều chỉnh (DRS):</strong> Tái hiện việc kích hoạt DRS trên đường đua</li>
+          <li><strong>Động cơ V6 chi tiết:</strong> Tháo nắp động cơ để ngắm nhìn động cơ V6 tinh xảo</li>
+          <li><strong>Bánh xe in họa tiết:</strong> Bánh xe với thiết kế chân thực</li>
+          <li><strong>Kích thước ấn tượng:</strong> Chiều dài hơn 61cm (24 inch)</li>
+        </ul>
+
+        <h3>Ứng dụng LEGO Builder:</h3>
+        <p>Khám phá cách lắp ráp tương tác qua ứng dụng LEGO® Builder với hướng dẫn 3D chi tiết, zoom, xoay và theo dõi tiến trình lắp ráp.</p>
+
+        <h3>Món quà hoàn hảo:</h3>
+        <p>Đây là món quà tuyệt vời dành cho người hâm mộ F1, xe Ferrari và những người yêu thích LEGO Technic. Một dự án lắp ráp thư giãn và món đồ trưng bày đầy tự hào.</p>
+      </div>
+
+      <!-- Tab Content: Specs -->
+      <div id="specs" class="tab-content">
+        <h2>Thông số kỹ thuật chi tiết</h2>
+        <table class="specs-table">
+          <tr>
+            <td class="spec-label">Mã sản phẩm</td>
+            <td>42207</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Tên sản phẩm</td>
+            <td>Ferrari SF-24 F1</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Thương hiệu</td>
+            <td>LEGO</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Series</td>
+            <td>LEGO Technic</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Số mảnh ghép</td>
+            <td>1,361 chi tiết</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Độ tuổi khuyến nghị</td>
+            <td>18+ (người lớn)</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Kích thước sản phẩm</td>
+            <td>61 cm (L) x 27 cm (W) x 12 cm (H)</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Trọng lượng</td>
+            <td>2.5 kg</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Chất liệu</td>
+            <td>Nhựa ABS cao cấp</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Xuất xứ</td>
+            <td>Đan Mạch</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Bảo hành</td>
+            <td>12 tháng chính hãng</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Tính năng đặc biệt</td>
+            <td>Hệ thống lái, Hộp số 2 cấp, DRS, Động cơ V6</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Tab Content: Reviews -->
+      <div id="reviews" class="tab-content">
+        <h2>Đánh giá từ khách hàng</h2>
+        
+        <div class="review-summary">
+          <div class="review-score">
+            <span class="score-number">4.5</span>
+            <div class="score-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="score-count">127 đánh giá</span>
+          </div>
+          
+          <div class="review-bars">
+            <div class="bar-item">
+              <span>5 <i class="fa-solid fa-star"></i></span>
+              <div class="bar"><div class="fill" style="width: 75%"></div></div>
+              <span>95</span>
+            </div>
+            <div class="bar-item">
+              <span>4 <i class="fa-solid fa-star"></i></span>
+              <div class="bar"><div class="fill" style="width: 15%"></div></div>
+              <span>19</span>
+            </div>
+            <div class="bar-item">
+              <span>3 <i class="fa-solid fa-star"></i></span>
+              <div class="bar"><div class="fill" style="width: 8%"></div></div>
+              <span>10</span>
+            </div>
+            <div class="bar-item">
+              <span>2 <i class="fa-solid fa-star"></i></span>
+              <div class="bar"><div class="fill" style="width: 2%"></div></div>
+              <span>2</span>
+            </div>
+            <div class="bar-item">
+              <span>1 <i class="fa-solid fa-star"></i></span>
+              <div class="bar"><div class="fill" style="width: 1%"></div></div>
+              <span>1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-list">
+          <!-- Review Item 1 -->
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-info">
+                <strong>Nguyễn Văn A</strong>
+                <span class="review-date">15/01/2025</span>
+              </div>
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <p class="review-text">Sản phẩm tuyệt vời! Chi tiết rất chân thực, hệ thống lái và hộp số hoạt động mượt mà. Quá trình lắp ráp rất thú vị, mất khoảng 8-10 tiếng. Đáng đồng tiền bát gạo!</p>
+          </div>
+
+          <!-- Review Item 2 -->
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-info">
+                <strong>Trần Thị B</strong>
+                <span class="review-date">10/01/2025</span>
+              </div>
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <p class="review-text">Mua làm quà tặng sinh nhật cho chồng, anh ấy rất thích. Chất lượng LEGO luôn đảm bảo. Giao hàng nhanh, đóng gói cẩn thận.</p>
+          </div>
+
+          <!-- Review Item 3 -->
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-info">
+                <strong>Lê Minh C</strong>
+                <span class="review-date">05/01/2025</span>
+              </div>
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <p class="review-text">Là fan của F1 và Ferrari nên mua ngay khi ra mắt. Mô hình rất đẹp, đặt trên bàn làm việc ai vào cũng khen. Hướng dẫn lắp ráp rõ ràng qua app LEGO Builder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== RELATED PRODUCTS ========== -->
+  <div class="related-products">
+    <h2><i class="fa-solid fa-layer-group"></i> Sản phẩm liên quan</h2>
+    <div class="product-grid">
+      
+      <!-- Related Product 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-sieu-xe-ferrari-fxx-k-v29-lego-technic-42212-lg_5.jpg?v=1753159470&width=1100" alt="LEGO SPEED CHAMPIONS">
+        </div>
+        <div class="product-info">
+          <div class="product-category">LEGO SPEED CHAMPIONS</div>
+          <h3 class="product-name">Đồ chơi lắp ráp xe đua</h3>
+          <div class="product-meta">
+            <span><i class="fa-solid fa-child"></i> 8+</span>
+            <span><i class="fa-solid fa-puzzle-piece"></i> 3696</span>
+          </div>
+          <div class="product-price">809.000đ</div>
+          <div class="product-actions">
+            <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+            <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Product 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-xe-dua-moneygram-haas-f1_-team-vf-24-lego-speed-champions-77250.png?v=1742375715&width=1100" alt="LEGO SPEED CHAMPIONS">
+        </div>
+        <div class="product-info">
+          <div class="product-category">LEGO SPEED CHAMPIONS</div>
+          <h3 class="product-name">Đồ chơi lắp ráp xe đua MoneyGram</h3>
+          <div class="product-meta">
+            <span><i class="fa-solid fa-child"></i> 8+</span>
+            <span><i class="fa-solid fa-puzzle-piece"></i> 2704</span>
+          </div>
+          <div class="product-price">839.000đ</div>
+          <div class="product-actions">
+            <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+            <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Product 3 -->
+      <div class="product-card">
+        <span class="product-badge">-30%</span>
+        <div class="product-image">
+          <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-xe-dua-f1-lego-city-60442.png?v=1741234835&width=1100" alt="LEGO CITY">
+        </div>
+        <div class="product-info">
+          <div class="product-category">LEGO CITY</div>
+          <h3 class="product-name">Đồ chơi lắp ráp xe đua F1</h3>
+          <div class="product-meta">
+            <span><i class="fa-solid fa-child"></i> 8+</span>
+            <span><i class="fa-solid fa-puzzle-piece"></i> 830</span>
+          </div>
+          <div class="product-price">
+            258.300đ
+            <span class="product-price-old">369.000đ</span>
+          </div>
+          <div class="product-actions">
+            <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+            <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <!-- JS import header/footer -->
+  <script>
+    // Nhúng header
+    fetch('../../components/header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    // Nhúng footer
+    fetch('../../components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+  <script>
+  // Hàm đổi tab
+  function openTab(event, tabName) {
+    // 1️⃣ Ẩn tất cả tab nội dung
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(tab => tab.classList.remove('active'));
+
+    // 2️⃣ Bỏ active trên tất cả nút tab
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+    // 3️⃣ Hiện tab được chọn + đánh dấu nút đang active
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+<!-- Footer -->
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <!-- JS import header/footer -->
+  <script>
+    // Nhúng header
+    fetch('../../components/header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    // Nhúng footer
+    fetch('../../components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+
+<!-- JavaScript cho Header Search - Thêm vào cuối file list.html -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    
+    if (searchInput && searchButton) {
+      // Function search
+      function performSearch() {
+        const keyword = searchInput.value.trim();
+        if (keyword) {
+          window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
+        } else {
+          alert('⚠️ Vui lòng nhập từ khóa tìm kiếm!');
+          searchInput.focus();
+        }
+      }
+      
+      // Click button
+      searchButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        performSearch();
+      });
+      
+      // Enter key
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          performSearch();
+        }
+      });
+      
+      // Focus effect
+      searchInput.addEventListener('focus', function() {
+        this.parentElement.style.boxShadow = '0 0 0 3px rgba(180,63,63,0.2)';
+      });
+      
+      searchInput.addEventListener('blur', function() {
+        this.parentElement.style.boxShadow = '';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
