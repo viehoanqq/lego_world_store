@@ -1,0 +1,183 @@
+/* === CONTACT PAGE === */
+.contact-content {
+  max-width: 1000px;
+  margin: 60px auto 100px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #a4161a;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Thông tin liên hệ */
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.info-box {
+  background: #fff8e1;
+  border-radius: 20px;
+  width: 280px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.info-box i {
+  font-size: 38px;
+  color: #f7b600;
+  margin-bottom: 10px;
+}
+
+.info-box h3 {
+  font-size: 20px;
+  color: #a4161a;
+  margin-bottom: 5px;
+}
+
+.info-box p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Form liên hệ */
+.contact-form {
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #a4161a;
+  margin-bottom: 30px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #a4161a;
+  box-shadow: 0 0 6px rgba(164, 22, 26, 0.3);
+  outline: none;
+}
+
+/* Nút gửi */
+.btn-send {
+  background: #a4161a;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.btn-send i {
+  font-size: 18px;
+}
+
+.btn-send:hover {
+  background: #8b1316;
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng nhẹ khi tải */
+.contact-content section {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.contact-content section:nth-child(1) { animation-delay: 0.1s; }
+.contact-content section:nth-child(2) { animation-delay: 0.3s; }
+.contact-content section:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box {
+    width: 90%;
+  }
+
+  .contact-form {
+    padding: 25px 15px;
+  }
+
+  form {
+    width: 100%;
+  }
+}
