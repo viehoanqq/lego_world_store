@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,7 @@
     color: #ffffff;
 }
 .side-bar{
-    background-color: #333333;
+    background-color: #1E293B;
     width:250px;
     height: 100vh;
     position: fixed;
@@ -23,7 +22,7 @@
 .side-bar .logo
 {
     height: 150px;
-    background-color: #333333;
+    background-color: #1E293B;
 }
 .side-bar .logo{
     align-content: center;
@@ -39,22 +38,23 @@
 .side-bar .menu .system{
 
 }
-.side-bar .menu .system li{
+.side-bar .menu li{
     font-size: 18px;
     width: 100%;
-    height: 50px;
     align-content: center;
     margin: 30px 0;
-    padding-left: 30px;
-    box-sizing: border-box;
-    cursor: pointer;
+    box-sizing: border-box; 
     transition: all 0.3s ease;
-    border-left: #333333 solid 4px;
+    border-left: #1E293B solid 4px; 
 }
-.side-bar .menu .system li:hover{
-    border-left: #fff solid 4px;
+.menu  li a {
+  display: block;          
+  padding: 10px 15px;     
+}
+.side-bar .menu li:hover{
+    border-left: #3B82F6 solid 4px; 
     border-radius: 3px;
-    background-color: rgb(73, 73, 73);
+    background-color: #334155;
 }
 .side-bar .menu .system li:last-child{
     position: relative;
@@ -65,7 +65,7 @@
     font-size: 12px;
     top: -10px;
     left: 10px;
-    background-color: #757575;
+    background-color: #EF4444;
     padding: 2px 7px;
     border-radius: 50%;
 
@@ -81,20 +81,7 @@
 }
 .side-bar .menu .support li{
     font-size: 16px;
-    width: 100%;
-    height: 40px;
-    align-content: center;
-    margin: 10px 0;
-    padding-left: 30px;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-left: #333333 solid 4px;
-}
-.side-bar .menu .support li:hover{
-    border-left: #fff solid 4px;
-    border-radius: 3px;
-    background-color: rgb(73, 73, 73);
+    margin: 15px 0px;
 }
 .side-bar i{
     padding-right: 15px;
@@ -146,7 +133,7 @@
     position: relative;
     top: -10px;
     font-size: 11px;
-    background-color: #333333;
+    background-color: #EF4444; 
     color: white;
     padding: 3px 5px;
     border-radius: 50%;
@@ -166,80 +153,4 @@
 .main-content .content{
   margin-top: 150px;
   min-height: 100hv;
-  height: 1000px;
-}
-.content .stat-top .stat-card{
-    box-sizing: border-box;
-    width: 25%;
-    height: 200px;
-    color:#fff;
-    padding: 30px;
-    font-size: 17px;
-    border-radius: 30px;
-    background-color: #333333;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-.stat-card .stat-header{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.stat-header i{
-  position: relative;
-  top: 5px;
-}
-.stat-header .stat-name{
-    flex:3;
-    margin-left: 10px;
-}
-.stat-card .stat-value{
-    margin: 20px 0;
-}
-.stat-card .stat-footer{
-    display: flex;
-    justify-content: space-between;
-}
-.stat-card .stat-footer .percent{
-    flex: 2;
-    margin-left: 10px;
-}
-.main-content{
-    padding: 20px;
-}
-.stat-top{
-    display: flex;
-    justify-content: space-between;
-}
-.stat-top .stat-card:not(:first-child) {
-  background-color: #ffffff;
-  color:#333333;
-}
-.stat-bottom{
-    display: flex;
-    margin-top: 50px;
-}
-.stat-bottom .sale-performance{
-    flex:0.7;
-}
-.stat-bottom .sale-performance .header{
-    display: flex;
-    justify-content: space-between;
-}
-.header .export{
-    align-content: center;
-    padding-right: 50px;
-}
-.header .export button{
-    padding : 10px;
-    border: none;
-    font-size: 15px;
-    background-color: #ffffff;
-}
-.header .export button i{
-    margin-left: 5px;
-}
-.stat-bottom .right-chart{
-    flex:0.3;
-    margin-left: 20px;
 }
