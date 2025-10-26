@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Price List - LEGO Store Admin</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link href="/assets/css/components/admin-sidebar.css" rel="stylesheet">
+  <link href="/assets/css/admin/pricing/list.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- === SIDEBAR === -->
+  <aside class="side-bar">
+    <div class="logo">
+      <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+    </div>
+    <nav class="menu">
+      <ul class="system">
+        <li><a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i> Overview</a></li>
+        <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i> Messages <span class="message">2</span></a></li>
+        <li><a href="/admin/products/products.html" class="active"><i class="fa-solid fa-box"></i> Products</a></li>
+        <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+        <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i> Imports</a></li>
+        <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+      </ul>
+      <ul class="support">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- === MAIN CONTENT === -->
+  <div class="main-content">
+    <!-- === HEADER === -->
+    <header class="admin-header">
+      <h1>Product Price List</h1>
+      <div class="admin-info">
+        <span class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" placeholder="Search products...">
+        </span>
+        <button class="btn-add"><i class="fa-solid fa-plus"></i> Add Product</button>
+        <span class="info">
+          <i class="fa-solid fa-bell">
+            <span class="noti">3</span>
+          </i>
+          <img src="/assets/images/avt.png" alt="Admin avatar" />
+          <p class="nametag">Việt Hoàng</p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+      </div>
+    </header>
+
+    <!-- === CONTENT === -->
+    <section class="content">
+      <div class="table-container">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Import Price</th>
+              <th>Selling Price</th>
+              <th>Stock</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>SP001</td>
+              <td><img src="/assets/images/category1.webp" alt="lego"></td>
+              <td>Lego F1 Car</td>
+              <td>Vehicles</td>
+              <td>800,000₫</td>
+              <td>1,000,000₫</td>
+              <td>15</td>
+              <td>
+                <button class="btn-edit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                <button class="btn-delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>SP002</td>
+              <td><img src="/assets/images/category2.webp" alt="lego"></td>
+              <td>Lego Space Technic</td>
+              <td>Spaceship</td>
+              <td>900,000₫</td>
+              <td>1,150,000₫</td>
+              <td>15</td>
+              <td>
+                <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>SP003</td>
+              <td><img src="/assets/images/category3.webp" alt="lego"></td>
+              <td>Lego Hogwart Castle</td>
+              <td>Architecture</td>
+              <td>1,200,000₫</td>
+              <td>1,500,000₫</td>
+              <td>5</td>
+              <td>
+                <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>SP004</td>
+              <td><img src="/assets/images/category4.webp" alt="lego"></td>
+              <td>Lego Optimus Prime</td>
+              <td>Robot</td>
+              <td>850,000₫</td>
+              <td>1,000,000₫</td>
+              <td>20</td>
+              <td>
+                <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+
+            <tr>
+                                <td>SP005</td>
+                                <td><img src="/assets/images/category6.webp" alt="lego"></td>
+                                <td>Lego Creator</td>
+                                <td>Animals</td>
+                                <td>930,000₫</td>
+                                <td>1,200,000₫</td>
+                                <td>15</td>
+                                <td>
+                                    <button class="btn-edit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                            </tr>
+
+                            <tr>
+                                <td>SP006</td>
+                                <td><img src="/assets/images/category7.webp" alt="lego"></td>
+                                <td>Lego Attack On Avenger Tower</td>
+                                <td>Marvels</td>
+                                <td>1,200,000₫</td>
+                                <td>1,400,000₫</td>
+                                <td>15</td>
+                                <td>
+                                    <button class="btn-edit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                            </tr>
+                            
+                            <tr>
+                                <td>SP007</td>
+                                <td><img src="/assets/images/category8.webp" alt="lego"></td>
+                                <td>Lego Louvre Museum</td>
+                                <td>Architecture</td>
+                                <td>1,200,000₫</td>
+                                <td>1,400,000₫</td>
+                                <td>25</td>
+                                <td>
+                                    <button class="btn-edit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                            </tr>
+                            
+                            <tr>
+                                <td>SP008</td>
+                                <td><img src="/assets/images/product1.webp" alt="lego"></td>
+                                <td>Lego Millenium Falcon</td>
+                                <td>Spaceship</td>
+                                <td>1,200,000₫</td>
+                                <td>1,500,000₫</td>
+                                <td>5</td>
+                                <td>
+                                    <button class="btn-edit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                            </tr>
+
+                            <tr>
+                                <td>SP009</td>
+                                <td><img src="/assets/images/product9.webp" alt="lego"></td>
+                                <td>Lego Eternals</td>
+                                <td>Marvels</td>
+                                <td>950,00₫</td>
+                                <td>1,250,000₫</td>
+                                <td>5</td>
+                                <td>
+                                    <button class="btn-edit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
