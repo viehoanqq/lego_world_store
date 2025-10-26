@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
+    <link href="../../assets/css/admin/import.css" rel="stylesheet">
     <link href="../../assets/css/components/admin-sidebar.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <title>Imports</title>
@@ -58,10 +59,156 @@
                 </span>
             </div>
         </header>
-        <section class="content">
+    <section class="content imports-page">
+  <!-- Tổng quan -->
+  <div class="overview-cards">
+    <div class="card">
+      <i class="fa-solid fa-truck"></i>
+      <div>
+        <p>Total Imports</p>
+        <h3>23</h3>
+      </div>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <div>
+        <p>Items Imported</p>
+        <h3>2,540</h3>
+      </div>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-dollar-sign"></i>
+      <div>
+        <p>Total Cost</p>
+        <h3>$154,820</h3>
+      </div>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-clock"></i>
+      <div>
+        <p>Pending Imports</p>
+        <h3>4</h3>
+      </div>
+    </div>
+  </div>
 
+  <!-- Bộ lọc -->
+  <div class="toolbar">
+    <a href="add-import.html"><button class="btn add-btn"><i class="fa-solid fa-plus"></i> Add Import</button> </a>
+    <div class="filter-group">
+      <select>
+        <option>All Status</option>
+        <option>Completed</option>
+        <option>Pending</option>
+        <option>Cancelled</option>
+      </select>
+      <input type="text" placeholder="Search by supplier or ID...">
+      <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </div>
 
-            Noi dung o day
+  <!-- Bảng danh sách -->
+  <table class="imports-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Supplier</th>
+        <th>Date</th>
+        <th>Total Items</th>
+        <th>Total Cost</th>
+        <th>Status</th>
+        <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+        <td>IMP-001</td>
+        <td>Brick Supplies Ltd.</td>
+        <td>2025-10-10</td>
+        <td>150</td>
+        <td>$12,400</td>
+        <td><span class="status completed">Completed</span></td>
+        <td class="actions-cell">
+          <button class="view"><i class="fa-solid fa-eye"></i></button>
+          <a href="edit-import.html"><button class="edit"><i class="fa-solid fa-pen"></i></button></a>
+          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+          </tr>
+          <tr>
+        <td>IMP-002</td>
+        <td>Lego Factory Asia</td>
+        <td>2025-10-14</td>
+        <td>80</td>
+        <td>$6,850</td>
+        <td><span class="status pending">Pending</span></td>
+        <td class="actions-cell">
+          <button class="view"><i class="fa-solid fa-eye"></i></button>
+          <button class="edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>IMP-003</td>
+        <td>Global Toys Co.</td>
+        <td>2025-10-17</td>
+        <td>120</td>
+        <td>$9,500</td>
+        <td><span class="status completed">Completed</span></td>
+        <td class="actions-cell">
+          <button class="view"><i class="fa-solid fa-eye"></i></button>
+          <button class="edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>IMP-004</td>
+        <td>ToyBrick Vietnam</td>
+        <td>2025-10-19</td>
+        <td>60</td>
+        <td>$4,200</td>
+        <td><span class="status cancelled">Cancelled</span></td>
+        <td class="actions-cell">
+          <button class="view"><i class="fa-solid fa-eye"></i></button>
+          <button class="edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>IMP-005</td>
+        <td>Plastic World Inc.</td>
+        <td>2025-10-23</td>
+        <td>95</td>
+        <td>$7,880</td>
+        <td><span class="status pending">Pending</span></td>
+        <td class="actions-cell">
+          <button class="view"><i class="fa-solid fa-eye"></i></button>
+          <button class="edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>IMP-006</td>
+        <td>EuroLego Distributors</td>
+        <td>2025-10-25</td>
+        <td>200</td>
+        <td>$15,300</td>
+        <td><span class="status completed">Completed</span></td>
+        <td class="actions-cell">
+          <button class="view"><i class="fa-solid fa-eye"></i></button>
+          <button class="edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Ghi chú -->
+  <div class="status-legend">
+    <p><span class="status completed">Completed</span> Import completed successfully.</p>
+    <p><span class="status pending">Pending</span> Waiting for confirmation.</p>
+    <p><span class="status cancelled">Cancelled</span> Import has been cancelled.</p>
+  </div>
+</section>
         </section>
         </header>
 </body>

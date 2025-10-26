@@ -1,0 +1,606 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.imports-page {
+  padding: 30px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* Tổng quan cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+.overview-cards .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+.overview-cards .card:hover {
+  transform: translateY(-2px);
+}
+.overview-cards i {
+  font-size: 28px;
+  color: #007bff;
+}
+.overview-cards p {
+  font-size: 14px;
+  color: #666;
+}
+.overview-cards h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Thanh công cụ */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.btn.add-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.add-btn:hover {
+  background-color: #005dc7;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-group select,
+.filter-group input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.search-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background: #005dc7;
+}
+
+/* Bảng */
+.imports-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.imports-table th,
+.imports-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.imports-table thead {
+  background-color: #f5f6fa;
+  font-weight: 600;
+}
+.imports-table tr:hover {
+  background-color: #f9fafc;
+}
+
+/* Trạng thái */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.status.completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.status.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Hành động */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+.actions-cell button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+.actions-cell button.view { color: #007bff; }
+.actions-cell button.edit { color: #28a745; }
+.actions-cell button.delete { color: #dc3545; }
+.actions-cell button:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Ghi chú trạng thái */
+.status-legend {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.status-legend p {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* PHAM ADD-IMPORT*/
+
+
+
+
+/* ======= BASIC RESET ======= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background: #f6f8fb;
+  color: #1e293b;
+}
+
+/* ======= LAYOUT ======= */
+.add-import-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Vertical divider */
+.divider {
+  position: absolute;
+  right: 33%;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background: rgba(203, 213, 225, 0.6);
+}
+
+/* ======= FORM SECTION ======= */
+.form-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 25px 30px;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.form-header h2 {
+  font-size: 22px;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* File Upload */
+.file-upload {
+  position: relative;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-label {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.file-label:hover {
+  background: #1d4ed8;
+}
+
+.import-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ======= TABLE ======= */
+.sub-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.import-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.import-items-table th {
+  background: #f1f5f9;
+  text-align: left;
+  padding: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.import-items-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.import-items-table input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.delete-row {
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+tfoot .total-row td {
+  border-top: 2px solid #cbd5e1;
+  font-weight: 700;
+  padding-top: 15px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.total-value {
+  color: #2563eb;
+  font-size: 16px;
+}
+
+/* ======= BUTTONS ======= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+.add-row {
+  background: #f1f5f9;
+  color: #2563eb;
+  border: 1px solid #cbd5e1;
+}
+
+.add-row:hover {
+  background: #e0ecff;
+}
+
+.save {
+  background: #2563eb;
+  color: #fff;
+}
+
+.save:hover {
+  background: #1d4ed8;
+}
+
+.cancel {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  text-decoration: none;
+}
+
+.cancel:hover {
+  background: #e2e8f0;
+}
+
+.form-footer {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* ======= RECENT IMPORTS ======= */
+.import-sidebar {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 25px;
+}
+
+.import-sidebar h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.import-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.import-list li {
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.import-list li:hover {
+  background: #eef4ff;
+}
+
+.import-code {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.import-supplier {
+  font-size: 13px;
+  color: #64748b;
+  margin: 2px 0;
+}
+
+.import-total {
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 14px;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status.pending {
+  background: #fef9c3;
+  color: #eab308;
+}
+
+.status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 992px) {
+  .add-import-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+
+/* ====== EDIT IMPORT PAGE ====== */
+.edit-import .edit-import-layout {
+  display: flex;
+  gap: 40px;
+  margin: 40px 60px;
+  align-items: flex-start;
+}
+
+.edit-import .form-container {
+  flex: 1.2;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.edit-import .form-container .header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-import .form-container .header-row h2 {
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-import .upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e9f0ff;
+  color: #1e64ff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.edit-import .upload-label:hover {
+  background: #dbe6ff;
+}
+
+.edit-import .file-upload input[type="file"] {
+  display: none;
+}
+
+.divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px dashed #ccc;
+}
+
+/* Table + total */
+.total-section {
+  margin: 15px 0 25px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.total-section .label {
+  margin-right: 10px;
+  color: #555;
+}
+
+/* ====== Sidebar ====== */
+.edit-import .import-sidebar {
+  flex: 0.7;
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.import-sidebar h3, 
+.import-sidebar h4 {
+  color: #333;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-card {
+  background: #f9fafc;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.summary-card hr {
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.import-sidebar .import-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.import-sidebar .import-list li:last-child {
+  border-bottom: none;
+}
+
+.import-sidebar .status {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.completed { background: #e6f7ec; color: #1e9433; }
+.status.pending { background: #fff7e0; color: #b58900; }
+.status.cancelled { background: #ffecec; color: #c73636; }

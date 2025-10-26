@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
+    <link href="../../assets/css/admin/import.css" rel="stylesheet">
+    <link href="../../assets/css/components/admin-sidebar.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <title>Imports</title>
+</head>
+
+<body>
+    <aside class="side-bar">
+        <div class="logo">
+            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+        </div>
+        <nav class="menu">
+            <ul class="system">
+                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
+                            class="message">2</span></a> </li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+            <ul class="support">
+                <li><a href="">Help</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="admin-header">
+            <h1>Welcome back, Hoang</h1>
+
+            <div class="admin-info">
+                <span class="search-bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input placeholder="Search">
+                </span>
+                <span class="info">
+                    <i class="fa-solid fa-bell">
+                        <span class="noti">3</span>
+                    </i>
+                    <img src="../../assets/images/avt.png" alt="admin avt" />
+                    <p class="nametag">Việt Hoàng</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        </header>
+ <section class="content add-import-page">
+    <div class="add-import-layout">
+
+      <!-- LEFT: FORM -->
+      <div class="form-container">
+        <div class="form-header">
+          <h2><i class="fa-solid fa-plus"></i> New Import</h2>
+          <div class="file-upload">
+            <label for="fileImport" class="file-label">
+              <i class="fa-solid fa-file-arrow-up"></i> Choose File
+            </label>
+            <input type="file" id="fileImport" accept=".csv,.xlsx">
+          </div>
+        </div>
+
+        <form class="import-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="supplier">Supplier</label>
+              <input type="text" id="supplier" placeholder="Enter supplier name..." required>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select id="status">
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="note">Note</label>
+              <input type="text" id="note" placeholder="Additional notes...">
+            </div>
+          </div>
+
+          <h3 class="sub-title">Import Items</h3>
+          <table class="import-items-table">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Unit Cost ($)</th>
+                <th>Total ($)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" placeholder="LEGO Starfighter"></td>
+                <td><input type="number" min="1" value="10"></td>
+                <td><input type="number" min="0" value="25"></td>
+                <td>$250</td>
+                <td><button type="button" class="delete-row"><i class="fa-solid fa-trash"></i></button></td>
+              </tr>
+              <tr>
+                <td><input type="text" placeholder="LEGO Ninjago Dragon"></td>
+                <td><input type="number" min="1" value="5"></td>
+                <td><input type="number" min="0" value="40"></td>
+                <td>$200</td>
+                <td><button type="button" class="delete-row"><i class="fa-solid fa-trash"></i></button></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="total-row">
+                <td colspan="3" class="text-right">Total Price:</td>
+                <td colspan="2" class="total-value">$450</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <button type="button" class="btn add-row"><i class="fa-solid fa-plus"></i> Add Item</button>
+
+          <div class="form-footer">
+            <button type="submit" class="btn save"><i class="fa-solid fa-check"></i> Save Import</button>
+            <a href="imports.html" class="btn cancel"><i class="fa-solid fa-xmark"></i> Cancel</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: RECENT IMPORTS -->
+      <aside class="import-sidebar">
+        <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Imports</h3>
+        <ul class="import-list">
+          <li>
+            <div>
+              <p class="import-code">#IMP-1007</p>
+              <p class="import-supplier">ToyLand Co. • 2025-10-21</p>
+              <p class="import-total">$540</p>
+            </div>
+            <span class="status completed">Completed</span>
+          </li>
+          <li>
+            <div>
+              <p class="import-code">#IMP-1006</p>
+              <p class="import-supplier">BrickWorld Ltd. • 2025-10-18</p>
+              <p class="import-total">$230</p>
+            </div>
+            <span class="status pending">Pending</span>
+          </li>
+          <li>
+            <div>
+              <p class="import-code">#IMP-1005</p>
+              <p class="import-supplier">BuildMaster • 2025-10-15</p>
+              <p class="import-total">$310</p>
+            </div>
+            <span class="status cancelled">Cancelled</span>
+          </li>
+          <li>
+            <div>
+              <p class="import-code">#IMP-1004</p>
+              <p class="import-supplier">FunToys • 2025-10-10</p>
+              <p class="import-total">$180</p>
+            </div>
+            <span class="status completed">Completed</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- vertical divider -->
+      <div class="divider"></div>
+
+    </div>
+  </section>
+</body>
+
+</html>

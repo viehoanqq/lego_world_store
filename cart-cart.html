@@ -80,52 +80,7 @@
         <!--Footer-->
         <iframe src="components/footer.html" width="100%" height="600" frameboder="0" scrolling="no"></iframe>
 
-        <script>
-    // Hàm định dạng số tiền (thêm dấu chấm và ký hiệu ₫)
-    function formatCurrency(amount) {
-        return amount.toLocaleString('vi-VN') + '₫';
-    }
-
-    // Hàm tính lại tổng từng sản phẩm và tổng toàn bộ
-    function updateCartTotal() {
-        const rows = document.querySelectorAll('.cart-table tbody tr');
-        let subtotal = 0;
-
-        rows.forEach(row => {
-            const priceText = row.cells[1].textContent.replace(/[^\d]/g, '');
-            const quantity = parseInt(row.querySelector('input').value);
-            const price = parseInt(priceText);
-            const total = price * quantity;
-
-            // Cập nhật ô "Thành tiền"
-            row.cells[3].textContent = formatCurrency(total);
-
-            subtotal += total;
-        });
-
-        // Cập nhật phần tổng tiền
-        const subtotalEl = document.querySelector('.summary-item strong');
-        const totalEl = document.querySelector('.summary-total strong');
-
-        if (subtotalEl) subtotalEl.textContent = formatCurrency(subtotal);
-        if (totalEl) totalEl.textContent = formatCurrency(subtotal); // vì phí ship miễn phí
-    }
-
-    // Gắn sự kiện "input" cho tất cả ô số lượng
-    document.querySelectorAll('.cart-table input[type="number"]').forEach(input => {
-        input.addEventListener('input', updateCartTotal);
-    });
-
-    // Gắn sự kiện xóa sản phẩm
-    document.querySelectorAll('.btn-remove').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.target.closest('tr').remove();
-            updateCartTotal();
-        });
-    });
-
-    // Gọi khi load trang lần đầu
-    updateCartTotal();
+    
 </script>
 
     </body>
