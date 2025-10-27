@@ -34,7 +34,7 @@
     <div class="main-header">
       <div class="logo">
         <a href="./home.html">
-          <img src="./assets/images/logo.png" alt="LEGO World Store" />
+          <img src="/assets/images/logo.png" alt="LEGO World Store" />
         </a>
       </div>
 
@@ -68,56 +68,58 @@
 
 
   <!-- ========== MAIN ========== -->
-  <main class="history-page">
-    <section class="history-header">
-      <h1>Lịch sử mua hàng</h1>
-      <p>Xem lại các đơn hàng bạn đã mua tại Lego World Store</p>
-    </section>
+  <!-- MAIN: Lịch sử -->
+    <main class="history-page">
+      <section class="history-header">
+        <h1>Lịch sử mua hàng</h1>
+        <p>Xem lại các đơn hàng bạn đã mua tại Lego World Store</p>
+      </section>
 
-    <section class="history-list">
-      <table class="history-table">
-        <thead>
-          <tr>
-            <th>Mã đơn hàng</th>
-            <th>Ngày đặt</th>
-            <th>Tổng tiền</th>
-            <th>Trạng thái</th>
-            <th>Chi tiết</th>
-          </tr>
-        </thead>
-        <tbody id="order-history">
-          <tr>
-            <td>#HD20251001</td>
-            <td>01/10/2025</td>
-            <td>1.250.000₫</td>
-            <td><span style="color: green; font-weight: 600;">Đã giao</span></td>
-            <td><a href="./order-detail.html?id=HD20251001" class="btn-detail"><i class="fa-solid fa-eye"></i> Xem</a></td>
-          </tr>
-          <tr>
-            <td>#HD20251005</td>
-            <td>05/10/2025</td>
-            <td>850.000₫</td>
-            <td><span style="color: orange; font-weight: 600;">Đang giao</span></td>
-            <td><a href="./order-detail.html?id=HD20251005" class="btn-detail"><i class="fa-solid fa-eye"></i> Xem</a></td>
-          </tr>
-          <tr>
-            <td>#HD20251012</td>
-            <td>12/10/2025</td>
-            <td>3.200.000₫</td>
-            <td><span style="color: blue; font-weight: 600;">Đang xử lý</span></td>
-            <td><a href="./order-detail.html?id=HD20251012" class="btn-detail"><i class="fa-solid fa-eye"></i> Xem</a></td>
-          </tr>
-          <tr>
-            <td>#HD20250929</td>
-            <td>29/09/2025</td>
-            <td>2.490.000₫</td>
-            <td><span style="color: red; font-weight: 600;">Đã hủy</span></td>
-            <td><a href="./order-detail.html?id=HD20250929" class="btn-detail"><i class="fa-solid fa-eye"></i> Xem</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+      <section class="history-controls">
+        <label>Lọc theo trạng thái:
+          <select>
+            <option>Tất cả</option>
+            <option>Đã giao</option>
+            <option>Đang giao</option>
+            <option>Đã hủy</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="history-list">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Mã đơn hàng</th>
+              <th>Ngày đặt</th>
+              <th>Tổng tiền</th>
+              <th>Thanh toán</th>
+              <th>Trạng thái</th>
+              <th>Chi tiết</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#HD20251001</td>
+              <td>01/10/2025</td>
+              <td>3.300.000</td>
+              <td>Chuyển khoản ngân hàng</td>
+              <td><span class="status delivered">Đã giao</span></td>
+              <td><a href="order_detail.html" class="btn-view">Xem</a></td>
+            </tr>
+
+            <tr>
+              <td>#HD20251005</td>
+              <td>05/10/2025</td>
+              <td>5.720.000</td>
+              <td>COD</td>
+              <td><span class="status shipping">Đang giao</span></td>
+              <td><a href="#" class="btn-view">Xem</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
 
 
   <!-- ========== FOOTER ========== -->
@@ -137,7 +139,7 @@
       <div class="footer-subscribe">
         <div class="logo">
           <a href="../home.html">
-            <img src="../assets/images/logo.png" alt="LEGO World Store" />
+            <img src="/assets/images/logo.png" alt="LEGO World Store" />
           </a>
         </div>
         <div class="subscribe-box">
