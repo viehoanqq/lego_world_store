@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'PoppinsVH';
+  src: url('../../font/FzPoppins/FZ-Poppins-Regular.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'PoppinsVH';
+  src: url('../../font/FzPoppins/FZ-Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'PoppinsVH', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.order-detail-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(164, 22, 26, 0.2);
+}
+
+/* --- HEADER --- */
+.order-detail-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.order-detail-header h1 {
+  color: #a4161a;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.order-detail-header .status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #fff;
+}
+.status.delivered {
+  background-color: #28a745;
+}
+.status.shipping {
+  background-color: #ffc107;
+  color: #000;
+}
+.status.cancelled {
+  background-color: #dc3545;
+}
+
+/* --- ORDER INFO --- */
+.order-info {
+  background: #fff7e6;
+  border-left: 4px solid #ffcf00;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.order-info h3 {
+  color: #a4161a;
+  margin-bottom: 10px;
+}
+
+/* --- ORDER TABLE --- */
+.order-items h3 {
+  color: #b43f3f;
+  border-left: 4px solid #ffcf00;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-table th,
+.order-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.order-table th {
+  background-color: #a4161a;
+  color: #fff;
+}
+
+.order-table td img {
+  width: 80px;
+  border-radius: 10px;
+}
+
+.order-total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(90deg, #a4161a, #d62828);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(164, 22, 26, 0.4);
+  margin-top: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.order-total strong {
+  font-size: 26px;
+  color: #ffe66d;
+  margin-left: 8px;
+}
+
+/* --- BUTTON --- */
+.back-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background-color: #a4161a;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  background-color: #ff2b32;
+  transform: scale(1.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .order-detail-page {
+    padding: 20px;
+  }
+  .order-table th, .order-table td {
+    font-size: 14px;
+  }
+  .btn-back {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
