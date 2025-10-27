@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết đơn hàng - Lego World Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="/assets/css/components/components.css">
+  <link rel="stylesheet" href="/assets/css/user/order_detail.css">
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="top-bar">
+      <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+      <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+      <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+      <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+      <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+    </div>
+
+    <div class="main-header">
+      <div class="logo">
+        <a href="./home.html">
+          <img src="/assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="user-options">
+        <a href="../login.html"><i class="fa-solid fa-user"></i> Tài khoản</a>
+        <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a>
+      </div>
+    </div>
+
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="./home.html">TRANG CHỦ</a></li>
+        <li><a href="./product.html">SẢN PHẨM</a></li>
+        <li><a href="#">HÀNG MỚI</a></li>
+        <li><a href="#">KHUYẾN MÃI</a></li>
+        <li><a href="#">THƯƠNG HIỆU</a></li>
+        <li><a href="#">TIN TỨC</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main class="order-detail-page">
+    <section class="order-detail-header">
+      <h1>Chi tiết đơn hàng#HD20251001</h1>
+      <p>Ngày đặt: <strong>01/10/2025</strong> | Trạng thái: <span class="status shipping">Đã giao</span></p>
+    </section>
+
+    <section class="order-info">
+      <h3>Thông tin người nhận</h3>
+      <p><strong>Người nhận:</strong> Nguyễn Văn A</p>
+      <p><strong>Địa chỉ:</strong> 273 An Dương Vương, Quận 5, TP. Hồ Chí Minh</p>
+      <p><strong>Điện thoại:</strong> 0901 234 567</p>
+      <p><strong>Phương thức thanh toán:</strong> Chuyển khoản ngân hàng </p>
+    </section>
+
+    <section class="order-items">
+      <h3>Sản phẩm trong đơn hàng</h3>
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="../../assets/images/product1.webp" alt="Lego City"></td>
+            <td>Lego Millenium Falcon</td>
+            <td>1</td>
+            <td>1.700.000₫</td>
+            <td>1.700.000₫</td>
+          </tr>
+          <tr>
+            <td><img src="../../assets/images/product9.webp" alt="Lego Ninjago"></td>
+            <td>Lego Eternals</td>
+            <td>1</td>
+            <td>1.300.000₫</td>
+            <td>1.300.000₫</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="order-total">Tổng cộng: <strong>3.300.000₫</strong></p>
+    </section>
+
+    <div class="back-btn">
+      <a href="./cart-history.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Quay lại lịch sử mua hàng</a>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
