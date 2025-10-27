@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý sản phẩm | LEGO Admin</title>
+   <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+   <link rel="stylesheet" href="../../assets/css/admin/product.css">
+   <link rel="stylesheet" href="../../assets/admin/product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="side-bar">
+      <div class="logo">
+          <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+      </div>
+      <nav class="menu">
+          <ul class="system">
+              <li><a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Overview</a></li>
+              <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span class="message">2</span></a></li>
+              <li><a href="/admin/products/list.html" class="active"><i class="fa-solid fa-box"></i>Products</a></li>
+              <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
+              <li><a href="/admin/orders/list.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
+              <li><a href="/admin/imports/list.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
+              <li><a href="/admin/customers/list.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+              <li><a href="#"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          </ul>
+          <ul class="support">
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+          </ul>
+      </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="admin-header">
+      <h1>Welcome back, Hoang</h1>
+
+      <div class="admin-info">
+        <span class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input placeholder="Search...">
+        </span>
+        <span class="info">
+          <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+          <img src="../../assets/images/avt.png" alt="Admin Avatar" />
+          <p class="nametag">Việt Hoàng</p>
+        </span>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="page-header">
+        <div>
+          <h2>Product List</h2>
+          <div class="breadcrumb">
+            <a href="/admin/dashboard.html">Dashboard</a> / <span>Products</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-bar">
+        <div class="search-filter">
+          <input type="text" placeholder="Search by product name..." id="searchInput">
+          <select id="statusFilter">
+              <option value="all">All Status</option>
+              <option value="active">Active</option>
+              <option value="hidden">Hidden</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="window.location.href='/admin/products/add.html'">
+          <i class="fa-solid fa-plus"></i> Add New Product
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#402</td>
+              <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-rong-rung-xanh-cua-lloyd-lego-ninjago-71829.png?v=1741322444&width=400" class="category-image" alt="LEGO NINJAGO"></td>
+              <td><strong>Green Forest Dragon Building Toy</strong></td>
+              <td>LEGO NINJAGO</td>
+              <td>City truck model with building accessories</td>
+              <td><span class="qty low">8</span></td>
+              <td class="price">
+                <div class="price-block">
+                  <span class="new">3.999.000₫</span>
+                  <span class="old">4.999.000₫</span>
+                  <span class="sale-badge">-20%</span>
+                </div>
+              </td>
+              <td><span class="status-badge status-active">Active</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                  <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/products/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                  <button class="icon-btn delete" title="Hide/Delete"><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#403</td>
+              <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42159_755e3d82-ba5d-420e-972f-3d8cf50c95d1.jpg?v=1725613562&width=400" class="category-image" alt="LEGO TECHNIC"></td>
+              <td><strong>Yamaha Supercar Building Toy</strong></td>
+              <td>LEGO TECHNIC</td>
+              <td>Dragon battle set featuring ninjas and villains</td>
+              <td><span class="qty">15</span></td>
+              <td class="price">
+                <div class="price-block">
+                  <span class="new">1.104.150₫</span>
+                  <span class="old">1.299.000₫</span>
+                  <span class="sale-badge">-15%</span>
+                </div>
+              </td>
+              <td><span class="status-badge status-hidden">Hidden</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                  <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/products/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                  <button class="icon-btn show" title="Show"><i class="fa-solid fa-eye"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#404</td>
+              <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/10969_df3c161d-8ac9-4f2d-9022-3a29e5e1b83d.jpg?v=1725531888&width=400" class="category-image" alt="LEGO DUPLO"></td>
+              <td><strong>Fire Truck Building Toy</strong></td>
+              <td>LEGO DUPLO</td>
+              <td>Superhero car battle set featuring Iron Man</td>
+              <td><span class="qty zero">0</span></td>
+              <td class="price">
+                <div class="price-block">
+                  <span class="new">2.399.000₫</span>
+                </div>
+              </td>
+              <td><span class="status-badge status-hidden">Hidden</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                  <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/products/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                  <button class="icon-btn delete" title="Hide/Delete"><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#405</td>
+              <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42163_6a442c09-f724-4212-a412-a2d2b95077b5.jpg?v=1725512511&width=400" class="category-image" alt="LEGO TECHNIC"></td>
+              <td><strong>Heavy Bulldozer Building Toy</strong></td>
+              <td>LEGO TECHNIC</td>
+              <td>Superhero car battle set featuring Iron Man</td>
+              <td><span class="qty">35</span></td>
+              <td class="price">
+                <div class="price-block">
+                  <span class="new">808.200₫</span>
+                  <span class="old">898.000₫</span>
+                  <span class="sale-badge">-10%</span>
+                </div>
+              </td>
+              <td><span class="status-badge status-active">Active</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                  <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/products/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                  <button class="icon-btn delete" title="Hide/Delete"><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#406</td>
+              <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/76923.jpg?v=1726926507&width=400" class="category-image" alt="LEGO SPEED CHAMPIONS"></td>
+              <td><strong>Lamborghini Supercar Building Toy</strong></td>
+              <td>LEGO SPEED CHAMPIONS</td>
+              <td>Superhero car battle set featuring Iron Man</td>
+              <td><span class="qty low">5</span></td>
+              <td class="price">
+                <div class="price-block">
+                  <span class="new">1.569.000₫</span>
+                </div>
+              </td>
+              <td><span class="status-badge status-active">Active</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                  <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/products/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                  <button class="icon-btn delete" title="Hide/Delete"><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#407</td>
+              <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/76270.jpg?v=1726656662&width=400" class="category-image" alt="LEGO SUPERHEROES"></td>
+              <td><strong>Batman Battle Armor Building Toy</strong></td>
+              <td>LEGO SUPERHEROES</td>
+              <td>Dragon battle set featuring ninjas and villains</td>
+              <td><span class="qty low">1</span></td>
+              <td class="price">
+                <div class="price-block">
+                  <span class="new">2.729.000₫</span>
+                </div>
+              </td>
+              <td><span class="status-badge status-hidden">Hidden</span></td>
+              <td>
+                <div class="action-buttons">
+                  <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                  <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/products/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                  <button class="icon-btn show" title="Show"><i class="fa-solid fa-eye"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination">
+          <div class="pagination-info">
+            Showing <strong>1-6</strong> of <strong>6</strong> products
+          </div>
+          <div class="pagination-buttons">
+            <button disabled><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+</body>
+</html>

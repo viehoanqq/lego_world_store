@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tìm kiếm sản phẩm LEGO - LEGO World Store</title>
-  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
   <link rel="stylesheet" href="../../assets/css/user/product.css">
   <link rel="stylesheet" href="../../assets/css/components/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -14,8 +14,46 @@
 
   <!-- Header -->
   <header>
-    <div id="header"></div>
-  </header>
+        <div class="top-bar">
+            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+        </div>
+        <div class="main-header">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                </a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="user-options">
+                <a href="../login/login.html">
+                    <i class="fa-solid fa-user"></i> Đăng nhập
+                </a>
+                <a href="../order/order.html">
+                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+                </a>
+            </div>
+        </div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="">TRANG CHỦ</a></li>
+                <li><a href="list.html">SẢN PHẨM</a></li>
+                <li><a href="">HÀNG MỚI</a></li>
+                <li><a href="">KHUYẾN MÃI</a></li>
+                <li><a href="">THƯƠNG HIỆU</a></li>
+                <li><a href="">TIN TỨC</a></li>
+            </ul>
+        </nav>
+    </header>
 
   <!-- ========== BREADCRUMB ========== -->
   <div class="breadcrumb">
@@ -173,23 +211,23 @@
         
         <!-- Result Product 1 -->
         <div class="product-card">
-          <span class="product-badge new">Mới</span>
+          <span class="product-badge new">NEW</span>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=400&h=400&fit=crop" alt="Ferrari SF-24 F1">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71813_e9d1e63f-bfa8-45bf-9627-4a2c4f65a6d7.jpg?v=1725605900&width=400" alt="LEGO NINJAGO">
           </div>
           <div class="product-info">
-            <div class="product-category">LEGO Technic</div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe Ferrari SF-24 F1</h3>
+            <div class="product-header-line">
+              <div class="product-category">LEGO NINJAGO</div>
+              <div class="product-sku">Mã: 489</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp tu viện bóng tối</h3>
             <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 18+</span>
+              <span><i class="fa-solid fa-child"></i> 10+</span>
               <span><i class="fa-solid fa-puzzle-piece"></i> 1361</span>
             </div>
-            <div class="product-price">
-              3.999.000đ
-              <span class="product-price-old">4.999.000đ</span>
-            </div>
+            <div class="product-price">3.839.000đ</div>
             <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
               <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
             </div>
           </div>
@@ -197,23 +235,26 @@
 
         <!-- Result Product 2 -->
         <div class="product-card">
-          <span class="product-badge">-20%</span>
+          <span class="product-badge">-30%</span>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop" alt="Ferrari 488 GTE">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42169_93640d5a-a7c9-4ef9-9dca-43d0313a1fa5.jpg?v=1746873322&width=400" alt="LEGO TECHNIC">
           </div>
           <div class="product-info">
-            <div class="product-category">LEGO Technic</div>
-            <h3 class="product-name">Ferrari 488 GTE AF Corse #51</h3>
+            <div class="product-header-line">
+              <div class="product-category">LEGO TECHNIC</div>
+              <div class="product-sku">Mã: 459</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp xe đua thể thao</h3>
             <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 18+</span>
+              <span><i class="fa-solid fa-child"></i> 8+</span>
               <span><i class="fa-solid fa-puzzle-piece"></i> 1677</span>
             </div>
             <div class="product-price">
-              3.599.000đ
-              <span class="product-price-old">4.499.000đ</span>
+              1.154.300đ
+              <span class="product-price-old">1.649.000đ</span>
             </div>
             <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
               <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
             </div>
           </div>
@@ -222,18 +263,21 @@
         <!-- Result Product 3 -->
         <div class="product-card">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1515630278258-407f66498911?w=400&h=400&fit=crop" alt="Ferrari Daytona SP3">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42182.jpg?v=1726928944&width=400" alt="LEGO TECHNIC">
           </div>
           <div class="product-info">
-            <div class="product-category">LEGO Technic</div>
-            <h3 class="product-name">Ferrari Daytona SP3</h3>
+            <div class="product-header-line">
+              <div class="product-category">LEGO TECHNIC</div>
+              <div class="product-sku">Mã: 559</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp xe thám hiểm mặt trăng</h3>
             <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 18+</span>
+              <span><i class="fa-solid fa-child"></i> 10+</span>
               <span><i class="fa-solid fa-puzzle-piece"></i> 3778</span>
             </div>
-            <div class="product-price">8.999.000đ</div>
+            <div class="product-price">7.299.000đ</div>
             <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
               <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
             </div>
           </div>
@@ -241,23 +285,26 @@
 
         <!-- Result Product 4 -->
         <div class="product-card">
-          <span class="product-badge">-15%</span>
+          <span class="product-badge">-30%</span>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Ferrari F8 Tributo">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-la-rap-cua-hang-phu-kien-cho-thu-cung-lego-friends-42650_f28343a7-5917-4a97-b033-ff73299dee5e.png?v=1752024881&width=400" alt="LEGO FRIENDS">
           </div>
           <div class="product-info">
-            <div class="product-category">LEGO Speed Champions</div>
-            <h3 class="product-name">Ferrari F8 Tributo</h3>
+            <div class="product-header-line">
+              <div class="product-category">LEGO FRIENDS</div>
+              <div class="product-sku">Mã: 881</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp cửa hàng phụ kiện cho thú cưng</h3>
             <div class="product-meta">
               <span><i class="fa-solid fa-child"></i> 8+</span>
               <span><i class="fa-solid fa-puzzle-piece"></i> 275</span>
             </div>
             <div class="product-price">
-              679.000đ
-              <span class="product-price-old">799.000đ</span>
+              895.300đ
+              <span class="product-price-old">1.279.000đ</span>
             </div>
             <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
               <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
             </div>
           </div>
@@ -265,20 +312,23 @@
 
         <!-- Result Product 5 -->
         <div class="product-card">
-          <span class="product-badge new">Mới</span>
+          <span class="product-badge new">NEW</span>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop" alt="Ferrari 812 Competizione">
+            <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-rong-than-suc-manh-thunderfang-lego-ninjago-71832.png?v=1759286245&width=1100" alt="LEGO NINJAGO">
           </div>
           <div class="product-info">
-            <div class="product-category">LEGO Speed Champions</div>
-            <h3 class="product-name">Ferrari 812 Competizione</h3>
+            <div class="product-header-line">
+              <div class="product-category">LEGO NINJAGO</div>
+              <div class="product-sku">Mã: 103</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp rồng thần sức mạnh</h3>
             <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 9+</span>
+              <span><i class="fa-solid fa-child"></i> 10+</span>
               <span><i class="fa-solid fa-puzzle-piece"></i> 261</span>
             </div>
-            <div class="product-price">599.000đ</div>
+            <div class="product-price">2.399.000đ</div>
             <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
               <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
             </div>
           </div>
@@ -287,67 +337,27 @@
         <!-- Result Product 6 -->
         <div class="product-card">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1566821582776-92b13ab46bb4?w=400&h=400&fit=crop" alt="Scuderia Ferrari Garage">
+            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/10311_c83d120f-940e-450a-8885-89e330bfcb5f.jpg?v=1760078221&width=400" alt="LEGO BOTANICALS">
           </div>
           <div class="product-info">
-            <div class="product-category">LEGO Speed Champions</div>
-            <h3 class="product-name">Scuderia Ferrari F1 Race Garage</h3>
+            <div class="product-header-line">
+              <div class="product-category">LEGO BOTANICALS</div>
+              <div class="product-sku">Mã: 669</div>
+            </div>
+            <h3 class="product-name">Đồ chơi lắp ráp hoa lan</h3>
             <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 8+</span>
+              <span><i class="fa-solid fa-child"></i> 12+</span>
               <span><i class="fa-solid fa-puzzle-piece"></i> 843</span>
             </div>
-            <div class="product-price">1.799.000đ</div>
+            <div class="product-price">1.619.000đ</div>
             <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
+              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
               <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Result Product 7 -->
-        <div class="product-card">
-          <span class="product-badge">-25%</span>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400&h=400&fit=crop" alt="Ferrari F40">
-          </div>
-          <div class="product-info">
-            <div class="product-category">LEGO Creator Expert</div>
-            <h3 class="product-name">Ferrari F40</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 16+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 1158</span>
-            </div>
-            <div class="product-price">
-              2.249.000đ
-              <span class="product-price-old">2.999.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Result Product 8 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=400&fit=crop" alt="Ferrari 296 GTS">
-          </div>
-          <div class="product-info">
-            <div class="product-category">LEGO Speed Champions</div>
-            <h3 class="product-name">Ferrari 296 GTS</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 9+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 217</span>
-            </div>
-            <div class="product-price">549.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm giỏ</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
-
+        
       </div>
 
       <!-- Pagination -->
@@ -369,72 +379,87 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="main-footer">
-    <div class="footer-top">
-      <div class="container">
-        <span>Miễn phí giao hàng đơn từ 500k</span>
-        <span>Giao hàng hỏa tốc 4 tiếng</span>
-        <span>Hệ thống 200 cửa hàng</span>
-      </div>
-    </div>
 
-    <div class="footer-body">
-      <div class="footer-subscribe">
-        <div class="logo">
-          <a href="../../index.html">
-            <img src="../../assets/images/logo.png" alt="LEGO World Store" style="width: 200px;" />
-          </a>
+        <!-- Thanh thông báo nhỏ -->
+        <div class="footer-top">
+            <div class="container">
+                <span>Miễn phí giao hàng đơn từ 500k</span>
+                <span>Giao hàng hỏa tốc 4 tiếng</span>
+                <span>Hệ thống 200 cửa hàng</span>
+            </div>
         </div>
-        <div class="subscribe-box">
-          <h4><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</h4>
-          <form>
-            <input type="email" placeholder="Nhập email của bạn" required />
-            <button type="submit">Đăng ký</button>
-          </form>
-          <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+
+        <div class="footer-body">
+
+            <!-- Đăng ký nhận tin -->
+            <div class="footer-subscribe">
+                <div class="logo">
+                    <a href="../home/home.html">
+                        <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                    </a>
+                </div>
+                <div class="subscribe-box">
+                    <h4>
+                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD
+                            STORE</p>
+                    </h4>
+                    <form>
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+                </div>
+            </div>
+
+            <!-- Mạng xã hội -->
+            <div class="footer-social">
+                <h4>Kết nối với chúng tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+                </div>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <h4>Thông tin liên hệ</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+            </div>
+
+            <!-- Liên kết & Chính sách -->
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>Điều khoản & Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+                        <li><a href="#">Chính sách trả góp</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
 
-      <div class="footer-social">
-        <h4>Kết nối với chúng tôi</h4>
-        <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-          <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-          <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-          <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+        <!-- Bản quyền -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+            </div>
         </div>
-      </div>
 
-      <div class="footer-contact">
-        <h4>Thông tin liên hệ</h4>
-        <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. HCM</p>
-        <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
-        <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
-        <p><i class="fa-regular fa-clock"></i> <strong>T2-T7:</strong> 8:00 - 17:00</p>
-        <p><i class="fa-regular fa-clock"></i> <strong>CN:</strong> 8:00 - 12:00</p>
-      </div>
-
-      <div class="footer-grid">
-        <div class="footer-links">
-          <h4>Điều khoản & Chính sách</h4>
-          <ul>
-            <li><a href="#">Chính sách giao hàng</a></li>
-            <li><a href="#">Chính sách bảo mật</a></li>
-            <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
-            <li><a href="#">Điều khoản thành viên</a></li>
-            <li><a href="#">Hệ thống cửa hàng</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
-        <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- JavaScript -->
   <script>

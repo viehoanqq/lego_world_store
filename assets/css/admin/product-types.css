@@ -1,0 +1,263 @@
+
+/* Clean, modern admin style for Product Categories page */
+:root{
+  --sidebar-w:260px;
+  --accent:#B43F3F;
+  --accent-2:#FFCF00;
+  --muted:#6b7280;
+  --bg:#f5f6f7;
+  --card-bg:#ffffff;
+  --radius:10px;
+  --shadow: 0 6px 20px rgba(15,23,42,0.06);
+  --font-stack: 'Nunito Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-stack);
+  color:#374151;
+  background:var(--bg);
+  display:flex;
+}
+
+
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 200vh;
+}
+
+
+
+/* HEADER */
+.admin-header{
+  background:var(--card-bg);
+  padding:22px 36px;
+  display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 1px 0 rgba(15,23,42,0.04);
+}
+.admin-header h1{
+    font-weight: 300;
+    margin-left: 30px;
+    flex: 1;
+}
+.admin-info{display:flex;align-items:center;gap:18px}
+
+/* header search / avatar */
+.admin-info .search-bar{
+  display:flex;align-items:center;gap:10px;background:#f3f5f7;padding:8px 12px;border-radius:999px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.03);
+}
+.admin-info .search-bar input{
+  border:0;background:transparent;outline:0;font-size:14px;width:220px;color:#374151
+}
+.admin-info .search-bar button{
+  border:0;background:var(--accent);color:#fff;padding:8px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;font-size:14px;
+}
+.info img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.nametag{font-weight:700;color:#111827}
+
+/* PAGE CONTENT */
+.content{padding:28px}
+
+/* Page header + breadcrumb */
+.page-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.page-header h2{font-size:28px;color:#111827;margin-bottom:6px}
+.breadcrumb{color:var(--muted);font-size:13px}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+
+/* ACTION BAR */
+.action-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:20px}
+.search-filter{display:flex;gap:12px;align-items:center;flex:1}
+.search-filter input{
+  padding:12px 14px;border-radius:10px;border:1px solid #e6e9ee;background:#fff;width:360px;font-size:14px;
+  box-shadow: none;outline:0;
+}
+.search-filter select{
+  padding:10px 12px;border-radius:10px;border:1px solid #e6e9ee;background:#fff;font-size:14px;
+}
+.btn{padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(180,63,63,0.12)}
+
+/* TABLE WRAPPER */
+.table-container{
+  background:var(--card-bg);border-radius:14px;padding:18px;box-shadow:var(--shadow);overflow:hidden;
+}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{
+  text-align:left;padding:16px 14px;background:#fbfdff;color:#6b7280;font-weight:700;border-bottom:1px solid #eef2f6;font-size:13px;
+}
+tbody td{padding:16px 14px;vertical-align:middle;border-bottom:1px solid #f3f6f8;color:#374151}
+tbody tr:hover td{background:#ffffff}
+
+/* IMAGE */
+.category-image{width:60px;height:60px;object-fit:cover;border-radius:8px;box-shadow:0 4px 14px rgba(15,23,42,0.04)}
+
+/* PRODUCTS count + status */
+.product-count{font-weight:700;color:var(--accent);margin-right:6px}
+.status-badge{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px}
+.status-active{background:#e7f5ee;color:#0f9a53}
+.status-hidden{background:#fff0f0;color:#d0383a}
+
+/* ACTION BUTTONS */
+.action-buttons{display:flex;gap:8px;align-items:center}
+.icon-btn{
+  width:36px;height:36px;border-radius:8px;border:0;display:inline-flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:14px;transition:all .15s;box-shadow:0 4px 12px rgba(15,23,42,0.04)
+}
+.icon-btn.view{background:#f6eefc;color:#6c2aa0}
+.icon-btn.edit{background:#e8f7ff;color:#0369a1}
+.icon-btn.delete{background:#fff0f0;color:#c02929}
+.icon-btn:hover{transform:translateY(-2px);opacity:0.95}
+
+/* PAGINATION */
+.pagination{display:flex;justify-content:space-between;align-items:center;padding:12px 6px;margin-top:14px;background:transparent}
+.pagination-info{color:var(--muted)}
+.pagination-buttons{display:flex;gap:8px}
+.pagination-buttons button{
+  padding:8px 12px;border-radius:8px;border:1px solid #eef2f6;background:#fff;cursor:pointer;font-weight:600;
+}
+.pagination-buttons button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* RESPONSIVE */
+@media (max-width: 1100px){
+  .search-filter input{width:240px}
+  .admin-info .search-bar input{width:160px}
+}
+@media (max-width: 800px){
+  .side-bar{position:relative;width:100%;height:auto}
+  .main-content{margin-left:0;width:100%}
+  .content{padding:16px}
+  .search-filter{flex-direction:column;align-items:stretch}
+  .search-filter input{width:100%}
+}
+
+
+
+/* ===== ADD FORM ===== */
+.form-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.form-group label span {
+  color: #B43F3F;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #B43F3F;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+
+
+/* ===== EDIT FORM ===== */
+.form-card img.category-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #eee;
+  display: block;
+}
+
+.form-group img.category-image:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+  border-color: #B43F3F;
+}
+
+/* Định dạng label cho ảnh hiện tại */
+.form-group label[for="imageUpload"],
+.form-group label:not([for]) {
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Điều chỉnh lại nút trong form edit cho rõ ràng */
+.form-buttons .btn-primary {
+  background: #B43F3F;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.form-buttons .btn-primary:hover {
+  background: #912f2f;
+  transform: translateY(-2px);
+}
+
+.form-buttons .btn-secondary {
+  background: #FFCF00;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.form-buttons .btn-secondary:hover {
+  background: #e6ba00;
+  transform: translateY(-2px);
+}
+
+/* Làm form gọn lại và cân đối */
+.form-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-group input[type="file"] {
+  padding: 8px;
+  border: 1px dashed #ccc;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.form-group input[type="file"]:hover {
+  border-color: #B43F3F;
+}
+
