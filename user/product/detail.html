@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>LEGO - Danh sách sản phẩm | Lego World Store</title>
-  <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/components/homepage.css">
   <link rel="stylesheet" href="../../assets/css/user/product.css">
   <link rel="stylesheet" href="../../assets/css/components/components.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -11,8 +11,48 @@
 <body>
   <!-- Header -->
   <header>
-    <div id="header"></div>
-  </header>
+        <div class="top-bar">
+            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+        </div>
+        <div class="main-header">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                </a>
+            </div>
+
+            <div class="search-bar">
+                <form action="search.html" method="get" class="search-bar search-form-inline">
+                <input type="text" name="q" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              </form>
+            </div>
+
+            <div class="user-options">
+                <a href="../login/login.html">
+                    <i class="fa-solid fa-user"></i> Đăng nhập
+                </a>
+                <a href="../order/order.html">
+                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+                </a>
+            </div>
+        </div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="">TRANG CHỦ</a></li>
+                <li><a href="list.html">SẢN PHẨM</a></li>
+                <li><a href="">HÀNG MỚI</a></li>
+                <li><a href="">KHUYẾN MÃI</a></li>
+                <li><a href="">THƯƠNG HIỆU</a></li>
+                <li><a href="">TIN TỨC</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
   <!-- MAIN CONTENT -->
@@ -413,22 +453,88 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div id="footer"></div>
-  </footer>
+  <footer class="main-footer">
 
-  <!-- JS import header/footer -->
-  <script>
-    // Nhúng header
-    fetch('../../components/header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header').innerHTML = data);
+        <!-- Thanh thông báo nhỏ -->
+        <div class="footer-top">
+            <div class="container">
+                <span>Miễn phí giao hàng đơn từ 500k</span>
+                <span>Giao hàng hỏa tốc 4 tiếng</span>
+                <span>Hệ thống 200 cửa hàng</span>
+            </div>
+        </div>
 
-    // Nhúng footer
-    fetch('../../components/footer.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
-  </script>
+        <div class="footer-body">
+
+            <!-- Đăng ký nhận tin -->
+            <div class="footer-subscribe">
+                <div class="logo">
+                    <a href="../home/home.html">
+                        <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                    </a>
+                </div>
+                <div class="subscribe-box">
+                    <h4>
+                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD
+                            STORE</p>
+                    </h4>
+                    <form>
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+                </div>
+            </div>
+
+            <!-- Mạng xã hội -->
+            <div class="footer-social">
+                <h4>Kết nối với chúng tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+                </div>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <h4>Thông tin liên hệ</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+            </div>
+
+            <!-- Liên kết & Chính sách -->
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>Điều khoản & Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+                        <li><a href="#">Chính sách trả góp</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bản quyền -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+            </div>
+        </div>
+
+    </footer>
 
   <script>
   // Hàm đổi tab
@@ -448,67 +554,91 @@
 </script>
 
 <!-- Footer -->
-  <footer>
-    <div id="footer"></div>
-  </footer>
+  <footer class="main-footer">
 
-  <!-- JS import header/footer -->
-  <script>
-    // Nhúng header
-    fetch('../../components/header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header').innerHTML = data);
+        <!-- Thanh thông báo nhỏ -->
+        <div class="footer-top">
+            <div class="container">
+                <span>Miễn phí giao hàng đơn từ 500k</span>
+                <span>Giao hàng hỏa tốc 4 tiếng</span>
+                <span>Hệ thống 200 cửa hàng</span>
+            </div>
+        </div>
 
-    // Nhúng footer
-    fetch('../../components/footer.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
-  </script>
+        <div class="footer-body">
+
+            <!-- Đăng ký nhận tin -->
+            <div class="footer-subscribe">
+                <div class="logo">
+                    <a href="../home/home.html">
+                        <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                    </a>
+                </div>
+                <div class="subscribe-box">
+                    <h4>
+                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD
+                            STORE</p>
+                    </h4>
+                    <form>
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+                </div>
+            </div>
+
+            <!-- Mạng xã hội -->
+            <div class="footer-social">
+                <h4>Kết nối với chúng tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+                </div>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <h4>Thông tin liên hệ</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+            </div>
+
+            <!-- Liên kết & Chính sách -->
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>Điều khoản & Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+                        <li><a href="#">Chính sách trả góp</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bản quyền -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+            </div>
+        </div>
+
+    </footer>
 
 
-<!-- JavaScript cho Header Search - Thêm vào cuối file list.html -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('.search-bar input');
-    const searchButton = document.querySelector('.search-bar button');
-    
-    if (searchInput && searchButton) {
-      // Function search
-      function performSearch() {
-        const keyword = searchInput.value.trim();
-        if (keyword) {
-          window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
-        } else {
-          alert('⚠️ Vui lòng nhập từ khóa tìm kiếm!');
-          searchInput.focus();
-        }
-      }
-      
-      // Click button
-      searchButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        performSearch();
-      });
-      
-      // Enter key
-      searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          performSearch();
-        }
-      });
-      
-      // Focus effect
-      searchInput.addEventListener('focus', function() {
-        this.parentElement.style.boxShadow = '0 0 0 3px rgba(180,63,63,0.2)';
-      });
-      
-      searchInput.addEventListener('blur', function() {
-        this.parentElement.style.boxShadow = '';
-      });
-    }
-  });
-</script>
+
 
 </body>
 </html>

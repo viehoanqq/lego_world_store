@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý loại sản phẩm | LEGO Admin</title>
+  <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+  <link rel="stylesheet" href="../../assets/css/admin/product-types.css">
+  <link rel="stylesheet" href="../../assets/admin/product-types.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="side-bar">
+        <div class="logo">
+            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+        </div>
+        <nav class="menu">
+            <ul class="system">
+                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
+                            class="message">2</span></a> </li>
+                <li><a href="/admin/products/list.html"><i class="fa-solid fa-box"></i>Products</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+            <ul class="support">
+                <li><a href="">Help</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="admin-header">
+            <h1>Welcome back, Hoang</h1>
+
+      <div class="admin-info">
+        <span class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input placeholder="Tìm kiếm loại sản phẩm...">
+        </span>
+        <span class="info">
+          <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+          <img src="../../assets/images/avt.png" alt="Admin Avatar" />
+          <p class="nametag">Việt Hoàng</p>
+        </span>
+      </div>
+    </header>
+
+    <section class="content">
+            <div class="page-header">
+                <div>
+                    <h2>Product Categories</h2>
+                    <div class="breadcrumb">
+                        <a href="/admin/dashboard.html">Dashboard</a> / <span>Categories</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <div class="search-filter">
+                    <input type="text" placeholder="Search by category name..." id="searchInput">
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="hidden">Hidden</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='/admin/product-types/add.html'">
+                    <i class="fa-solid fa-plus"></i>
+                    Add New Category
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Category Name</th>
+                            <th>Description</th>
+                            <th>Products</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#001</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-gara-f1-lego-city-60444.png?v=1741234241&width=400" class="category-image" alt="LEGO City"></td>
+                            <td><strong>LEGO City</strong></td>
+                            <td>Urban themed building sets with vehicles and buildings</td>
+                            <td><span class="product-count">45</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#002</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42170_92188d78-2f65-4dbf-a641-88c1ef93aca7.jpg?v=1725606535&width=400" class="category-image" alt="LEGO Technic"></td>
+                            <td><strong>LEGO Technic</strong></td>
+                            <td>Advanced building sets with functional mechanical features</td>
+                            <td><span class="product-count">32</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#003</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/31208_e232c73f-34e3-4f3a-af24-20b2cb7ead87.jpg?v=1725526876&width=400" class="category-image" alt="LEGO Art"></td>
+                            <td><strong>LEGO Art</strong></td>
+                            <td>Sets based on the iconic Star Wars universe</td>
+                            <td><span class="product-count">67</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#004</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-may-danh-chu-va-hoa-lego-creator-31169.png?v=1741236406&width=400" class="category-image" alt="LEGO Creator"></td>
+                            <td><strong>LEGO Creator</strong></td>
+                            <td>Superhero themed sets featuring Marvel characters</td>
+                            <td><span class="product-count">28</span> products</td>
+                            <td><span class="status-badge status-hidden">Hidden</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Show" onclick="toggleStatus(this)"><i class="fa-solid fa-eye"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#005</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/products/10913-_13_1.jpg?v=1743494936&width=400" class="category-image" alt="LEGO Duplo"></td>
+                            <td><strong>LEGO Duplo</strong></td>
+                            <td>3-in-1 building sets with multiple build options</td>
+                            <td><span class="product-count">41</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#006</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-la-rap-cua-hang-phu-kien-cho-thu-cung-lego-friends-42650_f28343a7-5917-4a97-b033-ff73299dee5e.png?v=1752024881&width=400" class="category-image" alt="LEGO Friends"></td>
+                            <td><strong>LEGO Friends</strong></td>
+                            <td>Friendship and adventure themed building sets</td>
+                            <td><span class="product-count">38</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#007</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/tran-chien-dung-nham-dia-nguc-nether-lego-minecraft-21266.png?v=1741321651&width=400" class="category-image" alt="LEGO Minecraft"></td>
+                            <td><strong>LEGO Minecraft</strong></td>
+                            <td>Iconic buildings and skylines from around the world</td>
+                            <td><span class="product-count">22</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#008</td>
+                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71821.jpg?v=1726925800&width=400" class="category-image" alt="LEGO Ninjago"></td>
+                            <td><strong>LEGO Ninjago</strong></td>
+                            <td>Ninja themed action sets with dragons and warriors</td>
+                            <td><span class="product-count">35</span> products</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <div class="pagination-info">
+                        Showing <strong>1-8</strong> of <strong>8</strong> categories
+                    </div>
+                    <div class="pagination-buttons">
+                        <button disabled><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+  </div>
+
+</body>
+</html>
