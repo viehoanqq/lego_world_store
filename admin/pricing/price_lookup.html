@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Price List - LEGO Store Admin</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link href="/assets/css/components/admin-sidebar.css" rel="stylesheet">
+  <link href="/assets/css/admin/pricing/price_lookup.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- === SIDEBAR === -->
+  <aside class="side-bar">
+    <div class="logo">
+      <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+    </div>
+    <nav class="menu">
+      <ul class="system">
+        <li><a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i> Overview</a></li>
+        <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i> Messages <span class="message">2</span></a></li>
+        <li><a href="/admin/products/products.html" class="active"><i class="fa-solid fa-box"></i> Products</a></li>
+        <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+        <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i> Imports</a></li>
+        <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+      </ul>
+      <ul class="support">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- === MAIN CONTENT === -->
+  <div class="main-content">
+    <!-- === HEADER === -->
+    <header class="admin-header">
+      <h1>Product Price List</h1>
+      <div class="admin-info">
+        <span class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" placeholder="Search products...">
+        </span>
+        <button class="btn-add"><i class="fa-solid fa-plus"></i> Add Product</button>
+        <span class="info">
+          <i class="fa-solid fa-bell">
+            <span class="noti">3</span>
+          </i>
+          <img src="/assets/images/avt.png" alt="Admin avatar" />
+          <p class="nametag">Việt Hoàng</p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+      </div>
+    </header>
+
+    <div class="content-box">
+      <h2>Product Pricing Lookup</h2>
+
+      <div class="search-filter">
+        <input type="text" placeholder="Search products...">
+        <select>
+          <option>All Categories</option>
+          <option>Vehicles</option>
+          <option>Architecture</option>
+          <option>Marvel</option>
+        </select>
+        <button class="btn-edit">Search</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>product ID</th>
+            <th>Product Name</th>
+            <th>Cost Price</th>
+            <th>Profit Margin (%)</th>
+            <th>Selling Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>#001</th>
+            <th>Lego City</th>
+            <th>1.000.000đ</th>
+            <th>20%</th>
+            <th>1.200.000đ</th>
+          </tr>
+          <tr>
+            <th>#002</th>
+            <th>Lego Technic</th>
+            <th>500.000đ</th>
+            <th>20%</th>
+            <th>600.000đ</th>
+          </tr>  
+          <tr>
+            <th>#003</th>
+            <th>Lego Creator</th>
+            <th>1.200.000đ</th>
+            <th>25%</th>
+            <th>1.500.00đ</th>
+          </tr>
+          <tr>
+            <th>#005</th>
+            <th>Lego Duplo</th>
+            <th>800.000đ</th>
+            <th>25%</th>
+            <th>1.000.000đ</th>
+          </tr>
+          <tr>
+            <th>#006</th>
+            <th>Lego Friends</th>
+            <th>1.000.000đ</th>
+            <th>30%</th>
+            <th>1.300.000đ</th>
+          </tr>
+          <tr>
+            <th>#007</th>
+            <th>Lego Minecraft</th>
+            <th>1.300.000</th>
+            <th>25%</th>
+            <th>1.600.000đ</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>
