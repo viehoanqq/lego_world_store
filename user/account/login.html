@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Lego Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/admin/login.css">
+</head>
+ <header style="text-align: center; padding: 25px 0;">
+    <img src="../../assets/images/logo.png" alt="LEGO Store Logo" style="height: 55spx;">
+  </header>
+
+<main style="background-color: #fff; padding: 60px 0;">
+  <div
+    style="max-width: 800px; margin: 0 auto; background-color: #fff; border: 1px solid #f5c2c2; border-radius: 15px; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center;"
+  >
+    <h2 style="color: #c00; margin-bottom: 25px;">Đăng nhập tài khoản</h2>
+
+    <!-- Form -->
+    <form
+      style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;"
+    >
+      <div style="text-align: left;">
+        <label for="email" style="font-weight: bold;">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@gmail.com"
+          style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;"
+        />
+      </div>
+
+      <div style="text-align: left;">
+        <label for="password" style="font-weight: bold;">Mật khẩu:</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Nhập mật khẩu"
+          style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;"
+        />
+      </div>
+
+      <div style="text-align: right;">
+        <a href="#" style="font-size: 14px; color: #c00; text-decoration: none;">Quên mật khẩu?</a>
+      </div>
+
+      <button
+        type="submit"
+        style="background-color: #c00; color: #fff; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;"
+      >
+        Đăng nhập
+      </button>
+    </form>
+
+    <!-- Liên kết đăng ký -->
+    <p style="margin-top: 20px; font-size: 15px;">
+      Chưa có tài khoản?
+      <a
+        href="register.html"
+        style="color: #c00; text-decoration: none; font-weight: bold;"
+      >
+        Đăng ký ngay
+      </a>
+    </p>
+  </div>
+</main>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Lego Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/admin/login.css">
+</head>
+ <header style="text-align: center; padding: 25px 0;">
+    <img src="../../assets/images/logo.png" alt="LEGO Store Logo" style="height: 55spx;">
+  </header>
+
+<body style="background-color: #f4f6f9; font-family: 'Poppins', sans-serif;">
+  <main class="register-wrapper" style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div class="register-box" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 420px; text-align: center;">
+      <img src="../../assets/images/logo.png" alt="LEGO Store" style="width: 80px; margin-bottom: 20px;">
+      <h2 style="color: #C00; margin-bottom: 10px;">Tạo tài khoản mới</h2>
+      <p style="color: #555; font-size: 14px; margin-bottom: 30px;">Gia nhập LEGO World ngay hôm nay!</p>
+
+      <form>
+        <div style="margin-bottom: 20px; text-align: left;">
+          <label for="fullname" style="font-weight: 600;">Họ và tên</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn" required
+            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px;">
+        </div>
+
+        <div style="margin-bottom: 20px; text-align: left;">
+          <label for="email" style="font-weight: 600;">Email</label>
+          <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required
+            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px;">
+        </div>
+
+        <div style="margin-bottom: 20px; text-align: left;">
+          <label for="password" style="font-weight: 600;">Mật khẩu</label>
+          <input type="password" id="password" name="password" placeholder="Tạo mật khẩu" required
+            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px;">
+        </div>
+
+        <div style="margin-bottom: 25px; text-align: left;">
+          <label for="confirm" style="font-weight: 600;">Xác nhận mật khẩu</label>
+          <input type="password" id="confirm" name="confirm" placeholder="Nhập lại mật khẩu" required
+            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px;">
+        </div>
+
+        <button type="submit"
+          style="width: 100%; background-color: #C00; color: white; font-weight: 600; padding: 12px; border: none; border-radius: 8px; cursor: pointer;">
+          Đăng ký
+        </button>
+      </form>
+
+      <p style="margin-top: 20px; font-size: 14px;">
+        Đã có tài khoản?
+        <a href="login.html" style="color: #C00; font-weight: 600; text-decoration: none;">Đăng nhập</a>
+      </p>
+    </div>
+  </main>
+</body>
+</html>
