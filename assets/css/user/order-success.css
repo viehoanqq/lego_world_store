@@ -1,0 +1,161 @@
+.order-success {
+  max-width: 80%;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 50px 40px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.order-success .icon {
+  font-size: 4rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.order-success h1 {
+  font-size: 2.2rem;
+  color: #e3000b;
+  margin-bottom: 10px;
+}
+
+.order-success p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 35px;
+}
+
+/* --- THÔNG TIN ĐƠN HÀNG --- */
+.order-details {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 25px 30px;
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+.order-details h2 {
+  font-size: 1.25rem;
+  border-left: 5px solid #e3000b;
+  padding-left: 10px;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+.order-info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.order-info-item:last-child {
+  border-bottom: none;
+}
+
+.order-info-item span:first-child {
+  color: #666;
+}
+
+.order-info-item span:last-child {
+  font-weight: 500;
+  color: #222;
+}
+
+.order-info-item.total {
+  background: #fef4f4;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #e3000b;
+  margin-top: 10px;
+  border-bottom: none;
+}
+
+/* --- BUTTONS --- */
+.order-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #e3000b;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #c20009;
+}
+
+.btn-secondary {
+  background: #f2f2f2;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background: #e6e6e6;
+}
+
+@media (max-width: 600px) {
+  .order-actions {
+    flex-direction: column;
+  }
+
+  .order-details {
+    padding: 20px;
+  }
+}
+.checkout-steps {
+  position: relative;
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.checkout-steps::after{
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  height: 4px;
+  background: #b71c1c;
+  top: 25%;
+  z-index: -1;
+}
+.checkout-steps .step-active:nth-child(1){
+  margin-left: 0px;
+}
+.checkout-steps .step-active{
+  width: 20%;
+  text-align: center;
+}
+.checkout-steps .step-active p{
+  color: #b71c1c;
+  border: #b71c1c 3px solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: 700;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.checkout-steps .step-active #\31,#\32,#\33,#\34{
+  color: #ffffff;
+  background: #b71c1c;
+}

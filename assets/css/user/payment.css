@@ -1,0 +1,194 @@
+.payment-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.payment-header {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.payment-header h1 {
+  font-size: 2rem;
+  color: #e3000b;
+}
+
+.payment-header p {
+  color: #666;
+}
+
+/* Cột trái */
+.payment-left {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.payment-left h2 {
+  font-size: 1.3rem;
+  border-left: 5px solid #e3000b;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  color: #c20009;
+}
+
+/* Ngân hàng */
+.bank-list {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bank-list input {
+  display: none;
+}
+
+.bank-list label {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.bank-list img {
+  width: 90px;
+  height: 45px;
+  object-fit: contain;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+input#bank1:checked + img,
+input#bank2:checked + img,
+input#bank3:checked + img {
+  border: 2px solid #e3000b;
+}
+
+/* Form */
+.transfer-form input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.transfer-form input:focus {
+  border-color: #e3000b;
+  outline: none;
+  box-shadow: 0 0 4px rgba(227,0,11,0.3);
+}
+
+/* QR hiển thị theo ngân hàng */
+.qr-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-image {
+  display: none;
+}
+
+#bank1:checked ~ .qr-section .qr-bank1 { display: block; }
+#bank2:checked ~ .qr-section .qr-bank2 { display: block; }
+#bank3:checked ~ .qr-section .qr-bank3 { display: block; }
+
+.qr-image img {
+  width: 180px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 6px;
+}
+
+/* Cột phải */
+.payment-right {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  height: fit-content;
+}
+
+.payment-right h2 {
+  font-size: 1.3rem;
+  border-left: 5px solid #e3000b;
+  padding-left: 10px;
+  color: #c20009;
+  margin-bottom: 15px;
+}
+
+.payment-summary p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.btn-confirm {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #e3000b;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.btn-confirm:hover {
+  background: #c20009;
+}
+
+@media (max-width: 900px) {
+  .payment-page {
+    grid-template-columns: 1fr;
+  }
+}
+.checkout-steps {
+  position: relative;
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.checkout-steps::after{
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  height: 4px;
+  background: #b71c1c;
+  top: 25%;
+  z-index: -1;
+}
+.checkout-steps .step-active:nth-child(1){
+  margin-left: 0px;
+}
+.checkout-steps .step-active{
+  width: 20%;
+  text-align: center;
+}
+.checkout-steps .step-active p{
+  color: #b71c1c;
+  border: #b71c1c 3px solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: 700;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.checkout-steps .step-active #\31,#\32,#\33{
+  color: #ffffff;
+  background: #b71c1c;
+}

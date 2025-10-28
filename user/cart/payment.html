@@ -10,7 +10,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../../assets/css/components/homepage.css">
-  <link rel="stylesheet" href="../../assets/css/user/checkout.css">
+  <link rel="stylesheet" href="../../assets/css/user/payment.css">
 </head>
 <body>
 
@@ -53,7 +53,9 @@
       </ul>
     </nav>
   </header>
-<div class="checkout-steps">
+
+  <!-- ========== MAIN PAYMENT ========== -->
+         <div class="checkout-steps">
   <div class="step-active">
     <p id="1">1</p>
     <span>Giỏ hàng</span>
@@ -74,101 +76,55 @@
     <p id="5">5</p>
     <span>Xem lại đơn hàng</span>
   </div>
-</div>
-<main class="checkout-page">
-    <section class="checkout-header">
-      <h1>Thanh toán hóa đơn</h1>
-      <p>Vui lòng nhập thông tin giao hàng và chọn phương thức thanh toán.</p>
+        </div>
+  <main class="payment-page">
+    <section class="payment-header">
+      <h1>Thanh toán chuyển khoản</h1>
+      <p>Vui lòng chọn ngân hàng và thực hiện thanh toán theo hướng dẫn bên dưới.</p>
     </section>
 
-    <section class="checkout-info">
-      <h2>Địa chỉ giao hàng</h2>
-
-      <div class="address-options">
-        <label class="address-row">
-          <input type="radio" name="address" checked id="use-default">
-          <div>
-            <strong>Nguyễn Văn A</strong> — 123 Nguyễn Trãi, Quận 1, TP.HCM — 0123 456 789
-          </div>
+    <section class="payment-left">
+      <h2>1. Chọn ngân hàng</h2>
+      <div class="bank-list">
+        <label>
+          <input type="radio" name="bank" id="bank1" checked>
+          <img src="../../assets/images/momo.png" alt="Ngân hàng A">
         </label>
-
-        <label class="address-row">
-          <input type="radio" name="address" id="use-new">
-          <div><strong>Nhập địa chỉ mới</strong></div>
+        <label>
+          <input type="radio" name="bank" id="bank2">
+          <img src="../../assets/images/vnpay.jpg" alt="Ngân hàng B">
         </label>
-
-        <div class="new-address-form" id="new-address-form">
-          <input type="text" placeholder="Họ và tên người nhận">
-          <input type="tel" placeholder="Số điện thoại">
-          <input type="email" placeholder="Email">
-          <input type="text" placeholder="Địa chỉ chi tiết (số nhà, phường, quận, thành phố)">
-        </div>
+        <label>
+          <input type="radio" name="bank" id="bank3">
+          <img src="../../assets/images/zalo.png" alt="Ngân hàng C">
+        </label>
       </div>
 
-      <h2>Phương thức thanh toán</h2>
-      <div class="payment-options">
-        <label><input type="radio" name="payment" checked> Thanh toán khi nhận hàng (COD)</label>
-        <label><input type="radio" name="payment"> Chuyển khoản ngân hàng</label>
-        <label><input type="radio" name="payment"> Thanh toán trực tuyến</label>
-      </div>
+      <h2>2. Thông tin người chuyển</h2>
+      <form class="transfer-form">
+        <input type="text" placeholder="Họ và tên người chuyển" required>
+        <input type="text" placeholder="Số tài khoản / Số thẻ" required>
+        <input type="text" placeholder="Ngân hàng của bạn" required>
+        <input type="text" placeholder="Số tiền chuyển (VD: 1.200.000 đ)" required>
+      </form>
 
-      <div class="checkout-actions">
-        <a href="cart-cart.html" class="btn-secondary">Quay lại giỏ hàng</a>
-      </div>
     </section>
 
-    <aside class="checkout-summary">
-      <h2>Tóm tắt đơn hàng</h2>
-
-      <div id="order-summary">
-        <div class="order-item">
-          <div class="order-details">
-            <img src="../../assets/images/product1.webp" alt="">
-            <span>Mô hình Lego Marvel Eternals</span>
-          </div>
-          <span class="order-price">1.200.000đ</span>
-        </div>
-
-        <div class="order-item">
-          <div class="order-details">
-            <img src="../../assets/images/product2.webp" alt="">
-            <span>Mô hình Lego Statue of Liberty</span>
-          </div>
-          <span class="order-price">1.000.000đ</span>
-        </div>
-
-        <div class="order-item">
-          <div class="order-details">
-            <img src="../../assets/images/product3.webp" alt="">
-            <span>Mô hình Lego Hogwarts Castle</span>
-          </div>
-          <span class="order-price">3.000.000đ</span>
-        </div>
-
-        <div class="order-item">
-          <div class="order-details">
-            <span>Phí VAT (10%)</span>
-          </div>
-          <span>520.000đ</span>
-        </div>
-        <div class="order-item">
-          <div class="order-details">
-            <span>Phí giao hàng</span>
-          </div>
-          <span>Miễn phí</span>
-        </div>
-
-        <div class="order-total">
-          <strong>Tổng cộng:</strong>
-          <strong>5.27  0.000đ</strong>
-        </div>
+    <aside class="payment-right">
+      <h2>Tóm tắt chuyển khoản</h2>
+      <div class="payment-summary">
+        <p><strong>Người nhận:</strong> LEGO WORLD STORE</p>
+        <p><strong>Số tài khoản:</strong> 1234 5678 9999 (Ngân hàng ACB)</p>
+        <p><strong>Nội dung chuyển khoản:</strong> THANH TOAN DON #1025</p>
+        <p><strong>Số tiền:</strong> 1.200.000 đ</p>
       </div>
+           <div class="qr-section">
+        <h2>3. Quét mã QR để thanh toán</h2>
+        <img src="../../assets/images/qrcode.png" alt="QR Ngân hàng A">
 
-      <a href="payment.html"><button class="btn-checkout">Xác nhận đơn hàng</button> </a>
+      <a href="order-success.html" class="btn-confirm">Đã thanh toán?</a>
     </aside>
   </main>
-
-
 
   <!-- ========== FOOTER ========== -->
   <footer class="main-footer">

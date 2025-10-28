@@ -517,3 +517,6 @@ h2 {
   background: linear-gradient(45deg, #c71f1f, #ff6b6b);
 }
 }
+html{
+    scroll-behavior: smooth;
+}

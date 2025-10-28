@@ -5,58 +5,60 @@
   <title>LEGO - Danh sách sản phẩm | Lego World Store</title>
   <link rel="stylesheet" href="../assets/css/components/homepage.css">
   <link rel="stylesheet" href="../../assets/css/user/product.css">
-  <link rel="stylesheet" href="../../assets/css/components/components.css">
+  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
-        <div class="top-bar">
-            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
-            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
-            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
-            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
-            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
-        </div>
-        <div class="main-header">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="../assets/images/logo.png" alt="LEGO World Store" />
-                </a>
-            </div>
+   <header>
+    <!-- Thanh trên cùng -->
+    <div class="top-bar">
+      <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+      <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+      <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+      <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+      <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+    </div>
 
-            <div class="search-bar">
-              <form action="search.html" method="get" class="search-bar search-form-inline">
-                <input type="text" name="q" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-              </form>
-            </div>
+    <!-- Header chính -->
+    <div class="main-header">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
 
-            <div class="user-options">
-                <a href="../login/login.html">
-                    <i class="fa-solid fa-user"></i> Đăng nhập
-                </a>
-                <a href="../order/order.html">
-                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
-                </a>
-            </div>
-        </div>
-        </div>
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="index.html">TRANG CHỦ</a></li>
-                <li><a href="">SẢN PHẨM</a></li>
-                <li><a href="">HÀNG MỚI</a></li>
-                <li><a href="">KHUYẾN MÃI</a></li>
-                <li><a href="">THƯƠNG HIỆU</a></li>
-                <li><a href="">TIN TỨC</a></li>
-            </ul>
-        </nav>
-    </header>
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="user-options">
+        <a href="../account/login.html" target="_parent">
+          <i class="fa-solid fa-user"></i> Đăng nhập
+        </a>
+        <a href="../cart/cart-cart.html" target="_parent">
+          <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+        </a>
+      </div>
+    </div>
+
+    <!-- Menu điều hướng -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../../index.html" target="_parent">TRANG CHỦ</a></li>
+        <li><a href="list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="../../index.html#new-product">HÀNG MỚI</a></li>
+        <li><a href="../../index.html">KHUYẾN MÃI</a></li>
+        <li><a href="../../index.html">CHỦ ĐỀ</a></li>
+        <li><a href="../../index.html">TIN TỨC</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="../../index.html"><i class="fa-solid fa-house"></i> Sản phẩm</a>
+    <a href="../../index.html"><i class="fa-solid fa-house"></i>Trang chủ</a>
     <span>/</span>
     <strong>Tất cả sản phẩm</strong>
   </div>
@@ -157,306 +159,331 @@
       <!-- GRID SẢN PHẨM -->
       <div class="product-grid">
          <!-- Product 1 -->
-        <div class="product-card">
-          <span class="product-badge new">NEW</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-xe-ferrari-sf-24-f1-lego-technic-42207_0.jpg?v=1740971660&width=400" alt="LEGO TECHNIC">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO TECHNIC</div>
-              <div class="product-sku">Mã: 421</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe Ferrari </h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 6+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 743</span>
-            </div>
-            <div class="product-price">
-              1.299.000đ
-              <span class="product-price-old">1.599.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 1 -->
+<div class="product-card">
+  <a href="detail.html">
+  <span class="product-badge new">NEW</span>
+  <div class="product-image">
+    <img src="../../assets/images/product1.webp" alt="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO STAR WARS</div>
+      <div class="product-sku">Mã: 75257</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> 12+</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> 2</span>
+    </div>
+    <div class="product-price">
+      2.500.000₫
+      <span class="product-price-old">2.940.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+  </a>
+</div>
+<!-- Product 2 -->
+<div class="product-card">
+  <span class="product-badge new">NEW</span>
+  <div class="product-image">
+    <img src="../../assets/images/product2.webp" alt="Bộ xếp hình LEGO Technic Xe Ferrari 42143" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO TECHNIC</div>
+      <div class="product-sku">Mã: 42143</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Technic Xe Ferrari 42143</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      3.200.000₫
+      <span class="product-price-old">3.550.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 2 -->
-        <div class="product-card">
-          <span class="product-badge">-15%</span>
-          <div class="product-image">
-            <img src="https://www.mykingdom.com.vn/cdn/shop/files/60445.png?v=1759285996&width=1100" alt="LEGO CITY">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO CITY</div>
-              <div class="product-sku">Mã: 207</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe vận chuyển xe đua</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 10+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 920</span>
-            </div>
-            <div class="product-price">
-              2.761.650đ
-              <span class="product-price-old">3.249.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 3 -->
+<div class="product-card">
+  <span class="product-badge new">NEW</span>
+  <div class="product-image">
+    <img src="../../assets/images/product3.webp" alt="Bộ xếp hình LEGO Friends Thành phố Heartlake 41704" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO FRIENDS</div>
+      <div class="product-sku">Mã: 41704</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Friends Thành phố Heartlake 41704</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      1.800.000₫
+      <span class="product-price-old">2.400.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 3 -->
-        <div class="product-card">
-            <span class="product-badge">-40%</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/products/10696_1.jpg?v=1743494980&width=400" alt="LEGO CLASSIC">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO CLASSIC</div>
-              <div class="product-sku">Mã: 451</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp thùng gạch trung classic</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 6+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 569</span>
-            </div>
-            <div class="product-price">
-              761.400đ
-              <span class="product-price-old">1.269.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 4 -->
+<div class="product-card">
+  <span class="product-badge new">NEW</span>
+  <div class="product-image">
+    <img src="../../assets/images/product4.webp" alt="Bộ xếp hình LEGO Ninjago Rồng Huyền Thoại 71753" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO NINJAGO</div>
+      <div class="product-sku">Mã: 71753</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Ninjago Rồng Huyền Thoại 71753</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      900.000₫
+      <span class="product-price-old">1.290.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 4 -->
-        <div class="product-card">
-          <span class="product-badge new">NEW</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/mo-hinh-lap-rap-kinh-hien-vi-nat-geo-steam-ds1127h_1.jpg?v=1757646697&width=700" alt="STEAM">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">STEAM</div>
-              <div class="product-sku">Mã: 887</div>
-            </div>
-            <h3 class="product-name">Đồ chơi mô hình lắp ráp kính hiển vi Nat Geo Steam</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 16+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 7541</span>
-            </div>
-            <div class="product-price">489.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 5 -->
+<div class="product-card">
+  <span class="product-badge">-35%</span>
+  <div class="product-image">
+    <img src="../../assets/images/product5.webp" alt="Bộ xếp hình LEGO Creator Xe Máy Bay 31126" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO CREATOR</div>
+      <div class="product-sku">Mã: 31126</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Creator Xe Máy Bay 31126</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      750.000₫
+      <span class="product-price-old">1.150.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 5 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/76277_c2c8a31d-692c-449b-bc85-f503fa0c6807.jpg?v=1725510939&width=700" alt="LEGO SUPERHEROES">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO SUPERHEROES</div>
-              <div class="product-sku">Mã: 478</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp chiến giáp WarMachine Lego Superheroes</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 8+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 456</span>
-            </div>
-            <div class="product-price">459.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 6 -->
+<div class="product-card">
+  <span class="product-badge new">NEW</span>
+  <div class="product-image">
+    <img src="../../assets/images/product6.webp" alt="Bộ xếp hình LEGO Duplo Thị Trấn 10933" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO DUPLO</div>
+      <div class="product-sku">Mã: 10933</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Duplo Thị Trấn 10933</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      1.100.000₫
+      <span class="product-price-old">1.380.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 6 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/10280_6f82d206-8386-47ba-b499-310819e0f918.jpg?v=1725527326&width=700" alt="LEGO BOTANICALS">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO BOTANICALS</div>
-              <div class="product-sku">Mã: 200</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp bó hoa lego Botanicals </h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 10+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 342</span>
-            </div>
-            <div class="product-price">1.839.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 7 -->
+<div class="product-card">
+  <span class="product-badge">-40%</span>
+  <div class="product-image">
+    <img src="../../assets/images/product7.webp" alt="Bộ xếp hình LEGO Harry Potter Lâu Đài Hogwarts 71043" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO HARRY POTTER</div>
+      <div class="product-sku">Mã: 71043</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Harry Potter Lâu Đài Hogwarts 71043</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      8.500.000₫
+      <span class="product-price-old">14.170.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 7 -->
-        <div class="product-card">
-          <span class="product-badge">-10%</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42154_f212e1e9-a18a-4da9-a8c7-6d72dc6f8721.jpg?v=1725527511&width=400" alt="LEGO TECHNIC">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO TECHNIC</div>
-              <div class="product-sku">Mã: 599</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp siêu xe thể thao Ford</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 12+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 1125</span>
-            </div>
-            <div class="product-price">
-              3.419.100đ
-              <span class="product-price-old">3.799.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 8 -->
+<div class="product-card">
+  <span class="product-badge">-5%</span>
+  <div class="product-image">
+    <img src="../../assets/images/product8.webp" alt="Bộ xếp hình LEGO City Xe Cứu Thương 60330" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO CITY</div>
+      <div class="product-sku">Mã: 60330</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO City Xe Cứu Thương 60330</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      950.000₫
+      <span class="product-price-old">1.000.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 8 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-xe-banh-donut-di-dong-lego-city-60452.jpg?v=1753684373&width=400" alt="LEGO CITY">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO CITY</div>
-              <div class="product-sku">Mã: 618</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe bánh donut di động</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 16+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 6020</span>
-            </div>
-            <div class="product-price">599.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 9 -->
+<div class="product-card">
+  <span class="product-badge">25%<br/>OFF</span>
+  <div class="product-image">
+    <img src="../../assets/images/product9.webp" alt="Bộ xếp hình LEGO Marvel Avengers 76155" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO MARVEL</div>
+      <div class="product-sku">Mã: 76155</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Marvel Avengers 76155</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      1.800.000₫
+      <span class="product-price-old">2.400.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 9 -->
-        <div class="product-card">
-          <span class="product-badge hot">Hot</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71819_94278439-9325-404c-81f9-40b7ba7b700d.jpg?v=1746980382&width=400" alt="LEGO NINJAGO">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO NINJAGO</div>
-              <div class="product-sku">Mã: 220</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp ngôi đền rồng đá</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 8+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 701</span>
-            </div>
-            <div class="product-price">3.839.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 10 -->
+<div class="product-card">
+  <span class="product-badge">30%<br/>OFF</span>
+  <div class="product-image">
+    <img src="../../assets/images/product10.webp" alt="Bộ xếp hình LEGO Speed Champions Lamborghini 76908" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO SPEED</div>
+      <div class="product-sku">Mã: 76908</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Speed Champions Lamborghini 76908</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      1.050.000₫
+      <span class="product-price-old">1.500.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 10 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/60415_706f1fcd-a598-4b95-a8e1-e334c3a9c3a1.jpg?v=1725523765&width=400" alt="LEGO CITY">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO CITY</div>
-              <div class="product-sku">Mã: 623</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe cảnh sát truy đổi tội phạm</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 6+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 509</span>
-            </div>
-            <div class="product-price">
-              1.099.000đ
-              <span class="product-price-old">629.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 11 -->
+<div class="product-card">
+  <span class="product-badge">15%<br/>OFF</span>
+  <div class="product-image">
+    <img src="../../assets/images/product11.webp" alt="Bộ xếp hình LEGO Classic Hộp Gạch 11015" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO CLASSIC</div>
+      <div class="product-sku">Mã: 11015</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Classic Hộp Gạch 11015</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      680.000₫
+      <span class="product-price-old">800.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 11 -->
-        <div class="product-card">
-          <span class="product-badge new">NEW</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71812_7ad89424-6e99-4427-86a9-05d1ddf17864.jpg?v=1725613038&width=400" alt="LEGO NINJAGO">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO NINJAGO</div>
-              <div class="product-sku">Mã: 890</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp chiến giáp vượt địa hình</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 7+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 174</span>
-            </div>
-            <div class="product-price">2.249.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
+<!-- Product 12 -->
+<div class="product-card">
+  <span class="product-badge">40%<br/>OFF</span>
+  <div class="product-image">
+    <img src="../../assets/images/product12.webp" alt="Bộ xếp hình LEGO Nữ Thần Tự Do 21042" />
+  </div>
+  <div class="product-info">
+    <div class="product-header-line">
+      <div class="product-category">LEGO ARCHITECTURE</div>
+      <div class="product-sku">Mã: 21042</div>
+    </div>
+    <h3 class="product-name">Bộ xếp hình LEGO Nữ Thần Tự Do 21042</h3>
+    <div class="product-meta">
+      <span><i class="fa-solid fa-child"></i> -</span>
+      <span><i class="fa-solid fa-puzzle-piece"></i> -</span>
+    </div>
+    <div class="product-price">
+      2.100.000₫
+      <span class="product-price-old">3.500.000₫</span>
+    </div>
+    <div class="product-actions">
+      <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+    </div>
+  </div>
+</div>
 
-        <!-- Product 12 -->
-        <div class="product-card">
-          <span class="product-badge">-30%</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/31148_14a08ba2-3207-4f1a-bb5e-d9aac0e81beb.jpg?v=1725510556&width=400" alt="LEGO CREATOR">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO CREATOR</div>
-              <div class="product-sku">Mã: 363</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp giày trượt patin</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 18+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 3696</span>
-            </div>
-            <div class="product-price">
-              629.300đ
-              <span class="product-price-old">899.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
 
         <!-- Thêm các sản phẩm khác tương tự -->
 
@@ -474,86 +501,83 @@
   <!-- Footer -->
   <footer class="main-footer">
 
-        <!-- Thanh thông báo nhỏ -->
-        <div class="footer-top">
-            <div class="container">
-                <span>Miễn phí giao hàng đơn từ 500k</span>
-                <span>Giao hàng hỏa tốc 4 tiếng</span>
-                <span>Hệ thống 200 cửa hàng</span>
-            </div>
-        </div>
+  <!-- Thanh thông báo nhỏ -->
+  <div class="footer-top">
+    <div class="container">
+      <span>Miễn phí giao hàng đơn từ 500k</span>
+      <span>Giao hàng hỏa tốc 4 tiếng</span>
+      <span>Hệ thống 200 cửa hàng</span>
+    </div>
+  </div>
 
-        <div class="footer-body">
+  <div class="footer-body">
 
-            <!-- Đăng ký nhận tin -->
-            <div class="footer-subscribe">
-                <div class="logo">
-                    <a href="../home/home.html">
-                        <img src="../assets/images/logo.png" alt="LEGO World Store" />
-                    </a>
-                </div>
-                <div class="subscribe-box">
-                    <h4>
-                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD
-                            STORE</p>
-                    </h4>
-                    <form>
-                        <input type="email" placeholder="Nhập email của bạn" required />
-                        <button type="submit">Đăng ký</button>
-                    </form>
-                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
-                </div>
-            </div>
+    <!-- Đăng ký nhận tin -->
+    <div class="footer-subscribe">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
+      <div class="subscribe-box">
+        <h4><p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p></h4>
+        <form>
+          <input type="email" placeholder="Nhập email của bạn" required />
+          <button type="submit">Đăng ký</button>
+        </form>
+        <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+      </div>
+    </div>
 
-            <!-- Mạng xã hội -->
-            <div class="footer-social">
-                <h4>Kết nối với chúng tôi</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
-                </div>
-            </div>
+    <!-- Mạng xã hội -->
+    <div class="footer-social">
+      <h4>Kết nối với chúng tôi</h4>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+      </div>
+    </div>
 
-            <!-- Thông tin liên hệ -->
-            <div class="footer-contact">
-                <h4>Thông tin liên hệ</h4>
-                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
-                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
-                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
-            </div>
+    <!-- Thông tin liên hệ -->
+    <div class="footer-contact">
+      <h4>Thông tin liên hệ</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+      <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+      <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+    </div>
 
-            <!-- Liên kết & Chính sách -->
-            <div class="footer-grid">
-                <div class="footer-links">
-                    <h4>Điều khoản & Chính sách</h4>
-                    <ul>
-                        <li><a href="#">Chính sách giao hàng</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
-                        <li><a href="#">Chính sách thanh toán</a></li>
-                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
-                        <li><a href="#">Chính sách trả góp</a></li>
-                        <li><a href="#">Hệ thống cửa hàng</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Liên kết & Chính sách -->
+    <div class="footer-grid">
+      <div class="footer-links">
+        <h4>Điều khoản & Chính sách</h4>
+        <ul>
+          <li><a href="../../pages/policy.html">Chính sách mua hàng</a></li>
+          <li><a href="../../pages/about.html">Thông tin về LegoWorldStore</a></li>
+          <li><a href="../../pages/contact.html">Thông tin liên hệ</a></li>
+          <li><a href="#">Chính sách thanh toán</a></li>
+          <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+          <li><a href="#">Chính sách trả góp</a></li>
+          <li><a href="#">Hệ thống cửa hàng</a></li>
+        </ul>
+      </div>
+    </div>
 
-        </div>
+  </div>
 
-        <!-- Bản quyền -->
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
-                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
-            </div>
-        </div>
+  <!-- Bản quyền -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+      <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+    </div>
+  </div>
 
-    </footer>
+</footer>
 
 
 </body>

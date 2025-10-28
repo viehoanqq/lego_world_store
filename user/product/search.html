@@ -3,661 +3,365 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tìm kiếm sản phẩm LEGO - LEGO World Store</title>
-  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+  <title>Tìm kiếm "xe" | LEGO World Store</title>
+  <link rel="stylesheet" href="../assets/css/components/homepage.css">
   <link rel="stylesheet" href="../../assets/css/user/product.css">
-  <link rel="stylesheet" href="../../assets/css/components/header.css">
+  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  
 </head>
 <body>
 
   <!-- Header -->
   <header>
-        <div class="top-bar">
-            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
-            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
-            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
-            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
-            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
-        </div>
-        <div class="main-header">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="../assets/images/logo.png" alt="LEGO World Store" />
-                </a>
-            </div>
+    <!-- Thanh trên cùng -->
+    <div class="top-bar">
+      <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+      <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+      <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+      <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+      <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+    </div>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+    <!-- Header chính -->
+    <div class="main-header">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
 
-            <div class="user-options">
-                <a href="../login/login.html">
-                    <i class="fa-solid fa-user"></i> Đăng nhập
-                </a>
-                <a href="../order/order.html">
-                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
-                </a>
-            </div>
-        </div>
-        </div>
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="">TRANG CHỦ</a></li>
-                <li><a href="list.html">SẢN PHẨM</a></li>
-                <li><a href="">HÀNG MỚI</a></li>
-                <li><a href="">KHUYẾN MÃI</a></li>
-                <li><a href="">THƯƠNG HIỆU</a></li>
-                <li><a href="">TIN TỨC</a></li>
-            </ul>
-        </nav>
-    </header>
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
 
-  <!-- ========== BREADCRUMB ========== -->
+      <div class="user-options">
+        <a href="../account/login.html" target="_parent">
+          <i class="fa-solid fa-user"></i> Đăng nhập
+        </a>
+        <a href="../cart/cart-cart.html" target="_parent">
+          <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+        </a>
+      </div>
+    </div>
+
+    <!-- Menu điều hướng -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../../index.html" target="_parent">TRANG CHỦ</a></li>
+        <li><a href="list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="../../index.html#new-product">HÀNG MỚI</a></li>
+        <li><a href="../../index.html">KHUYẾN MÃI</a></li>
+        <li><a href="../../index.html">CHỦ ĐỀ</a></li>
+        <li><a href="../../index.html">TIN TỨC</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
   <div class="breadcrumb">
     <a href="../../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
     <span>/</span>
-    <strong>Tìm kiếm sản phẩm</strong>
+    <strong>Tìm kiếm: "xe"</strong>
   </div>
 
-  <!-- ========== SEARCH SECTION ========== -->
-  <div class="search-container">
-    
-    <!-- Search Header -->
-    <div class="search-header">
-      <h1><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm sản phẩm LEGO</h1>
-      <p>Sử dụng bộ lọc bên dưới để tìm kiếm sản phẩm phù hợp với bạn</p>
-      
-      <!-- Advanced Search Form -->
-      <form class="search-form" id="searchForm">
-        
-        <!-- Row 1: Keyword -->
-        <div class="search-row">
-          <div class="search-input-group full-width">
-            <label><i class="fa-solid fa-search"></i> Từ khóa tìm kiếm</label>
-            <input type="text" 
-                   id="keyword" 
-                   name="keyword" 
-                   placeholder="Nhập tên sản phẩm (VD: Ferrari, Technic, City...)"
-                   value="Ferrari">
-          </div>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- SIDEBAR FILTER -->
+    <aside class="sidebar">
+      <!-- Danh mục -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-layer-group"></i> Danh mục</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> Phương tiện giao thông (35)</label>
+          <label><input type="checkbox"> LEGO Technic (22)</label>
+          <label><input type="checkbox"> LEGO City (18)</label>
+          <label><input type="checkbox"> LEGO Speed Champions (15)</label>
+          <label><input type="checkbox"> LEGO Creator (12)</label>
+          <label><input type="checkbox"> Siêu anh hùng (8)</label>
         </div>
-
-        <!-- Row 2: Category + Age -->
-        <div class="search-row">
-          <div class="search-input-group">
-            <label><i class="fa-solid fa-layer-group"></i> Loại sản phẩm</label>
-            <select id="category" name="category">
-              <option value="">-- Tất cả loại --</option>
-              <option value="city">LEGO City</option>
-              <option value="technic" selected>LEGO Technic</option>
-              <option value="friends">LEGO Friends</option>
-              <option value="starwars">LEGO Star Wars</option>
-              <option value="creator">LEGO Creator</option>
-              <option value="ninjago">LEGO Ninjago</option>
-              <option value="marvel">LEGO Marvel</option>
-              <option value="harry">LEGO Harry Potter</option>
-              <option value="disney">LEGO Disney</option>
-              <option value="architecture">LEGO Architecture</option>
-            </select>
-          </div>
-
-          <div class="search-input-group">
-            <label><i class="fa-solid fa-child"></i> Độ tuổi</label>
-            <select id="age" name="age">
-              <option value="">-- Tất cả độ tuổi --</option>
-              <option value="4">4+</option>
-              <option value="6">6+</option>
-              <option value="8">8+</option>
-              <option value="10">10+</option>
-              <option value="12">12+</option>
-              <option value="16">16+</option>
-              <option value="18">18+</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Row 3: Price Range -->
-        <div class="search-row">
-          <div class="search-input-group">
-            <label><i class="fa-solid fa-tags"></i> Giá từ (đ)</label>
-            <input type="number" 
-                   id="priceFrom" 
-                   name="priceFrom" 
-                   placeholder="0" 
-                   min="0"
-                   step="100000">
-          </div>
-
-          <div class="search-input-group">
-            <label><i class="fa-solid fa-tags"></i> Giá đến (đ)</label>
-            <input type="number" 
-                   id="priceTo" 
-                   name="priceTo" 
-                   placeholder="50.000.000" 
-                   min="0"
-                   step="100000">
-          </div>
-        </div>
-
-        <!-- Row 4: Pieces Range -->
-        <div class="search-row">
-          <div class="search-input-group">
-            <label><i class="fa-solid fa-puzzle-piece"></i> Số mảnh ghép</label>
-            <select id="pieces" name="pieces">
-              <option value="">-- Tất cả --</option>
-              <option value="0-100">Dưới 100 mảnh</option>
-              <option value="100-500">100 - 500 mảnh</option>
-              <option value="500-1000">500 - 1000 mảnh</option>
-              <option value="1000-2000">1000 - 2000 mảnh</option>
-              <option value="2000+">Trên 2000 mảnh</option>
-            </select>
-          </div>
-
-          <div class="search-input-group">
-            <label><i class="fa-solid fa-box"></i> Tình trạng</label>
-            <select id="status" name="status">
-              <option value="">-- Tất cả --</option>
-              <option value="instock" selected>Còn hàng</option>
-              <option value="preorder">Đặt trước</option>
-              <option value="outstock">Hết hàng</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Search Buttons -->
-        <div class="search-buttons">
-          <button type="submit" class="btn-search">
-            <i class="fa-solid fa-magnifying-glass"></i> TÌM KIẾM
-          </button>
-          <button type="reset" class="btn-reset">
-            <i class="fa-solid fa-rotate-right"></i> ĐẶT LẠI
-          </button>
-        </div>
-
-      </form>
-    </div>
-
-    <!-- Search Results Info -->
-    <div class="search-result-info">
-      <div class="result-text">
-        <i class="fa-solid fa-circle-check"></i>
-        Tìm thấy <strong class="result-count">48</strong> sản phẩm cho từ khóa 
-        <span class="search-keyword">"Ferrari"</span>
-        <span class="filter-tags">
-          <span class="tag">LEGO Technic <i class="fa-solid fa-xmark"></i></span>
-          <span class="tag">Còn hàng <i class="fa-solid fa-xmark"></i></span>
-        </span>
       </div>
-      
-      <div class="sort-options">
-        <label for="sortResults"><i class="fa-solid fa-arrow-down-short-wide"></i> Sắp xếp:</label>
-        <select id="sortResults">
-          <option value="newest">Mới nhất</option>
-          <option value="popular">Phổ biến nhất</option>
-          <option value="price-asc">Giá: Thấp đến cao</option>
-          <option value="price-desc">Giá: Cao đến thấp</option>
-          <option value="name-asc">Tên: A-Z</option>
-          <option value="name-desc">Tên: Z-A</option>
-        </select>
-      </div>
-    </div>
 
-    <!-- Search Results Grid -->
-    <div class="search-results">
+      <!-- Độ tuổi -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-child"></i> Độ tuổi</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> 6+ (28)</label>
+          <label><input type="checkbox"> 8+ (32)</label>
+          <label><input type="checkbox"> 10+ (25)</label>
+          <label><input type="checkbox"> 12+ (18)</label>
+          <label><input type="checkbox"> 16+ (10)</label>
+        </div>
+      </div>
+
+      <!-- Khoảng giá -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-filter-circle-dollar"></i> Khoảng giá</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> Dưới 500.000đ (12)</label>
+          <label><input type="checkbox"> 500.000đ - 1.000.000đ (28)</label>
+          <label><input type="checkbox"> 1.000.000đ - 2.000.000đ (35)</label>
+          <label><input type="checkbox"> 2.000.000đ - 5.000.000đ (22)</label>
+          <label><input type="checkbox"> Trên 5.000.000đ (8)</label>
+        </div>
+        <div style="margin-top: 15px;">
+          <small style="color: #666; display: block; margin-bottom: 8px;">Hoặc tự nhập khoảng giá:</small>
+          <div class="price-range">
+            <input type="number" placeholder="Từ" min="0">
+            <span>-</span>
+            <input type="number" placeholder="Đến" min="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Số mảnh ghép -->
+      <div class="filter-box">
+        <h3><i class="fa-solid fa-puzzle-piece"></i> Số mảnh ghép</h3>
+        <div class="filter-group">
+          <label><input type="checkbox"> 100 - 500 mảnh (38)</label>
+          <label><input type="checkbox"> 500 - 1000 mảnh (45)</label>
+          <label><input type="checkbox"> 1000 - 2000 mảnh (22)</label>
+          <label><input type="checkbox"> Trên 2000 mảnh (8)</label>
+        </div>
+      </div>
+
+      <button class="btn-filter"><i class="fa-solid fa-filter"></i> Áp dụng bộ lọc</button>
+      <button class="btn-clear"><i class="fa-solid fa-rotate-right"></i> Xóa bộ lọc</button>
+    </aside>
+
+    <!-- SEARCH RESULTS AREA -->
+    <section class="product-area">
+      <div class="product-header">
+        <div>
+          <h1><i class="fa-solid fa-magnifying-glass"></i> Kết quả tìm kiếm: "xe"</h1>
+          <p class="product-count">Hiển thị <strong>1-12</strong> trong <strong>105</strong> sản phẩm</p>
+        </div>
+
+        <div class="sort-options">
+          <label for="sort"><i class="fa-solid fa-arrow-down-short-wide"></i> Sắp xếp:</label>
+          <select id="sort">
+            <option value="newest">Mới nhất</option>
+            <option value="popular">Phổ biến nhất</option>
+            <option value="price-asc">Giá: Thấp đến cao</option>
+            <option value="price-desc">Giá: Cao đến thấp</option>
+            <option value="name-asc">Tên: A-Z</option>
+            <option value="name-desc">Tên: Z-A</option>
+            <option value="discount">Giảm giá nhiều nhất</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- GRID SẢN PHẨM TÌM KIẾM -->
       <div class="product-grid">
-        
-        <!-- Result Product 1 -->
+
+        <!-- Sản phẩm 1: LEGO Technic Xe Ferrari -->
         <div class="product-card">
-          <span class="product-badge new">NEW</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71813_e9d1e63f-bfa8-45bf-9627-4a2c4f65a6d7.jpg?v=1725605900&width=400" alt="LEGO NINJAGO">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO NINJAGO</div>
-              <div class="product-sku">Mã: 489</div>
+          <a href="detail.html">
+            <span class="product-badge new">NEW</span>
+            <div class="product-image">
+              <img src="../../assets/images/product2.webp" alt="Bộ xếp hình LEGO Technic Xe Ferrari 42143" />
             </div>
-            <h3 class="product-name">Đồ chơi lắp ráp tu viện bóng tối</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 10+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 1361</span>
+            <div class="product-info">
+              <div class="product-header-line">
+                <div class="product-category">LEGO TECHNIC</div>
+                <div class="product-sku">Mã: 42143</div>
+              </div>
+              <h3 class="product-name">Bộ xếp hình LEGO Technic Xe Ferrari 42143</h3>
+              <div class="product-meta">
+                <span><i class="fa-solid fa-child"></i> 10+</span>
+                <span><i class="fa-solid fa-puzzle-piece"></i> 3778</span>
+              </div>
+              <div class="product-price">
+                3.200.000₫
+                <span class="product-price-old">3.550.000₫</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+                <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+              </div>
             </div>
-            <div class="product-price">3.839.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
+          </a>
         </div>
 
-        <!-- Result Product 2 -->
+        <!-- Sản phẩm 2: LEGO City Xe Cứu Thương -->
         <div class="product-card">
-          <span class="product-badge">-30%</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42169_93640d5a-a7c9-4ef9-9dca-43d0313a1fa5.jpg?v=1746873322&width=400" alt="LEGO TECHNIC">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO TECHNIC</div>
-              <div class="product-sku">Mã: 459</div>
+          <a href="detail.html">
+            <span class="product-badge">-5%</span>
+            <div class="product-image">
+              <img src="../../assets/images/product8.webp" alt="Bộ xếp hình LEGO City Xe Cứu Thương 60330" />
             </div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe đua thể thao</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 8+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 1677</span>
+            <div class="product-info">
+              <div class="product-header-line">
+                <div class="product-category">LEGO CITY</div>
+                <div class="product-sku">Mã: 60330</div>
+              </div>
+              <h3 class="product-name">Bộ xếp hình LEGO City Xe Cứu Thương 60330</h3>
+              <div class="product-meta">
+                <span><i class="fa-solid fa-child"></i> 6+</span>
+                <span><i class="fa-solid fa-puzzle-piece"></i> 275</span>
+              </div>
+              <div class="product-price">
+                950.000₫
+                <span class="product-price-old">1.000.000₫</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+                <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+              </div>
             </div>
-            <div class="product-price">
-              1.154.300đ
-              <span class="product-price-old">1.649.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
+          </a>
         </div>
 
-        <!-- Result Product 3 -->
+        <!-- Sản phẩm 3: LEGO Speed Champions Lamborghini -->
         <div class="product-card">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42182.jpg?v=1726928944&width=400" alt="LEGO TECHNIC">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO TECHNIC</div>
-              <div class="product-sku">Mã: 559</div>
+          <a href="detail.html">
+            <span class="product-badge">30%<br/>OFF</span>
+            <div class="product-image">
+              <img src="../../assets/images/product10.webp" alt="Bộ xếp hình LEGO Speed Champions Lamborghini 76908" />
             </div>
-            <h3 class="product-name">Đồ chơi lắp ráp xe thám hiểm mặt trăng</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 10+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 3778</span>
+            <div class="product-info">
+              <div class="product-header-line">
+                <div class="product-category">LEGO SPEED</div>
+                <div class="product-sku">Mã: 76908</div>
+              </div>
+              <h3 class="product-name">Bộ xếp hình LEGO Speed Champions Lamborghini 76908</h3>
+              <div class="product-meta">
+                <span><i class="fa-solid fa-child"></i> 8+</span>
+                <span><i class="fa-solid fa-puzzle-piece"></i> 262</span>
+              </div>
+              <div class="product-price">
+                1.050.000₫
+                <span class="product-price-old">1.500.000₫</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+                <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+              </div>
             </div>
-            <div class="product-price">7.299.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
+          </a>
         </div>
 
-        <!-- Result Product 4 -->
+        <!-- Sản phẩm 4: LEGO Creator Xe Máy Bay -->
         <div class="product-card">
-          <span class="product-badge">-30%</span>
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-la-rap-cua-hang-phu-kien-cho-thu-cung-lego-friends-42650_f28343a7-5917-4a97-b033-ff73299dee5e.png?v=1752024881&width=400" alt="LEGO FRIENDS">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO FRIENDS</div>
-              <div class="product-sku">Mã: 881</div>
+          <a href="detail.html">
+            <span class="product-badge">-35%</span>
+            <div class="product-image">
+              <img src="../../assets/images/product5.webp" alt="Bộ xếp hình LEGO Creator Xe Máy Bay 31126" />
             </div>
-            <h3 class="product-name">Đồ chơi lắp ráp cửa hàng phụ kiện cho thú cưng</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 8+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 275</span>
+            <div class="product-info">
+              <div class="product-header-line">
+                <div class="product-category">LEGO CREATOR</div>
+                <div class="product-sku">Mã: 31126</div>
+              </div>
+              <h3 class="product-name">Bộ xếp hình LEGO Creator Xe Máy Bay 31126</h3>
+              <div class="product-meta">
+                <span><i class="fa-solid fa-child"></i> 7+</span>
+                <span><i class="fa-solid fa-puzzle-piece"></i> 236</span>
+              </div>
+              <div class="product-price">
+                750.000₫
+                <span class="product-price-old">1.150.000₫</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+                <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+              </div>
             </div>
-            <div class="product-price">
-              895.300đ
-              <span class="product-price-old">1.279.000đ</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
+          </a>
         </div>
 
-        <!-- Result Product 5 -->
-        <div class="product-card">
-          <span class="product-badge new">NEW</span>
-          <div class="product-image">
-            <img src="https://www.mykingdom.com.vn/cdn/shop/files/do-choi-lap-rap-rong-than-suc-manh-thunderfang-lego-ninjago-71832.png?v=1759286245&width=1100" alt="LEGO NINJAGO">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO NINJAGO</div>
-              <div class="product-sku">Mã: 103</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp rồng thần sức mạnh</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 10+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 261</span>
-            </div>
-            <div class="product-price">2.399.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Result Product 6 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/10311_c83d120f-940e-450a-8885-89e330bfcb5f.jpg?v=1760078221&width=400" alt="LEGO BOTANICALS">
-          </div>
-          <div class="product-info">
-            <div class="product-header-line">
-              <div class="product-category">LEGO BOTANICALS</div>
-              <div class="product-sku">Mã: 669</div>
-            </div>
-            <h3 class="product-name">Đồ chơi lắp ráp hoa lan</h3>
-            <div class="product-meta">
-              <span><i class="fa-solid fa-child"></i> 12+</span>
-              <span><i class="fa-solid fa-puzzle-piece"></i> 843</span>
-            </div>
-            <div class="product-price">1.619.000đ</div>
-            <div class="product-actions">
-              <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-              <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
-
-        
+        <!-- Thêm sản phẩm khác nếu cần -->
       </div>
 
-      <!-- Pagination -->
+      <!-- Phân trang -->
       <div class="pagination">
-        <a href="#" class="disabled"><i class="fa-solid fa-angles-left"></i></a>
-        <a href="#" class="disabled"><i class="fa-solid fa-angle-left"></i></a>
-        <span class="active">1</span>
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">4</a>
-        <span>...</span>
-        <a href="#">12</a>
-        <a href="#"><i class="fa-solid fa-angle-right"></i></a>
-        <a href="#"><i class="fa-solid fa-angles-right"></i></a>
+        <a href="#">5</a>
+        <a href="#">»</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <!-- Thanh thông báo nhỏ -->
+    <div class="footer-top">
+      <div class="container">
+        <span>Miễn phí giao hàng đơn từ 500k</span>
+        <span>Giao hàng hỏa tốc 4 tiếng</span>
+        <span>Hệ thống 200 cửa hàng</span>
       </div>
     </div>
 
-  </div>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="main-footer">
-
-        <!-- Thanh thông báo nhỏ -->
-        <div class="footer-top">
-            <div class="container">
-                <span>Miễn phí giao hàng đơn từ 500k</span>
-                <span>Giao hàng hỏa tốc 4 tiếng</span>
-                <span>Hệ thống 200 cửa hàng</span>
-            </div>
+    <div class="footer-body">
+      <!-- Đăng ký nhận tin -->
+      <div class="footer-subscribe">
+        <div class="logo">
+          <a href="../../index.html">
+            <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+          </a>
         </div>
-
-        <div class="footer-body">
-
-            <!-- Đăng ký nhận tin -->
-            <div class="footer-subscribe">
-                <div class="logo">
-                    <a href="../home/home.html">
-                        <img src="../assets/images/logo.png" alt="LEGO World Store" />
-                    </a>
-                </div>
-                <div class="subscribe-box">
-                    <h4>
-                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD
-                            STORE</p>
-                    </h4>
-                    <form>
-                        <input type="email" placeholder="Nhập email của bạn" required />
-                        <button type="submit">Đăng ký</button>
-                    </form>
-                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
-                </div>
-            </div>
-
-            <!-- Mạng xã hội -->
-            <div class="footer-social">
-                <h4>Kết nối với chúng tôi</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
-                </div>
-            </div>
-
-            <!-- Thông tin liên hệ -->
-            <div class="footer-contact">
-                <h4>Thông tin liên hệ</h4>
-                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
-                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
-                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
-                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
-            </div>
-
-            <!-- Liên kết & Chính sách -->
-            <div class="footer-grid">
-                <div class="footer-links">
-                    <h4>Điều khoản & Chính sách</h4>
-                    <ul>
-                        <li><a href="#">Chính sách giao hàng</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
-                        <li><a href="#">Chính sách thanh toán</a></li>
-                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
-                        <li><a href="#">Chính sách trả góp</a></li>
-                        <li><a href="#">Hệ thống cửa hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-
+        <div class="subscribe-box">
+          <h4><p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p></h4>
+          <form>
+            <input type="email" placeholder="Nhập email của bạn" required />
+            <button type="submit">Đăng ký</button>
+          </form>
+          <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
         </div>
+      </div>
 
-        <!-- Bản quyền -->
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
-                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
-            </div>
+      <!-- Mạng xã hội -->
+      <div class="footer-social">
+        <h4>Kết nối với chúng tôi</h4>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+          <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
         </div>
+      </div>
 
-    </footer>
+      <!-- Thông tin liên hệ -->
+      <div class="footer-contact">
+        <h4>Thông tin liên hệ</h4>
+        <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+        <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+        <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+        <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+        <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+      </div>
 
-  <!-- JavaScript -->
-  <script>
-    // ========== LẤY TỪ KHÓA TỪ URL ==========
-    window.addEventListener('DOMContentLoaded', function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const keyword = urlParams.get('q');
-      
-      if (keyword) {
-        // Điền vào form
-        document.getElementById('keyword').value = keyword;
-        
-        // Cập nhật kết quả hiển thị
-        document.querySelector('.search-keyword').textContent = `"${keyword}"`;
-        
-        // Tự động scroll xuống kết quả
-        setTimeout(() => {
-          document.querySelector('.search-result-info').scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'start' 
-          });
-        }, 500);
-      }
-    });
+      <!-- Liên kết & Chính sách -->
+      <div class="footer-grid">
+        <div class="footer-links">
+          <h4>Điều khoản & Chính sách</h4>
+          <ul>
+            <li><a href="../../pages/policy.html">Chính sách mua hàng</a></li>
+            <li><a href="../../pages/about.html">Thông tin về LegoWorldStore</a></li>
+            <li><a href="../../pages/contact.html">Thông tin liên hệ</a></li>
+            <li><a href="#">Chính sách thanh toán</a></li>
+            <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+            <li><a href="#">Chính sách trả góp</a></li>
+            <li><a href="#">Hệ thống cửa hàng</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    // ========== FORM SUBMIT HANDLER ==========
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form values
-      const keyword = document.getElementById('keyword').value;
-      const category = document.getElementById('category');
-      const categoryText = category.options[category.selectedIndex].text;
-      const age = document.getElementById('age').value;
-      const priceFrom = document.getElementById('priceFrom').value;
-      const priceTo = document.getElementById('priceTo').value;
-      const pieces = document.getElementById('pieces');
-      const piecesText = pieces.options[pieces.selectedIndex].text;
-      const status = document.getElementById('status');
-      const statusText = status.options[status.selectedIndex].text;
-      
-      // Validate keyword
-      if (!keyword.trim()) {
-        alert('Vui lòng nhập từ khóa tìm kiếm!');
-        document.getElementById('keyword').focus();
-        return;
-      }
-      
-      // Update result count (random for demo)
-      const resultCount = Math.floor(Math.random() * 50) + 10;
-      document.querySelector('.result-count').textContent = resultCount;
-      document.querySelector('.search-keyword').textContent = `"${keyword}"`;
-      
-      // Update filter tags
-      const filterTags = document.querySelector('.filter-tags');
-      filterTags.innerHTML = '';
-      
-      if (category.value) {
-        filterTags.innerHTML += `<span class="tag">${categoryText} <i class="fa-solid fa-xmark"></i></span>`;
-      }
-      if (status.value) {
-        filterTags.innerHTML += `<span class="tag">${statusText} <i class="fa-solid fa-xmark"></i></span>`;
-      }
-      if (age) {
-        filterTags.innerHTML += `<span class="tag">${age}+ <i class="fa-solid fa-xmark"></i></span>`;
-      }
-      if (priceFrom || priceTo) {
-        const priceText = `${priceFrom || '0'}đ - ${priceTo || '∞'}`;
-        filterTags.innerHTML += `<span class="tag">${priceText} <i class="fa-solid fa-xmark"></i></span>`;
-      }
-      
-      // Add click event to new tags
-      document.querySelectorAll('.filter-tags .tag i').forEach(icon => {
-        icon.addEventListener('click', function() {
-          this.parentElement.remove();
-        });
-      });
-      
-      // Show search animation
-      const searchBtn = this.querySelector('.btn-search');
-      const originalText = searchBtn.innerHTML;
-      searchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang tìm...';
-      searchBtn.disabled = true;
-      
-      // Simulate search
-      setTimeout(() => {
-        searchBtn.innerHTML = originalText;
-        searchBtn.disabled = false;
-        
-        // Scroll to results
-        document.querySelector('.search-result-info').scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start' 
-        });
-        
-        // Show success message
-        const message = `✓ Tìm thấy ${resultCount} sản phẩm!\n\nTiêu chí tìm kiếm:\n• Từ khóa: ${keyword}\n• Loại: ${categoryText}\n• Độ tuổi: ${age || 'Tất cả'}\n• Giá: ${priceFrom || '0'}đ - ${priceTo || 'Không giới hạn'}\n• Số mảnh: ${piecesText}\n• Tình trạng: ${statusText}`;
-        
-        // Optional: Show alert or toast notification
-        // alert(message);
-      }, 1000);
-    });
-
-    // ========== RESET FORM ==========
-    document.querySelector('.btn-reset').addEventListener('click', function() {
-      document.querySelector('.search-keyword').textContent = '""';
-      document.querySelector('.result-count').textContent = '248';
-      document.querySelector('.filter-tags').innerHTML = '';
-      
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ========== REMOVE FILTER TAG ==========
-    document.querySelectorAll('.filter-tags .tag i').forEach(icon => {
-      icon.addEventListener('click', function() {
-        this.parentElement.remove();
-      });
-    });
-
-    // ========== ADD TO CART ANIMATION ==========
-    document.querySelectorAll('.btn-add-cart').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const originalText = this.innerHTML;
-        this.innerHTML = '<i class="fa-solid fa-check"></i> Đã thêm!';
-        this.style.background = '#4caf50';
-        
-        setTimeout(() => {
-          this.innerHTML = originalText;
-          this.style.background = '';
-        }, 2000);
-      });
-    });
-  </script>
-
-  <!-- Footer -->
-  <footer>
-    <div id="footer"></div>
+    <!-- Bản quyền -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+        <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+      </div>
+    </div>
   </footer>
-
-  <!-- JS import header/footer -->
-  <script>
-    // Nhúng header
-    fetch('../../components/header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header').innerHTML = data);
-
-    // Nhúng footer
-    fetch('../../components/footer.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
-  </script>
-
-
-<!-- JavaScript cho Header Search - Thêm vào cuối file list.html -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('.search-bar input');
-    const searchButton = document.querySelector('.search-bar button');
-    
-    if (searchInput && searchButton) {
-      // Function search
-      function performSearch() {
-        const keyword = searchInput.value.trim();
-        if (keyword) {
-          window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
-        } else {
-          alert('⚠️ Vui lòng nhập từ khóa tìm kiếm!');
-          searchInput.focus();
-        }
-      }
-      
-      // Click button
-      searchButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        performSearch();
-      });
-      
-      // Enter key
-      searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          performSearch();
-        }
-      });
-      
-      // Focus effect
-      searchInput.addEventListener('focus', function() {
-        this.parentElement.style.boxShadow = '0 0 0 3px rgba(180,63,63,0.2)';
-      });
-      
-      searchInput.addEventListener('blur', function() {
-        this.parentElement.style.boxShadow = '';
-      });
-    }
-  });
-</script>
 
 </body>
 </html>

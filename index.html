@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <title> Trang chủ - Lego World Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/components/components.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/components/homepage.css">
+    <link rel="stylesheet" href="assets/css/components/items.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 
@@ -32,7 +33,7 @@
 
       <div class="search-bar">
         <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
       </div>
 
       <div class="user-options">
@@ -48,12 +49,12 @@
     <!-- Menu điều hướng -->
     <nav class="nav-bar">
       <ul>
-        <li><a href="../home/home.html" target="_parent">TRANG CHỦ</a></li>
-        <li><a href="./user/product/list.html" target="_parent">SẢN PHẨM</a></li>
-        <li><a href="#">HÀNG MỚI</a></li>
-        <li><a href="#">KHUYẾN MÃI</a></li>
-        <li><a href="#">THƯƠNG HIỆU</a></li>
-        <li><a href="#">TIN TỨC</a></li>
+        <li><a href="index.html" target="_parent">TRANG CHỦ</a></li>
+        <li><a href="user/product/list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="#new-product">HÀNG MỚI</a></li>
+        <li><a href="#sale-product">KHUYẾN MÃI</a></li>
+        <li><a href="#type-product">CHỦ ĐỀ</a></li>
+        <li><a href="#news">TIN TỨC</a></li>
       </ul>
     </nav>
   </header>
@@ -67,7 +68,7 @@
     </div>
 
     <!-- Hàng mới về -->
-    <section class="new-product">
+    <section class="new-product" id="new-product">
       <div class="section-header">
         <h2>Hàng mới về - Bé thích mê</h2>
         <button class="btn-view">Xem tất cả</button>
@@ -169,7 +170,7 @@
     </section>
 
     <!-- Sản phẩm khuyến mãi -->
-    <section class="sale-product">
+    <section class="sale-product" id="sale-product">
       <div class="section-header">
         <h2>Khuyến mãi ngập tràng</h2>
         <button class="btn-view">Xem tất cả</button>
@@ -394,7 +395,7 @@
 
 
 
-   <section class="type-product">
+   <section class="type-product" id="type-product">
       <div class="section-header">
         <h2>Chủ đề - Danh mục Lego</h2>
         <button class="btn-view">Xem tất cả</button>
@@ -442,7 +443,7 @@
       </div>
     </section>
 <!-- Tin tức mới nhất -->
-<section class="news-section">
+<section class="news-section" id="news">
   <div class="section-header">
     <h2>Tin tức mới nhất</h2>
   </div>
@@ -496,8 +497,8 @@
     <!-- Đăng ký nhận tin -->
     <div class="footer-subscribe">
       <div class="logo">
-        <a href="../home/home.html">
-          <img src="./assets/images/logo.png" alt="LEGO World Store" />
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="LEGO World Store" />
         </a>
       </div>
       <div class="subscribe-box">
@@ -537,9 +538,9 @@
       <div class="footer-links">
         <h4>Điều khoản & Chính sách</h4>
         <ul>
-          <li><a href="#">Chính sách giao hàng</a></li>
-          <li><a href="#">Chính sách bảo mật</a></li>
-          <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+          <li><a href="pages/policy.html">Chính sách mua hàng</a></li>
+          <li><a href="pages/about.html">Thông tin về LegoWorldStore</a></li>
+          <li><a href="pages/contact.html">Thông tin liên hệ</a></li>
           <li><a href="#">Chính sách thanh toán</a></li>
           <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
           <li><a href="#">Chính sách trả góp</a></li>
