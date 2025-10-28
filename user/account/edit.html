@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Lego Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/admin/login.css">
+</head>
+ <header style="text-align: center; padding: 25px 0;">
+    <img src="../../assets/images/logo.png" alt="LEGO Store Logo" style="height: 55spx;">
+  </header>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/admin/login.css">
+</head>
+<body style="background-color: #f8f9fa; font-family: 'Nunito Sans', sans-serif; margin: 0; padding: 0;">
+
+  <!-- Container chính -->
+  <div style="max-width: 1100px; margin: 40px auto; display: flex; gap: 30px; padding: 0 20px;">
+
+    <!-- Cột trái: Avatar + Menu -->
+    <div style="flex: 0 0 280px; background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center;">
+
+      <!-- Avatar tròn -->
+      <div style="width: 100px; height: 100px; border-radius: 50%; background: #C00; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 4px solid #fff; box-shadow: 0 2px 8px rgba(196,30,58,0.2);">
+        <img src="https://via.placeholder.com/100?text=AVT" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <h3 style="color: #333; font-size: 18px; margin: 8px 0 4px; font-weight: 600;">Lê Minh Quân</h3>
+      <p style="color: #888; font-size: 14px; margin-bottom: 20px;">Thành viên Gold</p>
+
+      <a href="#" style="display: block; background: #C00; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px; margin-bottom: 25px;">Đổi ảnh đại diện</a>
+
+      <!-- Menu dọc -->
+      <div style="text-align: left;">
+        <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: #555; text-decoration: none; font-size: 15px; margin-bottom: 8px; transition: all 0.2s;">
+          <span style="font-size: 18px; color: #C00;">Thông tin cá nhân</span>
+        </a>
+        <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: #777; text-decoration: none; font-size: 15px; margin-bottom: 8px;">
+          <span style="font-size: 18px;">Địa chỉ giao hàng</span>
+        </a>
+        <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: #777; text-decoration: none; font-size: 15px; margin-bottom: 8px;">
+          <span style="font-size: 18px;">Lịch sử đơn hàng</span>
+        </a>
+        <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: #777; text-decoration: none; font-size: 15px; margin-bottom: 8px;">
+          <span style="font-size: 18px;">Sản phẩm yêu thích</span>
+        </a>
+        <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: #777; text-decoration: none; font-size: 15px; margin-bottom: 8px;">
+          <span style="font-size: 18px;">Cài đặt tài khoản</span>
+        </a>
+        <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; color: #e74c3c; text-decoration: none; font-size: 15px; margin-top: 20px;">
+          <span style="font-size: 18px;">Đăng xuất</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cột phải: Form chỉnh sửa -->
+    <div style="flex: 1; background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+
+      <h2 style="color: #C00; font-size: 22px; font-weight: 700; margin-bottom: 8px; text-align: center;">THÔNG TIN CÁ NHÂN</h2>
+      <p style="color: #888; font-size: 14px; text-align: center; margin-bottom: 30px;">Quản lý thông tin cá nhân của bạn</p>
+
+      <form>
+        <!-- Thông tin cơ bản -->
+        <div style="background: #fdf8f8; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+          <h3 style="color: #C00; font-size: 16px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <span style="width: 24px; height: 24px; background: #C00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;">1</span>
+            Thông tin cơ bản
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
+              <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Họ và tên đệm *</label>
+              <input type="text" value="Lê Minh" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            <div>
+              <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Tên *</label>
+              <input type="text" value="Quân" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            <div>
+              <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Email *</label>
+              <input type="email" value="leminhquan@example.com" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            <div>
+              <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Số điện thoại *</label>
+              <input type="tel" value="0987654321" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Thông tin bổ sung -->
+        <div style="background: #fdf8f8; border-radius: 12px; padding: 20px;">
+          <h3 style="color: #C00; font-size: 16px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <span style="width: 24px; height: 24px; background: #C00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px;">2</span>
+            Thông tin bổ sung
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
+              <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Ngày sinh</label>
+              <input type="date" value="1992-08-15" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+            </div>
+            <div>
+              <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Giới tính</label>
+              <select style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+                <option>Nam</option>
+                <option>Nữ</option>
+                <option>Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px;">
+            <label style="display: block; color: #C00; font-weight: 500; margin-bottom: 6px; font-size: 14px;">Địa chỉ thường trú</label>
+            <input type="text" value="789 Trần Hưng Đạo, Quận 5, TP.HCM" style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+          </div>
+        </div>
+
+        <!-- Nút lưu -->
+        <div style="text-align: center; margin-top: 30px;">
+          <button type="submit" style="background: #C00; color: white; border: none; padding: 12px 40px; border-radius: 10px; font-weight: 600; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(196,30,58,0.3);">
+            Lưu thay đổi
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
