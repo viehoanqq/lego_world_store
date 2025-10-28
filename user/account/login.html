@@ -1,76 +1,203 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login | Lego Store</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="../assets/css/admin/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/user/account.css">
 </head>
- <header style="text-align: center; padding: 25px 0;">
-    <img src="../../assets/images/logo.png" alt="LEGO Store Logo" style="height: 55spx;">
-  </header>
 
-<main style="background-color: #fff; padding: 60px 0;">
-  <div
-    style="max-width: 800px; margin: 0 auto; background-color: #fff; border: 1px solid #f5c2c2; border-radius: 15px; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center;"
-  >
-    <h2 style="color: #c00; margin-bottom: 25px;">Đăng nhập tài khoản</h2>
+<body>
 
-    <!-- Form -->
-    <form
-      style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;"
-    >
-      <div style="text-align: left;">
-        <label for="email" style="font-weight: bold;">Email:</label><br />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="example@gmail.com"
-          style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;"
-        />
-      </div>
+    <header>
+        <div class="top-bar">
+            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+        </div>
+        <div class="main-header">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+                </a>
+            </div>
 
-      <div style="text-align: left;">
-        <label for="password" style="font-weight: bold;">Mật khẩu:</label><br />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Nhập mật khẩu"
-          style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;"
-        />
-      </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+                <a href="../product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
+            </div>
 
-      <div style="text-align: right;">
-        <a href="#" style="font-size: 14px; color: #c00; text-decoration: none;">Quên mật khẩu?</a>
-      </div>
+            <div class="user-options">
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i> Đăng nhập
+                </a>
+                <a href="../cart/cart-cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+                </a>
+            </div>
+        </div>
+        </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="../../index.html" target="_parent">TRANG CHỦ</a></li>
+        <li><a href="../product/list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="../../index.html#new-product">HÀNG MỚI</a></li>
+        <li><a href="../../index.html">KHUYẾN MÃI</a></li>
+        <li><a href="../../index.html">CHỦ ĐỀ</a></li>
+        <li><a href="../../index.html">TIN TỨC</a></li>
+      </ul>
+    </nav>
+    </header>
 
-      <button
-        type="submit"
-        style="background-color: #c00; color: #fff; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;"
-      >
-        Đăng nhập
-      </button>
-    </form>
+<div class="main-content">
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h2>Đăng nhập</h2>
+                <p>Chào mừng quay lại LEGO World Store!</p>
+            </div>
 
-    <!-- Liên kết đăng ký -->
-    <p style="margin-top: 20px; font-size: 15px;">
-      Chưa có tài khoản?
-      <a
-        href="register.html"
-        style="color: #c00; text-decoration: none; font-weight: bold;"
-      >
-        Đăng ký ngay
-      </a>
-    </p>
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label>Email hoặc Số điện thoại</label>
+                    <input type="text" placeholder="Nhập email hoặc số điện thoại" required />
+                </div>
+
+                <div class="input-group">
+                    <label>Mật khẩu</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="Nhập mật khẩu" required />
+                        <span class="toggle-password" onclick="togglePassword()">
+                            <i class="fa-solid fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                        Ghi nhớ đăng nhập
+                    </label>
+                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="login-btn" id="login-btn">Đăng nhập</button>
+            </form>
+
+            <div class="divider">
+                <span>Hoặc tiếp tục với</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn google">
+                    <i class="fa-brands fa-google"></i> Google
+                </button>
+                <button class="social-btn facebook">
+                    <i class="fa-brands fa-facebook-f"></i> Facebook
+                </button>
+            </div>
+
+            <p class="signup-text">
+                Chưa có tài khoản? <a href="register.html">Đăng ký</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+   <footer class="main-footer">
+
+  <!-- Thanh thông báo nhỏ -->
+  <div class="footer-top">
+    <div class="container">
+      <span>Miễn phí giao hàng đơn từ 500k</span>
+      <span>Giao hàng hỏa tốc 4 tiếng</span>
+      <span>Hệ thống 200 cửa hàng</span>
+    </div>
   </div>
-</main>
+
+  <div class="footer-body">
+
+    <!-- Đăng ký nhận tin -->
+    <div class="footer-subscribe">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
+      <div class="subscribe-box">
+        <h4><p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p></h4>
+        <form>
+          <input type="email" placeholder="Nhập email của bạn" required />
+          <button type="submit">Đăng ký</button>
+        </form>
+        <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+      </div>
+    </div>
+
+    <!-- Mạng xã hội -->
+    <div class="footer-social">
+      <h4>Kết nối với chúng tôi</h4>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+      </div>
+    </div>
+
+    <!-- Thông tin liên hệ -->
+    <div class="footer-contact">
+      <h4>Thông tin liên hệ</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+      <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+      <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+    </div>
+
+    <!-- Liên kết & Chính sách -->
+    <div class="footer-grid">
+      <div class="footer-links">
+        <h4>Điều khoản & Chính sách</h4>
+        <ul>
+          <li><a href="../../pages/policy.html">Chính sách mua hàng</a></li>
+          <li><a href="../../pages/about.html">Thông tin về LegoWorldStore</a></li>
+          <li><a href="../../pages/contact.html">Thông tin liên hệ</a></li>
+          <li><a href="#">Chính sách thanh toán</a></li>
+          <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+          <li><a href="#">Chính sách trả góp</a></li>
+          <li><a href="#">Hệ thống cửa hàng</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bản quyền -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+      <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+document.getElementById("login-btn").addEventListener("click", function() {
+
+  localStorage.setItem("isLoggedIn", "true");
+  window.location.href = "../../index.html";
+  alert("Đăng nhập thành công!");
+
+});
+</script>
+</body>
 </html>

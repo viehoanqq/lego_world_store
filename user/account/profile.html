@@ -2,66 +2,221 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login | Lego Store</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="../assets/css/admin/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/user/account.css">
 </head>
- <header style="text-align: center; padding: 25px 0;">
-    <img src="../../assets/images/logo.png" alt="LEGO Store Logo" style="height: 55spx;">
-  </header>
 
 <body>
-    <div class="main-content" style="display: flex; justify-content: center; align-items: center; min-height: 85vh; background-color: #f4f6f9;">
-  <div style="background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 650px;">
 
-    <!-- Tiêu đề -->
-    <h2 style="color: #f9351f; text-align: center; margin-bottom: 25px;">Hồ sơ cá nhân</h2>
+    <header>
+        <div class="top-bar">
+            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+        </div>
+        <div class="main-header">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                </a>
+            </div>
 
-    <!-- Thông tin cơ bản -->
-    <div style="display: flex; align-items: center; gap: 25px; margin-bottom: 25px;">
-      <img src="../../assets/images/avatar.png" alt="Avatar" style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #c0392b;">
-      <div>
-        <h3 style="margin: 0; color: #333;">Nguyễn Văn A</h3>
-        <p style="margin: 5px 0; color: #777;">Thành viên từ: 12/2024</p>
-        <span style="display: inline-block; background-color: #f43a25; color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 13px;">
-          Cấp độ: Thành viên vàng
-        </span>
-      </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="user-options">
+                <a href="../login/login.html">
+                    <i class="fa-solid fa-user"></i> Đăng nhập
+                </a>
+                <a href="../order/order.html">
+                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+                </a>
+            </div>
+        </div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="">TRANG CHỦ</a></li>
+                <li><a href="">SẢN PHẨM</a></li>
+                <li><a href="">HÀNG MỚI</a></li>
+                <li><a href="">KHUYẾN MÃI</a></li>
+                <li><a href="">THƯƠNG HIỆU</a></li>
+                <li><a href="">TIN TỨC</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="main-content" style="width: 80%; margin: 30px auto;">
+        <div class="profile-container">
+            <!-- CỘT TRÁI: Avatar + Menu -->
+            <aside class="profile-sidebar">
+                <div class="profile-avatar">
+                    <img src="../../assets/images/avt.png" alt="Avatar" class="avatar-img" />
+                    <h3 class="user-name">Nguyễn Việt Hoàng</h3>
+                    <p class="user-email">hihihi@gmail.com</p>
+                </div>
+
+                <nav class="profile-menu">
+                    <a href="#" class="menu-item active">
+                        <span>Thông tin cá nhân</span>
+                    </a>
+                    <a href="../cart/cart-history.html" class="menu-item">
+                        <span>Đơn hàng của tôi</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>Địa chỉ giao hàng</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="#" class="menu-item text-danger">
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- CỘT PHẢI: Form chỉnh sửa -->
+            <section class="profile-main">
+                <div class="profile-form-box">
+                    <h2 class="section-title">Thông tin cá nhân</h2>
+                    <p class="section-desc">Cập nhật thông tin để nhận ưu đãi và giao hàng nhanh hơn.</p>
+
+                    <form class="profile-form">
+                        <div class="input-group">
+                            <label>Họ và tên</label>
+                            <input type="text" value="Nguyễn Văn A" required />
+                        </div>
+
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" value="nguyenvana@gmail.com" required />
+                        </div>
+
+                        <div class="input-group">
+                            <label>Số điện thoại</label>
+                            <input type="tel" value="0901234567" pattern="[0-9]{10}" required />
+                            <small>Nhập 10 số, bắt đầu bằng 0</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Ngày sinh</label>
+                            <input type="date" value="1995-06-15" />
+                        </div>
+
+                        <div class="input-group">
+                            <label>Giới tính</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male" checked />
+                                    <span class="radio-check"></span> Nam
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female" />
+                                    <span class="radio-check"></span> Nữ
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other" />
+                                    <span class="radio-check"></span> Khác
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="update-btn">Cập nhật thông tin</button>
+                    </form>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <!-- Thông tin chi tiết -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; line-height: 1.8; color: #444;">
-      <p><strong>Họ và tên:</strong> Nguyễn Văn A</p>
-      <p><strong>Email:</strong> nguyenvana@example.com</p>
-      <p><strong>Số điện thoại:</strong> 0901234567</p>
-      <p><strong>Giới tính:</strong> Nam</p>
-      <p><strong>Ngày sinh:</strong> 01/01/1990</p>
-      <p><strong>Địa chỉ:</strong> 123 Nguyễn Trãi, Q.1, TP.HCM</p>
-      <p><strong>Tài khoản:</strong> Đang hoạt động</p>
-      <p><strong>Tổng đơn hàng:</strong> 15 đơn</p>
-    </div>
+    <footer class="main-footer">
 
-    <!-- Phần mô tả ngắn -->
-    <div style="margin-top: 25px; background-color: #f9f9f9; padding: 15px; border-radius: 10px; color: #555;">
-      <p style="margin: 0;">
-        “Mình là người yêu thích LEGO, đặc biệt là các bộ chủ đề Star Wars và Technic. 
-        Sưu tầm LEGO là niềm vui và cách để mình thư giãn sau giờ học!”
-      </p>
-    </div>
+        <!-- Thanh thông báo nhỏ -->
+        <div class="footer-top">
+            <div class="container">
+                <span>Miễn phí giao hàng đơn từ 500k</span>
+                <span>Giao hàng hỏa tốc 4 tiếng</span>
+                <span>Hệ thống 200 cửa hàng</span>
+            </div>
+        </div>
 
-    <!-- Nút hành động -->
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="edit.html" style="display: inline-block; padding: 10px 20px; background-color: #c0392b; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">Chỉnh sửa hồ sơ</a>
-    </div>
-  </div>
-</div>
+        <div class="footer-body">
+
+            <!-- Đăng ký nhận tin -->
+            <div class="footer-subscribe">
+                <div class="logo">
+                    <a href="../home/home.html">
+                        <img src="../assets/images/logo.png" alt="LEGO World Store" />
+                    </a>
+                </div>
+                <div class="subscribe-box">
+                    <h4>
+                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD
+                            STORE</p>
+                    </h4>
+                    <form>
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+                </div>
+            </div>
+
+            <!-- Mạng xã hội -->
+            <div class="footer-social">
+                <h4>Kết nối với chúng tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+                </div>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <h4>Thông tin liên hệ</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+            </div>
+
+            <!-- Liên kết & Chính sách -->
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>Điều khoản & Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+                        <li><a href="#">Chính sách trả góp</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bản quyền -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+            </div>
+        </div>
+
+    </footer>
 </body>
+
 </html>
