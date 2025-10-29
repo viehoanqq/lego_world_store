@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Lịch sử mua hàng - Lego World Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
-  <script src="assets/js/main.js" defer ></script>
-  <!-- CSS -->
-  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
-  <link rel="stylesheet" href="../../assets/css/user/cart-history.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/user/account.css">
+    <link rel="stylesheet" href="../../assets/css/user/cart-history.css">
   <script src="../../assets/js/main.js" defer ></script>
 </head>
 
@@ -63,11 +58,39 @@
       </ul>
     </nav>
   </header>
+<div class="main-content" style="width: 80%; margin: 30px auto;">
+        <div class="profile-container">
+            <!-- CỘT TRÁI: Avatar + Menu -->
+            <aside class="profile-sidebar">
+                <div class="profile-avatar">
+                    <img src="/assets/images/avt.png" alt="Avatar" class="avatar-img" />
+                    <h3 class="user-name">Nguyễn Việt Hoàng</h3>
+                    <p class="user-email">hihihi@gmail.com</p>
+                </div>
 
+                <nav class="profile-menu">
+                    <a href="#" class="menu-item active">
+                        <span>Thông tin cá nhân</span>
+                    </a>
+                    <a href="/user/cart/cart-history.html" class="menu-item">
+                        <span>Đơn hàng của tôi</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>Địa chỉ giao hàng</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="#" id="logout-btn" class="menu-item text-danger">
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+            </aside>
 
-  <!-- ========== MAIN ========== -->
-  <!-- MAIN: Lịch sử -->
-    <main class="history-page">
+            <!-- CỘT PHẢI: Form chỉnh sửa -->
+            <section class="profile-main">
+                <div class="profile-form-box">
+                    <main class="history-page">
       
       <section class="history-header">
         <h1>Lịch sử mua hàng</h1>
@@ -119,7 +142,10 @@
         </table>
       </section>
     </main>
-
+                </div>
+            </section>
+        </div>
+    </div>
 
 <!-- Footer -->
 <footer class="main-footer">
@@ -199,7 +225,15 @@
       <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
     </div>
   </div>
+    <script>
+document.getElementById("logout-btn").addEventListener("click", function() {
 
-</footer>
+  localStorage.setItem("isLoggedIn","false");
+  window.location.href = "../../index.html";
+  alert("Đăng xuất thành công!");
+
+});
+</script>
 </body>
+
 </html>
