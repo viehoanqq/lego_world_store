@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Price List - LEGO Store Admin</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link href="/assets/css/components/admin-sidebar.css" rel="stylesheet">
+  <link href="/assets/css/admin/order/order-management.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- === SIDEBAR === -->
+  <aside class="side-bar">
+        <div class="logo">
+            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+        </div>
+        <nav class="menu">
+            <ul class="system">
+                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
+                            class="message">2</span></a> </li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+            <ul class="support">
+                <li><a href="">Help</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="admin-header">
+            <h1>Welcome back, Hoang</h1>
+            <div class="admin-info">
+                <span class="search-bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input placeholder="Search">
+                </span>
+                <span class="info">
+                    <i class="fa-solid fa-bell">
+                        <span class="noti">3</span>
+                    </i>
+                    <img src="/assets/images/avt.png" alt="admin avt" />
+                    <p class="nametag">Việt Hoàng</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        </header>
+
+<!--Main-->
+    <div class="orders-container">
+        <h2>Orders Management</h2>
+        <div class="filters">
+        <div>
+            <label>From date:</label>
+            <input type="date" id="startDate">
+        </div>
+        <div>
+            <label>To date:</label>
+            <input type="date" id="endDate">
+        </div>
+        <div>
+            <label>Status:</label>
+            <select id="statusFilter">
+                <option value="all">All</option>
+                <option value="new">New</option>
+                <option value="processing">Processing</option>
+                <option value="shipped">Shipped</option>
+                <option value="cancel">Canceled</option>
+            </select>
+        </div>
+    <button class="filter-btn">Lọc</button>
+    </div>
+
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#DH001</td>
+                <td>2025-10-28</td>
+                <td>Nguyễn Văn A</td>
+                <td>1,200,000đ</td>
+                <td><span class="tag new">New</span></td>
+                <td><a href="order-detail.html" class="detail-btn">View</a></td>
+            </tr>
+            <tr>
+        <td>#DH002</td>
+        <td>2025-01-15</td>
+        <td>Trần Thị B</td>
+        <td>850,000đ</td>
+        <td><span class="tag processing">Processing</span></td>
+        <td><a href="order-detail.html" class="detail-btn">View</a></td>
+    </tr>
+    <tr>
+        <td>#DH003</td>
+        <td>2025-10-21</td>
+        <td>Phạm Văn C</td>
+        <td>3,450,000đ</td>
+        <td><span class="tag shipped">Shipped</span></td>
+        <td><a href="order-detail.html" class="detail-btn">View</a></td>
+    </tr>
+    <tr>
+        <td>#DH004</td>
+        <td>2025-04-26</td>
+        <td>Hoàng Thị D</td>
+        <td>2,100,000đ</td>
+        <td><span class="tag cancel">Canceled</span></td>
+        <td><a href="order-detail.html" class="detail-btn">View</a></td>
+    </tr>
+    <tr>
+        <td>#DH005</td>
+        <td>2025-08-30</td>
+        <td>Lê Văn E</td>
+        <td>990,000đ</td>
+        <td><span class="tag shipped">Shipped</span></td>
+        <td><a href="order-detail.html" class="detail-btn">View</a></td>
+    </tr>
+        </tbody>
+    </table>
+    
+    </div>
+</body>
+</html>
