@@ -32,4 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const fixed = path(link.getAttribute("href"));
     link.setAttribute("href", fixed);
   });
+    document.querySelectorAll("img[src^='/']").forEach(img => {
+    const fixed_img = path(img.getAttribute("src"));
+    img.setAttribute("src", fixed_img);
+  });
 });
