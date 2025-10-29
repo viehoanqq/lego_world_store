@@ -1,0 +1,127 @@
+/* ============== MAIN CONTAINER ============== */
+.orders-container {
+    margin-left: 0px;
+    padding: 25px;
+    font-family: "Nunito Sans", sans-serif;
+    background: #f7f9fc;
+    min-height: 100vh;
+    margin-top: 90px;
+}
+
+.orders-container h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+/* ============== FILTER AREA ============== */
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+}
+
+.filters label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.filters input[type="date"],
+.filters select {
+    padding: 6px 10px;
+    border: 1px solid #d1d9e6;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    background: #1e88e5;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 600;
+}
+.filter-btn:hover {
+    background: #1565c0;
+}
+
+/* ============== TABLE ============== */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+}
+
+.orders-table th {
+    background: #1976d2;
+    color: #fff;
+    padding: 14px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.orders-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e4e9f2;
+    font-size: 14px;
+}
+
+.orders-table tr:hover {
+    background: #f1f7ff;
+}
+
+/* ============== STATUS TAG ============== */
+.tag {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.new {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.processing {
+    background: #fff3cd;
+    color: #b8860b;
+}
+
+.shipped {
+    background: #d4edda;
+    color: #1b5e20;
+}
+
+.cancel {
+    background: #f8d7da;
+    color: #842029;
+}
+
+/* ============== VIEW BUTTON ============== */
+.detail-btn {
+    background: #43a047;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.detail-btn:hover {
+    background: #2e7d32;
+}

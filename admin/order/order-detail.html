@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Price List - LEGO Store Admin</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link href="/assets/css/components/admin-sidebar.css" rel="stylesheet">
+  <link href="/assets/css/admin/order/order-detail.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- === SIDEBAR === -->
+  <aside class="side-bar">
+        <div class="logo">
+            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+        </div>
+        <nav class="menu">
+            <ul class="system">
+                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
+                            class="message">2</span></a> </li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+            <ul class="support">
+                <li><a href="">Help</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="admin-header">
+            <h1>Welcome back, Hoang</h1>
+            <div class="admin-info">
+                <span class="search-bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input placeholder="Search">
+                </span>
+                <span class="info">
+                    <i class="fa-solid fa-bell">
+                        <span class="noti">3</span>
+                    </i>
+                    <img src="/assets/images/avt.png" alt="admin avt" />
+                    <p class="nametag">Việt Hoàng</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        </header>
+
+<!--Main-->
+    <div class="order-detail">
+        <h2>Order Detail</h2>
+        <div class="info">
+            <p><strong>Order ID:</strong> #DH001</p>
+            <p><strong>Date:</strong> 2025-10-28</p>
+            <p><strong>Customer:</strong> Nguyen Van A</p>
+            <p><strong>Phone:</strong> 0912 345 678</p>
+            <p><strong>Address:</strong> 215 Nguyen Trai, Q1, TP.HCM</p>
+            <p><strong>Total:</strong> 2,400,000₫</p>
+
+            <label>Status:</label>
+            <select>
+                <option>New</option>
+                <option selected>Processing</option>
+                <option>Shipped</option>
+                <option>Canceled</option>
+            </select>
+        </div>
+
+        <h3>Products</h3>
+        <table>
+            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
+            <tr><td>Lego Car</td><td>1</td><td>500,000₫</td><td>500,000₫</td></tr>
+            <tr><td>Lego City</td><td>2</td><td>700,000₫</td><td>1,400,000₫</td></tr>
+            <tr><td>Lego Ninjago</td><td>1</td><td>500,000₫</td><td>500,000₫</td></tr>
+        </table>
+
+        <div class="total-box">
+            <p><strong>Subtotal:</strong> 2,400,000₫</p>
+            <p><strong>Shipping:</strong> 30,000₫</p>
+            <p><strong>VAT (10%):</strong> 240,000₫</p>
+            <hr>
+            <p class="grand"><strong>Grand Total: 2,670,000₫</strong></p>
+        </div>
+
+        <button class="save-btn">Save</button>
+
+    </div>
+    <div class="order-detail">
+        <h2>Order Detail</h2>
+        <div class="info">
+            <p><strong>Order ID:</strong> #DH002</p>
+            <p><strong>Date:</strong> 2025-10-28</p>
+            <p><strong>Customer:</strong> Tran Thi B</p>
+            <p><strong>Phone:</strong> 0981 222 333</p>
+            <p><strong>Address:</strong> 45 Cach Mang Thang 8, Q3, TP.HCM</p>
+            <p><strong>Total:</strong> 3,200,000₫</p>
+
+            <label>Status:</label>
+            <select>
+                <option selected>New</option>
+                <option>Processing</option>
+                <option>Shipped</option>
+                <option>Canceled</option>
+            </select>
+        </div>
+
+        <h3>Products</h3>
+        <table>
+            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
+            <tr><td>Lego Technic Car</td><td>1</td><td>1,200,000₫</td><td>1,200,000₫</td></tr>
+            <tr><td>Lego Harry Potter Castle</td><td>1</td><td>2,000,000₫</td><td>2,000,000₫</td></tr>
+        </table>
+
+        <div class="total-box">
+            <p><strong>Subtotal:</strong> 3,200,000₫</p>
+            <p><strong>Shipping:</strong> 30,000₫</p>
+            <p><strong>VAT (10%):</strong> 320,000₫</p>
+            <hr>
+            <p class="grand"><strong>Grand Total: 3,550,000₫</strong></p>
+        </div>
+
+        <button class="save-btn">Save</button>
+    </div>
+    <div class="order-detail">
+        <h2>Order Detail</h2>
+        <div class="info">
+            <p><strong>Order ID:</strong> #DH003</p>
+            <p><strong>Date:</strong> 2025-10-29</p>
+            <p><strong>Customer:</strong> Le Van C</p>
+            <p><strong>Phone:</strong> 0904 777 888</p>
+            <p><strong>Address:</strong> 99 Tran Hung Dao, Q5, TP.HCM</p>
+            <p><strong>Total:</strong> 4,500,000₫</p>
+
+            <label>Status:</label>
+            <select>
+                <option>New</option>
+                <option>Processing</option>
+                <option selected>Shipped</option>
+                <option>Canceled</option>
+            </select>
+        </div>
+
+        <h3>Products</h3>
+        <table>
+            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
+            <tr><td>Lego Star Wars X-Wing</td><td>1</td><td>2,500,000₫</td><td>2,500,000₫</td></tr>
+            <tr><td>Lego Marvel Iron Man Armor</td><td>2</td><td>1,000,000₫</td><td>2,000,000₫</td></tr>
+        </table>
+
+        <div class="total-box">
+            <p><strong>Subtotal:</strong> 4,500,000₫</p>
+            <p><strong>Shipping:</strong> 30,000₫</p>
+            <p><strong>VAT (10%):</strong> 450,000₫</p>
+            <hr>
+            <p class="grand"><strong>Grand Total: 4,980,000₫</strong></p>
+        </div>
+
+        <button class="save-btn">Save</button>
+    </div>
+
+
+</body>
+</html>
