@@ -1,25 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    //login
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const name = document.getElementById("name");
-    const accountLink = document.getElementById("account-link");
-    if (isLoggedIn === "true") {
-        name.textContent = "Việt Hoàng";
-        accountLink.setAttribute("href", "/user/account/profile.html");
-    }
-
-    const cartlink = document.getElementById("cart-link");
-    cartlink.addEventListener("click", function (event) {
-        if (isLoggedIn === "false") {
-            event.preventDefault();
-            alert("Vui lòng đăng nhập để xem giỏ hàng.");
-            window.location.href = "/user/account/login.html";
-        }
- 
-    },);
-    //fix path
+        //fix path
     const REPO_NAME = "lego_world_store"; 
     let BASE_URL = window.location.origin;
     if (window.location.hostname.includes("github.io")) {
@@ -42,4 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("head script[src^='/']").forEach(script => {
     script.setAttribute("src", path(script.getAttribute("src")));
   });
+
+    //login
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const name = document.getElementById("name");
+    const accountLink = document.getElementById("account-link");
+    if (isLoggedIn === "true") {
+        name.textContent = "Việt Hoàng";
+        accountLink.setAttribute("href", "/user/account/profile.html");
+    }
+
+    const cartlink = document.getElementById("cart-link");
+    cartlink.addEventListener("click", function (event) {
+        if (isLoggedIn === "false") {
+            event.preventDefault();
+            alert("Vui lòng đăng nhập để xem giỏ hàng.");
+            window.location.href = "/user/account/login.html";
+        }
+ 
+    },);
 });
