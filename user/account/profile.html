@@ -76,7 +76,7 @@
                     <a href="#" class="menu-item">
                         <span>Đổi mật khẩu</span>
                     </a>
-                    <a href="#" class="menu-item text-danger">
+                    <a href="#" id="logout-btn" class="menu-item text-danger">
                         <span>Đăng xuất</span>
                     </a>
                 </nav>
@@ -217,6 +217,15 @@
         </div>
 
     </footer>
+    <script>
+document.getElementById("logout-btn").addEventListener("click", function() {
+
+  localStorage.setItem("isLoggedIn","false");
+  window.location.href = "../../index.html";
+  alert("Đăng xuất thành công!");
+
+});
+</script>
 </body>
 
 </html>

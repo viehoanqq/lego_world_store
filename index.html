@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/components/homepage.css">
     <link rel="stylesheet" href="assets/css/components/items.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <script src="assets/js/main.js" defer ></script>
 </head>
 
 <body>
@@ -26,21 +27,21 @@
     <!-- Header chính -->
     <div class="main-header">
       <div class="logo">
-        <a href="index.html">
-          <img src="assets/images/logo.png" alt="LEGO World Store" />
+        <a href="/index.html">
+          <img src="/assets/images/logo.png" alt="LEGO World Store" />
         </a>
       </div>
 
       <div class="search-bar">
         <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
-        <a href="user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
+        <a href="/user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
       </div>
 
       <div class="user-options">
-        <a href="user/account/login.html" target="_parent" id="account-link">
+        <a href="/user/account/login.html" target="_parent" id="account-link">
           <i class="fa-solid fa-user"></i> <span id="name"> Đăng nhập </span>
         </a>
-        <a href="user/cart/cart-cart.html" target="_parent">
+        <a href="/user/cart/cart-cart.html" target="_parent" id="cart-link">
           <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
         </a>
       </div>
@@ -49,8 +50,8 @@
     <!-- Menu điều hướng -->
     <nav class="nav-bar">
       <ul>
-        <li><a href="index.html" target="_parent">TRANG CHỦ</a></li>
-        <li><a href="user/product/list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="/index.html" target="_parent">TRANG CHỦ</a></li>
+        <li><a href="/user/product/list.html" target="_parent">SẢN PHẨM</a></li>
         <li><a href="#new-product">HÀNG MỚI</a></li>
         <li><a href="#sale-product">KHUYẾN MÃI</a></li>
         <li><a href="#type-product">CHỦ ĐỀ</a></li>
@@ -63,7 +64,7 @@
     <!-- Banner chính -->
     <div class="banner">
       <button class="btn-next"><i class="fa-solid fa-chevron-left"></i></button>
-      <img src="./assets/images/banner.webp" alt="Banner" />
+      <img src="/assets/images/banner.webp" alt="Banner" />
       <button class="btn-next"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
@@ -77,7 +78,7 @@
       <div class="product-box">
         <!-- Banner bên trái -->
         <div class="banner-product">
-          <img src="./assets/images/new-product.webp" alt="Hàng mới về - Bé thích mê"/>
+          <img src="/assets/images/new-product.webp" alt="Hàng mới về - Bé thích mê"/>
         </div>
 
         <!-- Danh sách sản phẩm -->
@@ -560,6 +561,5 @@
   </div>
 
 </footer>
-<script src="assets/js/js.js"></script>
 </body>
 </html>
