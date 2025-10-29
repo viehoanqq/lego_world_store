@@ -22,7 +22,6 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
 }
 
 .banner-text {
@@ -34,13 +33,13 @@
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #ffcc00;
+  color: #a4161a;
 }
 
 .banner-text p {
   font-size: 18px;
   font-weight: 400;
-  color: #fff;
+  color: #a4161a;
 }
 
 /* Nội dung chính */

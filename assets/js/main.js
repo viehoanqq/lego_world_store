@@ -1,7 +1,7 @@
 
 
-//login
 document.addEventListener("DOMContentLoaded", function () {
+    //login
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const name = document.getElementById("name");
     const accountLink = document.getElementById("account-link");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
  
     },);
-
+    //fix path
     const REPO_NAME = "lego_world_store"; 
     let BASE_URL = window.location.origin;
     if (window.location.hostname.includes("github.io")) {

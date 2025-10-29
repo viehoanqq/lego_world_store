@@ -1,25 +1,11 @@
-/* ========================================
-   PRODUCT SYSTEM - LEGO WORLD STORE
-   File: assets/css/user/product.css
-   Áp dụng cho: list.html, detail.html, search.html
-   Tối ưu: Không trùng lặp, rõ ràng, dễ bảo trì
-   ======================================== */
 
-/* ------------------- RESET & TYPOGRAPHY ------------------- */
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: 'PoppinsVH', Arial, sans-serif;
-  background: linear-gradient(180deg, #fff 0%, #f8f8f8 100%);
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {

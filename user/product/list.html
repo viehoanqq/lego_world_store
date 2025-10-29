@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>LEGO - Danh sách sản phẩm | Lego World Store</title>
-  <link rel="stylesheet" href="../assets/css/components/homepage.css">
-  <link rel="stylesheet" href="../../assets/css/user/product.css">
-  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+  <link rel="stylesheet" href="/assets/css/user/product.css">
+  <link rel="stylesheet" href="/assets/css/components/homepage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="/assets/js/main.js" defer ></script>
 </head>
 <body>
   <!-- Header -->
-   <header>
+  <header>
     <!-- Thanh trên cùng -->
     <div class="top-bar">
       <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
@@ -23,21 +23,21 @@
     <!-- Header chính -->
     <div class="main-header">
       <div class="logo">
-        <a href="../../index.html">
-          <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+        <a href="/index.html">
+          <img src="/assets/images/logo.png" alt="LEGO World Store" />
         </a>
       </div>
 
       <div class="search-bar">
         <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="/user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
       </div>
 
       <div class="user-options">
-        <a href="../account/login.html" target="_parent">
-          <i class="fa-solid fa-user"></i> Đăng nhập
+        <a href="/user/account/login.html" target="_parent" id="account-link">
+          <i class="fa-solid fa-user"></i> <span id="name"> Đăng nhập </span>
         </a>
-        <a href="../cart/cart-cart.html" target="_parent">
+        <a href="/user/cart/cart-cart.html" target="_parent" id="cart-link">
           <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
         </a>
       </div>
@@ -46,19 +46,19 @@
     <!-- Menu điều hướng -->
     <nav class="nav-bar">
       <ul>
-        <li><a href="../../index.html" target="_parent">TRANG CHỦ</a></li>
-        <li><a href="list.html" target="_parent">SẢN PHẨM</a></li>
-        <li><a href="../../index.html#new-product">HÀNG MỚI</a></li>
-        <li><a href="../../index.html">KHUYẾN MÃI</a></li>
-        <li><a href="../../index.html">CHỦ ĐỀ</a></li>
-        <li><a href="../../index.html">TIN TỨC</a></li>
+        <li><a href="/index.html" target="_parent">TRANG CHỦ</a></li>
+         <li><a href="/user/product/list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="/index.html">HÀNG MỚI</a></li>
+        <li><a href="/index.html">KHUYẾN MÃI</a></li>
+       <li><a href="/index.html">CHỦ ĐỀ</a></li>
+        <li><a href="/index.html">TIN TỨC</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="../../index.html"><i class="fa-solid fa-house"></i>Trang chủ</a>
+    <a href="/index.html"><i class="fa-solid fa-house"></i>Trang chủ</a>
     <span>/</span>
     <strong>Tất cả sản phẩm</strong>
   </div>
@@ -161,10 +161,10 @@
          <!-- Product 1 -->
 <!-- Product 1 -->
 <div class="product-card">
-  <a href="detail.html">
+  <a href="/user/product/detail.html">
   <span class="product-badge new">NEW</span>
   <div class="product-image">
-    <img src="../../assets/images/product1.webp" alt="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257" />
+    <img src="/assets/images/product1.webp" alt="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257" />
   </div>
   <div class="product-info">
     <div class="product-header-line">
@@ -182,7 +182,7 @@
     </div>
     <div class="product-actions">
       <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+      <a href="/user/product/detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
     </div>
   </div>
   </a>
@@ -191,7 +191,7 @@
 <div class="product-card">
   <span class="product-badge new">NEW</span>
   <div class="product-image">
-    <img src="../../assets/images/product2.webp" alt="Bộ xếp hình LEGO Technic Xe Ferrari 42143" />
+    <img src="/assets/images/product2.webp" alt="Bộ xếp hình LEGO Technic Xe Ferrari 42143" />
   </div>
   <div class="product-info">
     <div class="product-header-line">
@@ -209,7 +209,7 @@
     </div>
     <div class="product-actions">
       <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+      <a href="/user/product/detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
     </div>
   </div>
 </div>
@@ -218,7 +218,7 @@
 <div class="product-card">
   <span class="product-badge new">NEW</span>
   <div class="product-image">
-    <img src="../../assets/images/product3.webp" alt="Bộ xếp hình LEGO Friends Thành phố Heartlake 41704" />
+    <img src="/assets/images/product3.webp" alt="Bộ xếp hình LEGO Friends Thành phố Heartlake 41704" />
   </div>
   <div class="product-info">
     <div class="product-header-line">
@@ -236,7 +236,7 @@
     </div>
     <div class="product-actions">
       <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+      <a href="/user/product/detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
     </div>
   </div>
 </div>
@@ -245,7 +245,7 @@
 <div class="product-card">
   <span class="product-badge new">NEW</span>
   <div class="product-image">
-    <img src="../../assets/images/product4.webp" alt="Bộ xếp hình LEGO Ninjago Rồng Huyền Thoại 71753" />
+    <img src="/assets/images/product4.webp" alt="Bộ xếp hình LEGO Ninjago Rồng Huyền Thoại 71753" />
   </div>
   <div class="product-info">
     <div class="product-header-line">
@@ -263,7 +263,7 @@
     </div>
     <div class="product-actions">
       <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+      <a href="/user/product/detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
     </div>
   </div>
 </div>
@@ -272,7 +272,7 @@
 <div class="product-card">
   <span class="product-badge">-35%</span>
   <div class="product-image">
-    <img src="../../assets/images/product5.webp" alt="Bộ xếp hình LEGO Creator Xe Máy Bay 31126" />
+    <img src="/assets/images/product5.webp" alt="Bộ xếp hình LEGO Creator Xe Máy Bay 31126" />
   </div>
   <div class="product-info">
     <div class="product-header-line">
@@ -290,7 +290,7 @@
     </div>
     <div class="product-actions">
       <button class="btn-add-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-      <a href="detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
+      <a href="/user/product/detail.html" class="btn-view-detail"><i class="fa-solid fa-eye"></i></a>
     </div>
   </div>
 </div>
@@ -497,9 +497,8 @@
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="main-footer">
+<!-- Footer -->
+<footer class="main-footer">
 
   <!-- Thanh thông báo nhỏ -->
   <div class="footer-top">
@@ -515,8 +514,8 @@
     <!-- Đăng ký nhận tin -->
     <div class="footer-subscribe">
       <div class="logo">
-        <a href="../../index.html">
-          <img src="../../assets/images/logo.png" alt="LEGO World Store" />
+        <a href="/index.html">
+          <img src="/assets/images/logo.png" alt="LEGO World Store" />
         </a>
       </div>
       <div class="subscribe-box">
@@ -556,9 +555,9 @@
       <div class="footer-links">
         <h4>Điều khoản & Chính sách</h4>
         <ul>
-          <li><a href="../../pages/policy.html">Chính sách mua hàng</a></li>
-          <li><a href="../../pages/about.html">Thông tin về LegoWorldStore</a></li>
-          <li><a href="../../pages/contact.html">Thông tin liên hệ</a></li>
+          <li><a href="/pages/policy.html">Chính sách mua hàng</a></li>
+          <li><a href="/pages/about.html">Thông tin về LegoWorldStore</a></li>
+          <li><a href="/pages/contact.html">Thông tin liên hệ</a></li>
           <li><a href="#">Chính sách thanh toán</a></li>
           <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
           <li><a href="#">Chính sách trả góp</a></li>
@@ -578,7 +577,5 @@
   </div>
 
 </footer>
-
-
 </body>
 </html>

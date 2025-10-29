@@ -12,13 +12,12 @@
   />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+  <link rel="stylesheet" href="/assets/css/components/homepage.css">
   <link rel="stylesheet" href="/assets/css/user/order_review.css">
+  <script src="/assets/js/main.js" defer ></script>
 </head>
 
 <body>
-
-  <!-- ========== HEADER ========== -->
   <header>
     <!-- Thanh trên cùng -->
     <div class="top-bar">
@@ -32,21 +31,21 @@
     <!-- Header chính -->
     <div class="main-header">
       <div class="logo">
-        <a href="./home.html">
+        <a href="/index.html">
           <img src="/assets/images/logo.png" alt="LEGO World Store" />
         </a>
       </div>
 
       <div class="search-bar">
         <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="/user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
       </div>
 
       <div class="user-options">
-        <a href="../login.html">
-          <i class="fa-solid fa-user"></i> Đăng nhập
+        <a href="/user/account/login.html" target="_parent" id="account-link">
+          <i class="fa-solid fa-user"></i> <span id="name"> Đăng nhập </span>
         </a>
-        <a href="./cart.html">
+        <a href="/user/cart/cart-cart.html" target="_parent" id="cart-link">
           <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
         </a>
       </div>
@@ -55,15 +54,16 @@
     <!-- Menu điều hướng -->
     <nav class="nav-bar">
       <ul>
-        <li><a href="./home.html">TRANG CHỦ</a></li>
-        <li><a href="./product.html">SẢN PHẨM</a></li>
-        <li><a href="#">HÀNG MỚI</a></li>
-        <li><a href="#">KHUYẾN MÃI</a></li>
-        <li><a href="#">THƯƠNG HIỆU</a></li>
-        <li><a href="#">TIN TỨC</a></li>
+        <li><a href="/index.html" target="_parent">TRANG CHỦ</a></li>
+         <li><a href="/user/product/list.html" target="_parent">SẢN PHẨM</a></li>
+        <li><a href="/index.html">HÀNG MỚI</a></li>
+        <li><a href="/index.html">KHUYẾN MÃI</a></li>
+       <li><a href="/index.html">CHỦ ĐỀ</a></li>
+        <li><a href="/index.html">TIN TỨC</a></li>
       </ul>
     </nav>
   </header>
+
 
  <div class="checkout-steps">
   <div class="step-active">
@@ -121,95 +121,92 @@
           <p class="order-total">Tổng cộng: <strong>5.720.000đ</strong></p>
 
           <div class="review-actions">
-            <a href="checkout.html" class="btn-secondary">Quay lại</a>
-            <a href="cart-history.html" class="btn-primary">Xác nhận</a>
+            <a href="/user/cart/checkout.html" class="btn-secondary">Quay lại</a>
+            <a href="/user/cart/cart-history.html" class="btn-primary">Xác nhận</a>
           </div>
         </div>
       </section>
     </main>
 
+<!-- Footer -->
+<footer class="main-footer">
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="main-footer">
-    <!-- Thanh thông báo nhỏ -->
-    <div class="footer-top">
-      <div class="container">
-        <span>Miễn phí giao hàng đơn từ 500k</span>
-        <span>Giao hàng hỏa tốc 4 tiếng</span>
-        <span>Hệ thống 200 cửa hàng</span>
+  <!-- Thanh thông báo nhỏ -->
+  <div class="footer-top">
+    <div class="container">
+      <span>Miễn phí giao hàng đơn từ 500k</span>
+      <span>Giao hàng hỏa tốc 4 tiếng</span>
+      <span>Hệ thống 200 cửa hàng</span>
+    </div>
+  </div>
+
+  <div class="footer-body">
+
+    <!-- Đăng ký nhận tin -->
+    <div class="footer-subscribe">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/assets/images/logo.png" alt="LEGO World Store" />
+        </a>
+      </div>
+      <div class="subscribe-box">
+        <h4><p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p></h4>
+        <form>
+          <input type="email" placeholder="Nhập email của bạn" required />
+          <button type="submit">Đăng ký</button>
+        </form>
+        <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
       </div>
     </div>
 
-    <div class="footer-body">
-
-      <!-- Đăng ký nhận tin -->
-      <div class="footer-subscribe">
-        <div class="logo">
-          <a href="../home.html">
-            <img src="/assets/images/logo.png" alt="LEGO World Store" />
-          </a>
-        </div>
-        <div class="subscribe-box">
-          <h4>
-            <p class="subscribe-title">
-              <strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE
-            </p>
-          </h4>
-          <form>
-            <input type="email" placeholder="Nhập email của bạn" required />
-            <button type="submit">Đăng ký</button>
-          </form>
-          <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
-        </div>
-      </div>
-
-      <!-- Mạng xã hội -->
-      <div class="footer-social">
-        <h4>Kết nối với chúng tôi</h4>
-        <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-          <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-          <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-          <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
-        </div>
-      </div>
-
-      <!-- Thông tin liên hệ -->
-      <div class="footer-contact">
-        <h4>Thông tin liên hệ</h4>
-        <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
-        <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
-        <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
-        <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
-        <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
-      </div>
-
-      <!-- Liên kết & Chính sách -->
-      <div class="footer-grid">
-        <div class="footer-links">
-          <h4>Điều khoản & Chính sách</h4>
-          <ul>
-            <li><a href="#">Chính sách giao hàng</a></li>
-            <li><a href="#">Chính sách bảo mật</a></li>
-            <li><a href="#">Chính sách bảo hành & đổi trả</a></li>
-            <li><a href="#">Chính sách thanh toán</a></li>
-            <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
-            <li><a href="#">Chính sách trả góp</a></li>
-            <li><a href="#">Hệ thống cửa hàng</a></li>
-          </ul>
-        </div>
+    <!-- Mạng xã hội -->
+    <div class="footer-social">
+      <h4>Kết nối với chúng tôi</h4>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
       </div>
     </div>
 
-    <!-- Bản quyền -->
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
-        <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+    <!-- Thông tin liên hệ -->
+    <div class="footer-contact">
+      <h4>Thông tin liên hệ</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+      <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+      <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+      <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+    </div>
+
+    <!-- Liên kết & Chính sách -->
+    <div class="footer-grid">
+      <div class="footer-links">
+        <h4>Điều khoản & Chính sách</h4>
+        <ul>
+          <li><a href="/pages/policy.html">Chính sách mua hàng</a></li>
+          <li><a href="/pages/about.html">Thông tin về LegoWorldStore</a></li>
+          <li><a href="/pages/contact.html">Thông tin liên hệ</a></li>
+          <li><a href="#">Chính sách thanh toán</a></li>
+          <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+          <li><a href="#">Chính sách trả góp</a></li>
+          <li><a href="#">Hệ thống cửa hàng</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
 
+  </div>
+
+  <!-- Bản quyền -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+      <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+    </div>
+  </div>
+
+</footer>
 </body>
 </html>
