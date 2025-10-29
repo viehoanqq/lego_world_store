@@ -36,4 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const fixed_img = path(img.getAttribute("src"));
     img.setAttribute("src", fixed_img);
   });
+    document.querySelectorAll("head link[href^='/']").forEach(link => {
+    link.setAttribute("href", path(link.getAttribute("href")));
+  });
+  document.querySelectorAll("head script[src^='/']").forEach(script => {
+    script.setAttribute("src", path(script.getAttribute("src")));
+  });
 });
