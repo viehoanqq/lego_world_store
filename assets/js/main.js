@@ -19,4 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
  
     },);
+
+    const REPO_NAME = "lego_world_store"; 
+    let BASE_URL = window.location.origin;
+    if (window.location.hostname.includes("github.io")) {
+    BASE_URL += `/${REPO_NAME}`;
+}
+    function path(relativePath) {
+    return `${BASE_URL}${relativePath.startsWith("/") ? "" : "/"}${relativePath}`;
+}
+    document.querySelectorAll("a[href^='/']").forEach(link => {
+    const fixed = path(link.getAttribute("href"));
+    link.setAttribute("href", fixed);
+  });
 });
