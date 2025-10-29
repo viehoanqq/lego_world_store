@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("head script[src^='/']").forEach(script => {
     script.setAttribute("src", path(script.getAttribute("src")));
   });
-
+  // Nếu đang mở trực tiếp qua file://
   //login
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   const name = document.getElementById("name");
