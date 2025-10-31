@@ -16,7 +16,7 @@
 
   <!-- Styles -->
   <link href="/assets/css/components/admin-sidebar.css" rel="stylesheet">
-  <link href="/assets/css/admin/order/order-management.css" rel="stylesheet">
+  <link href="/assets/css/admin/order-management.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,7 +44,6 @@
             </ul>
         </nav>
     </aside>
-
     <div class="main-content">
         <header class="admin-header">
             <h1>Welcome back, Hoang</h1>
@@ -65,85 +64,46 @@
         </header>
 
 <!--Main-->
-    <div class="orders-container">
-        <h2>Orders Management</h2>
-        <div class="filters">
-        <div>
-            <label>From date:</label>
-            <input type="date" id="startDate">
-        </div>
-        <div>
-            <label>To date:</label>
-            <input type="date" id="endDate">
-        </div>
-        <div>
+    <div class="order-detail">
+        <h2>Order Detail</h2>
+        <div class="info">
+            <p><strong>Order ID:</strong> #DH001</p>
+            <p><strong>Date:</strong> 2025-10-28</p>
+            <p><strong>Customer:</strong> Nguyen Van A</p>
+            <p><strong>Phone:</strong> 0912 345 678</p>
+            <p><strong>Address:</strong> 215 Nguyen Trai, Q1, TP.HCM</p>
+            <p><strong>Total:</strong> 2,400,000₫</p>
+
             <label>Status:</label>
-            <select id="statusFilter">
-                <option value="all">All</option>
-                <option value="new">New</option>
-                <option value="processing">Processing</option>
-                <option value="shipped">Shipped</option>
-                <option value="cancel">Canceled</option>
+            <select>
+                <option>New</option>
+                <option selected>Processing</option>
+                <option>Shipped</option>
+                <option>Canceled</option>
             </select>
         </div>
-    <button class="filter-btn">Lọc</button>
-    </div>
 
-    <table class="orders-table">
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Order Date</th>
-                <th>Customer</th>
-                <th>Total</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>#DH001</td>
-                <td>2025-10-28</td>
-                <td>Nguyễn Văn A</td>
-                <td>1,200,000đ</td>
-                <td><span class="tag new">New</span></td>
-                <td><a href="order-detail.html" class="detail-btn">View</a></td>
-            </tr>
-            <tr>
-        <td>#DH002</td>
-        <td>2025-01-15</td>
-        <td>Trần Thị B</td>
-        <td>850,000đ</td>
-        <td><span class="tag processing">Processing</span></td>
-        <td><a href="order-detail.html" class="detail-btn">View</a></td>
-    </tr>
-    <tr>
-        <td>#DH003</td>
-        <td>2025-10-21</td>
-        <td>Phạm Văn C</td>
-        <td>3,450,000đ</td>
-        <td><span class="tag shipped">Shipped</span></td>
-        <td><a href="order-detail.html" class="detail-btn">View</a></td>
-    </tr>
-    <tr>
-        <td>#DH004</td>
-        <td>2025-04-26</td>
-        <td>Hoàng Thị D</td>
-        <td>2,100,000đ</td>
-        <td><span class="tag cancel">Canceled</span></td>
-        <td><a href="order-detail.html" class="detail-btn">View</a></td>
-    </tr>
-    <tr>
-        <td>#DH005</td>
-        <td>2025-08-30</td>
-        <td>Lê Văn E</td>
-        <td>990,000đ</td>
-        <td><span class="tag shipped">Shipped</span></td>
-        <td><a href="order-detail.html" class="detail-btn">View</a></td>
-    </tr>
-        </tbody>
-    </table>
-    
+        <h3>Products</h3>
+        <table>
+            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
+            <tr><td>Lego Car</td><td>1</td><td>500,000₫</td><td>500,000₫</td></tr>
+            <tr><td>Lego City</td><td>2</td><td>700,000₫</td><td>1,400,000₫</td></tr>
+            <tr><td>Lego Ninjago</td><td>1</td><td>500,000₫</td><td>500,000₫</td></tr>
+        </table>
+
+        <div class="total-box">
+            <p><strong>Subtotal:</strong> 2,400,000₫</p>
+            <p><strong>Shipping:</strong> 30,000₫</p>
+            <p><strong>VAT (10%):</strong> 240,000₫</p>
+            <hr>
+            <p class="grand"><strong>Grand Total: 2,670,000₫</strong></p>
+        </div>
+
+        <button class="save-btn">Save</button>
+
     </div>
+    
+
+
 </body>
 </html>

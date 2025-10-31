@@ -1,0 +1,352 @@
+/* ============================================= */
+/*          LEGO ADMIN - ORDER MANAGEMENT        */
+/* ============================================= */
+
+/* ==== RESET & BASE ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ==== LAYOUT ==== */
+.main-content {
+  margin-left: 260px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  background: #f8fafc;
+  padding-bottom: 40px;
+}
+
+.admin-header {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.admin-header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.admin-header .admin-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.admin-header .search-bar {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.admin-header .search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.admin-header .admin-info i {
+  font-size: 18px;
+  color: #475569;
+  position: relative;
+}
+
+.admin-header .noti {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 2px 5px;
+}
+
+/* ============================================= */
+/*             1. ORDERS LIST PAGE               */
+/* ============================================= */
+
+.orders-container {
+  padding: 32px;
+}
+
+.orders-container h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+/* === FILTERS === */
+.filters {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+}
+
+.filters label {
+  font-weight: 600;
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.filters input,
+.filters select {
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-1px);
+}
+
+/* === TABLE === */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.orders-table th {
+  background: #f8fafc;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.orders-table td {
+  padding: 14px 18px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 15px;
+}
+
+.orders-table tr:hover {
+  background: #f8faff;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.tag.new { background: #dbeafe; color: #1d4ed8; }
+.tag.processing { background: #fef9c3; color: #ca8a04; }
+.tag.shipped { background: #dcfce7; color: #16a34a; }
+.tag.cancel { background: #fee2e2; color: #dc2626; }
+
+.detail-btn {
+  display: inline-block;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.detail-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* ============================================= */
+/*             2. ORDER DETAIL PAGE              */
+/* ============================================= */
+
+.order-detail {
+  padding: 32px;
+}
+
+.order-detail h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+/* Info box */
+.order-detail .info {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.order-detail .info p {
+  font-size: 15px;
+  padding: 6px 0;
+}
+
+.order-detail select {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.order-detail select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+/* Products Table */
+.order-detail table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  margin-top: 16px;
+}
+
+.order-detail th {
+  background: #f8fafc;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 700;
+  color: #475569;
+  font-size: 14px;
+}
+
+.order-detail td {
+  padding: 14px 18px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 15px;
+}
+
+.order-detail tr:hover {
+  background: #f8faff;
+}
+
+/* Total Box */
+.total-box {
+  margin-top: 24px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.total-box p {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.total-box hr {
+  border: none;
+  border-top: 1px dashed #e2e8f0;
+  margin: 12px 0;
+}
+
+.total-box .grand {
+  font-size: 18px;
+  font-weight: 800;
+  color: #dc2626;
+}
+
+/* Save Button */
+.save-btn {
+  margin-top: 20px;
+  padding: 14px 20px;
+  width: 100%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+}
+
+/* ============================================= */
+/*                 RESPONSIVE                    */
+/* ============================================= */
+@media (max-width: 992px) {
+  .main-content { margin-left: 0; }
+  .filters { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 600px) {
+  .orders-table, .order-detail table {
+    font-size: 13px;
+  }
+}
