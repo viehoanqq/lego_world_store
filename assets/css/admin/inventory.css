@@ -1,0 +1,97 @@
+.inventory-container {
+    padding: 25px;
+    background: #f5f6fa;
+    min-height: 100vh;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.inventory-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* ===== TABLE ===== */
+.table-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    background: #eef0f4;
+}
+
+table thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 700;
+}
+
+table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+table tbody tr:hover {
+    background: #f4f9ff;
+}
+
+.status-ok {
+    color: green;
+    font-weight: bold;
+}
+
+.status-low {
+    color: #d97706;
+    font-weight: bold;
+}
+
+.status-danger {
+    color: red;
+    font-weight: bold;
+}
+
+/* ===== HISTORY TAGS ===== */
+.tag-in {
+    color: #0c7b93;
+    font-weight: bold;
+}
+
+.tag-out {
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+/* ===== FLEX HEADER ===== */
+.inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inventory-header input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e4fc7;
+}
