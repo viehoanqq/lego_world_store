@@ -148,7 +148,7 @@
 }
 
 .login-btn:hover {
-    background: #a4161a;
+    background: #da242a;
 }
 
 .divider {
@@ -194,6 +194,7 @@
     justify-content: center;
     gap: 8px;
     transition: all 0.2s ease;
+    margin: 0 10px
 }
 
 .social-btn.google:hover {
@@ -236,267 +237,265 @@
 /* ==============================================================
    REGISTER PAGE – dùng chung với login.css
    ============================================================== */
-
-/* Container chính */
 .register-container {
-  min-height: calc(100vh - 260px);   /* trừ header + footer */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  background: #f8f9fa;
+    min-height: calc(100vh - 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+    background: #f8f9fa; /* Màu nền xám nhẹ làm nổi bật form trắng */
 }
 
-/* Box đăng ký */
+/* Box đăng ký - Tăng độ rộng để chứa 2 cột đẹp hơn */
 .register-box {
-  background: #fff;
-  max-width: 460px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
-  overflow: hidden;
-    border: #a4161a solid 2px;
-    padding: 30px;
+    background: #fff;
+    max-width: 650px; /* Rộng hơn Login box một chút */
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(164, 22, 26, 0.1); /* Bóng mờ đỏ nhẹ */
+    overflow: hidden;
+    border: 2px solid #a4161a; /* Viền đỏ LEGO đặc trưng */
+    position: relative;
 }
 
-/* Header */
+/* Header đỏ rực rỡ */
 .register-header {
-  text-align: center;
-  padding: 30px 30px 20px;
-  background-color: #a4161a;
-  color: #fff;
-}
-.register-header h2 {
-  margin: 0 0 8px;
-  font-size: 26px;
-  font-weight: 700;
-}
-.register-header p {
-  margin: 0;
-  font-size: 15px;
-  opacity: .95;
-}
-
-/* Form */
-.register-form {
-  padding: 30px;
-}
-
-/* Nhóm input */
-.input-group {
-  margin-bottom: 22px;
-}
-.input-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 14px;
-}
-.input-group label .required {
-  color: #e74c3c;
-}
-
-/* Input */
-.input-group input {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 15px;
-  transition: border .3s, box-shadow .3s;
-}
-.input-group input:focus {
-  outline: none;
-  border-color: #B43F3F;
-  box-shadow: 0 0 0 3px rgba(180,63,63,.15);
-}
-
-/* Password wrapper */
-.password-wrapper {
-  position: relative;
-}
-.password-wrapper input {
-  padding-right: 44px;
-}
-.toggle-password {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #95a5a6;
-  font-size: 18px;
-}
-.toggle-password:hover {
-  color: #7f8c8d;
-}
-
-/* Small text */
-.input-group small {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  color: #7f8c8d;
-}
-
-/* Checkbox điều khoản */
-.terms-checkbox {
-  margin: 20px 0 25px;
-}
-.checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  font-size: 14px;
-  color: #2c3e50;
-  cursor: pointer;
-}
-.checkbox-label input {
-  margin-right: 10px;
-  margin-top: 2px;
-}
-.checkbox-label .checkmark {
-  position: relative;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  flex-shrink: 0;
-}
-.checkbox-label input:checked + .checkmark {
-  background: #B43F3F;
-  border-color: #B43F3F;
-}
-.checkbox-label input:checked + .checkmark::after {
-  content: "✓";
-  position: absolute;
-  color: #fff;
-  font-weight: bold;
-  font-size: 13px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.checkbox-label a {
-  color: #B43F3F;
-  text-decoration: underline;
-}
-.checkbox-label a:hover {
-  color: #e74c3c;
-}
-
-/* Nút đăng ký */
-.register-btn {
-  width: 100%;
-  padding: 14px;
-  background: #B43F3F;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .3s, transform .2s;
-}
-.register-btn:hover {
-  background: #e53935;
-  transform: translateY(-1px);
-}
-.register-btn:active {
-  transform: translateY(0);
-}
-
-/* Divider */
-.divider {
-  position: relative;
-  text-align: center;
-  margin: 28px 0;
-  color: #95a5a6;
-  font-size: 14px;
-}
-.divider::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #ddd;
-}
-.divider span {
-  background: #fff;
-  padding: 0 12px;
-}
-
-/* Social login */
-.social-login {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.social-btn {
-  flex: 1;
-  padding: 11px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all .3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.social-btn i {
-  font-size: 18px;
-}
-.social-btn.google:hover {
-  background: #f8f9fa;
-  border-color: #4285f4;
-  color: #4285f4;
-}
-.social-btn.facebook:hover {
-  background: #f8f9fa;
-  border-color: #1877f2;
-  color: #1877f2;
-}
-
-/* Link đăng nhập */
-.login-text {
-  text-align: center;
-  font-size: 14px;
-  color: #7f8c8d;
-}
-.login-text a {
-  color: #B43F3F;
-  font-weight: 600;
-  text-decoration: underline;
-}
-.login-text a:hover {
-  color: #e53935;
-}
-
-/* ==============================================================
-   RESPONSIVE
-   ============================================================== */
-@media (max-width: 576px) {
-  .register-container {
-    padding: 20px 15px;
-  }
-  .register-header {
-    padding: 25px 20px 15px;
-  }
-  .register-header h2 {
-    font-size: 23px;
-  }
-  .register-form {
+    text-align: center;
+    background: #a4161a;
+    color: #fff;
     padding: 25px 20px;
-  }
-  .social-login {
-    flex-direction: column;
-  }
+}
+
+.register-header h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.register-header p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Form Padding */
+.register-form {
+    padding: 30px 40px;
+}
+
+/* --- GRID LAYOUT (Chia cột) --- */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia đôi 50-50 */
+    gap: 20px; /* Khoảng cách giữa 2 cột */
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.input-group label .required {
+    color: #d32f2f;
+}
+
+/* Style cho Input fields */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+/* Hiệu ứng khi bấm vào input */
+.input-group input:focus {
+    outline: none;
+    border-color: #a4161a;
+    box-shadow: 0 0 0 4px rgba(164, 22, 26, 0.1); /* Highlight đỏ nhạt */
+}
+
+/* Password Toggle Icon */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.password-wrapper .toggle-password:hover {
+    color: #a4161a;
+}
+
+/* Checkbox Terms */
+.terms-checkbox {
+    margin: 10px 0 25px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.checkbox-label input {
+    display: none; /* Ẩn checkbox mặc định */
+}
+
+/* Custom Checkbox đẹp hơn */
+.checkbox-label .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.checkbox-label input:checked + .checkmark {
+    background-color: #a4161a;
+    border-color: #a4161a;
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    content: '\f00c'; /* FontAwesome Check Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-label a {
+    color: #a4161a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+/* Nút Đăng Ký */
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    background: #a4161a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.register-btn:hover {
+    background: #c91e25;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(164, 22, 26, 0.3);
+}
+
+/* Phần Divider và Social */
+.divider {
+    text-align: center;
+    margin: 0 40px 25px;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #eee;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 15px;
+    color: #888;
+    font-size: 13px;
+    position: relative;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    padding: 0 40px 20px;
+}
+
+.login-footer {
+    background: #fdfdfd;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-footer a {
+    color: #a4161a;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    /* Trên mobile thì quay về 1 cột */
+    .form-row {
+        grid-template-columns: 1fr; 
+        gap: 0;
+    }
+    
+    .register-form {
+        padding: 25px 20px;
+    }
+    
+    .social-login {
+        padding: 0 20px 20px;
+        flex-direction: column;
+    }
+    
+    .register-header h2 {
+        font-size: 24px;
+    }
 }
 /* ==============================================================
    PROFILE PAGE – DÙNG CHUNG VỚI LOGIN & REGISTER

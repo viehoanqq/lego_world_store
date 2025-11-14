@@ -1,48 +1,91 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //fix path
   const REPO_NAME = "lego_world_store";
-  let BASE_URL = window.location.origin;
-  if (window.location.hostname.includes("github.io")) {
-    BASE_URL += `/${REPO_NAME}`;
+  let BASE_URL = "";
+  let FILE_ROOT_PREFIX = ""; // Tiền tố cho đường dẫn khi chạy file://
+  let isFile = window.location.protocol === "file:";
+
+  // --- PHẦN SỬA LỖI CHO FILE:// ---
+  // Tự động tìm đường dẫn tới thư mục gốc (root)
+  // bằng cách xem script 'main.js' được gọi từ đâu
+  if (isFile) {
+    const mainScript = document.querySelector('script[src*="assets/js/main.js"]');
+    if (mainScript) {
+      const scriptSrc = mainScript.getAttribute('src');
+      // Ví dụ: src là "../../assets/js/main.js"
+      // Tiền tố (FILE_ROOT_PREFIX) sẽ là "../../"
+      FILE_ROOT_PREFIX = scriptSrc.substring(0, scriptSrc.indexOf('assets/js/main.js'));
+    }
+  }
+  // --- KẾT THÚC PHẦN SỬA LỖI ---
+
+  // Xác định BASE_URL cho môi trường server (GitHub Pages hoặc localhost)
+  if (!isFile && window.location.hostname.includes("github.io")) {
+    BASE_URL = `${window.location.origin}/${REPO_NAME}`;
+  } else if (!isFile) {
+    BASE_URL = window.location.origin;
   }
 
+  /**
+   * Hàm 'path' đã được cập nhật
+   * Nó sẽ chuyển đổi một đường dẫn gốc (ví dụ: "/assets/img.png")
+   * thành đường dẫn chính xác cho mọi môi trường.
+   */
   function path(relativePath) {
-    return `${BASE_URL}${relativePath.startsWith("/") ? "" : "/"}${relativePath}`;
+    if (!relativePath) return "";
+
+    // Luôn xóa dấu / ở đầu để chúng ta kiểm soát tiền tố
+    const cleanPath = relativePath.startsWith('/') ? relativePath.substring(1) : relativePath;
+
+    if (isFile) {
+      // Môi trường file://
+      // Trả về: "../../" + "assets/images/logo.png" (ví dụ)
+      return `${FILE_ROOT_PREFIX}${cleanPath}`;
+    }
+
+    // Môi trường Server (GitHub, localhost)
+    // Trả về: "https://user.github.io/lego_world_store" + "/" + "assets/images/logo.png"
+    return `${BASE_URL}/${cleanPath}`;
   }
 
-  document.querySelectorAll("a[href^='/']").forEach(link => {
-    const fixed = path(link.getAttribute("href"));
-    link.setAttribute("href", fixed);
-  });
+  // Hàm này giữ nguyên như của bạn
+  const fixPaths = (selector, attr) => {
+    // Chỉ chọn các thuộc tính bắt đầu bằng "/"
+    document.querySelectorAll(`${selector}[${attr}^='/']`).forEach(el => {
+      const originalPath = el.getAttribute(attr);
+      el.setAttribute(attr, path(originalPath));
+    });
+  };
 
-  document.querySelectorAll("img[src^='/']").forEach(img => {
-    const fixed_img = path(img.getAttribute("src"));
-    img.setAttribute("src", fixed_img);
-  });
+  // Sửa tất cả đường dẫn
+  fixPaths("a", "href");
+  fixPaths("img", "src");
+  fixPaths("head link", "href");
+  fixPaths("head script", "src"); // Sửa cả script nếu có
 
-  document.querySelectorAll("head link[href^='/']").forEach(link => {
-    link.setAttribute("href", path(link.getAttribute("href")));
-  });
+  // ===============================================
+  // LOGIN LOGIC (Giữ nguyên, giờ nó sẽ chạy đúng)
+  // ===============================================
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const username = localStorage.getItem("username");
 
-  document.querySelectorAll("head script[src^='/']").forEach(script => {
-    script.setAttribute("src", path(script.getAttribute("src")));
-  });
-  // Nếu đang mở trực tiếp qua file://
-  //login
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const name = document.getElementById("name");
+  const nameEl = document.getElementById("name");
   const accountLink = document.getElementById("account-link");
-  if (isLoggedIn === "true") {
-    name.textContent = "Việt Hoàng";
+  const cartLink = document.getElementById("cart-link");
+
+  if (isLoggedIn && nameEl && accountLink) {
+    nameEl.textContent = username || "User";
+    // Hàm path() sẽ tự động sửa link profile này
     accountLink.setAttribute("href", path("/user/account/profile.html"));
   }
 
-  const cartlink = document.getElementById("cart-link");
-  cartlink.addEventListener("click", function (event) {
-    if (isLoggedIn === "false") {
-      event.preventDefault();
-      alert("Vui lòng đăng nhập để xem giỏ hàng.");
-      window.location.href = path("/user/account/login.html");
-    }
-  });
+  if (cartLink) {
+    cartLink.addEventListener("click", function (event) {
+      if (!isLoggedIn) {
+        event.preventDefault();
+        alert("Vui lòng đăng nhập để xem giỏ hàng.");
+        // Hàm path() sẽ tự động sửa link login này
+        window.location.href = path("/user/account/login.html");
+      }
+    });
+  }
 });

@@ -74,12 +74,14 @@
       <div class="filter-box">
         <h3><i class="fa-solid fa-layer-group"></i> Danh mục</h3>
         <div class="filter-group">
-          <label><input type="checkbox"> Phương tiện giao thông (35)</label>
-          <label><input type="checkbox"> LEGO Technic (22)</label>
-          <label><input type="checkbox"> LEGO City (18)</label>
-          <label><input type="checkbox"> LEGO Speed Champions (15)</label>
-          <label><input type="checkbox"> LEGO Creator (12)</label>
-          <label><input type="checkbox"> Siêu anh hùng (8)</label>
+          <label><input type="radio" name="category"> Xe ô tô mô hình (48)</label>
+          <label><input type="radio" name="category"> Tàu vũ trụ (2)</label>
+          <label><input type="radio" name="category"> Lâu đài cổ tích (35)</label>
+          <label><input type="radio" name="category"> Robot chiến binh (28)</label>
+          <label><input type="radio" name="category"> Thành phố hiện đại (31)</label>
+          <label><input type="radio" name="category"> Động vật hoang dã (25)</label>
+          <label><input type="radio" name="category"> Siêu anh hùng (18)</label>
+          <label><input type="radio" name="category"> Kiến trúc nổi tiếng (12)</label>
         </div>
       </div>
 
@@ -87,11 +89,13 @@
       <div class="filter-box">
         <h3><i class="fa-solid fa-child"></i> Độ tuổi</h3>
         <div class="filter-group">
-          <label><input type="checkbox"> 6+ (28)</label>
-          <label><input type="checkbox"> 8+ (32)</label>
-          <label><input type="checkbox"> 10+ (25)</label>
-          <label><input type="checkbox"> 12+ (18)</label>
-          <label><input type="checkbox"> 16+ (10)</label>
+          <label><input type="radio" name="age"> 4+ (52)</label>
+          <label><input type="radio" name="age"> 6+ (68)</label>
+          <label><input type="radio" name="age"> 8+ (45)</label>
+          <label><input type="radio" name="age"> 10+ (32)</label>
+          <label><input type="radio" name="age"> 12+ (28)</label>
+          <label><input type="radio" name="age"> 16+ (15)</label>
+          <label><input type="radio" name="age"> 18+ (8)</label>
         </div>
       </div>
 
@@ -99,18 +103,18 @@
       <div class="filter-box">
         <h3><i class="fa-solid fa-filter-circle-dollar"></i> Khoảng giá</h3>
         <div class="filter-group">
-          <label><input type="checkbox"> Dưới 500.000đ (12)</label>
-          <label><input type="checkbox"> 500.000đ - 1.000.000đ (28)</label>
-          <label><input type="checkbox"> 1.000.000đ - 2.000.000đ (35)</label>
-          <label><input type="checkbox"> 2.000.000đ - 5.000.000đ (22)</label>
-          <label><input type="checkbox"> Trên 5.000.000đ (8)</label>
+          <label><input type="radio" name="price"> Dưới 500.000đ (45)</label>
+          <label><input type="radio" name="price"> 500.000đ - 1.000.000đ (68)</label>
+          <label><input type="radio" name="price"> 1.000.000đ - 2.000.000đ (52)</label>
+          <label><input type="radio" name="price"> 2.000.000đ - 5.000.000đ (38)</label>
+          <label><input type="radio" name="price"> Trên 5.000.000đ (15)</label>
         </div>
         <div style="margin-top: 15px;">
           <small style="color: #666; display: block; margin-bottom: 8px;">Hoặc tự nhập khoảng giá:</small>
           <div class="price-range">
-            <input type="number" placeholder="Từ" min="0">
-            <span>-</span>
-            <input type="number" placeholder="Đến" min="0">
+        <input type="number" placeholder="Từ" min="0">
+        <span>-</span>
+        <input type="number" placeholder="Đến" min="0">
           </div>
         </div>
       </div>
@@ -119,11 +123,13 @@
       <div class="filter-box">
         <h3><i class="fa-solid fa-puzzle-piece"></i> Số mảnh ghép</h3>
         <div class="filter-group">
-          <label><input type="checkbox"> 100 - 500 mảnh (38)</label>
-          <label><input type="checkbox"> 500 - 1000 mảnh (45)</label>
-          <label><input type="checkbox"> 1000 - 2000 mảnh (22)</label>
-          <label><input type="checkbox"> Trên 2000 mảnh (8)</label>
+          <label><input type="radio" name="pieces"> Dưới 100 mảnh (35)</label>
+          <label><input type="radio" name="pieces"> 100 - 500 mảnh (78)</label>
+          <label><input type="radio" name="pieces"> 500 - 1000 mảnh (52)</label>
+          <label><input type="radio" name="pieces"> 1000 - 2000 mảnh (28)</label>
+          <label><input type="radio" name="pieces"> Trên 2000 mảnh (12)</label>
         </div>
+      </div>
       </div>
 
       <button class="btn-filter"><i class="fa-solid fa-filter"></i> Áp dụng bộ lọc</button>
@@ -278,10 +284,6 @@
       <div class="pagination">
         <a href="#">«</a>
         <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
         <a href="#">»</a>
       </div>
     </section>

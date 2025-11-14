@@ -69,6 +69,7 @@ img {
 .sidebar {
   width: 280px;
   flex-shrink: 0;
+  margin-bottom: 40px;
 }
 
 .filter-box {
@@ -104,6 +105,7 @@ img {
   font-size: 13px;
   color: #555;
   border-radius: 4px;
+  font-weight: 700;
   transition: all 0.2s ease;
 }
 
@@ -113,6 +115,7 @@ img {
   padding-left: 10px;
 }
 
+.filter-group input[type="radio"],
 .filter-group input[type="checkbox"] {
   margin-right: 10px;
   width: 18px;
@@ -182,6 +185,8 @@ img {
 /* ------------------- PRODUCT AREA ------------------- */
 .product-area {
   flex: 1;
+  position: relative;
+  padding-bottom: 50px;
 }
 
 .product-header {
@@ -444,10 +449,14 @@ img {
 .pagination {
   display: flex;
   justify-content: center;
+  width: 20%;
   gap: 8px;
   margin: 40px 0;
   flex-wrap: wrap;
-}
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+  margin: 30px auto;}
 
 .pagination a,
 .pagination span {

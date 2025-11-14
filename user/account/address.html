@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi mật khẩu | LEGO World Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/user/account.css">
+    <style>
+.address-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Nút Thêm mới nổi bật */
+.btn-add-address {
+    background-color: #a4161a;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(164, 22, 26, 0.2);
+}
+
+.btn-add-address:hover {
+    background-color: #c91e25;
+    transform: translateY(-1px);
+}
+
+/* Danh sách địa chỉ */
+.address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Thẻ (Card) Địa chỉ từng cái */
+.address-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+
+/* Hover vào card thì viền đỏ nhẹ */
+.address-card:hover {
+    border-color: #a4161a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Cột Thông tin bên trái */
+.addr-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.row-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.row-name .name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.row-name .divider {
+    color: #ccc;
+}
+
+.row-name .phone {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Badge Mặc định */
+.badge-default {
+    font-size: 11px;
+    color: #a4161a;
+    border: 1px solid #a4161a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    background: #fff5f5;
+}
+
+.row-addr p {
+    margin: 4px 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Cột Thao tác bên phải */
+.addr-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    min-width: 140px;
+}
+
+.addr-actions .links {
+    display: flex;
+    gap: 15px;
+}
+
+.action-link {
+    font-size: 14px;
+    color: #0056b3; /* Màu xanh link chuẩn */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+.action-link.text-danger {
+    color: #d32f2f;
+}
+
+/* Nút Thiết lập mặc định */
+.btn-set-default {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-set-default:hover {
+    border-color: #333;
+    background: #333;
+    color: #fff;
+}
+
+/* Nếu là nút disabled (đã là mặc định rồi) */
+.btn-set-default.disabled {
+    opacity: 0.5;
+    cursor: default;
+    background: #eee;
+    border-color: #eee;
+}
+.btn-set-default.disabled:hover {
+    background: #eee;
+    color: #555;
+    border-color: #eee;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .address-header-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-add-address {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .address-card {
+        flex-direction: column;
+    }
+
+    .addr-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+}
+    </style>
+    <script src="../../assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
+            <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
+            <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
+            <span><i class="fa-solid fa-credit-card"></i> Mua hàng trả góp</span>
+            <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
+        </div>
+
+        <div class="main-header">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="/assets/images/logo.png" alt="LEGO World Store" />
+                </a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
+                <a href="/user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
+            </div>
+
+            <div class="user-options">
+                <a href="/user/account/login.html" target="_parent" id="account-link">
+                    <i class="fa-solid fa-user"></i> <span id="name"> Đăng nhập </span>
+                </a>
+                <a href="/user/cart/cart-cart.html" target="_parent" id="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng (1)
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/index.html" target="_parent">TRANG CHỦ</a></li>
+                <li><a href="/user/product/list.html" target="_parent">SẢN PHẨM</a></li>
+                <li><a href="/index.html">HÀNG MỚI</a></li>
+                <li><a href="/index.html">KHUYẾN MÃI</a></li>
+                <li><a href="/index.html">CHỦ ĐỀ</a></li>
+                <li><a href="/index.html">TIN TỨC</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content" style="width: 80%; margin: 30px auto;">
+        <div class="profile-container">
+            <aside class="profile-sidebar">
+                <div class="profile-avatar">
+                    <img src="/assets/images/avt.png" alt="Avatar" class="avatar-img" />
+                    <h3 class="user-name">Nguyễn Việt Hoàng</h3>
+                    <p class="user-email">hihihi@gmail.com</p>
+                </div>
+
+                <nav class="profile-menu">
+                    <a href="/user/account/profile.html" class="menu-item">
+                        <span>Thông tin cá nhân</span>
+                    </a>
+                    <a href="/user/cart/cart-history.html" class="menu-item">
+                        <span>Đơn hàng của tôi</span>
+                    </a>
+                    <a href="/user/account/address.html" class="menu-item active">
+                        <span>Địa chỉ giao hàng</span>
+                    </a>
+                    <a href="/user/account/forgot-password.html" class="menu-item">
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="#" id="logout-btn" class="menu-item text-danger">
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <section class="profile-main">
+                <div class="profile-form-box">
+                    
+                    <div class="address-header-row">
+                        <div>
+                            <h2 class="section-title">Địa chỉ của tôi</h2>
+                            <p class="section-desc">Quản lý địa chỉ nhận hàng</p>
+                        </div>
+                        <button class="btn-add-address" >
+                            <i class="fa-solid fa-plus"></i> Thêm địa chỉ mới
+                        </button>
+                    </div>
+
+                    <div class="address-list">
+                        
+                        <div class="address-card default">
+                            <div class="addr-info">
+                                <div class="row-name">
+                                    <span class="name">Nguyễn Việt Hoàng</span>
+                                    <span class="divider">|</span>
+                                    <span class="phone">0901234567</span>
+                                    <span class="badge-default"><i class="fa-solid fa-check"></i> Mặc định</span>
+                                </div>
+                                <div class="row-addr">
+                                    <p>273 An Dương Vương</p>
+                                    <p>Phường 3, Quận 5, TP. Hồ Chí Minh</p>
+                                </div>
+                            </div>
+                            <div class="addr-actions">
+                                <a href="#" class="action-link">Cập nhật</a>
+                                <button class="btn-set-default disabled" disabled>Thiết lập mặc định</button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="addr-info">
+                                <div class="row-name">
+                                    <span class="name">Nguyễn Văn B</span>
+                                    <span class="divider">|</span>
+                                    <span class="phone">0988777666</span>
+                                </div>
+                                <div class="row-addr">
+                                    <p>Số 10, Đường số 7, KDC Him Lam</p>
+                                    <p>Phường Tân Hưng, Quận 7, TP. Hồ Chí Minh</p>
+                                </div>
+                            </div>
+                            <div class="addr-actions">
+                                <div class="links">
+                                    <a href="#" class="action-link">Cập nhật</a>
+                                    <a href="#" class="action-link text-danger">Xóa</a>
+                                </div>
+                                <button class="btn-set-default">Thiết lập mặc định</button>
+                            </div>
+                        </div>
+                        
+                         <div class="address-card">
+                            <div class="addr-info">
+                                <div class="row-name">
+                                    <span class="name">Công ty LEGO</span>
+                                    <span class="divider">|</span>
+                                    <span class="phone">02839393939</span>
+                                </div>
+                                <div class="row-addr">
+                                    <p>Tầng 12, Tòa nhà Bitexco</p>
+                                    <p>Quận 1, TP. Hồ Chí Minh</p>
+                                </div>
+                            </div>
+                            <div class="addr-actions">
+                                <div class="links">
+                                    <a href="#" class="action-link">Cập nhật</a>
+                                    <a href="#" class="action-link text-danger">Xóa</a>
+                                </div>
+                                <button class="btn-set-default">Thiết lập mặc định</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <span>Miễn phí giao hàng đơn từ 500k</span>
+                <span>Giao hàng hỏa tốc 4 tiếng</span>
+                <span>Hệ thống 200 cửa hàng</span>
+            </div>
+        </div>
+
+        <div class="footer-body">
+
+            <div class="footer-subscribe">
+                <div class="logo">
+                    <a href="/index.html">
+                        <img src="/assets/images/logo.png" alt="LEGO World Store" />
+                    </a>
+                </div>
+                <div class="subscribe-box">
+                    <h4>
+                        <p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p>
+                    </h4>
+                    <form>
+                        <input type="email" placeholder="Nhập email của bạn" required />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                    <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <h4>Kết nối với chúng tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Thông tin liên hệ</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
+                <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
+                <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
+                <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>Điều khoản & Chính sách</h4>
+                    <ul>
+                        <li><a href="/pages/policy.html">Chính sách mua hàng</a></li>
+                        <li><a href="/pages/about.html">Thông tin về LegoWorldStore</a></li>
+                        <li><a href="/pages/contact.html">Thông tin liên hệ</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
+                        <li><a href="#">Chính sách trả góp</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
+                <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script xử lý Đăng xuất
+        document.getElementById("logout-btn").addEventListener("click", function() {
+            localStorage.setItem("isLoggedIn", "false");
+            window.location.href = "../../index.html";
+            alert("Đăng xuất thành công!");
+        });
+    </script>
+</body>
+</html>

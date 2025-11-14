@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký tài khoản | LEGO World Store</title>
+    <title>homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="../../assets/css/components/homepage.css">
     <link rel="stylesheet" href="../../assets/css/user/account.css">
@@ -57,74 +57,62 @@
       </ul>
     </nav>
   </header>
-
-    <!-- ==================== MAIN CONTENT - ĐĂNG KÝ ==================== -->
-    <div class="main-content">
+ <div class="main-content">
         <div class="register-container">
             <div class="register-box">
-                <div class="risteegr-header">
+                <div class="register-header">
                     <h2>Đăng ký tài khoản</h2>
-                    <p>Tham gia LEGO World Store để nhận ưu đãi độc quyền!</p>
+                    <p>Trở thành thành viên LEGO World để nhận ưu đãi!</p>
                 </div>
 
                 <form class="register-form" id="registerForm">
-                    <!-- Họ tên -->
-                    <div class="input-group">
-                        <label>Họ và tên <span class="required">*</span></label>
-                        <input id="user-name" type="text" placeholder="Nguyễn Văn A" required />
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Họ và tên <span class="required">*</span></label>
+                            <input id="user-name" type="text" placeholder="Ví dụ: Nguyễn Văn A" />
+                        </div>
+                        <div class="input-group">
+                            <label>Số điện thoại <span class="required">*</span></label>
+                            <input type="tel" id="user-phone" placeholder="0901234567" />
+                        </div>
                     </div>
 
-                    <!-- Email -->
                     <div class="input-group">
                         <label>Email <span class="required">*</span></label>
-                        <input type="email" id="user-email" placeholder="example@gmail.com" required />
+                        <input type="email" id="user-email" placeholder="example@gmail.com"/>
                     </div>
 
-                    <!-- Số điện thoại -->
-                    <div class="input-group">
-                        <label>Số điện thoại <span class="required">*</span></label>
-                        <input type="tel" id="user-phone" placeholder="0901234567" pattern="[0-9]{10}" required />
-                        <small>Nhập 10 số, bắt đầu bằng 0</small>
-                    </div>
-
-                    <!-- Mật khẩu -->
-                    <div class="input-group">
-                        <label>Mật khẩu <span class="required">*</span></label>
-                        <div class="password-wrapper">
-                            <input type="password" id="registerPassword" placeholder="Tối thiểu 6 ký tự" minlength="6" required />
-                            <span class="toggle-password">
-                                <i class="fa-solid fa-eye"></i>
-                            </span>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Mật khẩu <span class="required">*</span></label>
+                            <div class="password-wrapper">
+                                <input type="password" id="registerPassword" placeholder="Tối thiểu 6 ký tự" />
+                                <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+                            </div>
                         </div>
-                        <small>Tối thiểu 6 ký tự</small>
-                    </div>
-
-                    <!-- Xác nhận mật khẩu -->
-                    <div class="input-group">
-                        <label>Xác nhận mật khẩu <span class="required">*</span></label>
-                        <div class="password-wrapper">
-                            <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu" required />
-                            <span class="toggle-password">
-                                <i class="fa-solid fa-eye"></i>
-                            </span>
+                        <div class="input-group">
+                            <label>Xác nhận mật khẩu <span class="required">*</span></label>
+                            <div class="password-wrapper">
+                                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu"  />
+                                <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+                            </div>
                         </div>
-                        <small>Nhập lại mật khẩu để xác nhận</small>
                     </div>
 
-                    <!-- Đồng ý điều khoản -->
                     <div class="terms-checkbox">
                         <label class="checkbox-label">
                             <input type="checkbox" id="agreeTerms" required />
                             <span class="checkmark"></span>
-                            Tôi đồng ý với <a href="/pages/policy.html" target="_blank">Điều khoản dịch vụ</a> và <a href="/pages/policy.html#privacy" target="_blank">Chính sách bảo mật</a>
+                            <span>Tôi đồng ý với <a href="#">Điều khoản</a> & <a href="#">Chính sách bảo mật</a></span>
                         </label>
                     </div>
 
-                    <button type="submit" class="register-btn">Đăng ký ngay</button>
+                    <button type="submit" class="register-btn" id="register-btn">Đăng ký ngay</button>
                 </form>
 
                 <div class="divider">
-                    <span>Hoặc tiếp tục với</span>
+                    <span>Hoặc đăng ký bằng</span>
                 </div>
 
                 <div class="social-login">
@@ -136,13 +124,12 @@
                     </button>
                 </div>
 
-                <p class="login-text">
-                    Đã có tài khoản? <a href="/user/account/login.html">Đăng nhập</a>
-                </p>
+                <div class="login-footer">
+                    <p>Bạn đã có tài khoản? <a href="/user/account/login.html">Đăng nhập ngay</a></p>
+                </div>
             </div>
         </div>
     </div>
-    <!-- ==================== END MAIN CONTENT ==================== -->
 <!-- Footer -->
 <footer class="main-footer">
 
@@ -222,6 +209,14 @@
     </div>
   </div>
 
-</footer>
+<script>
+document.getElementById("register-btn").addEventListener("click", function() {
+
+  localStorage.setItem("isLoggedIn", "true");
+  window.location.href = "../../index.html";
+  alert("Đăng ký thành công!");
+
+});
+</script>
 </body>
 </html>
