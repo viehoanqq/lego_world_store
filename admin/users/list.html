@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
+    <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+    <link href="../../assets/css/admin/users/list.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <title>User List</title>
+</head>
+
+<body>
+    <aside class="side-bar">
+        <div class="logo">
+            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+        </div>
+        <nav class="menu">
+            <ul class="system">
+                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
+                            class="message">2</span></a> </li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+            <ul class="support">
+                <li><a href="">Help</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="admin-header">
+            <h1>Welcome back, Hoang</h1>
+            <div class="admin-info">
+                <span class="search-bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input placeholder="Search">
+                </span>
+                <span class="info">
+                    <i class="fa-solid fa-bell">
+                        <span class="noti">3</span>
+                    </i>
+                    <img src="../assets/images/avt.png" alt="admin avt" />
+                    <p class="nametag">Việt Hoàng</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        </header>
+        <section class="content">
+    <h2 class="page-title">User List</h2>
+    <div class="user-table-container">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+    <tr>
+        <td>U001</td>
+        <td>Nguyễn Văn A</td>
+        <td>nguyenvana@example.com</td>
+        <td>Admin</td>
+        <td><span class="active">Active</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U002</td>
+        <td>Trần Thị B</td>
+        <td>tranthib@example.com</td>
+        <td>User</td>
+        <td><span class="inactive">Inactive</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U003</td>
+        <td>Lê Minh C</td>
+        <td>leminhc@example.com</td>
+        <td>User</td>
+        <td><span class="active">Active</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U004</td>
+        <td>Phạm Thị D</td>
+        <td>phamthid@example.com</td>
+        <td>Moderator</td>
+        <td><span class="active">Active</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U005</td>
+        <td>Võ Quốc E</td>
+        <td>voquoc.e@example.com</td>
+        <td>User</td>
+        <td><span class="inactive">Inactive</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U006</td>
+        <td>Ngô Thanh F</td>
+        <td>ngothanhf@example.com</td>
+        <td>Admin</td>
+        <td><span class="active">Active</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U007</td>
+        <td>Đặng Thảo G</td>
+        <td>dangthaog@example.com</td>
+        <td>User</td>
+        <td><span class="active">Active</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U008</td>
+        <td>Huỳnh Đức H</td>
+        <td>huynhduch@example.com</td>
+        <td>Moderator</td>
+        <td><span class="inactive">Inactive</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U009</td>
+        <td>Bùi Kim I</td>
+        <td>buikimi@example.com</td>
+        <td>User</td>
+        <td><span class="active">Active</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr>
+        <td>U010</td>
+        <td>Đỗ Hoàng K</td>
+        <td>dohoangk@example.com</td>
+        <td>User</td>
+        <td><span class="inactive">Inactive</span></td>
+        <td>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                   </td>
+                 </tr>
+               </tbody>
+              </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
