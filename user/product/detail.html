@@ -60,9 +60,9 @@
 
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="../../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+    <a href="/index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
     <span>/</span>
-    <a href="../user/list.html">Sản phẩm</a>
+    <a href="/user/product/list.html">Sản phẩm</a>
     <span>/</span>
     <strong>Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257</strong>
   </div>
@@ -116,17 +116,18 @@
             <div class="spec-item"><span class="spec-label">Series:</span> <span class="spec-value">LEGO Star Wars</span></div>
             <div class="spec-item"><span class="spec-label">Tình trạng:</span> <span class="spec-value in-stock">Còn hàng</span></div>
           </div>
-
-          <div class="action-buttons">
+          <a href="/user/cart/cart-cart.html">
+          <div class="action-buttons"> 
             <button class="btn-add-to-cart-large">
               <i class="fa-solid fa-cart-plus"></i> THÊM VÀO GIỎ HÀNG
             </button>
-              <a href="/user/cart/cart-cart.html"><button class="btn-buy-now">
+              <button class="btn-buy-now">
                 <i class="fa-solid fa-bolt"></i> MUA NGAY
             
               </button>
-            </a>
+            
           </div>
+          </a>
 
           <div class="product-features">
             <div class="feature-item"><i class="fa-solid fa-shield-halved"></i> Bảo hành chính hãng 12 tháng</div>
@@ -186,13 +187,13 @@
 <footer class="main-footer">
 
   <!-- Thanh thông báo nhỏ -->
-  <div class="footer-top">
-    <div class="container">
-      <span>Miễn phí giao hàng đơn từ 500k</span>
-      <span>Giao hàng hỏa tốc 4 tiếng</span>
-      <span>Hệ thống 200 cửa hàng</span>
+    <div class="footer-top">
+      <div class="container">
+        <span>Miễn phí giao hàng đơn từ 500k</span>
+        <span>Giao hàng hỏa tốc 4 tiếng</span>
+        <span>Hệ thống 200 cửa hàng</span>
+      </div>
     </div>
-  </div>
 
   <div class="footer-body">
 
@@ -262,5 +263,54 @@
   </div>
 
 </footer>
+
+</footer>
+
+<script src="../../assets/js/main.js" defer ></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  
+  // 1. Tìm tất cả các nút bấm (tab buttons)
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  
+  // 2. Tìm tất cả các nội dung (tab contents)
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  // 3. Lắng nghe sự kiện click trên từng nút
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      
+      // Lấy 'data-tab' của nút được bấm (ví dụ: "description", "specs", "reviews")
+      const targetTabId = button.dataset.tab;
+      
+      // Tìm nội dung tương ứng (ví dụ: thẻ có id="description")
+      const targetContent = document.getElementById(targetTabId);
+
+      // --- Xử lý Active Class ---
+
+      // Xóa class 'active' khỏi TẤT CẢ các nút
+      tabButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+      
+      // Xóa class 'active' khỏi TẤT CẢ các nội dung (để ẩn chúng đi)
+      tabContents.forEach(content => {
+        content.classList.remove("active");
+      });
+
+      // Thêm class 'active' cho nút VỪA BẤM
+      button.classList.add("active");
+      
+      // Thêm class 'active' cho nội dung tương ứng (để hiện nó ra)
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+    });
+  });
+  
+});
+</script>
+
 </body>
 </html>

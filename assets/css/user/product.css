@@ -26,14 +26,7 @@ img {
 }
 
 /* ------------------- LAYOUT ------------------- */
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 40px 60px;
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-}
+
 
 .breadcrumb {
   background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
@@ -69,7 +62,7 @@ img {
 .sidebar {
   width: 280px;
   flex-shrink: 0;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .filter-box {
@@ -123,7 +116,11 @@ img {
   accent-color: #B43F3F;
   cursor: pointer;
 }
-
+.filter-group a{
+  color: #555;
+  font-size: 13px;
+  font-weight: 700;
+}
 .price-range {
   display: flex;
   gap: 10px;

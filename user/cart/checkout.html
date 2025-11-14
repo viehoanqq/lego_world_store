@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thanh toán - LEGO World Store</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../../assets/css/components/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/components/homepage.css">
   <link rel="stylesheet" href="../../assets/css/user/checkout.css">
   <script src="../../assets/js/main.js" defer ></script>
 </head>
 <body>
   <header>
-    <!-- Thanh trên cùng -->
-    <div class="top-bar">
+        <div class="top-bar">
       <span><i class="fa-solid fa-truck-fast"></i> Miễn phí giao hàng đơn từ 500k</span>
       <span><i class="fa-solid fa-bolt"></i> Giao hàng hỏa tốc 4 tiếng</span>
       <span><i class="fa-solid fa-gift"></i> Chương trình thành viên</span>
@@ -24,8 +21,7 @@
       <span><i class="fa-solid fa-store"></i> Hệ thống 200 cửa hàng</span>
     </div>
 
-    <!-- Header chính -->
-    <div class="main-header">
+        <div class="main-header">
       <div class="logo">
         <a href="/index.html">
           <img src="/assets/images/logo.png" alt="LEGO World Store" />
@@ -47,8 +43,7 @@
       </div>
     </div>
 
-    <!-- Menu điều hướng -->
-    <nav class="nav-bar">
+        <nav class="nav-bar">
       <ul>
         <li><a href="/index.html" target="_parent">TRANG CHỦ</a></li>
          <li><a href="/user/product/list.html" target="_parent">SẢN PHẨM</a></li>
@@ -81,45 +76,65 @@
     <span>Xem lại đơn hàng</span>
   </div>
 </div>
-<main class="checkout-page">
-    <section class="checkout-header">
-      <h1>Thanh toán hóa đơn</h1>
-      <p>Vui lòng nhập thông tin giao hàng và chọn phương thức thanh toán.</p>
-    </section>
 
+<main class="checkout-page">
     <section class="checkout-info">
-      <h2>Địa chỉ giao hàng</h2>
+      <h2> Địa chỉ giao hàng</h2>
 
       <div class="address-options">
-        <label class="address-row">
+                <label class="address-row">
           <input type="radio" name="address" checked id="use-default">
           <div>
-            <strong>Nguyễn Văn A</strong> — 123 Nguyễn Trãi, Quận 1, TP.HCM — 0123 456 789
+            <strong>    Nguyễn Văn A</strong> — 0123 456 789
+            <div class="address-detail">    123 Nguyễn Trãi, Phường 1, Quận 1, TP. Hồ Chí Minh</div>
           </div>
         </label>
 
-        <label class="address-row">
+                <label class="address-row">
           <input type="radio" name="address" id="use-new">
-          <div><strong>Nhập địa chỉ mới</strong></div>
+          <div><strong> Nhập địa chỉ mới</strong></div>
         </label>
 
-        <div class="new-address-form" id="new-address-form">
-          <input type="text" placeholder="Họ và tên người nhận">
-          <input type="tel" placeholder="Số điện thoại">
-          <input type="email" placeholder="Email">
-          <input type="text" placeholder="Địa chỉ chi tiết (số nhà, phường, quận, thành phố)">
+                <div class="new-address-form" id="new-address-form">
+                    <div class="form-row">
+            <input type="text" placeholder="Họ và tên người nhận">
+            <input type="tel" placeholder="Số điện thoại">
+          </div>
+          <input type="email" placeholder="Email (Để nhận thông tin đơn hàng)">
+          
+                    <select id="city">
+            <option value="" disabled selected>Chọn Tỉnh/Thành phố</option>
+                        <option value="hcm">TP. Hồ Chí Minh</option>
+            <option value="hanoi">Hà Nội</option>
+            <option value="danang">Đà Nẵng</option>
+          </select>
+          
+                    <select id="district">
+            <option value="" disabled selected>Chọn Quận/Huyện</option>
+            <option value="q1">Quận 1</option>
+            <option value="q5">Quận 5</option>
+          </select>
+          
+                    <select id="ward">
+            <option value="" disabled selected>Chọn Phường/Xã</option>
+            <option value="p1">Phường 1</option>
+            <option value="pDakao">Phường Đa Kao</option>
+          </select>
+          
+                    <input type="text" placeholder="Số nhà, tên đường">
         </div>
       </div>
-
-      <h2>Phương thức thanh toán</h2>
+            <h2> Phương thức thanh toán</h2>
       <div class="payment-options">
         <label><input type="radio" name="payment" checked> Thanh toán khi nhận hàng (COD)</label>
         <label><input type="radio" name="payment"> Chuyển khoản ngân hàng</label>
-        <label><input type="radio" name="payment"> Thanh toán trực tuyến</label>
+        <label><input type="radio" name="payment"> Thanh toán trực tuyến (Momo, VNPay...)</label>
       </div>
 
       <div class="checkout-actions">
-        <a href="/user/cart/cart-cart.html" class="btn-secondary">Quay lại giỏ hàng</a>
+        <a href="/user/cart/cart-cart.html" class="btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Quay lại giỏ hàng
+        </a>
       </div>
     </section>
 
@@ -166,7 +181,7 @@
 
         <div class="order-total">
           <strong>Tổng cộng:</strong>
-          <strong>5.27  0.000đ</strong>
+                    <strong>5.720.000đ</strong>
         </div>
       </div>
 
@@ -174,86 +189,49 @@
     </aside>
   </main>
 
-
-<!-- Footer -->
 <footer class="main-footer">
-
-  <!-- Thanh thông báo nhỏ -->
-  <div class="footer-top">
-    <div class="container">
-      <span>Miễn phí giao hàng đơn từ 500k</span>
-      <span>Giao hàng hỏa tốc 4 tiếng</span>
-      <span>Hệ thống 200 cửa hàng</span>
-    </div>
-  </div>
-
-  <div class="footer-body">
-
-    <!-- Đăng ký nhận tin -->
-    <div class="footer-subscribe">
-      <div class="logo">
-        <a href="/index.html">
-          <img src="/assets/images/logo.png" alt="LEGO World Store" />
-        </a>
-      </div>
-      <div class="subscribe-box">
-        <h4><p class="subscribe-title"><strong>Tham gia ngay</strong> để nhận thông tin ưu đãi từ LEGO WORLD STORE</p></h4>
-        <form>
-          <input type="email" placeholder="Nhập email của bạn" required />
-          <button type="submit">Đăng ký</button>
-        </form>
-        <small class="subscribe-note">*Bạn có thể hủy đăng ký bất kỳ lúc nào!</small>
-      </div>
-    </div>
-
-    <!-- Mạng xã hội -->
-    <div class="footer-social">
-      <h4>Kết nối với chúng tôi</h4>
-      <div class="social-links">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-        <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-        <a href="#"><i class="fa-solid fa-comment-dots"></i> Zalo</a>
-      </div>
-    </div>
-
-    <!-- Thông tin liên hệ -->
-    <div class="footer-contact">
-      <h4>Thông tin liên hệ</h4>
-      <p><i class="fa-solid fa-location-dot"></i> 273 An Dương Vương, Phường 1, Quận 5, TP. Hồ Chí Minh</p>
-      <p><i class="fa-solid fa-phone"></i> 1900 1208</p>
-      <p><i class="fa-solid fa-envelope"></i> hotro@legoworldstore.com.vn</p>
-      <p><i class="fa-regular fa-clock"></i> <strong>Thứ 2 - Thứ 7:</strong> 8:00 - 17:00</p>
-      <p><i class="fa-regular fa-clock"></i> <strong>Chủ nhật:</strong> 8:00 - 12:00</p>
-    </div>
-
-    <!-- Liên kết & Chính sách -->
-    <div class="footer-grid">
-      <div class="footer-links">
-        <h4>Điều khoản & Chính sách</h4>
-        <ul>
-          <li><a href="/pages/policy.html">Chính sách mua hàng</a></li>
-          <li><a href="/pages/about.html">Thông tin về LegoWorldStore</a></li>
-          <li><a href="/pages/contact.html">Thông tin liên hệ</a></li>
-          <li><a href="#">Chính sách thanh toán</a></li>
-          <li><a href="#">Điều kiện & Điều khoản thành viên</a></li>
-          <li><a href="#">Chính sách trả góp</a></li>
-          <li><a href="#">Hệ thống cửa hàng</a></li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Bản quyền -->
-  <div class="footer-bottom">
+    <div class="footer-bottom">
     <div class="container">
       <p>&copy; 2025 LEGO World Store. All rights reserved.</p>
       <p>Công ty cổ phần LEGO - Số ĐKKD: 0309132354</p>
     </div>
   </div>
-
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const useDefaultRadio = document.getElementById('use-default');
+    const useNewRadio = document.getElementById('use-new');
+    const newAddressForm = document.getElementById('new-address-form');
+
+    // 1. Ẩn form đi lúc ban đầu
+    if(newAddressForm) {
+        // Kiểm tra xem 'use-new' có được check sẵn không
+        if (!useNewRadio.checked) {
+            newAddressForm.style.display = 'none';
+        }
+    }
+
+    // 2. Bấm vào "Dùng địa chỉ mặc định"
+    if(useDefaultRadio) {
+        useDefaultRadio.addEventListener('change', function() {
+            if(this.checked) {
+                newAddressForm.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. Bấm vào "Nhập địa chỉ mới"
+    if(useNewRadio) {
+        useNewRadio.addEventListener('change', function() {
+            if(this.checked) {
+                newAddressForm.style.display = 'block';
+            }
+        });
+    }
+});
+</script>
+
 </body>
 </html>
+

@@ -65,33 +65,33 @@
                 <p>Chào mừng quay lại LEGO World Store!</p>
             </div>
 
-            <form class="login-form" id="loginForm">
-                <div class="input-group">
-                    <label>Email hoặc Số điện thoại</label>
-                    <input id="username" type="text" placeholder="Nhập email hoặc số điện thoại" required />
-                </div>
+           <form class="login-form" id="loginForm">
+    <div class="input-group">
+        <label>Email hoặc Số điện thoại</label>
+        <input 
+            id="username" 
+            type="text" 
+            placeholder="Nhập email hoặc số điện thoại" 
+            required
+            pattern="(^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$)|(^0[3|5|7|8|9][0-9]{8}$)"
+            title="Nhập email hoặc số điện thoại hợp lệ"
+        />
+    </div>
 
-                <div class="input-group">
-                    <label>Mật khẩu</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" placeholder="Nhập mật khẩu" required />
-                        <span class="toggle-password" onclick="togglePassword()">
-                            <i class="fa-solid fa-eye"></i>
-                        </span>
-                    </div>
-                </div>
+    <div class="input-group">
+        <label>Mật khẩu</label>
+        <input 
+            type="password" 
+            id="password" 
+            placeholder="Nhập mật khẩu" 
+            required
+            minlength="6"
+            title="Mật khẩu ít nhất 6 ký tự"
+        />
+    </div>
 
-                <div class="login-options">
-                    <label class="remember-me">
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
-                        Ghi nhớ đăng nhập
-                    </label>
-                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
-                </div>
-
-                <button type="submit" class="login-btn" id="login-btn">Đăng nhập</button>
-            </form>
+    <button type="submit" class="login-btn" id="login-btn">Đăng nhập</button>
+</form>
 
             <div class="divider">
                 <span>Hoặc tiếp tục với</span>
@@ -192,13 +192,20 @@
   </div>
 
 <script>
-document.getElementById("login-btn").addEventListener("click", function() {
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // ngăn submit mặc định
 
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("username", document.getElementById("username").value);
-  window.location.href = "../../index.html";
-  alert("Đăng nhập thành công!");
+    // Kiểm tra HTML validity
+    if (!this.checkValidity()) {
+        alert("this.reportValidity()"); 
+        return;
+    }
 
+    // Nếu hợp lệ, xử lý login
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", document.getElementById("username").value);
+    alert("Đăng nhập thành công!");
+    window.location.href = "../../index.html";
 });
 </script>
 </body>
