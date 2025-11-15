@@ -641,7 +641,7 @@ img {
   margin: 20px 0;
 }
 
-.btn-add-to-cart-large,
+.btn-add-to-cart,
 .btn-buy-now {
   flex: 1;
   padding: 14px;
@@ -657,12 +657,12 @@ img {
   transition: all 0.3s ease;
 }
 
-.btn-add-to-cart-large {
+.btn-add-to-cart{
   background: #ffc107;
   color: #000;
 }
 
-.btn-add-to-cart-large:hover {
+.btn-add-to-cart:hover {
   background: #ffdb5c;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255,193,7,0.4);

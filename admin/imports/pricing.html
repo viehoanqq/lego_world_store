@@ -57,6 +57,21 @@
 
     .no-data {text-align:center;padding:30px;color:#666;font-style:italic;}
 
+    /* THÊM MỚI: CSS CHO NÚT LƯU */
+    .btn-save {
+      padding: 6px 12px;
+      background: #22c55e; /* Màu xanh lá */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .btn-save:hover {
+      background: #16a34a;
+    }
+
     @media(max-width:768px){
       .filter-group{flex-direction:column;align-items:stretch;}
       .filter-group input,.filter-group select,.filter-group button{width:100%;}
@@ -87,12 +102,9 @@
 
   <div class="main-content">
     <header class="admin-header">
-      <h1>Quản lý tồn kho</h1>
+      <h1>Quản lý giá bán</h1>
       <div class="admin-info">
-        <span class="search-bar">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          <input placeholder="Tìm kiếm...">
-        </span>
+        
         <span class="info">
           <i class="fa-solid fa-bell"><span class="noti">3</span></i>
           <img src="/assets/images/avt.png" alt="Ảnh admin" />
@@ -100,17 +112,14 @@
           <i class="fa-solid fa-chevron-down"></i>
         </span>
       </div>
-    </header> <!-- ĐÓNG HEADER TẠI ĐÂY -->
-    <section class="content">
-      <!-- 3 chế độ -->
-      <div class="report-buttons">
+    </header>     <section class="content">
+            <div class="report-buttons">
         <button id="btnByCategory" class="active">Theo danh mục</button>
         <button id="btnByProduct">Theo sản phẩm</button>
         <button id="btnLookup">Tra cứu giá & lợi nhuận</button>
       </div>
 
-      <!-- Bộ lọc (giao diện) -->
-      <div class="filter-group">
+            <div class="filter-group">
         <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
         <select id="categoryFilter">
           <option value="">Tất cả danh mục</option>
@@ -118,8 +127,7 @@
         <button id="btnFilter"><i class="fa-solid fa-filter"></i> Lọc</button>
       </div>
 
-      <!-- Bảng -->
-      <div class="table-container">
+            <div class="table-container">
         <table id="pricingTable">
           <thead id="tableHeader">
             <tr>
@@ -131,6 +139,7 @@
               <th id="col5" style="display:none;">% LN</th>
               <th id="col6" style="display:none;">Giá bán</th>
               <th id="col7" style="display:none;">Lợi nhuận</th>
+                            <th id="colAction" style="display:none;">Thao tác</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
@@ -176,13 +185,17 @@
     const col5 = document.getElementById('col5');
     const col6 = document.getElementById('col6');
     const col7 = document.getElementById('col7');
+    // THÊM MỚI: Lấy cột Thao tác
+    const colAction = document.getElementById('colAction');
 
     // Ẩn tất cả trước
-    [col1, col2, col3, col4, col5, col6, col7].forEach(c => c.style.display = 'none');
+    // THAY ĐỔI: Thêm colAction vào danh sách ẩn
+    [col1, col2, col3, col4, col5, col6, col7, colAction].forEach(c => c.style.display = 'none');
 
     if (mode === 'category') {
-
-      [col1, col2, col3].forEach(c => c.style.display = '');
+      
+      // THAY ĐỔI: Chỉ hiển thị col1, col2 và colAction (SỬA LỖI)
+      [col1, col2, colAction].forEach(c => c.style.display = '');
 
       const catProfits = {};
       products.forEach(p => {
@@ -194,6 +207,7 @@
       let i = 1;
       for (const [cat, data] of Object.entries(catProfits)) {
         const avg = (data.total / data.count).toFixed(2);
+        // THAY ĐỔI: Thêm <td> chứa nút Lưu
         tableBody.innerHTML += `
           <tr>
             <td>${i++}</td>
@@ -202,6 +216,7 @@
               <input type="number" class="profit-input" value="${avg}" min="0" step="0.1" style="width:70px;">
               <span>%</span>
             </td>
+            <td><button class="btn-save">Lưu</button></td>
           </tr>`;
       }
     }
@@ -210,10 +225,12 @@
       col4.innerText = 'Giá vốn';
       col5.innerText = '% Lợi nhuận';
       col6.innerText = 'Giá bán';
-      [col3, col4, col5, col6].forEach(c => c.style.display = '');
+      // THAY ĐỔI: Hiển thị thêm colAction
+      [col3, col4, col5, col6, colAction].forEach(c => c.style.display = '');
 
       products.forEach((p, i) => {
         const { price } = calculatePrice(p.cost, p.profitPercent);
+        // THAY ĐỔI: Thêm <td> chứa nút Lưu
         tableBody.innerHTML += `
           <tr>
             <td>${i+1}</td>
@@ -224,6 +241,7 @@
               <span>%</span>
             </td>
             <td class="price">${price.toLocaleString()}₫</td>
+            <td><button class="btn-save">Lưu</button></td>
           </tr>`;
       });
     }
@@ -233,6 +251,7 @@
       col5.innerText = '% LN';
       col6.innerText = 'Giá bán';
       col7.innerText = 'Lợi nhuận';
+      // Chế độ tra cứu không cần nút lưu, giữ nguyên
       [col3, col4, col5, col6, col7].forEach(c => c.style.display = '');
 
       products.forEach((p, i) => {
@@ -250,7 +269,8 @@
     }
 
     if (!tableBody.innerHTML) {
-      tableBody.innerHTML = `<tr><td colspan="8" class="no-data">Không có dữ liệu.</td></tr>`;
+      // THAY ĐỔI: Cập nhật colspan
+      tableBody.innerHTML = `<tr><td colspan="9" class="no-data">Không có dữ liệu.</td></tr>`;
     }
   }
 
@@ -266,9 +286,7 @@
   document.getElementById('btnByProduct').onclick = () => setActiveMode('product', document.getElementById('btnByProduct'));
   document.getElementById('btnLookup').onclick = () => setActiveMode('lookup', document.getElementById('btnLookup'));
 
-  document.getElementById('btnFilter').onclick = () => {
-    alert('Chức năng lọc sẽ được triển khai sau!');
-  };
+
 
   // Cập nhật giá khi thay đổi % LN
   tableBody.addEventListener('input', e => {
@@ -283,6 +301,23 @@
       cells[4].textContent = price.toLocaleString() + '₫';
     }
   });
+
+  // THÊM MỚI: Sự kiện click cho nút Lưu
+  tableBody.addEventListener('click', e => {
+    if (e.target.classList.contains('btn-save')) {
+      // Lấy hàng (tr) chứa nút được bấm
+      const row = e.target.closest('tr');
+      if (mode === 'category') {
+        const categoryName = row.cells[1].textContent;
+        const newPercent = row.cells[2].querySelector('.profit-input').value;
+      } else if (mode === 'product') {
+        const productName = row.cells[1].textContent;
+        const newPercent = row.cells[3].querySelector('.profit-input').value;
+      }
+      // Trong ứng dụng thực tế, bạn sẽ gửi dữ liệu này lên server.
+    }
+  });
+
 
   // Khởi tạo
   renderTable();

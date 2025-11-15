@@ -5,21 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link href="../assets/css/admin/dashboard.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <script src="../assets/js/admin.js" defer ></script>
+    <script src="../assets/js/admin.js" defer></script>
     <title>Bảng điều khiển</title>
+
+    <style>
+        /* ==== GIỮ NGUYÊN TOÀN BỘ CSS CŨ ==== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito Sans', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+        .side-bar { position: fixed; left: 0; top: 0; width: 260px; height: 100vh; background: #ffffff; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; z-index: 1000; transition: all 0.3s ease; }
+        .side-bar .logo { height: 80px; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); display: flex; align-items: center; justify-content: center; padding: 0 20px; }
+        .side-bar .logo h2 a { color: white; font-size: 24px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; }
+        .side-bar .menu { flex: 1; padding: 20px 0; overflow-y: auto; }
+        .side-bar .menu ul { list-style: none; }
+        .side-bar .menu li { margin: 4px 12px; }
+        .side-bar .menu a { display: flex; align-items: center; padding: 12px 16px; color: #64748b; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 15px; transition: all 0.25s ease; position: relative; }
+        .side-bar .menu a i { font-size: 18px; width: 28px; text-align: center; margin-right: 12px; }
+        .side-bar .menu a:hover { background: #eef2ff; color: #4f46e5; }
+        .side-bar .menu a.active { background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); }
+        .side-bar .menu a.active i { color: white; }
+        .side-bar .menu .message { background: #ef4444; color: white; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 50%; position: absolute; right: 12px; top: 10px; }
+        .side-bar .menu .support { border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: auto; }
+        .side-bar .menu .support a { color: #94a3b8; font-weight: 500; }
+        .side-bar .menu .support a:hover { color: #4f46e5; background: #f8fafc; }
+        .main-content { margin-left: 260px; min-height: 100vh; background: #f8fafc; transition: margin-left 0.3s ease; }
+        .admin-header { position: fixed; top: 0; left: 260px; right: 0; height: 80px; background: white; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; padding: 0 30px; z-index: 999; }
+        .admin-header h1 { font-size: 22px; font-weight: 700; color: #1e293b; }
+        .admin-info { display: flex; align-items: center; gap: 20px; }
+        .info { display: flex; align-items: center; gap: 16px; position: relative; }
+        .info .fa-bell { position: relative; font-size: 20px; color: #64748b; cursor: pointer; }
+        .info .noti { position: absolute; top: -6px; right: -6px; background: #ef4444; color: white; font-size: 10px; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .info img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0; }
+        .nametag { font-weight: 600; color: #1e293b; margin-right: 8px; }
+        .info .fa-chevron-down { color: #94a3b8; font-size: 14px; }
+        .content { margin-top: 100px; padding: 30px; }
+        .stat-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+        .stat-card { background: white; border-radius: 20px; padding: 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); border: 1px solid #f1f5f9; }
+        .stat-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+        .stat-header i { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white; }
+        .stat-card:nth-child(1) .stat-header i { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .stat-card:nth-child(2) .stat-header i { background: linear-gradient(135deg, #10b981, #059669); }
+        .stat-card:nth-child(3) .stat-header i { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .stat-name h3 { font-size: 15px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+        .stat-name p { font-size: 13px; color: #94a3b8; }
+        .stat-value h2 { font-size: 32px; font-weight: 800; color: #1e293b; margin-bottom: 12px; }
+        .stat-footer { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+        .stat-footer i { font-size: 16px; }
+        .stat-footer .fa-arrow-trend-up { color: #22c55e; }
+        .stat-footer .fa-arrow-trend-down { color: #ef4444; }
+        .percent { font-weight: 700; }
+        .subtext { color: #94a3b8; font-size: 13px; }
+        .stat-bottom { display: grid; grid-template-columns: 1fr 380px; gap: 30px; }
+        .sale-performance { background: white; border-radius: 20px; padding: 28px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); border: 1px solid #f1f5f9; }
+        .sale-performance .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .sale-performance h2 { font-size: 18px; font-weight: 700; color: #1e293b; }
+        .export { display: flex; gap: 12px; }
+        .export button { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; color: #64748b; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
+        .export button:hover { background: #eef2ff; color: #4f46e5; border-color: #c4b5fd; }
+        .right-chart { display: flex; flex-direction: column; gap: 24px; }
+        .category-chart-container, .delivery-status { background: white; border-radius: 20px; padding: 28px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); border: 1px solid #f1f5f9; }
+        .category-chart-container h2, .delivery-status h2 { font-size: 17px; font-weight: 700; color: #1e293b; margin-bottom: 20px; }
+        @media (max-width: 1200px) { .stat-bottom { grid-template-columns: 1fr; } .right-chart { flex-direction: row; overflow-x: auto; } .category-chart-container, .delivery-status { min-width: 300px; } }
+        @media (max-width: 992px) { .side-bar { transform: translateX(-100%); } .main-content, .admin-header { margin-left: 0; left: 0; } .admin-header { padding: 0 20px; } }
+        .system a.active { background: linear-gradient(135deg, #6366f1, #4f46e5); color: white !important; border-radius: 12px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); }
+        .system a.active i { color: white !important; }
+
+        /* === CHỈ SỬA 3 BIỂU ĐỒ MỚI === */
+        /* BIỂU ĐỒ 1: LINE CHART */
+        .chart-line { display: flex; height: 260px; position: relative; font-size: 13px; }
+        .y-axis { width: 40px; display: flex; flex-direction: column; justify-content: space-between; color: #94a3b8; padding-right: 8px; text-align: right; }
+        .chart-area { flex: 1; position: relative; border-left: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+        .grid-lines { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .grid-line { border-top: 1px dashed #e5e7eb; }
+        .data-line { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+        .line-earnings { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+        .line-costs { stroke: #f59e0b; stroke-width: 2.5; fill: none; }
+        .dot { r: 4; fill: white; stroke-width: 2; }
+        .dot-earnings { stroke: #3b82f6; }
+        .dot-costs { stroke: #f59e0b; }
+        .x-labels { display: flex; justify-content: space-between; margin-top: 8px; color: #94a3b8; font-size: 13px; }
+        .legend-line { display: flex; justify-content: center; gap: 32px; margin-bottom: 16px; font-size: 13px; color: #6b7280; }
+        .legend-item-line { display: flex; align-items: center; gap: 6px; }
+        .legend-item-line::before { content: ''; width: 12px; height: 3px; background: currentColor; border-radius: 2px; }
+
+        /* BIỂU ĐỒ 2: DONUT */
+        .donut-container { display: flex; flex-direction: column; align-items: center; }
+        .donut-chart { width: 160px; height: 160px; position: relative; }
+        .donut-chart svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+        .donut-bg { fill: none; stroke: #e5e7eb; stroke-width: 28; }
+        .donut-segment { fill: none; stroke-width: 28; stroke-linecap: round; }
+        .donut-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 22px; font-weight: 700; color: #1e293b; }
+        .donut-legend { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; width: 100%; }
+        .donut-legend-item { display: flex; justify-content: space-between; font-size: 13.5px; color: #4b5563; }
+        .donut-legend-item::before { content: ''; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; }
+
+        /* BIỂU ĐỒ 3: BAR */
+        .bar-container { margin-top: 16px; }
+        .status-bars { display: flex; height: 20px; border-radius: 10px; overflow: hidden; margin-bottom: 16px; border: 1px solid #e5e7eb; }
+        .bar-delivered { width: 60%; background: #22c55e; }
+        .bar-shipping { width: 25%; background: #f59e0b; }
+        .bar-pending { width: 15%; background: #cbd5e1; }
+        .bar-legend { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #6b7280; }
+        .bar-legend-item { display: flex; justify-content: space-between; align-items: center; }
+        .bar-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+    </style>
 </head>
 
 <body>
     <aside class="side-bar">
-        <div class="logo">
-            <h2><a href="/admin/dashboard.html">LEGO STORE </a></h2>
-        </div>
+        <div class="logo"><h2><a href="/admin/dashboard.html">LEGO STORE</a></h2></div>
         <nav class="menu">
             <ul class="system">
                 <li class="active"><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
@@ -32,7 +128,6 @@
                 <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
                 <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
-
             <ul class="support">
                 <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
@@ -43,14 +138,8 @@
         <header class="admin-header">
             <h1>Quản lý</h1>
             <div class="admin-info">
-                <span class="search-bar">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input placeholder="Tìm kiếm...">
-                </span>
                 <span class="info">
-                    <i class="fa-solid fa-bell">
-                        <span class="noti">3</span>
-                    </i>
+                    <i class="fa-solid fa-bell"><span class="noti">3</span></i>
                     <img src="/assets/images/avt.png" alt="Ảnh admin" />
                     <p class="nametag">Việt Hoàng</p>
                     <i class="fa-solid fa-chevron-down"></i>
@@ -69,16 +158,13 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                    <div class="stat-value">
-                        <h2>12.323$</h2>
-                    </div>
+                    <div class="stat-value"><h2>12.323$</h2></div>
                     <div class="stat-footer">
                         <i class="fa-solid fa-arrow-trend-up"></i>
                         <p class="percent">+15.23%</p>
                         <p class="subtext">+1.2k tuần này</p>
                     </div>
                 </div>
-
                 <div class="stat-card">
                     <div class="stat-header">
                         <i class="fa-solid fa-users"></i>
@@ -88,16 +174,13 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                    <div class="stat-value">
-                        <h2>1,232</h2>
-                    </div>
+                    <div class="stat-value"><h2>1,232</h2></div>
                     <div class="stat-footer">
                         <i class="fa-solid fa-arrow-trend-up"></i>
                         <p class="percent">+11.23%</p>
                         <p class="subtext">+4.5k tuần này</p>
                     </div>
                 </div>
-
                 <div class="stat-card">
                     <div class="stat-header">
                         <i class="fa-solid fa-rotate-left"></i>
@@ -107,9 +190,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                    <div class="stat-value">
-                        <h2>823</h2>
-                    </div>
+                    <div class="stat-value"><h2>823</h2></div>
                     <div class="stat-footer">
                         <i class="fa-solid fa-arrow-trend-down"></i>
                         <p class="percent">-23.73%</p>
@@ -119,6 +200,7 @@
             </div>
 
             <div class="stat-bottom">
+                <!-- BIỂU ĐỒ 1: HIỆU SUẤT BÁN HÀNG -->
                 <div class="sale-performance">
                     <div class="header">
                         <h2>Hiệu suất bán hàng</h2>
@@ -127,100 +209,100 @@
                             <button>14 ngày gần đây <i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="chart-container">
-
+                    <div class="legend-line">
+                        <div class="legend-item-line" style="color:#3b82f6">Doanh thu</div>
+                        <div class="legend-item-line" style="color:#f59e0b">Chi phí</div>
+                    </div>
+                    <div class="chart-line">
                         <div class="y-axis">
                             <span>250</span><span>200</span><span>150</span><span>100</span><span>50</span><span>0</span>
                         </div>
-
-                        <div class="chart-content">
-                            <div class="chart-header">
-                                <div class="legend earnings">Doanh thu</div>
-                                <div class="legend costs">Chi phí</div>
+                        <div class="chart-area">
+                            <div class="grid-lines">
+                                <div class="grid-line" style="top:0%"></div>
+                                <div class="grid-line" style="top:20%"></div>
+                                <div class="grid-line" style="top:40%"></div>
+                                <div class="grid-line" style="top:60%"></div>
+                                <div class="grid-line" style="top:80%"></div>
                             </div>
-
-                            <svg viewBox="0 0 700 300" preserveAspectRatio="none">
-                                <g class="grid">
-                                    <line x1="0" y1="250" x2="700" y2="250"/>
-                                    <line x1="0" y1="200" x2="700" y2="200"/>
-                                    <line x1="0" y1="150" x2="700" y2="150"/>
-                                    <line x1="0" y1="100" x2="700" y2="100"/>
-                                    <line x1="0" y1="50" x2="700" y2="50"/>
-                                </g>
-
-                                <path class="path-earnings" d="M0,180 C100,140 200,150 300,80 C400,60 500,240 600,180 C700,100 700,100 700,100" />
-                                <path class="path-costs" d="M0,130 C100,200 200,130 300,150 C400,100 500,190 600,160 C700,140 700,140 700,140" />
-
-                                <!-- điểm doanh thu -->
-                                <circle class="circle-earnings" cx="0" cy="180" r="5"/>
-                                <circle class="circle-earnings" cx="100" cy="140" r="5"/>
-                                <circle class="circle-earnings" cx="200" cy="150" r="5"/>
-                                <circle class="circle-earnings" cx="300" cy="80" r="5"/>
-                                <circle class="circle-earnings" cx="400" cy="60" r="5"/>
-                                <circle class="circle-earnings" cx="500" cy="240" r="5"/>
-                                <circle class="circle-earnings" cx="600" cy="180" r="5"/>
-                                <circle class="circle-earnings" cx="700" cy="100" r="5"/>
-
-                                <!-- điểm chi phí -->
-                                <circle class="circle-costs" cx="0" cy="130" r="5"/>
-                                <circle class="circle-costs" cx="100" cy="200" r="5"/>
-                                <circle class="circle-costs" cx="200" cy="130" r="5"/>
-                                <circle class="circle-costs" cx="300" cy="150" r="5"/>
-                                <circle class="circle-costs" cx="400" cy="100" r="5"/>
-                                <circle class="circle-costs" cx="500" cy="190" r="5"/>
-                                <circle class="circle-costs" cx="600" cy="160" r="5"/>
-                                <circle class="circle-costs" cx="700" cy="140" r="5"/>
+                            <svg class="data-line">
+                                <polyline class="line-earnings" points="0,72 100,56 200,60 300,32 400,24 500,96 600,72 700,40" />
+                                <polyline class="line-costs" points="0,52 100,80 200,52 300,60 400,40 500,76 600,64 700,56" />
+                                <circle class="dot dot-earnings" cx="0" cy="72" />
+                                <circle class="dot dot-earnings" cx="100" cy="56" />
+                                <circle class="dot dot-earnings" cx="200" cy="60" />
+                                <circle class="dot dot-earnings" cx="300" cy="32" />
+                                <circle class="dot dot-earnings" cx="400" cy="24" />
+                                <circle class="dot dot-earnings" cx="500" cy="96" />
+                                <circle class="dot dot-earnings" cx="600" cy="72" />
+                                <circle class="dot dot-earnings" cx="700" cy="40" />
+                                <circle class="dot dot-costs" cx="0" cy="52" />
+                                <circle class="dot dot-costs" cx="100" cy="80" />
+                                <circle class="dot dot-costs" cx="200" cy="52" />
+                                <circle class="dot dot-costs" cx="300" cy="60" />
+                                <circle class="dot dot-costs" cx="400" cy="40" />
+                                <circle class="dot dot-costs" cx="500" cy="76" />
+                                <circle class="dot dot-costs" cx="600" cy="64" />
+                                <circle class="dot dot-costs" cx="700" cy="56" />
                             </svg>
-
-                            <div class="labels">
-                                <span>03 Tư</span>
-                                <span>05 Sáu</span>
-                                <span>07 CN</span>
-                                <span>09 Ba</span>
-                                <span>11 Năm</span>
-                                <span>13 Bảy</span>
-                                <span>15 Hai</span>
-                                <span>16 Ba</span>
-                            </div>
                         </div>
+                    </div>
+                    <div class="x-labels">
+                        <span>03 Tư</span><span>05 Sáu</span><span>07 CN</span><span>09 Ba</span>
+                        <span>11 Năm</span><span>13 Bảy</span><span>15 Hai</span><span>16 Ba</span>
                     </div>
                 </div>
 
                 <div class="right-chart">
-                    <h2>Top danh mục</h2>
+                    <!-- BIỂU ĐỒ 2: TOP DANH MỤC -->
                     <div class="category-chart-container">
-                        <div class="category-ring">
-                            <div class="category-value">$6.2k</div>
-                        </div>
-
-                        <div class="category-legend">
-                            <div class="legend-item electronics">Xe ô tô mô hình</div>
-                            <div class="legend-item laptops">Tàu vũ trụ</div>
-                            <div class="legend-item phones">Robot chiến binh</div>
+                        <h2>Top danh mục</h2>
+                        <div class="donut-container">
+                            <div class="donut-chart">
+                                <svg>
+                                    <circle class="donut-bg" cx="80" cy="80" r="66"></circle>
+                                    <circle class="donut-segment" cx="80" cy="80" r="66" stroke="#3b82f6" stroke-dasharray="207.3 377.0" stroke-dashoffset="0"></circle>
+                                    <circle class="donut-segment" cx="80" cy="80" r="66" stroke="#10b981" stroke-dasharray="94.2 377.0" stroke-dashoffset="-207.3"></circle>
+                                    <circle class="donut-segment" cx="80" cy="80" r="66" stroke="#ef4444" stroke-dasharray="75.4 377.0" stroke-dashoffset="-301.5"></circle>
+                                </svg>
+                                <div class="donut-center">$6.2k</div>
+                            </div>
+                            <div class="donut-legend">
+                                <div class="donut-legend-item"><span style="color:#3b82f6">Xe ô tô mô hình</span><span>55%</span></div>
+                                <div class="donut-legend-item"><span style="color:#10b981">Tàu vũ trụ</span><span>25%</span></div>
+                                <div class="donut-legend-item"><span style="color:#ef4444">Robot chiến binh</span><span>20%</span></div>
+                            </div>
                         </div>
                     </div>
 
+                    <!-- BIỂU ĐỒ 3: TRẠNG THÁI GIAO HÀNG -->
                     <div class="delivery-status">
                         <h2>Trạng thái giao hàng</h2>
-                        <div class="border-ds">
-                            <div class="status-bar">
-                                <div class="delivered"></div>
-                                <div class="shipping"></div>
-                                <div class="pending"></div>
+                        <div class="bar-container">
+                            <div class="status-bars">
+                                <div class="bar-delivered"></div>
+                                <div class="bar-shipping"></div>
+                                <div class="bar-pending"></div>
                             </div>
-                            <div class="legend">
-                                <div><span class="dot delivered"></span>Đã giao <span class="percent">60%</span></div>
-                                <div><span class="dot shipping"></span>Đang giao <span class="percent">25%</span></div>
-                                <div><span class="dot pending"></span>Chờ xử lý <span class="percent">15%</span></div>
+                            <div class="bar-legend">
+                                <div class="bar-legend-item">
+                                    <span><i class="bar-dot" style="background:#22c55e"></i>Đã giao</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="bar-legend-item">
+                                    <span><i class="bar-dot" style="background:#f59e0b"></i>Đang giao</span>
+                                    <span>25%</span>
+                                </div>
+                                <div class="bar-legend-item">
+                                    <span><i class="bar-dot" style="background:#cbd5e1"></i>Chờ xử lý</span>
+                                    <span>15%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </section>
     </div>
-
 </body>
 </html>

@@ -9,7 +9,9 @@
   width: 100%;
   max-width: none;
 }
-
+.content-box {
+  padding-top: 130px;
+}
 /* ==== TOOLBAR ==== */
 .messages-toolbar {
   display: flex;
