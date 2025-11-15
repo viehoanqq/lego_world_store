@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+  <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+  <link href="../../assets/css/admin/import.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <script src="../../assets/js/admin.js" defer></script> 
+
+  <title>Quản lý tồn kho</title>
+
+  <style>
+    :root { --primary: #6366f1; }
+
+    body {font-family:'Nunito Sans',sans-serif;margin:0;padding:0;background:#f5f5f5;}
+    .main-content {padding:20px;}
+    h1 {margin-bottom:15px;}
+
+    .report-buttons {display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+    .report-buttons button {
+      padding:12px 20px;border-radius:8px;cursor:pointer;
+      border:1px solid #ccc;background:#f3f4f6;font-size:1rem;font-weight:600;
+      transition: all 0.2s;
+    }
+    .report-buttons button:hover {background:#e5e7eb;}
+    .report-buttons button.active {
+      background:var(--primary);color:#fff;border-color:var(--primary);
+    }
+
+    .filter-group {
+      display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;align-items:center;
+    }
+    .filter-group input,
+    .filter-group select,
+    .filter-group button {
+      padding:10px;border:1px solid #ccc;border-radius:6px;font-size:.95rem;
+    }
+    .filter-group input[type="date"] {width:160px;}
+    .filter-group select {min-width:180px;}
+    .filter-group input[type="text"] {min-width:250px;}
+    .filter-group button {
+      background:var(--primary);color:#fff;border:none;cursor:pointer;
+      min-width:100px;font-weight:600;
+    }
+    .filter-group button:hover {background:#4f46e5;}
+
+    table {width:100%;border-collapse:collapse;margin-top:20px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.1);}
+    th,td {border:1px solid #ddd;padding:10px;text-align:center;}
+    th {background:var(--primary);color:#fff;font-weight:600;}
+
+    .status-warning {background:#f59e0b;color:#fff;padding:4px 10px;border-radius:12px;font-size:.8rem;font-weight:500;}
+    .status-active {background:#10b981;color:#fff;padding:4px 10px;border-radius:12px;font-size:.8rem;font-weight:500;}
+
+    .no-data {text-align:center;padding:30px;color:#666;font-style:italic;}
+
+    @media(max-width:768px){
+      .filter-group{flex-direction:column;align-items:stretch;}
+      .filter-group input,.filter-group select,.filter-group button{width:100%;}
+    }
+  </style>
+</head>
+
+<body>
+  <aside class="side-bar">
+    <div class="logo"><h2><a href="/admin/dashboard.html">LEGO STORE</a></h2></div>
+    <nav class="menu">
+      <ul class="system">
+        <li><a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+        <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+        <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+        <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+        <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+        <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+        <li><a href="/admin/imports/inventorys.html" class="active"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+        <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+        <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
+      </ul>
+      <ul class="support">
+        <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header class="admin-header">
+      <h1>Quản lý tồn kho</h1>
+      <div class="admin-info">
+        <span class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input placeholder="Tìm kiếm...">
+        </span>
+        <span class="info">
+          <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+          <img src="/assets/images/avt.png" alt="Ảnh admin" />
+          <p class="nametag">Việt Hoàng</p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+      </div>
+    </header> <!-- ĐÓNG HEADER TẠI ĐÂY -->
+
+    <section class="content">
+      <!-- Chọn chế độ -->
+      <div class="report-buttons">
+        <button id="btnStock" class="active">Tra cứu tồn kho</button>
+        <button id="btnWarning">Cảnh báo tồn kho</button>
+        <button id="btnReport">Báo cáo nhập‑xuất‑tồn</button>
+      </div>
+
+      <!-- Bộ lọc + Nút Lọc -->
+      <div class="filter-group" id="filterGroup">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+        <select id="categoryFilter">
+          <option value="">Tất cả danh mục</option>
+        </select>
+        <div id="dateFilter" style="display:none;gap:8px;">
+          <input type="date" id="startDate">
+          <input type="date" id="endDate">
+        </div>
+        <button id="btnFilter"><i class="fa-solid fa-filter"></i> Lọc</button>
+      </div>
+
+      <!-- Bảng dữ liệu -->
+      <div class="table-container">
+        <table id="inventoryTable">
+          <thead id="tableHeader">
+            <tr>
+              <th>STT</th>
+              <th>Sản phẩm</th>
+              <th>Danh mục</th>
+              <th id="col1">Tồn kho</th>
+              <th id="col2">Tình trạng</th>
+              <th id="col3" style="display:none;">Nhập trong kỳ</th>
+              <th id="col4" style="display:none;">Xuất trong kỳ</th>
+              <th id="col5" style="display:none;">Tồn đầu kỳ</th>
+              <th id="col6" style="display:none;">Tồn cuối kỳ</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const products = [
+      { id: 1, name: "LEGO Star Wars Tàu Millennium Falcon", category: "Tàu vũ trụ", stock: 12, import: 50, export: 38 },
+      { id: 2, name: "LEGO Technic Xe Ferrari", category: "Xe ô tô mô hình", stock: 10, import: 30, export: 20 },
+      { id: 3, name: "LEGO Friends Thành phố Heartlake", category: "Thành phố hiện đại", stock: 8, import: 25, export: 22 },
+      { id: 4, name: "LEGO Ninjago Rồng Huyền Thoại", category: "Động vật hoang dã", stock: 16, import: 40, export: 24 },
+      { id: 5, name: "LEGO Creator Xe Máy Bay", category: "Xe ô tô mô hình", stock: 9, import: 15, export: 6 },
+      { id: 6, name: "LEGO Duplo Thị Trấn", category: "Thành phố hiện đại", stock: 3, import: 10, export: 7 }
+    ];
+
+    let mode = 'stock';
+    const tableBody = document.getElementById('tableBody');
+
+    function renderTable() {
+      tableBody.innerHTML = '';
+      const cols = ['col1','col2','col3','col4','col5','col6'].map(id => document.getElementById(id));
+
+      if (mode === 'stock' || mode === 'warning') {
+        cols[0].innerText = 'Tồn kho';
+        cols[1].innerText = 'Tình trạng';
+        cols.slice(0,2).forEach(c => c.style.display = '');
+        cols.slice(2).forEach(c => c.style.display = 'none');
+
+        products.forEach((p, i) => {
+          if (mode === 'warning' && p.stock > 5) return;
+          const status = p.stock > 5
+            ? '<span class="status-active">Đầy đủ</span>'
+            : '<span class="status-warning">Sắp hết hàng</span>';
+          tableBody.innerHTML += `<tr>
+            <td>${i+1}</td><td>${p.name}</td><td>${p.category}</td>
+            <td>${p.stock}</td><td>${status}</td>
+          </tr>`;
+        });
+      } 
+      else if (mode === 'report') {
+        cols[0].innerText = 'Tồn đầu kỳ';
+        cols[1].innerText = 'Nhập trong kỳ';
+        cols[2].innerText = 'Xuất trong kỳ';
+        cols[5].innerText = 'Tồn cuối kỳ';
+        [0,1,2,5].forEach(i => cols[i].style.display = '');
+        [3,4].forEach(i => cols[i].style.display = 'none');
+
+        products.forEach((p, i) => {
+          const opening = p.stock - p.import + p.export;
+          tableBody.innerHTML += `<tr>
+            <td>${i+1}</td><td>${p.name}</td><td>${p.category}</td>
+            <td>${opening}</td><td>${p.import}</td><td>${p.export}</td><td>${p.stock}</td>
+          </tr>`;
+        });
+      }
+
+      if (!tableBody.innerHTML) {
+        tableBody.innerHTML = `<tr><td colspan="9" class="no-data">Không có dữ liệu.</td></tr>`;
+      }
+    }
+
+    function setActiveMode(newMode, btn) {
+      mode = newMode;
+      document.querySelectorAll('.report-buttons button')
+              .forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('dateFilter').style.display =
+        newMode === 'report' ? 'flex' : 'none';
+      renderTable();
+    }
+
+    document.getElementById('btnStock').onclick = () => setActiveMode('stock', document.getElementById('btnStock'));
+    document.getElementById('btnWarning').onclick = () => setActiveMode('warning', document.getElementById('btnWarning'));
+    document.getElementById('btnReport').onclick = () => setActiveMode('report', document.getElementById('btnReport'));
+
+    renderTable();
+  </script>
+</body>
+</html>

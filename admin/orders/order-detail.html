@@ -1,109 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Price List - LEGO Store Admin</title>
-
-  <!-- Fonts & Icons -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết đơn hàng - LEGO Store Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <!-- Styles -->
-  <link href="/assets/css/components/admin-sidebar.css" rel="stylesheet">
-  <link href="/assets/css/admin/order-management.css" rel="stylesheet">
+  <link href="../../assets/css/admin/order-management.css" rel="stylesheet">
+    <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+  <script src="../../assets/js/main.js" defer></script>
 </head>
-
 <body>
-  <!-- === SIDEBAR === -->
-  <aside class="side-bar">
-        <div class="logo">
-            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
-        </div>
-        <nav class="menu">
-            <ul class="system">
-                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
-                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
-                            class="message">2</span></a> </li>
-                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
-                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
-                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
-                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
-                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
-                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+
+<aside class="side-bar">
+  <div class="logo"><h2><a href="/admin/dashboard.html">LEGO STORE</a></h2></div>
+  <nav class="menu">
+    <ul class="system">
+                <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html" ><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html" class="active"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
+
             <ul class="support">
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
-        </nav>
-    </aside>
-    <div class="main-content">
-        <header class="admin-header">
-            <h1>Welcome back, Hoang</h1>
-            <div class="admin-info">
-                <span class="search-bar">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input placeholder="Search">
-                </span>
-                <span class="info">
-                    <i class="fa-solid fa-bell">
-                        <span class="noti">3</span>
-                    </i>
-                    <img src="/assets/images/avt.png" alt="admin avt" />
-                    <p class="nametag">Việt Hoàng</p>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </span>
-            </div>
-        </header>
+  </nav>
+</aside>
 
-<!--Main-->
-    <div class="order-detail">
-        <h2>Order Detail</h2>
-        <div class="info">
-            <p><strong>Order ID:</strong> #DH001</p>
-            <p><strong>Date:</strong> 2025-10-28</p>
-            <p><strong>Customer:</strong> Nguyen Van A</p>
-            <p><strong>Phone:</strong> 0912 345 678</p>
-            <p><strong>Address:</strong> 215 Nguyen Trai, Q1, TP.HCM</p>
-            <p><strong>Total:</strong> 2,400,000₫</p>
-
-            <label>Status:</label>
-            <select>
-                <option>New</option>
-                <option selected>Processing</option>
-                <option>Shipped</option>
-                <option>Canceled</option>
-            </select>
-        </div>
-
-        <h3>Products</h3>
-        <table>
-            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
-            <tr><td>Lego Car</td><td>1</td><td>500,000₫</td><td>500,000₫</td></tr>
-            <tr><td>Lego City</td><td>2</td><td>700,000₫</td><td>1,400,000₫</td></tr>
-            <tr><td>Lego Ninjago</td><td>1</td><td>500,000₫</td><td>500,000₫</td></tr>
-        </table>
-
-        <div class="total-box">
-            <p><strong>Subtotal:</strong> 2,400,000₫</p>
-            <p><strong>Shipping:</strong> 30,000₫</p>
-            <p><strong>VAT (10%):</strong> 240,000₫</p>
-            <hr>
-            <p class="grand"><strong>Grand Total: 2,670,000₫</strong></p>
-        </div>
-
-        <button class="save-btn">Save</button>
-
+<div class="main-content">
+  <header class="admin-header">
+    <h1>Chi tiết đơn hàng</h1>
+    <div class="admin-info">
+      <span class="search-bar">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input placeholder="Tìm kiếm...">
+      </span>
+      <span class="info">
+        <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+        <img src="/assets/images/avt.png" alt="Admin" />
+        <p class="nametag">Việt Hoàng</p>
+        <i class="fa-solid fa-chevron-down"></i>
+      </span>
     </div>
-    
+  </header>
 
+  <div class="order-detail">
+    
+    <h2>Chi tiết đơn hàng #DH003</h2>
+    <div class="info">
+      <p><strong>Khách hàng:</strong> Phạm Văn C</p>
+      <p><strong>Ngày đặt:</strong> 2025-10-21</p>
+      <p><strong>Trạng thái:</strong>
+        <select>
+          <option value="new">Mới</option>
+          <option value="processing">Đang xử lý</option>
+          <option value="shipped" selected>Đã gửi</option>
+          <option value="cancel">Đã hủy</option>
+        </select>
+      </p>
+    </div>
+
+    <h2>Sản phẩm trong đơn</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Mã</th>
+          <th>Ảnh</th>
+          <th>Tên sản phẩm</th>
+          <th>Danh mục</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Thành tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#41704</td>
+          <td><img src="/assets/images/product3.webp" alt="LEGO Friends Thành phố Heartlake 41704" style="width:80px; border-radius:8px;"></td>
+          <td>Bộ xếp hình LEGO Friends Thành phố Heartlake 41704</td>
+          <td>Thành phố hiện đại</td>
+          <td>1</td>
+          <td>1.800.000₫</td>
+          <td>1.800.000₫</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total-box">
+      <p><strong>Tổng tiền:</strong> <span class="grand">1.800.000₫</span></p>
+    </div>
+
+    <button class="save-btn">Cập nhật trạng thái</button>
+    
+  </div>
+</div>
 
 </body>
 </html>

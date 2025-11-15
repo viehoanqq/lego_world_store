@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý tỷ lệ lợi nhuận & giá bán</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS chung -->
+    <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+    <link href="../../assets/css/admin/product.css" rel="stylesheet">
+
+    <style>
+        /* ===== ACTION BAR ===== */
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-filter {
+            display: flex;
+            gap: 12px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-filter input,
+        .search-filter select {
+            padding: 12px 16px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+
+        .search-filter input:focus,
+        .search-filter select:focus {
+            border-color: #B43F3F;
+            box-shadow: 0 0 0 3px rgba(180, 63, 63, 0.1);
+        }
+
+        /* ===== TABLE ===== */
+        .table-container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #f8f9fa;
+        }
+
+        thead th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 14px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        tbody td {
+            padding: 16px;
+            color: #495057;
+            font-size: 14px;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== PRICE & PROFIT ===== */
+        .price {
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .profit-rate {
+            font-weight: 600;
+            color: #d32f2f;
+        }
+
+        .profit-rate.positive {
+            color: #2e7d32;
+        }
+
+        /* ===== STATUS BADGE ===== */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-hidden {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* ===== ACTION BUTTONS ===== */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .icon-btn i {
+            font-size: 16px;
+        }
+
+        .icon-btn.edit {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .icon-btn.edit:hover {
+            background-color: #1976d2;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+        }
+
+        .icon-btn.profit {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .icon-btn.profit:hover {
+            background-color: #2e7d32;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .pagination-info {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .pagination-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .pagination-buttons button {
+            padding: 8px 12px;
+            border: 1.5px solid #dee2e6;
+            background: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            color: #495057;
+        }
+
+        .pagination-buttons button:hover:not(:disabled) {
+            background: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
+        }
+
+        .pagination-buttons button.active {
+            background: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
+        }
+
+        .pagination-buttons button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .search-filter {
+                flex-direction: column;
+            }
+
+            .search-filter input,
+            .search-filter select {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .action-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .action-bar > * {
+                width: 100%;
+            }
+
+            .search-filter {
+                min-width: auto;
+            }
+
+            th:nth-child(5), td:nth-child(5),
+            th:nth-child(6), td:nth-child(6) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <aside class="side-bar">
+        <div class="logo">
+            <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+        </div>
+        <nav class="menu">
+            <ul class="system">
+                <li><a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li class="active"><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán & lợi nhuận</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
+            </ul>
+            <ul class="support">
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <header class="admin-header">
+            <h1>Quản lý tỷ lệ lợi nhuận & giá bán</h1>
+            <div class="admin-info">
+                <span class="search-bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input placeholder="Tìm kiếm...">
+                </span>
+                <span class="info">
+                    <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+                    <img src="/assets/images/avt.png" alt="Admin" />
+                    <p class="nametag">Việt Hoàng</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <!-- ACTION BAR -->
+            <div class="action-bar">
+                <div class="search-filter">
+                    <input type="text" placeholder="Tìm sản phẩm..." id="searchProductInput">
+                    <select id="categoryFilter">
+                        <option value="all">Tất cả danh mục</option>
+                        <option value="xe-oto">Xe ô tô mô hình</option>
+                        <option value="tau-vu-tru">Tàu vũ trụ</option>
+                        <option value="thanh-pho">Thành phố hiện đại</option>
+                        <option value="dong-vat">Động vật hoang dã</option>
+                    </select>
+                    <select id="profitFilter">
+                        <option value="all">Tất cả lợi nhuận</option>
+                        <option value="low">Dưới 20%</option>
+                        <option value="medium">20% - 40%</option>
+                        <option value="high">Trên 40%</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="applyBulkProfit()">
+                    <i class="fa-solid fa-percentage"></i> Áp dụng lợi nhuận hàng loạt
+                </button>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã</th>
+                            <th>Sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Giá nhập</th>
+                            <th>Giá bán</th>
+                            <th>Lợi nhuận</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product 1 -->
+                        <tr>
+                            <td>#75257</td>
+                            <td><strong>LEGO Star Wars Millennium Falcon</strong></td>
+                            <td>Tàu vũ trụ</td>
+                            <td>1.800.000₫</td>
+                            <td class="price">2.500.000₫</td>
+                            <td class="profit-rate positive">+38.9%</td>
+                            <td><span class="status-badge status-active">Đang bán</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn edit" title="Chỉnh sửa giá">
+                                        <i class="fa-solid fa-pen"></i> Sửa
+                                    </button>
+                                    <button class="icon-btn profit" title="Tính lại lợi nhuận">
+                                        <i class="fa-solid fa-calculator"></i> Tính
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product 2 -->
+                        <tr>
+                            <td>#42143</td>
+                            <td><strong>LEGO Technic Ferrari</strong></td>
+                            <td>Xe ô tô mô hình</td>
+                            <td>2.500.000₫</td>
+                            <td class="price">3.200.000₫</td>
+                            <td class="profit-rate positive">+28%</td>
+                            <td><span class="status-badge status-active">Đang bán</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn edit" title="Chỉnh sửa giá">
+                                        <i class="fa-solid fa-pen"></i> Sửa
+                                    </button>
+                                    <button class="icon-btn profit" title="Tính lại lợi nhuận">
+                                        <i class="fa-solid fa-calculator"></i> Tính
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product 3 -->
+                        <tr>
+                            <td>#41704</td>
+                            <td><strong>LEGO Friends Heartlake</strong></td>
+                            <td>Thành phố hiện đại</td>
+                            <td>1.300.000₫</td>
+                            <td class="price">1.800.000₫</td>
+                            <td class="profit-rate positive">+38.5%</td>
+                            <td><span class="status-badge status-active">Đang bán</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn edit" title="Chỉnh sửa giá">
+                                        <i class="fa-solid fa-pen"></i> Sửa
+                                    </button>
+                                    <button class="icon-btn profit" title="Tính lại lợi nhuận">
+                                        <i class="fa-solid fa-calculator"></i> Tính
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product 4 -->
+                        <tr>
+                            <td>#71753</td>
+                            <td><strong>LEGO Ninjago Rồng Huyền Thoại</strong></td>
+                            <td>Động vật hoang dã</td>
+                            <td>700.000₫</td>
+                            <td class="price">900.000₫</td>
+                            <td class="profit-rate positive">+28.6%</td>
+                            <td><span class="status-badge status-active">Đang bán</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn edit" title="Chỉnh sửa giá">
+                                        <i class="fa-solid fa-pen"></i> Sửa
+                                    </button>
+                                    <button class="icon-btn profit" title="Tính lại lợi nhuận">
+                                        <i class="fa-solid fa-calculator"></i> Tính
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product 5 -->
+                        <tr>
+                            <td>#31126</td>
+                            <td><strong>LEGO Creator Xe Máy Bay</strong></td>
+                            <td>Xe ô tô mô hình</td>
+                            <td>580.000₫</td>
+                            <td class="price">750.000₫</td>
+                            <td class="profit-rate positive">+29.3%</td>
+                            <td><span class="status-badge status-active">Đang bán</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn edit" title="Chỉnh sửa giá">
+                                        <i class="fa-solid fa-pen"></i> Sửa
+                                    </button>
+                                    <button class="icon-btn profit" title="Tính lại lợi nhuận">
+                                        <i class="fa-solid fa-calculator"></i> Tính
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product 6 -->
+                        <tr>
+                            <td>#10933</td>
+                            <td><strong>LEGO Duplo Thị Trấn</strong></td>
+                            <td>Thành phố hiện đại</td>
+                            <td>900.000₫</td>
+                            <td class="price">1.100.000₫</td>
+                            <td class="profit-rate positive">+22.2%</td>
+                            <td><span class="status-badge status-active">Đang bán</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="icon-btn edit" title="Chỉnh sửa giá">
+                                        <i class="fa-solid fa-pen"></i> Sửa
+                                    </button>
+                                    <button class="icon-btn profit" title="Tính lại lợi nhuận">
+                                        <i class="fa-solid fa-calculator"></i> Tính
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- PAGINATION -->
+                <div class="pagination">
+                    <div class="pagination-info">Hiển thị 1-6 của 24 sản phẩm</div>
+                    <div class="pagination-buttons">
+                        <button disabled><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Áp dụng lợi nhuận hàng loạt
+        function applyBulkProfit() {
+            const rate = prompt("Nhập tỷ lệ lợi nhuận mong muốn (%)", "30");
+            if (rate && !isNaN(rate)) {
+                alert(`Đã áp dụng lợi nhuận ${rate}% cho tất cả sản phẩm!`);
+                // Logic thực tế sẽ gọi API
+            }
+        }
+
+        // Tìm kiếm và lọc
+        document.getElementById('searchProductInput').addEventListener('input', filterTable);
+        document.getElementById('categoryFilter').addEventListener('change', filterTable);
+        document.getElementById('profitFilter').addEventListener('change', filterTable);
+
+        function filterTable() {
+            const search = document.getElementById('searchProductInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const profit = document.getElementById('profitFilter').value;
+            const rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const name = row.cells[1].textContent.toLowerCase();
+                const cat = row.cells[2].textContent;
+                const profitText = row.cells[5].textContent;
+
+                let show = true;
+                if (search && !name.includes(search)) show = false;
+                if (category !== 'all' && !cat.includes(category)) show = false;
+                if (profit !== 'all') {
+                    const rate = parseFloat(profitText.replace('%', ''));
+                    if (profit === 'low' && rate >= 20) show = false;
+                    if (profit === 'medium' && (rate < 20 || rate > 40)) show = false;
+                    if (profit === 'high' && rate <= 40) show = false;
+                }
+
+                row.style.display = show ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>

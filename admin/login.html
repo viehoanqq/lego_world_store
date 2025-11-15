@@ -4,35 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login | Lego Store</title>
+  <title>Đăng nhập Quản trị | Lego Store</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
     rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
   <link rel="stylesheet" href="../assets/css/admin/login.css">
+  <link rel="stylesheet" href="../assets/js/admin.js">
 </head>
 
 <body>
   <div class="login-container">
     <img class="logo" src="../assets/images/logo.png">
-    <h1 class="login-title">Admin Panel</h1>
-    <p class="login-subtitle">Sign in to your account</p>
+    <h1 class="login-title">Trang quản trị</h1>
+    <p class="login-subtitle">Đăng nhập để tiếp tục</p>
 
     <form class="login-form" action="dashboard.html" method="get">
-      <input id="username" type="text" placeholder="Username" required>
+      <input id="username" type="text" placeholder="Tên đăng nhập" required>
+
       <div class="pw-group">
-        <input id="password" type="password" placeholder="Password" required>
+        <input id="password" type="password" placeholder="Mật khẩu" required>
         <i class="fa-solid fa-eye toggle-password"></i>
       </div>
+
       <div class="pw-option">
-        <label><input type="checkbox" name="remember"> Remember me</label>
-        <a href="#" class="forgot-link">Forgot password?</a>
+        <label><input type="checkbox" name="remember"> Ghi nhớ đăng nhập</label>
+        <a href="#" class="forgot-link">Quên mật khẩu?</a>
       </div>
 
-      <button type="submit" class="login-btn">Login</button>
+      <button type="submit" class="login-btn" id="login-btn">Đăng nhập</button>
     </form>
   </div>
 </body>

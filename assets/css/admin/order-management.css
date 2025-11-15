@@ -1,8 +1,9 @@
 /* ============================================= */
-/*          LEGO ADMIN - ORDER MANAGEMENT        */
+/*          LEGO ADMIN - QUẢN LÝ ĐƠN HÀNG       */
+/*          MÀU CHỦ ĐẠO: #6366f1               */
 /* ============================================= */
 
-/* ==== RESET & BASE ==== */
+/* ==== RESET & CƠ BẢN ==== */
 * {
   margin: 0;
   padding: 0;
@@ -11,23 +12,25 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  background: #f8fafc;
+  background: #f4f5f7;
   color: #1e293b;
   line-height: 1.6;
 }
 
-/* ==== LAYOUT ==== */
+/* ==== BỐ CỤC ==== */
 .main-content {
   margin-left: 260px;
+  margin-top: 100px;
   min-height: 100vh;
   transition: margin-left 0.3s ease;
-  background: #f8fafc;
+  background: #f4f5f7;
   padding-bottom: 40px;
 }
 
+/* Header */
 .admin-header {
   height: 80px;
-  background: white;
+  background: #fff;
   border-bottom: 1px solid #e2e8f0;
   padding: 0 30px;
   display: flex;
@@ -36,6 +39,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .admin-header h1 {
@@ -50,10 +54,11 @@ body {
   gap: 18px;
 }
 
+/* Thanh tìm kiếm */
 .admin-header .search-bar {
   display: flex;
   align-items: center;
-  background: #f1f5f9;
+  background: #e0e7ff;
   padding: 6px 12px;
   border-radius: 12px;
 }
@@ -64,8 +69,17 @@ body {
   outline: none;
   padding: 4px 8px;
   font-size: 14px;
+  color: #1e293b;
 }
 
+.admin-header .search-bar button {
+  background: transparent;
+  border: none;
+  color: #6366f1;
+  cursor: pointer;
+}
+
+/* Icon thông báo */
 .admin-header .admin-info i {
   font-size: 18px;
   color: #475569;
@@ -77,38 +91,30 @@ body {
   top: -6px;
   right: -6px;
   background: #ef4444;
-  color: white;
+  color: #fff;
   font-size: 10px;
   border-radius: 50%;
   padding: 2px 5px;
 }
 
 /* ============================================= */
-/*             1. ORDERS LIST PAGE               */
+/*             1. TRANG DANH SÁCH ĐƠN HÀNG      */
 /* ============================================= */
 
 .orders-container {
   padding: 32px;
 }
 
-.orders-container h2 {
-  font-size: 26px;
-  font-weight: 800;
-  color: #1e293b;
-  margin-bottom: 24px;
-}
-
-/* === FILTERS === */
+/* Bộ lọc */
 .filters {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 16px;
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: #fff;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
   margin-bottom: 24px;
 }
 
@@ -123,54 +129,54 @@ body {
 .filters input,
 .filters select {
   padding: 10px 14px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1.5px solid #c7d2fe;
+  border-radius: 12px;
   font-size: 14px;
   outline: none;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .filters input:focus,
 .filters select:focus {
   border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
 }
 
+/* Nút lọc */
 .filter-btn {
   padding: 10px 20px;
   background: linear-gradient(135deg, #6366f1, #4f46e5);
-  color: white;
+  color: #fff;
   font-weight: 700;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .filter-btn:hover {
   background: linear-gradient(135deg, #4f46e5, #4338ca);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(99,102,241,0.25);
 }
 
-/* === TABLE === */
+/* Bảng danh sách đơn hàng */
 .orders-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
 }
 
 .orders-table th {
-  background: #f8fafc;
+  background: #eef2ff;
   text-align: left;
-  padding: 14px 18px;
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #475569;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
 }
 
 .orders-table td {
@@ -180,15 +186,17 @@ body {
 }
 
 .orders-table tr:hover {
-  background: #f8faff;
+  background: #f0f4ff;
 }
 
+/* Tag trạng thái */
 .tag {
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: capitalize;
+  display: inline-block;
 }
 
 .tag.new { background: #dbeafe; color: #1d4ed8; }
@@ -196,157 +204,225 @@ body {
 .tag.shipped { background: #dcfce7; color: #16a34a; }
 .tag.cancel { background: #fee2e2; color: #dc2626; }
 
+/* Nút xem chi tiết */
 .detail-btn {
   display: inline-block;
-  background: #10b981;
-  color: white;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
   text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 12px;
   font-size: 13px;
   font-weight: 700;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .detail-btn:hover {
-  background: #059669;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(99,102,241,0.25);
 }
-
 /* ============================================= */
-/*             2. ORDER DETAIL PAGE              */
+/*        TRANG CHI TIẾT ĐƠN HÀNG MỚI          */
 /* ============================================= */
 
 .order-detail {
   padding: 32px;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* Tiêu đề */
 .order-detail h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   color: #1e293b;
   margin-bottom: 24px;
+  border-left: 6px solid #6366f1;
+  padding-left: 12px;
 }
 
-/* Info box */
+/* Hộp thông tin khách hàng */
 .order-detail .info {
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: #fff;
   border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  padding: 24px 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .order-detail .info p {
+  flex: 1 1 250px;
   font-size: 15px;
-  padding: 6px 0;
+  line-height: 1.6;
 }
 
 .order-detail select {
-  margin-top: 12px;
+  margin-top: 8px;
   padding: 10px 14px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1.5px solid #c7d2fe;
+  border-radius: 12px;
   outline: none;
   font-size: 14px;
+  transition: all 0.3s;
 }
 
 .order-detail select:focus {
   border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
 }
 
-/* Products Table */
+/* Bảng sản phẩm */
 .order-detail table {
   width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border: 1px solid #e2e8f0;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 16px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  margin-top: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  background: #fff;
 }
 
 .order-detail th {
-  background: #f8fafc;
-  padding: 14px 18px;
-  text-align: left;
+  background: #eef2ff;
+  padding: 16px 20px;
   font-weight: 700;
-  color: #475569;
+  color: #1e293b;
   font-size: 14px;
+  text-align: left;
 }
 
 .order-detail td {
-  padding: 14px 18px;
-  border-top: 1px solid #f1f5f9;
+  padding: 16px 20px;
   font-size: 15px;
+  border-top: 1px solid #f1f5f9;
+  vertical-align: middle;
 }
 
 .order-detail tr:hover {
-  background: #f8faff;
+  background: #f0f4ff;
+  transition: background 0.3s;
 }
 
-/* Total Box */
+/* Ảnh sản phẩm */
+.order-detail td img {
+  width: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Tổng tiền */
 .total-box {
-  margin-top: 24px;
-  background: white;
+  margin-top: 32px;
+  background: #fff;
   border-radius: 16px;
-  padding: 24px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-}
-
-.total-box p {
+  padding: 24px 32px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
   display: flex;
   justify-content: space-between;
-  padding: 6px 0;
-  font-size: 15px;
-}
-
-.total-box hr {
-  border: none;
-  border-top: 1px dashed #e2e8f0;
-  margin: 12px 0;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
 }
 
 .total-box .grand {
-  font-size: 18px;
-  font-weight: 800;
-  color: #dc2626;
+  color: #6366f1;
+  font-size: 20px;
 }
 
-/* Save Button */
+/* Nút lưu trạng thái */
 .save-btn {
-  margin-top: 20px;
-  padding: 14px 20px;
+  margin-top: 24px;
+  padding: 16px 0;
   width: 100%;
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
   font-weight: 700;
   font-size: 16px;
   border: none;
-  border-radius: 14px;
+  border-radius: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .save-btn:hover {
-  background: linear-gradient(135deg, #059669, #047857);
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
   transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(99,102,241,0.3);
+}
+/* Nút trở về */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5ff;
+  color: #6366f1;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
 }
 
-/* ============================================= */
-/*                 RESPONSIVE                    */
-/* ============================================= */
+.back-btn i {
+  font-size: 16px;
+}
+
+.back-btn:hover {
+  background: #6366f1;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(99,102,241,0.25);
+  transform: translateX(-4px);
+}
+
+/* Responsive */
 @media (max-width: 992px) {
-  .main-content { margin-left: 0; }
-  .filters { flex-direction: column; align-items: stretch; }
+  .order-detail .info {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
-  .orders-table, .order-detail table {
+  .order-detail table th,
+  .order-detail table td {
+    padding: 12px 10px;
     font-size: 13px;
   }
+  
+  .order-detail td img {
+    width: 60px;
+  }
+  
+  .total-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
+.pagination {
+            margin-top: 15px;
+            display: flex;
+           
+            justify-content: center;
+            align-items: center;
+            gap: 5px; 
+        }
+        .pagination button {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 7px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pagination button.active {
+            background-color: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
+        }

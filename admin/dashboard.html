@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -11,61 +11,61 @@
 
     <link href="../assets/css/admin/dashboard.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <title>Dashboard</title>
+    <script src="../assets/js/admin.js" defer ></script>
+    <title>Bảng điều khiển</title>
 </head>
 
 <body>
     <aside class="side-bar">
         <div class="logo">
-            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+            <h2><a href="/admin/dashboard.html">LEGO STORE </a></h2>
         </div>
         <nav class="menu">
             <ul class="system">
-                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
-                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
-                            class="message">2</span></a> </li>
-                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
-                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
-                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
-                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
-                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
-                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+                <li class="active"><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
+
             <ul class="support">
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
         </nav>
     </aside>
 
     <div class="main-content">
         <header class="admin-header">
-            <h1>Welcome back, Hoang</h1>
+            <h1>Quản lý</h1>
             <div class="admin-info">
                 <span class="search-bar">
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input placeholder="Search">
+                    <input placeholder="Tìm kiếm...">
                 </span>
                 <span class="info">
                     <i class="fa-solid fa-bell">
                         <span class="noti">3</span>
                     </i>
-                    <img src="/assets/images/avt.png" alt="admin avt" />
+                    <img src="/assets/images/avt.png" alt="Ảnh admin" />
                     <p class="nametag">Việt Hoàng</p>
                     <i class="fa-solid fa-chevron-down"></i>
                 </span>
             </div>
         </header>
-        <!---noi dung o day-->
+
         <section class="content">
             <div class="stat-top">
                 <div class="stat-card">
                     <div class="stat-header">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <div class="stat-name">
-                            <h3>Total Sales</h3>
-                            <p>212 Orders</p>
+                            <h3>Tổng doanh thu</h3>
+                            <p>212 đơn</p>
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="stat-footer">
                         <i class="fa-solid fa-arrow-trend-up"></i>
                         <p class="percent">+15.23%</p>
-                        <p class="subtext">+1.2k this week</p>
+                        <p class="subtext">+1.2k tuần này</p>
                     </div>
                 </div>
 
@@ -83,8 +83,8 @@
                     <div class="stat-header">
                         <i class="fa-solid fa-users"></i>
                         <div class="stat-name">
-                            <h3>Visitors</h3>
-                            <p>Avg. time: 4:30m</p>
+                            <h3>Khách truy cập</h3>
+                            <p>Thời gian TB: 4:30</p>
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
@@ -94,16 +94,16 @@
                     <div class="stat-footer">
                         <i class="fa-solid fa-arrow-trend-up"></i>
                         <p class="percent">+11.23%</p>
-                        <p class="subtext">+4.5k this week</p>
+                        <p class="subtext">+4.5k tuần này</p>
                     </div>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-header">
-                        <i class="fa-solid fa-rotate-left"> </i>
+                        <i class="fa-solid fa-rotate-left"></i>
                         <div class="stat-name">
-                            <h3>Refunds</h3>
-                            <p>2 Disputed</p>
+                            <h3>Trả hàng</h3>
+                            <p>2 tranh chấp</p>
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
@@ -118,132 +118,109 @@
                 </div>
             </div>
 
-
             <div class="stat-bottom">
                 <div class="sale-performance">
                     <div class="header">
-                        <h2>Sale Performance</h2>
+                        <h2>Hiệu suất bán hàng</h2>
                         <div class="export">
-                            <button type="submit">Export Data<i class="fa-solid fa-chevron-down"></i></button>
-                                <button>Last 14 Days<i class="fa-solid fa-chevron-down"></i> </button>
+                            <button>Xuất dữ liệu <i class="fa-solid fa-chevron-down"></i></button>
+                            <button>14 ngày gần đây <i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="test">
-                        <div class="chart-container">
-                            <!-- Trục Y -->
-                            <div class="y-axis">
-                                <span>250</span>
-                                <span>200</span>
-                                <span>150</span>
-                                <span>100</span>
-                                <span>50</span>
-                                <span>0</span>
-                            </div>
+                    <div class="chart-container">
 
-                            <!-- Nội dung biểu đồ -->
-                            <div class="chart-content">
-                                <div class="chart-header">
-                                    <div class="legend earnings">Earnings</div>
-                                    <div class="legend costs">Costs</div>
-                                </div>
-
-                                <svg viewBox="0 0 700 300" preserveAspectRatio="none">
-                                    <!-- Lưới -->
-                                    <g class="grid">
-                                        <line x1="0" y1="250" x2="700" y2="250" />
-                                        <line x1="0" y1="200" x2="700" y2="200" />
-                                        <line x1="0" y1="150" x2="700" y2="150" />
-                                        <line x1="0" y1="100" x2="700" y2="100" />
-                                        <line x1="0" y1="50" x2="700" y2="50" />
-                                    </g>
-
-                                    <!-- Đường Earnings -->
-                                    <path class="path-earnings"
-                                        d="M0,180 C100,140 200,150 300,80 C400,60 500,240 600,180 C700,100 700,100 700,100" />
-
-                                    <!-- Đường Costs -->
-                                    <path class="path-costs"
-                                        d="M0,130 C100,200 200,130 300,150 C400,100 500,190 600,160 C700,140 700,140 700,140" />
-
-                                    <!-- Điểm Earnings -->
-                                    <circle class="circle-earnings" cx="0" cy="180" r="5" />
-                                    <circle class="circle-earnings" cx="100" cy="140" r="5" />
-                                    <circle class="circle-earnings" cx="200" cy="150" r="5" />
-                                    <circle class="circle-earnings" cx="300" cy="80" r="5" />
-                                    <circle class="circle-earnings" cx="400" cy="60" r="5" />
-                                    <circle class="circle-earnings" cx="500" cy="240" r="5" />
-                                    <circle class="circle-earnings" cx="600" cy="180" r="5" />
-                                    <circle class="circle-earnings" cx="700" cy="100" r="5" />
-
-                                    <!-- Điểm Costs -->
-                                    <circle class="circle-costs" cx="0" cy="130" r="5" />
-                                    <circle class="circle-costs" cx="100" cy="200" r="5" />
-                                    <circle class="circle-costs" cx="200" cy="130" r="5" />
-                                    <circle class="circle-costs" cx="300" cy="150" r="5" />
-                                    <circle class="circle-costs" cx="400" cy="100" r="5" />
-                                    <circle class="circle-costs" cx="500" cy="190" r="5" />
-                                    <circle class="circle-costs" cx="600" cy="160" r="5" />
-                                    <circle class="circle-costs" cx="700" cy="140" r="5" />
-                                </svg>
-
-                                <!-- Nhãn trục X -->
-                                <div class="labels">
-                                    <span>03 Wed</span>
-                                    <span>05 Fri</span>
-                                    <span>07 Sun</span>
-                                    <span>09 Tue</span>
-                                    <span>11 Thu</span>
-                                    <span>13 Sat</span>
-                                    <span>15 Mon</span>
-                                    <span>16 Tue</span>
-                                </div>
-                            </div>
+                        <div class="y-axis">
+                            <span>250</span><span>200</span><span>150</span><span>100</span><span>50</span><span>0</span>
                         </div>
 
+                        <div class="chart-content">
+                            <div class="chart-header">
+                                <div class="legend earnings">Doanh thu</div>
+                                <div class="legend costs">Chi phí</div>
+                            </div>
+
+                            <svg viewBox="0 0 700 300" preserveAspectRatio="none">
+                                <g class="grid">
+                                    <line x1="0" y1="250" x2="700" y2="250"/>
+                                    <line x1="0" y1="200" x2="700" y2="200"/>
+                                    <line x1="0" y1="150" x2="700" y2="150"/>
+                                    <line x1="0" y1="100" x2="700" y2="100"/>
+                                    <line x1="0" y1="50" x2="700" y2="50"/>
+                                </g>
+
+                                <path class="path-earnings" d="M0,180 C100,140 200,150 300,80 C400,60 500,240 600,180 C700,100 700,100 700,100" />
+                                <path class="path-costs" d="M0,130 C100,200 200,130 300,150 C400,100 500,190 600,160 C700,140 700,140 700,140" />
+
+                                <!-- điểm doanh thu -->
+                                <circle class="circle-earnings" cx="0" cy="180" r="5"/>
+                                <circle class="circle-earnings" cx="100" cy="140" r="5"/>
+                                <circle class="circle-earnings" cx="200" cy="150" r="5"/>
+                                <circle class="circle-earnings" cx="300" cy="80" r="5"/>
+                                <circle class="circle-earnings" cx="400" cy="60" r="5"/>
+                                <circle class="circle-earnings" cx="500" cy="240" r="5"/>
+                                <circle class="circle-earnings" cx="600" cy="180" r="5"/>
+                                <circle class="circle-earnings" cx="700" cy="100" r="5"/>
+
+                                <!-- điểm chi phí -->
+                                <circle class="circle-costs" cx="0" cy="130" r="5"/>
+                                <circle class="circle-costs" cx="100" cy="200" r="5"/>
+                                <circle class="circle-costs" cx="200" cy="130" r="5"/>
+                                <circle class="circle-costs" cx="300" cy="150" r="5"/>
+                                <circle class="circle-costs" cx="400" cy="100" r="5"/>
+                                <circle class="circle-costs" cx="500" cy="190" r="5"/>
+                                <circle class="circle-costs" cx="600" cy="160" r="5"/>
+                                <circle class="circle-costs" cx="700" cy="140" r="5"/>
+                            </svg>
+
+                            <div class="labels">
+                                <span>03 Tư</span>
+                                <span>05 Sáu</span>
+                                <span>07 CN</span>
+                                <span>09 Ba</span>
+                                <span>11 Năm</span>
+                                <span>13 Bảy</span>
+                                <span>15 Hai</span>
+                                <span>16 Ba</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="right-chart">
-                    <div class="test">
-
-                    </div>
-                    <div class="right-chart">
-                        <h2>Top Categories</h2>
-                        <div class="category-chart-container">
-                            <div class="category-ring">
-                                <div class="category-value">$6.2k</div>
-                            </div>
-
-                            <div class="category-legend">
-                                <div class="legend-item electronics">Lego Model cars</div>
-                                <div class="legend-item laptops">Lego spaceship</div>
-                                <div class="legend-item phones">Lego warrior robot</div>
-                            </div>
+                    <h2>Top danh mục</h2>
+                    <div class="category-chart-container">
+                        <div class="category-ring">
+                            <div class="category-value">$6.2k</div>
                         </div>
 
-                        <div class="delivery-status">
-                            <h2>Delivery status</h2>
-                            <div class="border-ds">
-                                <div class="status-bar">
-                                    <div class="delivered"></div>
-                                    <div class="shipping"></div>
-                                    <div class="pending"></div>
-                                </div>
-                                <div class="legend">
-                                    <div><span class="dot delivered"></span>delivered <span class="percent">60%</span>
-                                    </div>
-                                    <div><span class="dot shipping"></span> shipping <span class="percent">25%</span>
-                                    </div>
-                                    <div><span class="dot pending"></span> pending <span class="percent">15%</span>
-                                    </div>
-                                </div>
+                        <div class="category-legend">
+                            <div class="legend-item electronics">Xe ô tô mô hình</div>
+                            <div class="legend-item laptops">Tàu vũ trụ</div>
+                            <div class="legend-item phones">Robot chiến binh</div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-status">
+                        <h2>Trạng thái giao hàng</h2>
+                        <div class="border-ds">
+                            <div class="status-bar">
+                                <div class="delivered"></div>
+                                <div class="shipping"></div>
+                                <div class="pending"></div>
+                            </div>
+                            <div class="legend">
+                                <div><span class="dot delivered"></span>Đã giao <span class="percent">60%</span></div>
+                                <div><span class="dot shipping"></span>Đang giao <span class="percent">25%</span></div>
+                                <div><span class="dot pending"></span>Chờ xử lý <span class="percent">15%</span></div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-    </div>
-    </section>
-    </header>
-</body>
 
+        </section>
+    </div>
+
+</body>
 </html>

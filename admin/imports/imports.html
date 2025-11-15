@@ -1,217 +1,197 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
+    <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
     <link href="../../assets/css/admin/import.css" rel="stylesheet">
-    <link href="../../assets/css/components/admin-sidebar.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <title>Imports</title>
+    <script src="../../assets/js/admin.js" defer></script>
+    <title>Bảng điều khiển</title>
 </head>
 
 <body>
     <aside class="side-bar">
         <div class="logo">
-            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+            <h2><a href="/admin/dashboard.html">LEGO STORE </a></h2>
         </div>
         <nav class="menu">
             <ul class="system">
-                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
-                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
-                            class="message">2</span></a> </li>
-                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
-                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
-                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
-                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
-                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
-                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+                <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html" ><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html" ><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html" class="active"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
+
             <ul class="support">
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
         </nav>
     </aside>
 
     <div class="main-content">
         <header class="admin-header">
-            <h1>Welcome back, Hoang</h1>
-
+            <h1>Quản lý nhập hàng</h1>
             <div class="admin-info">
                 <span class="search-bar">
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input placeholder="Search">
+                    <input placeholder="Tìm kiếm...">
                 </span>
                 <span class="info">
                     <i class="fa-solid fa-bell">
                         <span class="noti">3</span>
                     </i>
-                    <img src="../../assets/images/avt.png" alt="admin avt" />
+                    <img src="/assets/images/avt.png" alt="Ảnh admin" />
                     <p class="nametag">Việt Hoàng</p>
                     <i class="fa-solid fa-chevron-down"></i>
                 </span>
             </div>
         </header>
-    <section class="content imports-page">
-  <!-- Tổng quan -->
-  <div class="overview-cards">
-    <div class="card">
-      <i class="fa-solid fa-truck"></i>
-      <div>
-        <p>Total Imports</p>
-        <h3>23</h3>
-      </div>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-boxes-stacked"></i>
-      <div>
-        <p>Items Imported</p>
-        <h3>2,540</h3>
-      </div>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-dollar-sign"></i>
-      <div>
-        <p>Total Cost</p>
-        <h3>$154,820</h3>
-      </div>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-clock"></i>
-      <div>
-        <p>Pending Imports</p>
-        <h3>4</h3>
-      </div>
-    </div>
-  </div>
 
-  <!-- Bộ lọc -->
-  <div class="toolbar">
-    <a href="add-import.html"><button class="btn add-btn"><i class="fa-solid fa-plus"></i> Add Import</button> </a>
-    <div class="filter-group">
-      <select>
-        <option>All Status</option>
-        <option>Completed</option>
-        <option>Pending</option>
-        <option>Cancelled</option>
-      </select>
-      <input type="text" placeholder="Search by supplier or ID...">
-      <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-  </div>
+        <section class="content imports-page">
+            <!-- Tổng quan -->
+            <div class="overview-cards">
+                <div class="card">
+                    <i class="fa-solid fa-truck"></i>
+                    <div>
+                        <p>Tổng số nhập hàng</p>
+                        <h3>23</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <div>
+                        <p>Số lượng hàng nhập</p>
+                        <h3>2,540</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <div>
+                        <p>Tổng chi phí</p>
+                        <h3>154.820.000₫</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <p>Nhập hàng chờ xử lý</p>
+                        <h3>4</h3>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Bảng danh sách -->
-  <table class="imports-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Supplier</th>
-        <th>Date</th>
-        <th>Total Items</th>
-        <th>Total Cost</th>
-        <th>Status</th>
-        <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-        <td>IMP-001</td>
-        <td>Brick Supplies Ltd.</td>
-        <td>2025-10-10</td>
-        <td>150</td>
-        <td>$12,400</td>
-        <td><span class="status completed">Completed</span></td>
-        <td class="actions-cell">
-          <button class="view"><i class="fa-solid fa-eye"></i></button>
-          <a href="edit-import.html"><button class="edit"><i class="fa-solid fa-pen"></i></button></a>
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
-        </td>
-          </tr>
-          <tr>
-        <td>IMP-002</td>
-        <td>Lego Factory Asia</td>
-        <td>2025-10-14</td>
-        <td>80</td>
-        <td>$6,850</td>
-        <td><span class="status pending">Pending</span></td>
-        <td class="actions-cell">
-          <button class="view"><i class="fa-solid fa-eye"></i></button>
-          <button class="edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
-        </td>
-      </tr>
-      <tr>
-        <td>IMP-003</td>
-        <td>Global Toys Co.</td>
-        <td>2025-10-17</td>
-        <td>120</td>
-        <td>$9,500</td>
-        <td><span class="status completed">Completed</span></td>
-        <td class="actions-cell">
-          <button class="view"><i class="fa-solid fa-eye"></i></button>
-          <button class="edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
-        </td>
-      </tr>
-      <tr>
-        <td>IMP-004</td>
-        <td>ToyBrick Vietnam</td>
-        <td>2025-10-19</td>
-        <td>60</td>
-        <td>$4,200</td>
-        <td><span class="status cancelled">Cancelled</span></td>
-        <td class="actions-cell">
-          <button class="view"><i class="fa-solid fa-eye"></i></button>
-          <button class="edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
-        </td>
-      </tr>
-      <tr>
-        <td>IMP-005</td>
-        <td>Plastic World Inc.</td>
-        <td>2025-10-23</td>
-        <td>95</td>
-        <td>$7,880</td>
-        <td><span class="status pending">Pending</span></td>
-        <td class="actions-cell">
-          <button class="view"><i class="fa-solid fa-eye"></i></button>
-          <button class="edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
-        </td>
-      </tr>
-      <tr>
-        <td>IMP-006</td>
-        <td>EuroLego Distributors</td>
-        <td>2025-10-25</td>
-        <td>200</td>
-        <td>$15,300</td>
-        <td><span class="status completed">Completed</span></td>
-        <td class="actions-cell">
-          <button class="view"><i class="fa-solid fa-eye"></i></button>
-          <button class="edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="delete"><i class="fa-solid fa-trash"></i></button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <!-- Bộ lọc và Tra cứu theo ngày -->
+           <a href="/admin/imports/add-import.html" class="btn add-btn"><i class="fa-solid fa-plus" style="color: white;"></i> Thêm phiếu nhập</a>
 
-  <!-- Ghi chú -->
-  <div class="status-legend">
-    <p><span class="status completed">Completed</span> Import completed successfully.</p>
-    <p><span class="status pending">Pending</span> Waiting for confirmation.</p>
-    <p><span class="status cancelled">Cancelled</span> Import has been cancelled.</p>
-  </div>
-</section>
+            <!-- Form tra cứu phiếu nhập theo ngày -->
+            <div class="search-imports-date">
+                <label>Từ ngày: <input type="date"></label>
+                <label>Đến ngày: <input type="date"></label>
+                <button class="btn search-btn"><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm</button>
+                <button class="btn refresh-btn"><i class="fa-solid fa-rotate"></i> Đặt lại</button>
+            </div>
+            
+            <!-- Bảng danh sách -->
+            <table class="imports-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nhà cung cấp</th>
+                        <th>Ngày nhập</th>
+                        <th>Tổng số lượng</th>
+                        <th>Tổng chi phí</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IMP-001</td>
+                        <td>Brick Supplies Ltd.</td>
+                        <td>2025-10-10</td>
+                        <td>150</td>
+                        <td>12.400.000₫</td>
+                        <td><span class="status completed">Hoàn tất</span></td>
+                        <td class="actions-cell">
+                           <a href="/admin/imports/view-import.html"><button class="view"><i class="fa-solid fa-eye"></i>Xem</button> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IMP-002</td>
+                        <td>Lego Factory Asia</td>
+                        <td>2025-10-14</td>
+                        <td>80</td>
+                        <td>6.850.000₫</td>
+                        <td><span class="status pending">Đang chờ</span></td>
+                        <td class="actions-cell">
+                           <a href="/admin/imports/view-import.html"><button class="view"><i class="fa-solid fa-eye"></i>Xem</button> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IMP-003</td>
+                        <td>Global Toys Co.</td>
+                        <td>2025-10-17</td>
+                        <td>120</td>
+                        <td>9.500.000₫</td>
+                        <td><span class="status completed">Hoàn tất</span></td>
+                        <td class="actions-cell">
+                          <a href="/admin/imports/view-import.html"><button class="view"><i class="fa-solid fa-eye"></i>Xem</button> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IMP-004</td>
+                        <td>ToyBrick Vietnam</td>
+                        <td>2025-10-19</td>
+                        <td>60</td>
+                        <td>4.200.000₫</td>
+                        <td><span class="status cancelled">Đã hủy</span></td>
+                        <td class="actions-cell">
+                       <a href="/admin/imports/view-import.html"><button class="view"><i class="fa-solid fa-eye"></i>Xem</button> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IMP-005</td>
+                        <td>Plastic World Inc.</td>
+                        <td>2025-10-23</td>
+                        <td>95</td>
+                        <td>7.880.000₫</td>
+                        <td><span class="status pending">Đang chờ</span></td>
+                        <td class="actions-cell">
+                          <a href="/admin/imports/view-import.html"><button class="view"><i class="fa-solid fa-eye"></i>Xem</button> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IMP-006</td>
+                        <td>EuroLego Distributors</td>
+                        <td>2025-10-25</td>
+                        <td>200</td>
+                        <td>15.300.000₫</td>
+                        <td><span class="status completed">Hoàn tất</span></td>
+                        <td class="actions-cell">
+                           <a href="/admin/imports/view-import.html"><button class="view"><i class="fa-solid fa-eye"></i>Xem</button> </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+            <div class="pagination">
+                <button><i class="fa-solid fa-angle-left"></i></button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button><i class="fa-solid fa-angle-right"></i></button>
+            </div>
         </section>
-        </header>
 </body>
-
 </html>

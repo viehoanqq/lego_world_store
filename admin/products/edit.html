@@ -1,141 +1,150 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sửa loại sản phẩm | LEGO Admin</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/admin/dashboard.css" />
-  <link rel="stylesheet" href="../../assets/css/admin/product.css" />
-  <link rel="stylesheet" href="../../assets/admin/product-types.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+  <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+  <link href="../../assets/css/admin/product.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <script src="../../assets/js/main.js" defer></script>
+  <title>Chỉnh sửa sản phẩm</title>
 </head>
 
 <body>
-  <!-- Sidebar -->
   <aside class="side-bar">
-        <div class="logo">
-            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
-        </div>
-        <nav class="menu">
-            <ul class="system">
-                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
-                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
-                            class="message">2</span></a> </li>
-                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
-                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
-                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
-                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
-                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
-                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+    <div class="logo">
+      <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+    </div>
+    <nav class="menu">
+    <ul class="system">
+                <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html" class="active"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
-            <ul class="support">
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
-            </ul>
-        </nav>
-    </aside>
 
-  <!-- Main Content -->
+            <ul class="support">
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+            </ul>
+    </nav>
+  </aside>
+
   <div class="main-content">
     <header class="admin-header">
-      <h1>Welcome back, Hoang</h1>
+      <h1>Chỉnh sửa sản phẩm</h1>
       <div class="admin-info">
         <span class="search-bar">
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          <input placeholder="Search..." />
+          <input placeholder="Tìm kiếm...">
         </span>
         <span class="info">
-          <i class="fa-solid fa-bell"><span class="noti">3</span></i>
-          <img src="../../assets/images/avt.png" alt="Admin Avatar" />
+          <i class="fa-solid fa-bell">
+            <span class="noti">3</span>
+          </i>
+          <img src="/assets/images/avt.png" alt="Ảnh admin" />
           <p class="nametag">Việt Hoàng</p>
+          <i class="fa-solid fa-chevron-down"></i>
         </span>
       </div>
     </header>
 
     <section class="content">
-      <div class="page-header">
-        <div>
-          <h2>Edit Product Category</h2>
-          <div class="breadcrumb">
-            <a href="/admin/dashboard.html">Dashboard</a> / 
-            <a href="/admin/product/list.html">Product</a> / 
-            <span>Edit</span>
-          </div>
-        </div>
-      </div>
-
       <div class="form-container">
-        <form class="product-form">
-          <div class="form-group">
-            <label for="productCode">Product code</label>
-            <input type="text" id="productCode" value="LEGO-001" readonly />
+        <form class="product-edit-form">
+          <!-- Upload ảnh -->
+          <div class="form-group image-upload-group">
+            <label>Hình ảnh sản phẩm</label>
+            <div class="image-preview-container">
+              <img src="/assets/images/product1.webp" alt="Sản phẩm" class="product-image-preview"
+                id="productImagePreview">
+              <div class="image-upload-overlay">
+                <i class="fa-solid fa-camera"></i>
+                <p>Thay đổi ảnh</p>
+              </div>
+            </div>
+            <input type="file" id="productImage" accept="image/*" class="image-input" onchange="previewImage(event)">
+            <small class="form-help">Định dạng: JPG, PNG. Kích thước tối đa: 2MB</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productName">Tên sản phẩm</label>
+              <input type="text" id="productName" value="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257">
+            </div>
+            <div class="form-group">
+              <label for="productSKU">Mã sản phẩm</label>
+              <input type="text" id="productSKU" value="75257">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productCategory">Danh mục</label>
+              <select id="productCategory">
+                <option value="tau-vu-tru" selected>Tàu vũ trụ</option>
+                <option value="xe-o-to">Xe ô tô mô hình</option>
+                <option value="robot">Robot chiến binh</option>
+                <option value="thanh-pho">Thành phố</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productStock">Tồn kho</label>
+              <input type="number" id="productStock" value="12" min="0">
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="productName">Product name</label>
-            <input type="text" id="productName" value="LEGO Star Wars – X-Wing Fighter" />
+            <label for="productPrice">Giá bán</label>
+            <input type="text" id="productPrice" value="2.500.000₫" placeholder="VD: 1.250.000₫">
           </div>
 
           <div class="form-group">
-            <label for="productType">Categories</label>
-            <select id="productType">
-              <option>LEGO Star Wars</option>
-              <option>LEGO City</option>
-              <option>LEGO Friends</option>
-              <option>LEGO Technic</option>
-            </select>
+            <label for="productDescription">Mô tả sản phẩm</label>
+            <textarea id="productDescription"
+              rows="5">Bộ xếp hình chi tiết Tàu Millennium Falcon, thích hợp cho trẻ từ 12 tuổi trở lên. Bao gồm 7 minifigures, cockpit mở được, ghế ngồi xoay, khoang hành khách, khoang kỹ thuật, và nhiều chi tiết sống động.</textarea>
           </div>
 
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" rows="4">X-Wing fighter model with 731 building pieces, including 3 special minifigures.</textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="price">Price (VNĐ)</label>
-            <input type="number" id="price" name="price" value="3999000" min="0" step="1000" />
-          </div>
-
-          <div class="form-group">
-            <label for="price_old">Original price (if any)</label>
-            <input type="number" id="price_old" name="price_old" value="4999000" min="0" step="1000" />
-          </div>
-
-          <div class="form-group">
-            <label for="discount_percent">Discount (%)</label>
-            <input type="number" id="discount_percent" name="discount_percent" value="20" min="0" max="100" step="0.1" />
-          </div>
-
-          <div class="form-group">
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" name="quantity" value="8" min="0" step="1" />
-          </div>
-
-          <div class="form-group">
-            <label for="status">Status</label>
-            <select id="status">
-              <option value="active" selected>Active</option>
-              <option value="hidden">Hidden</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productStatus">Trạng thái</label>
+              <select id="productStatus">
+                <option value="active" selected>Đang bán</option>
+                <option value="hidden">Ẩn</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productFeatured">Nổi bật</label>
+              <select id="productFeatured">
+                <option value="0">Bình thường</option>
+                <option value="1" selected>Nổi bật</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-actions">
-            <a href="list.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Cancel</a>
-            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save"></i> Update product</button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi
+            </button>
+            <a href="/admin/products/products.html">
+              <button type="button" class="btn btn-secondary" <i class="fa-solid fa-arrow-left"></i> Hủy
+              </button>
+            </a>
           </div>
         </form>
       </div>
     </section>
   </div>
-
 </body>
+
 </html>

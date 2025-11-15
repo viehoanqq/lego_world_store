@@ -653,3 +653,13 @@ svg {
     padding: 0 20px;
   }
 }
+.system a.active {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.system a.active i {
+  color: white !important;
+}

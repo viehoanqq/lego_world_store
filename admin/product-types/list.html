@@ -1,241 +1,616 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quản lý loại sản phẩm | LEGO Admin</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
-  <link rel="stylesheet" href="../../assets/css/admin/product-types.css">
-  <link rel="stylesheet" href="../../assets/admin/product-types.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-<body>
 
-  <!-- Sidebar -->
-  <aside class="side-bar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý danh mục</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS chung -->
+    <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+    <link href="../../assets/css/admin/product.css" rel="stylesheet">
+
+    <script src="../../assets/js/main.js" defer></script>
+    <style>
+        /* ===== ACTION BAR ===== */
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-filter {
+            display: flex;
+            gap: 12px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-filter input,
+        .search-filter select {
+            padding: 12px 16px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+
+        .search-filter input:focus,
+        .search-filter select:focus {
+            border-color: #B43F3F;
+            box-shadow: 0 0 0 3px rgba(180, 63, 63, 0.1);
+        }
+
+        /* ===== TABLE ===== */
+        .table-container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #f8f9fa;
+        }
+
+        thead th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 14px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        tbody td {
+            padding: 16px;
+            color: #495057;
+            font-size: 14px;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== CATEGORY IMAGE ===== */
+        .category-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== MÔ TẢ DÀI - ẨN TRÊN MOBILE ===== */
+        .category-description {
+            max-width: 280px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+
+        /* ===== STATUS BADGE ===== */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-hidden {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* ===== ACTION BUTTONS ===== */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .icon-btn i {
+            font-size: 16px;
+        }
+
+        .icon-btn.edit {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .icon-btn.edit:hover {
+            background-color: #1976d2;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+        }
+
+        .icon-btn.delete {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .icon-btn.delete:hover {
+            background-color: #c62828;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(198, 40, 40, 0.3);
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .pagination-info {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .pagination-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .pagination-buttons button {
+            padding: 8px 12px;
+            border: 1.5px solid #dee2e6;
+            background: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            color: #495057;
+        }
+
+        .pagination-buttons button:hover:not(:disabled) {
+            background: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
+        }
+
+        .pagination-buttons button.active {
+            background: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
+        }
+
+        .pagination-buttons button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .search-filter {
+                flex-direction: column;
+            }
+
+            .search-filter input,
+            .search-filter select {
+                width: 100%;
+            }
+
+            .category-description {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .action-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .action-bar>* {
+                width: 100%;
+            }
+
+            .search-filter {
+                min-width: auto;
+            }
+
+            .category-image {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* Ẩn cột Mô tả trên mobile */
+            th:nth-child(4),
+            td:nth-child(4) {
+                display: none;
+            }
+
+            /* Ẩn cột Số sản phẩm nếu cần */
+            th:nth-child(5),
+            td:nth-child(5) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <aside class="side-bar">
         <div class="logo">
-            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+            <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
         </div>
         <nav class="menu">
-            <ul class="system">
-                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
-                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
-                            class="message">2</span></a> </li>
-                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
-                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
-                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
-                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
-                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
-                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+           <ul class="system">
+                <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html" ><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html" class="active"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
+
             <ul class="support">
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
         </nav>
     </aside>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <header class="admin-header">
-            <h1>Welcome back, Hoang</h1>
-
-      <div class="admin-info">
-        <span class="search-bar">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          <input placeholder="Tìm kiếm loại sản phẩm...">
-        </span>
-        <span class="info">
-          <i class="fa-solid fa-bell"><span class="noti">3</span></i>
-          <img src="../../assets/images/avt.png" alt="Admin Avatar" />
-          <p class="nametag">Việt Hoàng</p>
-        </span>
-      </div>
-    </header>
-
-    <section class="content">
-            <div class="page-header">
-                <div>
-                    <h2>Product Categories</h2>
-                    <div class="breadcrumb">
-                        <a href="/admin/dashboard.html">Dashboard</a> / <span>Categories</span>
-                    </div>
-                </div>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <header class="admin-header">
+            <h1>Quản lý danh mục</h1>
+            <div class="admin-info">
+                <span class="search-bar">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input placeholder="Tìm kiếm...">
+                </span>
+                <span class="info">
+                    <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+                    <img src="/assets/images/avt.png" alt="Admin" />
+                    <p class="nametag">Việt Hoàng</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
             </div>
+        </header>
 
+        <section class="content">
+
+            <!-- ACTION BAR -->
             <div class="action-bar">
                 <div class="search-filter">
-                    <input type="text" placeholder="Search by category name..." id="searchInput">
+                    <input type="text" placeholder="Tìm tên danh mục..." id="searchCategoryInput">
                     <select id="statusFilter">
-                        <option value="all">All Status</option>
-                        <option value="active">Active</option>
-                        <option value="hidden">Hidden</option>
+                        <option value="all">Tất cả trạng thái</option>
+                        <option value="active">Đang hoạt động</option>
+                        <option value="hidden">Ẩn</option>
                     </select>
                 </div>
-                <button class="btn btn-primary" onclick="window.location.href='/admin/product-types/add.html'">
-                    <i class="fa-solid fa-plus"></i>
-                    Add New Category
-                </button>
+                <a href="/admin/product-types/add.html">
+                    <button class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i> Thêm danh mục
+                    </button>
+                </a>
             </div>
 
+            <!-- TABLE -->
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Image</th>
-                            <th>Category Name</th>
-                            <th>Description</th>
-                            <th>Products</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th>Ảnh</th>
+                            <th>Tên danh mục</th>
+                            <th>Mô tả</th>
+                            <th>Số sản phẩm</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- 1. Xe ô tô mô hình -->
                         <tr>
-                            <td>#001</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-gara-f1-lego-city-60444.png?v=1741234241&width=400" class="category-image" alt="LEGO City"></td>
-                            <td><strong>LEGO City</strong></td>
-                            <td>Urban themed building sets with vehicles and buildings</td>
-                            <td><span class="product-count">45</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>#CAT001</td>
+                            <td><img src="/assets/images/category1.webp" class="category-image" alt="Xe ô tô mô hình">
+                            </td>
+                            <td><strong>Xe ô tô mô hình</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Các mẫu xe ô tô LEGO chi tiết, từ siêu xe đến xe địa hình.">Các mẫu xe ô tô
+                                    LEGO chi tiết, từ siêu xe đến xe địa hình.</div>
+                            </td>
+                            <td>18 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- 2. Tàu vũ trụ -->
                         <tr>
-                            <td>#002</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/42170_92188d78-2f65-4dbf-a641-88c1ef93aca7.jpg?v=1725606535&width=400" class="category-image" alt="LEGO Technic"></td>
-                            <td><strong>LEGO Technic</strong></td>
-                            <td>Advanced building sets with functional mechanical features</td>
-                            <td><span class="product-count">32</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>#CAT002</td>
+                            <td><img src="/assets/images/category2.webp" class="category-image" alt="Tàu vũ trụ"></td>
+                            <td><strong>Tàu vũ trụ</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Tái hiện các tàu chiến, phi thuyền từ Star Wars, NASA và hơn thế nữa.">Tái
+                                    hiện các tàu chiến, phi thuyền từ Star Wars, NASA và hơn thế nữa.</div>
+                            </td>
+                            <td>24 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
+                            <td>
+                                 <div class="action-buttons">
+    <a href="/admin/product-types/edit.html">
+      <button class="icon-btn edit" title="Chỉnh sửa">
+        <i class="fa-solid fa-pen"></i>Sửa
+      </button>
+    </a>
+    <button class="icon-btn delete" title="Ẩn danh mục">
+      <i class="fa-solid fa-eye-slash"></i>Ẩn
+    </button>
+    <button class="icon-btn delete" title="Xóa danh mục">
+      <i class="fa-solid fa-trash"></i>Xóa
+    </button>
+  </div>
+                            </td>
+                        </tr>
+
+                        <!-- 3. Lâu đài cổ tích -->
+                        <tr>
+                            <td>#CAT003</td>
+                            <td><img src="/assets/images/category3.webp" class="category-image" alt="Lâu đài cổ tích">
+                            </td>
+                            <td><strong>Lâu đài cổ tích</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Thế giới cổ tích với lâu đài công chúa, hiệp sĩ và rồng thần.">Thế giới cổ
+                                    tích với lâu đài công chúa, hiệp sĩ và rồng thần.</div>
+                            </td>
+                            <td>12 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- 4. Robot chiến binh -->
                         <tr>
-                            <td>#003</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/31208_e232c73f-34e3-4f3a-af24-20b2cb7ead87.jpg?v=1725526876&width=400" class="category-image" alt="LEGO Art"></td>
-                            <td><strong>LEGO Art</strong></td>
-                            <td>Sets based on the iconic Star Wars universe</td>
-                            <td><span class="product-count">67</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>#CAT004</td>
+                            <td><img src="/assets/images/category4.webp" class="category-image" alt="Robot chiến binh">
+                            </td>
+                            <td><strong>Robot chiến binh</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Robot biến hình, chiến đấu, từ Ninjago đến Technic.">Robot biến hình, chiến
+                                    đấu, từ Ninjago đến Technic.</div>
+                            </td>
+                            <td>15 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- 5. Thành phố hiện đại -->
                         <tr>
-                            <td>#004</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-lap-rap-may-danh-chu-va-hoa-lego-creator-31169.png?v=1741236406&width=400" class="category-image" alt="LEGO Creator"></td>
-                            <td><strong>LEGO Creator</strong></td>
-                            <td>Superhero themed sets featuring Marvel characters</td>
-                            <td><span class="product-count">28</span> products</td>
-                            <td><span class="status-badge status-hidden">Hidden</span></td>
+                            <td>#CAT005</td>
+                            <td><img src="/assets/images/category5.webp" class="category-image"
+                                    alt="Thành phố hiện đại"></td>
+                            <td><strong>Thành phố hiện đại</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Xây dựng thành phố với nhà cao tầng, xe cứu hỏa, cảnh sát.">Xây dựng thành
+                                    phố với nhà cao tầng, xe cứu hỏa, cảnh sát.</div>
+                            </td>
+                            <td>20 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Show" onclick="toggleStatus(this)"><i class="fa-solid fa-eye"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- 6. Động vật hoang dã -->
                         <tr>
-                            <td>#005</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/products/10913-_13_1.jpg?v=1743494936&width=400" class="category-image" alt="LEGO Duplo"></td>
-                            <td><strong>LEGO Duplo</strong></td>
-                            <td>3-in-1 building sets with multiple build options</td>
-                            <td><span class="product-count">41</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>#CAT006</td>
+                            <td><img src="/assets/images/category6.webp" class="category-image" alt="Động vật hoang dã">
+                            </td>
+                            <td><strong>Động vật hoang dã</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Khám phá rừng rậm, đại dương với sư tử, cá mập, voi...">Khám phá rừng rậm,
+                                    đại dương với sư tử, cá mập, voi...</div>
+                            </td>
+                            <td>10 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- 7. Siêu anh hùng -->
                         <tr>
-                            <td>#006</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/do-choi-la-rap-cua-hang-phu-kien-cho-thu-cung-lego-friends-42650_f28343a7-5917-4a97-b033-ff73299dee5e.png?v=1752024881&width=400" class="category-image" alt="LEGO Friends"></td>
-                            <td><strong>LEGO Friends</strong></td>
-                            <td>Friendship and adventure themed building sets</td>
-                            <td><span class="product-count">38</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>#CAT007</td>
+                            <td><img src="/assets/images/category7.webp" class="category-image" alt="Siêu anh hùng">
+                            </td>
+                            <td><strong>Siêu anh hùng</strong></td>
+                            <td>
+                                <div class="category-description"
+                                    title="Batman, Spider-Man, Avengers - tái hiện các trận chiến anh hùng.">Batman,
+                                    Spider-Man, Avengers - tái hiện các trận chiến anh hùng.</div>
+                            </td>
+                            <td>16 sản phẩm</td>
+                            <td><span class="status-badge status-active">Đang hoạt động</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- 8. Kiến trúc nổi tiếng -->
                         <tr>
-                            <td>#007</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/tran-chien-dung-nham-dia-nguc-nether-lego-minecraft-21266.png?v=1741321651&width=400" class="category-image" alt="LEGO Minecraft"></td>
-                            <td><strong>LEGO Minecraft</strong></td>
-                            <td>Iconic buildings and skylines from around the world</td>
-                            <td><span class="product-count">22</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>#CAT008</td>
+                            <td><img src="/assets/images/category8.webp" class="category-image"
+                                    alt="Kiến trúc nổi tiếng"></td>
+                            <td><strong>Kiến trúc nổi tiếng</strong></td>
                             <td>
-                                <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
-                                </div>
+                                <div class="category-description"
+                                    title="Tháp Eiffel, Nhà Trắng, Kim Tự Tháp - tái hiện kỳ quan thế giới.">Tháp
+                                    Eiffel, Nhà Trắng, Kim Tự Tháp - tái hiện kỳ quan thế giới.</div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>#008</td>
-                            <td><img src="https://cdn.shopify.com/s/files/1/0731/6514/4343/files/71821.jpg?v=1726925800&width=400" class="category-image" alt="LEGO Ninjago"></td>
-                            <td><strong>LEGO Ninjago</strong></td>
-                            <td>Ninja themed action sets with dragons and warriors</td>
-                            <td><span class="product-count">35</span> products</td>
-                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>8 sản phẩm</td>
+                            <td><span class="status-badge status-hidden">Ẩn</span></td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="icon-btn view" title="View Details"><i class="fa-solid fa-eye"></i></button>
-                                    <button class="icon-btn edit" title="Edit" onclick="window.location.href='/admin/product-types/edit.html'"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn delete" title="Hide/Delete" onclick="toggleStatus(this)"><i class="fa-solid fa-eye-slash"></i></button>
+                                    <a href="/admin/product-types/edit.html">
+                                        <button class="icon-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>Sửa
+                                        </button>
+                                    </a>
+                                    <button class="icon-btn delete" title="Ẩn danh mục">
+                                        <i class="fa-solid fa-eye-slash"></i>Ẩn
+                                    </button>
+                                    <button class="icon-btn delete" title="Xóa danh mục">
+                                        <i class="fa-solid fa-trash"></i>Xóa
+                                    </button>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
+                <!-- PAGINATION -->
                 <div class="pagination">
-                    <div class="pagination-info">
-                        Showing <strong>1-8</strong> of <strong>8</strong> categories
-                    </div>
+                    
                     <div class="pagination-buttons">
                         <button disabled><i class="fa-solid fa-chevron-left"></i></button>
                         <button class="active">1</button>
-                        <button>2</button>
-                        <button>3</button>
                         <button><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
         </section>
-  </div>
-
+    </div>
 </body>
+
 </html>

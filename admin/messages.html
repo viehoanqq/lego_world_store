@@ -1,68 +1,65 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
-    <link href="../assets/css/components/admin-sidebar.css" rel="stylesheet">
+    <link href="../assets/css/admin/dashboard.css" rel="stylesheet">
     <link href="../assets/css/admin/messages.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <title>Messages</title>
+    <script src="./../assets/js/admin.js" defer ></script>
+    <title>Bảng điều khiển</title>
 </head>
 
 <body>
     <aside class="side-bar">
         <div class="logo">
-            <h2> <a href="/admin/dashboard.html">LEGO STORE </a></h2>
+            <h2><a href="/admin/dashboard.html">LEGO STORE </a></h2>
         </div>
         <nav class="menu">
             <ul class="system">
-                <li><a href="/admin/dashboard.html" class="active"><i class="fa-solid fa-house"></i>Overview</a></li>
-                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Messages <span
-                            class="message">2</span></a> </li>
-                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Products</a></li>
-                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Categories</a></li>
-                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Orders</a></li>
-                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-tags"></i>Imports</a></li>
-                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
-                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+                <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html" class="active"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
             </ul>
+
             <ul class="support">
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact us</a></li>
-                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
         </nav>
     </aside>
 
     <div class="main-content">
-        <header class="admin-header">
-            <h1>Welcome back, Hoang</h1>
-
+<header class="admin-header">
+            <h1>Tin nhắn</h1>
             <div class="admin-info">
                 <span class="search-bar">
                     <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input placeholder="Search">
+                    <input placeholder="Tìm kiếm...">
                 </span>
                 <span class="info">
                     <i class="fa-solid fa-bell">
                         <span class="noti">3</span>
                     </i>
-                    <img src="../assets/images/avt.png" alt="admin avt" />
+                    <img src="/assets/images/avt.png" alt="Ảnh admin" />
                     <p class="nametag">Việt Hoàng</p>
                     <i class="fa-solid fa-chevron-down"></i>
                 </span>
             </div>
-        </header>
-        <section class="content">
-            <div class="m-container">
-                <h2 class="m-title">Messages</h2>
+        </header>   
+
+
 <!-- Toolbar: Search + Filter -->
   <div class="messages-toolbar">
     <div class="search-container">

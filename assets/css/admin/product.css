@@ -19,81 +19,6 @@ body {
 }
 
 /* ===== HEADER ===== */
-.admin-header {
-  background: #fff;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.admin-header h1{
-    font-weight: 300;
-    margin-left: 30px;
-    flex: 1;
-}
-
-.admin-info {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background: #f5f5f5;
-  padding: 8px 16px;
-  border-radius: 8px;
-  gap: 10px;
-}
-
-.search-bar button {
-  background: none;
-  border: none;
-  color: #666;
-  cursor: pointer;
-}
-
-.search-bar input {
-  border: none;
-  background: none;
-  outline: none;
-  font-size: 14px;
-  width: 200px;
-}
-
-/* ===== PAGE HEADER ===== */
-.content {
-  padding: 40px;
-}
-
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.page-header h2 {
-  font-size: 28px;
-  color: #1a1a1a;
-}
-
-.breadcrumb {
-  color: #666;
-  font-size: 14px;
-}
-
-.breadcrumb a {
-  color: #B43F3F;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
 
 /* ===== ACTION BAR ===== */
 .action-bar {
@@ -228,67 +153,75 @@ tbody tr:last-child td {
   background: #f8d7da;
   color: #721c24;
 }
-
-/* ===== ACTION BUTTONS ===== */
+/* ===== ACTION BUTTONS CONTAINER ===== */
 .action-buttons {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
+/* Nút chung */
 .icon-btn {
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
-}
-
-.icon-btn i {
+  gap: 6px; /* khoảng cách icon và text */
+  padding: 8px 14px;
+  border-radius: 8px;
   font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-decoration: none;
 }
 
-.icon-btn.view {
-  background: #f3e5f5;
-  color: #7b1fa2;
+/* Icon trong nút */
+.icon-btn i {
+  font-size: 16px;
 }
 
-.icon-btn.view:hover {
-  background: #7b1fa2;
-  color: #fff;
-}
-
+/* ===== Sửa (Edit) ===== */
 .icon-btn.edit {
-  background: #e3f2fd;
+  background-color: #e3f2fd;
   color: #1976d2;
 }
-
 .icon-btn.edit:hover {
-  background: #1976d2;
+  background-color: #1976d2;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
 }
 
+/* ===== Ẩn/Xóa (Delete) ===== */
 .icon-btn.delete {
-  background: #ffebee;
+  background-color: #ffebee;
   color: #c62828;
 }
-
 .icon-btn.delete:hover {
-  background: #c62828;
+  background-color: #c62828;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(198, 40, 40, 0.3);
 }
 
+/* ===== Hiển thị (Show) ===== */
 .icon-btn.show {
-  background: #e8f5e9;
+  background-color: #e8f5e9;
   color: #2e7d32;
 }
-
 .icon-btn.show:hover {
-  background: #2e7d32;
+  background-color: #2e7d32;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+}
+
+/* ===== Nút chỉ có icon ===== */
+.icon-btn.only-icon {
+  width: 36px;
+  padding: 0;
+  justify-content: center;
 }
 
 /* ===== PAGINATION ===== */
@@ -299,6 +232,8 @@ tbody tr:last-child td {
   padding: 20px;
   background: #fff;
   border-radius: 0 0 12px 12px;
+  justify-content: center;
+            align-items: center;
 }
 
 .pagination-info {
@@ -309,6 +244,8 @@ tbody tr:last-child td {
 .pagination-buttons {
   display: flex;
   gap: 8px;
+justify-content: center;
+            align-items: center;
 }
 
 .pagination-buttons button {
@@ -323,15 +260,15 @@ tbody tr:last-child td {
 }
 
 .pagination-buttons button:hover:not(:disabled) {
-  background: #B43F3F;
+  background: #6366f1;
   color: #fff;
-  border-color: #B43F3F;
+  border-color: #6366f1;
 }
 
 .pagination-buttons button.active {
-  background: #B43F3F;
+  background: #6366f1;
   color: #fff;
-  border-color: #B43F3F;
+  border-color: #6366f1;
 }
 
 .pagination-buttons button:disabled {
@@ -345,10 +282,12 @@ tbody tr:last-child td {
 .form-container {
   background: #fff;
   padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 800px;
-  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  width: 100%;           /* Full width */
+  max-width: none;       /* Bỏ giới hạn */
+  margin: 0;             /* Bỏ căn giữa */
+  border: 1px solid #f1f5f9;
 }
 
 .product-form {
@@ -382,7 +321,7 @@ tbody tr:last-child td {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #B43F3F;
+  border-color: #6366f1;
 }
 
 .form-actions {
@@ -427,7 +366,7 @@ tbody tr:last-child td {
 }
 
 .price-block .new {
-  color: #B43F3F;
+  color: #888;
   font-weight: 700;
   font-size: 1rem;
 }
@@ -442,4 +381,189 @@ tbody tr:last-child td {
   color: #B43F3F;
   font-size: 0.8rem;
   margin-left: 4px;
+}
+/* ===== FORM LAYOUT ===== */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* ===== IMAGE UPLOAD ===== */
+.image-upload-group {
+  margin-bottom: 24px;
+}
+
+.image-preview-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px dashed #ddd;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.image-preview-container:hover {
+  border-color: #B43F3F;
+  background: #fff5f5;
+}
+
+.image-preview-container .product-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-preview-container:hover .product-image-preview {
+  transform: scale(1.05);
+}
+
+.image-upload-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(180, 63, 63, 0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-preview-container:hover .image-upload-overlay {
+  opacity: 1;
+}
+
+.image-upload-overlay i {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.image-upload-overlay p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.image-input {
+  display: none;
+}
+
+.form-help {
+  color: #6c757d;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* ===== FORM ENHANCEMENT ===== */
+.product-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-edit-form .form-group label {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.product-edit-form .form-group input,
+.product-edit-form .form-group select,
+.product-edit-form .form-group textarea {
+  padding: 12px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.product-edit-form .form-group input:focus,
+.product-edit-form .form-group select:focus,
+.product-edit-form .form-group textarea:focus {
+  border-color: #B43F3F;
+  box-shadow: 0 0 0 3px rgba(180, 63, 63, 0.1);
+  outline: none;
+}
+
+.product-edit-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ===== BUTTONS ===== */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(180, 63, 63, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #9c3636, #8a3030);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 63, 63, 0.4);
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #495057;
+  border: 1.5px solid #dee2e6;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+  transform: translateY(-1px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .image-preview-container {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .form-container {
+    padding: 24px;
+  }
 }

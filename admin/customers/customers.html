@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+  <link href="../../assets/css/admin/product.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <script src="../../assets/js/main.js" defer></script>
+  <title>Quản lý khách hàng</title>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="side-bar">
+    <div class="logo">
+      <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+    </div>
+
+    <nav class="menu">
+     <ul class="system">
+                <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
+                <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
+                <li><a href="/admin/products/products.html" ><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
+                <li><a href="/admin/orders/orders.html" ><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
+                <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
+                <li><a href="/admin/imports/inventorys.html"><i class="fa-solid fa-warehouse"></i>Tồn kho</a></li>
+                <li><a href="/admin/imports/pricing.html"><i class="fa-solid fa-coins"></i>Giá bán</a></li>
+                <li><a href="/admin/customers/customers.html" class="active"><i class="fa-solid fa-users"></i>Khách hàng</a></li>
+            </ul>
+
+            <ul class="support">
+                <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+            </ul>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-content">
+
+    <header class="admin-header">
+      <h1>Khách hàng</h1>
+
+      <div class="admin-info">
+        <span class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input placeholder="Tìm kiếm...">
+        </span>
+
+        <span class="info">
+          <i class="fa-solid fa-bell">
+            <span class="noti">3</span>
+          </i>
+          <img src="/assets/images/avt.png" alt="Ảnh admin">
+          <p class="nametag">Việt Hoàng</p>
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+      </div>
+    </header>
+
+    <section class="content">
+
+      <div class="action-bar">
+        <div class="search-filter">
+          <input type="text" placeholder="Nhập tên khách hàng...">
+          <select>
+            <option value="all">Tất cả trạng thái</option>
+            <option value="active">Hoạt động</option>
+            <option value="locked">Đã khóa</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Tên</th>
+              <th>Tài khoản</th>
+              <th>Số điện thoại</th>
+              <th>Địa chỉ</th>
+              <th>Tổng đơn</th>
+              <th>Ngày tạo</th>
+              <th>Trạng thái</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>Nguyễn Minh Đức</strong></td>
+              <td>ducnguyen@gmail.com</td>
+              <td>0901234567</td>
+              <td>Hà Nội</td>
+              <td>5</td>
+              <td>10/06/2024</td>
+              <td><span class="status-badge status-active">Hoạt động</span></td>
+              <td>
+                <div class="action-buttons">
+                  <a href="/admin/customers/edit.html">
+                    <button class="icon-btn edit"><i class="fa-solid fa-pen"></i> Sửa</button>
+                  </a>
+                  <button class="icon-btn delete"><i class="fa-solid fa-lock"></i> Khóa</button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td><strong>Trần Thảo My</strong></td>
+              <td>thaomy@example.com</td>
+              <td>0986543211</td>
+              <td>TP. Hồ Chí Minh</td>
+              <td>2</td>
+              <td>22/07/2024</td>
+              <td><span class="status-badge status-active">Hoạt động</span></td>
+              <td>
+               <div class="action-buttons">
+                  <a href="/admin/customers/edit.html">
+                    <button class="icon-btn edit"><i class="fa-solid fa-pen"></i> Sửa</button>
+                  </a>
+                  <button class="icon-btn delete"><i class="fa-solid fa-lock"></i> Khóa</button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td><strong>Lê Hoài Bảo</strong></td>
+              <td>lehoaibao123@gmail.com</td>
+              <td>0919001122</td>
+              <td>Đà Nẵng</td>
+              <td>0</td>
+              <td>15/07/2024</td>
+              <td><span class="status-badge status-hidden">Đã khóa</span></td>
+              <td>
+               <div class="action-buttons">
+                  <a href="/admin/customers/edit.html">
+                    <button class="icon-btn edit"><i class="fa-solid fa-pen"></i> Sửa</button>
+                  </a>
+                  <button class="icon-btn delete"><i class="fa-solid fa-lock"></i> Khóa</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <div class="pagination-buttons">
+            <button disabled><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

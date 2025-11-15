@@ -83,10 +83,34 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isLoggedIn) {
         event.preventDefault();
         alert("Vui lòng đăng nhập để xem giỏ hàng.");
-        // Hàm path() sẽ tự động sửa link login này
         window.location.href = path("/user/account/login.html");
       }
     });
   }
+
+
+// Xử lý nút Thêm vào giỏ
+document.querySelectorAll(".btn-add-to-cart").forEach(button => {
+  button.addEventListener("click", function (e) {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      alert("Bạn cần đăng nhập trước khi thêm sản phẩm vào giỏ hàng!");
+      return;
+    }
+    alert("Đã thêm vào giỏ hàng!");
+    window.open(path("/user/cart/cart-cart.html"));
+  });
+});
+document.querySelectorAll(".btn-add-cart").forEach(button => {
+  button.addEventListener("click", function (e) {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      alert("Bạn cần đăng nhập trước khi thêm sản phẩm vào giỏ hàng!");
+      return;
+    }
+    alert("Đã thêm vào giỏ hàng!");
+    window.open(path("/user/cart/cart-cart.html"));
+  });
 });
 
+});
