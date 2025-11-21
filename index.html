@@ -36,76 +36,76 @@
       <div class="search-bar">
         <input type="text" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)">
         <a href="/user/product/search.html"><button><i class="fa-solid fa-magnifying-glass"></i></button> </a>
-    <button type="button" class="advanced-search-trigger" id="openAdvancedSearch" title="Tìm kiếm nâng cao">
-  <i class="fa-solid fa-sliders"></i>
-</button>
+        <button type="button" class="advanced-search-trigger" id="openAdvancedSearch" title="Tìm kiếm nâng cao">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
       </div>
       <!-- Nút mở popup tìm kiếm nâng cao (thêm ngay sau button kính lúp) --
 
 <!-- POPUP TÌM KIẾM NÂNG CAO -->
-<div class="advanced-search-overlay" id="advancedSearchOverlay">
-  <div class="advanced-search-modal">
-    <div class="advanced-search-header">
-      <h2><i class="fa-solid fa-search"></i> Tìm kiếm nâng cao</h2>
-      <button type="button" class="close-popup" id="closeAdvancedSearch">×</button>
-    </div>
+      <div class="advanced-search-overlay" id="advancedSearchOverlay">
+        <div class="advanced-search-modal">
+          <div class="advanced-search-header">
+            <h2><i class="fa-solid fa-search"></i> Tìm kiếm nâng cao</h2>
+            <button type="button" class="close-popup" id="closeAdvancedSearch">×</button>
+          </div>
 
-    <form id="advancedSearchForm" class="advanced-search-form">
-      <!-- Từ khóa -->
-      <div class="form-group">
-        <label><i class="fa-solid fa-magnifying-glass"></i> Từ khóa</label>
-        <input type="text" id="keyword" placeholder="Tên sản phẩm, mã SKU, nhân vật...">
-      </div>
+          <form id="advancedSearchForm" class="advanced-search-form">
+            <!-- Từ khóa -->
+            <div class="form-group">
+              <label><i class="fa-solid fa-magnifying-glass"></i> Từ khóa</label>
+              <input type="text" id="keyword" placeholder="Tên sản phẩm, mã SKU, nhân vật...">
+            </div>
 
-      <!-- Danh mục (chủ đề) -->
-      <div class="form-group">
-        <label><i class="fa-solid fa-layer-group"></i> Danh mục</label>
-        <select id="category">
-          <option value="">Tất cả danh mục</option>
-          <option value="xe-o-to">Xe ô tô mô hình</option>
-          <option value="tau-vu-tru">Tàu vũ trụ</option>
-          <option value="lau-dai">Lâu đài cổ tích</option>
-          <option value="robot">Robot chiến binh</option>
-          <option value="thanh-pho">Thành phố hiện đại</option>
-          <option value="dong-vat">Động vật hoang dã</option>
-          <option value="sieu-anh-hung">Siêu anh hùng</option>
-          <option value="kien-truc">Kiến trúc nổi tiếng</option>
-        </select>
-      </div>
+            <!-- Danh mục (chủ đề) -->
+            <div class="form-group">
+              <label><i class="fa-solid fa-layer-group"></i> Danh mục</label>
+              <select id="category">
+                <option value="">Tất cả danh mục</option>
+                <option value="xe-o-to">Xe ô tô mô hình</option>
+                <option value="tau-vu-tru">Tàu vũ trụ</option>
+                <option value="lau-dai">Lâu đài cổ tích</option>
+                <option value="robot">Robot chiến binh</option>
+                <option value="thanh-pho">Thành phố hiện đại</option>
+                <option value="dong-vat">Động vật hoang dã</option>
+                <option value="sieu-anh-hung">Siêu anh hùng</option>
+                <option value="kien-truc">Kiến trúc nổi tiếng</option>
+              </select>
+            </div>
 
-      <!-- Độ tuổi -->
-      <div class="form-group">
-        <label><i class="fa-solid fa-child"></i> Độ tuổi</label>
-        <select id="age">
-          <option value="">Mọi lứa tuổi</option>
-          <option value="4">4+</option>
-          <option value="6">6+</option>
-          <option value="8">8+</option>
-          <option value="10">10+</option>
-          <option value="12">12+</option>
-          <option value="16">16+</option>
-          <option value="18">18+ (Adult)</option>
-        </select>
-      </div>
+            <!-- Độ tuổi -->
+            <div class="form-group">
+              <label><i class="fa-solid fa-child"></i> Độ tuổi</label>
+              <select id="age">
+                <option value="">Mọi lứa tuổi</option>
+                <option value="4">4+</option>
+                <option value="6">6+</option>
+                <option value="8">8+</option>
+                <option value="10">10+</option>
+                <option value="12">12+</option>
+                <option value="16">16+</option>
+                <option value="18">18+ (Adult)</option>
+              </select>
+            </div>
 
-      <!-- Khoảng giá -->
-      <div class="form-group">
-        <label><i class="fa-solid fa-coins"></i> Khoảng giá (VNĐ)</label>
-        <div class="price-range-input">
-          <input type="number" id="priceMin" placeholder="Từ (VD: 500000)" min="0">
-          <span>→</span>
-          <input type="number" id="priceMax" placeholder="Đến (VD: 5000000)" min="0">
+            <!-- Khoảng giá -->
+            <div class="form-group">
+              <label><i class="fa-solid fa-coins"></i> Khoảng giá (VNĐ)</label>
+              <div class="price-range-input">
+                <input type="number" id="priceMin" placeholder="Từ (VD: 500000)" min="0">
+                <span>→</span>
+                <input type="number" id="priceMax" placeholder="Đến (VD: 5000000)" min="0">
+              </div>
+            </div>
+
+            <!-- Nút hành động -->
+            <div class="form-actions">
+              <button type="reset" class="btn-reset">Xóa tất cả</button>
+              <button type="submit" class="btn-submit">Tìm kiếm ngay</button>
+            </div>
+          </form>
         </div>
       </div>
-
-      <!-- Nút hành động -->
-      <div class="form-actions">
-        <button type="reset" class="btn-reset">Xóa tất cả</button>
-        <button type="submit" class="btn-submit">Tìm kiếm ngay</button>
-      </div>
-    </form>
-  </div>
-</div>
       <div class="user-options">
         <a href="/user/account/login.html" target="_parent" id="account-link">
           <i class="fa-solid fa-user"></i> <span id="name"> Đăng nhập </span>
@@ -161,8 +161,8 @@
                   <p class="product-code">SKU: 75257</p>
                   <h5 class="product-name">Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257</h5>
                   <span class="product-price">
-                  <p id="new">2.500.000₫</p>
-                  <p id="old">2.940.000₫</p>
+                    <p id="new">2.500.000₫</p>
+                    <p id="old">2.940.000₫</p>
                   </span>
                   <div class="product-cart">
                     <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
@@ -354,113 +354,112 @@
         <div class="sale-box">
           <p class="timming">11h:59m:59s</p>
           <div class="flash-sale-list">
-            
-            <ul> 
-                <li>   <a href="/user/product/detail.html">
-                    <div class="flase-sale-item">
-                      <p class="product-sale">25% </br>OFF</p>
-                      <img src="/assets/images/product9.webp" alt="Bộ xếp hình LEGO Marvel Avengers 76155" />
-                      <p class="product-code">SKU: 76155</p>
-                      <h5 style="color: black;" class="product-name">Bộ xếp hình LEGO Marvel Avengers 76155</h5>
-                      <span class="product-price">
-                        <p id="new">1.800.000₫</p>
-                        <p id="old">2.400.000₫</p>
-                      </span>
-                      <div class="Sale-progress">
-                        <p class="progress-bar">
-                          <span class="sold">Đã bán: 15</span>
-                          <span class="unsold"></span>
-                        </p>
-                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                      </div>
-                    </div>
-                  </a>
-                </li>
 
-                <li> <a href="/user/product/detail.html">
-                    <div class="flase-sale-item">
-                      <p class="product-sale">30% </br>OFF</p>
-                      <img src="/assets/images/product10.webp"
-                        alt="Bộ xếp hình LEGO Speed Champions Lamborghini 76908" />
-                      <p class="product-code">SKU: 76908</p>
-                      <h5 class="product-name" style="color: black;">Bộ xếp hình LEGO Speed Lamborghini 76908</h5>
-                      <span class="product-price">
-                        <p id="new">1.050.000₫</p>
-                        <p id="old">1.500.000₫</p>
-                      </span>
-                      <div class="Sale-progress">
-                        <p class="progress-bar">
-                          <span class="sold">Đã bán: 20</span>
-                          <span class="unsold"></span>
-                        </p>
-                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                      </div>
+            <ul>
+              <li> <a href="/user/product/detail.html">
+                  <div class="flase-sale-item">
+                    <p class="product-sale">25% </br>OFF</p>
+                    <img src="/assets/images/product9.webp" alt="Bộ xếp hình LEGO Marvel Avengers 76155" />
+                    <p class="product-code">SKU: 76155</p>
+                    <h5 style="color: black;" class="product-name">Bộ xếp hình LEGO Marvel Avengers 76155</h5>
+                    <span class="product-price">
+                      <p id="new">1.800.000₫</p>
+                      <p id="old">2.400.000₫</p>
+                    </span>
+                    <div class="Sale-progress">
+                      <p class="progress-bar">
+                        <span class="sold">Đã bán: 15</span>
+                        <span class="unsold"></span>
+                      </p>
+                      <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
                     </div>
-                  </a>
-                </li>
-                <li> <a href="/user/product/detail.html">
-                    <div class="flase-sale-item">
-                      <p class="product-sale">15% </br>OFF</p>
-                      <img src="/assets/images/product11.webp" alt="Bộ xếp hình LEGO Classic Hộp Gạch 11015" />
-                      <p class="product-code">SKU: 11015</p>
-                      <h5 class="product-name" style="color: black;">Bộ xếp hình LEGO Classic Hộp Gạch 11015</h5>
-                      <span class="product-price">
-                        <p id="new">680.000₫</p>
-                        <p id="old">800.000₫</p>
-                      </span>
-                      <div class="Sale-progress">
-                        <p class="progress-bar">
-                          <span class="sold">Đã bán: 8</span>
-                          <span class="unsold"></span>
-                        </p>
-                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                      </div>
+                  </div>
+                </a>
+              </li>
+
+              <li> <a href="/user/product/detail.html">
+                  <div class="flase-sale-item">
+                    <p class="product-sale">30% </br>OFF</p>
+                    <img src="/assets/images/product10.webp" alt="Bộ xếp hình LEGO Speed Champions Lamborghini 76908" />
+                    <p class="product-code">SKU: 76908</p>
+                    <h5 class="product-name" style="color: black;">Bộ xếp hình LEGO Speed Lamborghini 76908</h5>
+                    <span class="product-price">
+                      <p id="new">1.050.000₫</p>
+                      <p id="old">1.500.000₫</p>
+                    </span>
+                    <div class="Sale-progress">
+                      <p class="progress-bar">
+                        <span class="sold">Đã bán: 20</span>
+                        <span class="unsold"></span>
+                      </p>
+                      <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
                     </div>
-                  </a>
-                </li>
+                  </div>
+                </a>
+              </li>
+              <li> <a href="/user/product/detail.html">
+                  <div class="flase-sale-item">
+                    <p class="product-sale">15% </br>OFF</p>
+                    <img src="/assets/images/product11.webp" alt="Bộ xếp hình LEGO Classic Hộp Gạch 11015" />
+                    <p class="product-code">SKU: 11015</p>
+                    <h5 class="product-name" style="color: black;">Bộ xếp hình LEGO Classic Hộp Gạch 11015</h5>
+                    <span class="product-price">
+                      <p id="new">680.000₫</p>
+                      <p id="old">800.000₫</p>
+                    </span>
+                    <div class="Sale-progress">
+                      <p class="progress-bar">
+                        <span class="sold">Đã bán: 8</span>
+                        <span class="unsold"></span>
+                      </p>
+                      <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                  </div>
+                </a>
+              </li>
 
 
-                <li> <a href="/user/product/detail.html">
-                    <div class="flase-sale-item">
-                      <p class="product-sale">40% </br>OFF</p>
-                      <img src="/assets/images/product12.webp" alt="Bộ xếp hình LEGO Nữ Thần Tự Do 21042" />
-                      <p class="product-code">SKU: 21042</p>
-                      <h5 class="product-name" style="color: black;">Bộ xếp hình LEGO Nữ Thần Tự Do 21042</h5>
-                      <span class="product-price">
-                        <p id="new">2.100.000₫</p>
-                        <p id="old">3.500.000₫</p>
-                      </span>
-                      <div class="Sale-progress">
-                        <p class="progress-bar">
-                          <span class="sold">Đã bán: 12</span>
-                          <span class="unsold"></span>
-                        </p>
-                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                      </div>
+              <li> <a href="/user/product/detail.html">
+                  <div class="flase-sale-item">
+                    <p class="product-sale">40% </br>OFF</p>
+                    <img src="/assets/images/product12.webp" alt="Bộ xếp hình LEGO Nữ Thần Tự Do 21042" />
+                    <p class="product-code">SKU: 21042</p>
+                    <h5 class="product-name" style="color: black;">Bộ xếp hình LEGO Nữ Thần Tự Do 21042</h5>
+                    <span class="product-price">
+                      <p id="new">2.100.000₫</p>
+                      <p id="old">3.500.000₫</p>
+                    </span>
+                    <div class="Sale-progress">
+                      <p class="progress-bar">
+                        <span class="sold">Đã bán: 12</span>
+                        <span class="unsold"></span>
+                      </p>
+                      <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
                     </div>
-                  </a>
-                </li>
+                  </div>
+                </a>
+              </li>
 
-                <li> <a href="/user/product/detail.html">
-                    <div class="flase-sale-item">
-                      <p class="product-sale">10% </br>OFF</p>
-                      <img src="/assets/images/product13.webp" alt="Bộ xếp hình LEGO Ideas Cây Bonsai 10281" />
-                      <p class="product-code">SKU: 10281</p>
-                      <h5 class="product-name" style="color: black;"> Bộ xếp hình LEGO Ideas Cây Bonsai 10281</h5>
-                      <span class="product-price">
-                        <p id="new">1.350.000₫</p>
-                        <p id="old">1.500.000₫</p>
-                      </span>
-                      <div class="Sale-progress">
-                        <p class="progress-bar">
-                          <span class="sold">Đã bán: 5</span>
-                          <span class="unsold"></span>
-                        </p>
-                        <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                      </div>
+              <li> <a href="/user/product/detail.html">
+                  <div class="flase-sale-item">
+                    <p class="product-sale">10% </br>OFF</p>
+                    <img src="/assets/images/product13.webp" alt="Bộ xếp hình LEGO Ideas Cây Bonsai 10281" />
+                    <p class="product-code">SKU: 10281</p>
+                    <h5 class="product-name" style="color: black;"> Bộ xếp hình LEGO Ideas Cây Bonsai 10281</h5>
+                    <span class="product-price">
+                      <p id="new">1.350.000₫</p>
+                      <p id="old">1.500.000₫</p>
+                    </span>
+                    <div class="Sale-progress">
+                      <p class="progress-bar">
+                        <span class="sold">Đã bán: 5</span>
+                        <span class="unsold"></span>
+                      </p>
+                      <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
                     </div>
-                  </a>
-                </li>
+                  </div>
+                </a>
+              </li>
 
             </ul>
           </div>
