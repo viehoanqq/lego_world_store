@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===============================================
   // Xử lý tất cả nút thêm vào giỏ
   // ===============================================
-  document.querySelectorAll(".btn-add-to-cart, .btn-add-cart, .btn-buy-now").forEach(button => {
+  document.querySelectorAll(".btn-add-to-cart, .btn-add-cart").forEach(button => {
     button.addEventListener("click", function (e) {
       e.preventDefault();  // Ngăn <a> chạy
       e.stopPropagation(); // Ngăn event lan ra thẻ cha
@@ -77,8 +77,68 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       alert("Đã thêm vào giỏ hàng!");
+    });
+  });
+  document.querySelectorAll(".btn-buy-now").forEach(button => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();  // Ngăn <a> chạy
+      e.stopPropagation(); // Ngăn event lan ra thẻ cha
+
+      if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập trước khi thêm sản phẩm vào giỏ hàng!");
+        return;
+      }
       window.location.href = path("/user/cart/cart-cart.html");
     });
   });
+   const trigger = document.getElementById('openAdvancedSearch');
+  const overlay = document.getElementById('advancedSearchOverlay');
+  const closeBtn = document.getElementById('closeAdvancedSearch');
+  const form = document.getElementById('advancedSearchForm');
 
+  // Mở popup
+  if (trigger) {
+    trigger.addEventListener('click', () => {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  // Đóng popup
+  function closePopup() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  closeBtn?.addEventListener('click', closePopup);
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) closePopup();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closePopup();
+  });
+
+  // Xử lý tìm kiếm → chuyển đến trang search.html kèm tham số
+  form?.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const params = new URLSearchParams();
+    const keyword = document.getElementById('keyword').value.trim();
+    const category = document.getElementById('category').value;
+    const age = document.getElementById('age').value;
+    const priceMin = document.getElementById('priceMin').value;
+    const priceMax = document.getElementById('priceMax').value;
+
+    if (keyword) params.append('q', keyword);
+    if (category) params.append('cat', category);
+    if (age) params.append('age', age);
+    if (priceMin) params.append('min', priceMin);
+    if (priceMax) params.append('max', priceMax);
+
+    const url = params.toString()
+      ? `/user/product/search.html?${params.toString()}`
+      : '/user/product/search.html';
+
+    window.location.href = url;
+  });
 });
