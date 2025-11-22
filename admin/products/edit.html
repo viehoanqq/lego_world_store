@@ -1,28 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chỉnh sửa sản phẩm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
   <link href="../../assets/css/admin/product.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-  <script src="../../assets/js/main.js" defer></script>
-  <title>Chỉnh sửa sản phẩm</title>
-</head>
+    <script src="../../assets/js/main.js" defer></script>
+  
+  <style>
+    .form-row { display: flex; gap: 20px; margin-bottom: 16px; }
+    .form-row .form-group { flex: 1; }
+    .image-upload-group { margin-bottom: 28px; }
+    .image-preview-container {
+      position: relative; width: 220px; height: 220px; border-radius: 16px; overflow: hidden;
+      border: 2px dashed #ccc; background: #f9f9f9; cursor: pointer; transition: all 0.3s ease;
+    }
+    .image-preview-container:hover { border-color: #B43F3F; }
+    .product-image-preview { width: 100%; height: 100%; object-fit: cover; }
+    .image-upload-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(180,63,63,0.9); color: white; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
+    }
+    .image-preview-container:hover .image-upload-overlay { opacity: 1; }
 
+    .product-edit-form .form-group label { font-weight: 600; color: #1a1a1a; margin-bottom: 8px; display: block; }
+    .product-edit-form .form-group input,
+    .product-edit-form .form-group select,
+    .product-edit-form .form-group textarea {
+      padding: 12px 16px; border: 1.5px solid #e0e0e0; border-radius: 10px; font-size: 15px;
+      background: #fff; width: 100%; transition: all 0.2s ease;
+    }
+    .product-edit-form .form-group input:focus,
+    .product-edit-form .form-group select:focus,
+    .product-edit-form .form-group textarea:focus {
+      border-color: #B43F3F; box-shadow: 0 0 0 3px rgba(180,63,63,0.1); outline: none;
+    }
+    .product-edit-form textarea { resize: vertical; min-height: 120px; }
+
+    .form-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+    .btn { padding: 12px 28px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary { background: linear-gradient(135deg, #B43F3F, #9c3636); color: #fff; box-shadow: 0 4px 12px rgba(180,63,63,0.3); }
+    .btn-primary:hover { background: linear-gradient(135deg, #9c3636, #8a3030); transform: translateY(-2px); }
+    .btn-secondary { background: #f8f9fa; color: #495057; border: 1.5px solid #dee2e6; }
+    .btn-secondary:hover { background: #e9ecef; }
+
+    .form-container {
+      background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid #f1f5f9;
+    }
+    @media (max-width: 768px) { .form-row { flex-direction: column; } }
+  </style>
+</head>
 <body>
+
+  <!-- SIDEBAR -->
   <aside class="side-bar">
     <div class="logo">
-      <h2><a href="/admin/dashboard.html">LEGO STORE</a></h2>
+      <h2><a href="/admin/dashboard.html">LEGO STORE </a></h2>
     </div>
     <nav class="menu">
-    <ul class="system">
+      <ul class="system">
                 <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
                 <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
                 <li><a href="/admin/products/products.html" class="active"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
@@ -40,16 +84,14 @@
     </nav>
   </aside>
 
+  <!-- MAIN CONTENT -->
   <div class="main-content">
     <header class="admin-header">
       <h1>Chỉnh sửa sản phẩm</h1>
       <div class="admin-info">
-        
         <span class="info">
-          <i class="fa-solid fa-bell">
-            <span class="noti">3</span>
-          </i>
-          <img src="/assets/images/avt.png" alt="Ảnh admin" />
+          <i class="fa-solid fa-bell"><span class="noti">3</span></i>
+          <img src="/assets/images/avt.png" alt="Admin" />
           <p class="nametag">Việt Hoàng</p>
           <i class="fa-solid fa-chevron-down"></i>
         </span>
@@ -59,89 +101,153 @@
     <section class="content">
       <div class="form-container">
         <form class="product-edit-form">
-          <!-- Upload ảnh -->
+
+          <!-- Ảnh sản phẩm -->
           <div class="form-group image-upload-group">
-            <label>Hình ảnh sản phẩm</label>
-            <div class="image-preview-container">
-              <img src="/assets/images/product1.webp" alt="Sản phẩm" class="product-image-preview"
-                id="productImagePreview">
+            <label>Hình ảnh chính</label>
+            <div class="image-preview-container" onclick="document.getElementById('productImage').click()">
+              <img src="../../assets/images/product1.webp" alt="LEGO Star Wars Millennium Falcon 75257" 
+                   class="product-image-preview" id="productImagePreview">
               <div class="image-upload-overlay">
                 <i class="fa-solid fa-camera"></i>
                 <p>Thay đổi ảnh</p>
               </div>
             </div>
             <input type="file" id="productImage" accept="image/*" class="image-input" onchange="previewImage(event)">
-            <small class="form-help">Định dạng: JPG, PNG. Kích thước tối đa: 2MB</small>
+            <small class="form-help">Định dạng: JPG, PNG, WebP (tối đa 2MB)</small>
           </div>
 
+          <!-- Tên + Mã SKU -->
           <div class="form-row">
             <div class="form-group">
-              <label for="productName">Tên sản phẩm</label>
-              <input type="text" id="productName" value="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257">
+              <label for="name">Tên sản phẩm *</label>
+              <input type="text" id="name" value="Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257" required>
             </div>
             <div class="form-group">
-              <label for="productSKU">Mã sản phẩm</label>
-              <input type="text" id="productSKU" value="75257">
+              <label for="sku">Mã sản phẩm (SKU) *</label>
+              <input type="text" id="sku" value="75257" required>
             </div>
           </div>
 
+          <!-- Danh mục + Series -->
           <div class="form-row">
             <div class="form-group">
-              <label for="productCategory">Danh mục</label>
-              <select id="productCategory">
+              <label for="category">Danh mục *</label>
+              <select id="category" required>
                 <option value="tau-vu-tru" selected>Tàu vũ trụ</option>
                 <option value="xe-o-to">Xe ô tô mô hình</option>
                 <option value="robot">Robot chiến binh</option>
-                <option value="thanh-pho">Thành phố</option>
+                <option value="thanh-pho284">Thành phố</option>
+                <option value="kien-truc">Kiến trúc</option>
+                <option value="ninjago">Ninjago</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="productStock">Tồn kho</label>
-              <input type="number" id="productStock" value="12" min="0">
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="productPrice">Giá bán</label>
-            <input type="text" id="productPrice" value="2.500.000₫" placeholder="VD: 1.250.000₫">
-          </div>
+          <!-- Giá bán -->
 
-          <div class="form-group">
-            <label for="productDescription">Mô tả sản phẩm</label>
-            <textarea id="productDescription"
-              rows="5">Bộ xếp hình chi tiết Tàu Millennium Falcon, thích hợp cho trẻ từ 12 tuổi trở lên. Bao gồm 7 minifigures, cockpit mở được, ghế ngồi xoay, khoang hành khách, khoang kỹ thuật, và nhiều chi tiết sống động.</textarea>
+          <!-- Thông số chi tiết LEGO -->
+          <div class="form-row">
+            <div class=" newProductAge form-group">
+              <label for="age">Độ tuổi</label>
+              <input type="text" id="age" value="12+">
+            </div>
+            <div class="form-group">
+              <label for="pieces">Số mảnh ghép</label>
+              <input type="text" id="pieces" value="1351">
+            </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="productStatus">Trạng thái</label>
-              <select id="productStatus">
+              <label for="dimensions">Kích thước (cm)</label>
+              <input type="text" id="dimensions" value="44 x 32 x 14">
+            </div>
+            <div class="form-group">
+              <label for="weight">Trọng lượng (kg)</label>
+              <input type="text" id="weight" value="2.1">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="material">Chất liệu</label>
+              <input type="text" id="material" value="Nhựa ABS cao cấp">
+            </div>
+            <div class="form-group">
+              <label for="origin">Xuất xứ</label>
+              <input type="text" id="origin" value="Đan Mạch">
+            </div>
+          </div>
+
+          <!-- Mô tả chi tiết -->
+          <div class="form-group">
+            <label for="description">Mô tả sản phẩm</label>
+            <textarea id="description" rows="10">
+Khám phá Tàu Millennium Falcon 75257 – biểu tượng của vũ trụ Star Wars với thiết kế chi tiết, nội thất đầy đủ, và các nhân vật kinh điển.
+
+• Phi thuyền có thể mở để xem nội thất: phòng điều khiển, khoang nghỉ, khu kỹ thuật
+• Tháp pháo xoay 360°, 4 khẩu pháo bắn lò xo
+• Đi kèm 7 nhân vật: Han Solo, Chewbacca, Lando, C-3PO, R2-D2, Finn, Boolio
+• Hạ cánh bằng bánh xe hoặc trưng bày với giá đỡ
+
+Món quà hoàn hảo cho fan Star Wars và người yêu thích lắp ráp LEGO!
+            </textarea>
+          </div>
+
+          <!-- Trạng thái & Nổi bật -->
+<div class="form-row">
+            <div class="form-group">
+              <label for="status">Trạng thái</label>
+              <select id="status">
                 <option value="active" selected>Đang bán</option>
                 <option value="hidden">Ẩn</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="productFeatured">Nổi bật</label>
-              <select id="productFeatured">
-                <option value="0">Bình thường</option>
-                <option value="1" selected>Nổi bật</option>
+                        <div class="form-group">
+              <label for="origin">Bảo hành</label>
+              <select id="status">
+                <option value="active" selected>1 tháng</option>
+                <option value="hidden">3 tháng</option>
+                <option value="hidden">6 tháng</option>
+                <option value="hidden">12 tháng</option>
+                <option value="hidden">24 tháng</option>
               </select>
             </div>
           </div>
 
+          <!-- Nút hành động -->
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">
               <i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi
             </button>
             <a href="/admin/products/products.html">
-              <button type="button" class="btn btn-secondary" <i class="fa-solid fa-arrow-left"></i> Hủy
+              <button type="button" class="btn btn-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Hủy
               </button>
             </a>
           </div>
         </form>
       </div>
+   'à
     </section>
   </div>
-</body>
 
+  <!-- JS Preview ảnh khi thay đổi -->
+  <script>
+    function previewImage(event) {
+      const file = event.target.files[0];
+      const preview = document.getElementById('productImagePreview');
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
 </html>

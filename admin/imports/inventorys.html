@@ -90,7 +90,6 @@
     <header class="admin-header">
       <h1>Quản lý tồn kho</h1>
       <div class="admin-info">
-      
         <span class="info">
           <i class="fa-solid fa-bell"><span class="noti">3</span></i>
           <img src="/assets/images/avt.png" alt="Ảnh admin" />
@@ -98,7 +97,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </span>
       </div>
-    </header> <!-- ĐÓNG HEADER TẠI ĐÂY -->
+    </header>
 
     <section class="content">
       <!-- Chọn chế độ -->
@@ -108,16 +107,18 @@
         <button id="btnReport">Báo cáo nhập‑xuất‑tồn</button>
       </div>
 
-      <!-- Bộ lọc + Nút Lọc -->
+      <!-- Bộ lọc + Nút Lọc (2 ô ngày luôn hiển thị ở cả 3 chế độ) -->
       <div class="filter-group" id="filterGroup">
         <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
         <select id="categoryFilter">
           <option value="">Tất cả danh mục</option>
         </select>
-        <div id="dateFilter" style="display:none;gap:8px;">
-          <input type="date" id="startDate">
+
+        <!-- ĐÃ THÊM: 2 ô ngày luôn hiện, trước nút Lọc -->
+        <div style="display:flex; gap:8px; align-items:center;">
           <input type="date" id="endDate">
         </div>
+
         <button id="btnFilter"><i class="fa-solid fa-filter"></i> Lọc</button>
       </div>
 
@@ -144,76 +145,122 @@
   </div>
 
   <script>
-    const products = [
-      { id: 1, name: "LEGO Star Wars Tàu Millennium Falcon", category: "Tàu vũ trụ", stock: 12, import: 50, export: 38 },
-      { id: 2, name: "LEGO Technic Xe Ferrari", category: "Xe ô tô mô hình", stock: 10, import: 30, export: 20 },
-      { id: 3, name: "LEGO Friends Thành phố Heartlake", category: "Thành phố hiện đại", stock: 8, import: 25, export: 22 },
-      { id: 4, name: "LEGO Ninjago Rồng Huyền Thoại", category: "Động vật hoang dã", stock: 16, import: 40, export: 24 },
-      { id: 5, name: "LEGO Creator Xe Máy Bay", category: "Xe ô tô mô hình", stock: 9, import: 15, export: 6 },
-      { id: 6, name: "LEGO Duplo Thị Trấn", category: "Thành phố hiện đại", stock: 3, import: 10, export: 7 }
-    ];
+  // Dữ liệu mẫu
+const products = [
+  { id: 1, name: "LEGO Star Wars Tàu Millennium Falcon", category: "Tàu vũ trụ", stock: 12, import: 50, export: 38 },
+  { id: 2, name: "LEGO Technic Xe Ferrari", category: "Xe ô tô mô hình", stock: 10, import: 30, export: 20 },
+  { id: 3, name: "LEGO Friends Thành phố Heartlake", category: "Thành phố hiện đại", stock: 8, import: 25, export: 22 },
+  { id: 4, name: "LEGO Ninjago Rồng Huyền Thoại", category: "Động vật hoang dã", stock: 16, import: 40, export: 24 },
+  { id: 5, name: "LEGO Creator Xe Máy Bay", category: "Xe ô tô mô hình", stock: 9, import: 15, export: 6 },
+  { id: 6, name: "LEGO Duplo Thị Trấn", category: "Thành phố hiện đại", stock: 3, import: 10, export: 7 }
+];
 
-    let mode = 'stock';
-    const tableBody = document.getElementById('tableBody');
+let mode = 'stock';
+const tableBody = document.getElementById('tableBody');
 
-    function renderTable() {
-      tableBody.innerHTML = '';
-      const cols = ['col1','col2','col3','col4','col5','col6'].map(id => document.getElementById(id));
+// Hàm vẽ bảng
+function renderTable() {
+  tableBody.innerHTML = '';
 
-      if (mode === 'stock' || mode === 'warning') {
-        cols[0].innerText = 'Tồn kho';
-        cols[1].innerText = 'Tình trạng';
-        cols.slice(0,2).forEach(c => c.style.display = '');
-        cols.slice(2).forEach(c => c.style.display = 'none');
+  const cols = ['col1','col2','col3','col4','col5','col6']
+    .map(id => document.getElementById(id));
 
-        products.forEach((p, i) => {
-          if (mode === 'warning' && p.stock > 5) return;
-          const status = p.stock > 5
-            ? '<span class="status-active">Đầy đủ</span>'
-            : '<span class="status-warning">Sắp hết hàng</span>';
-          tableBody.innerHTML += `<tr>
-            <td>${i+1}</td><td>${p.name}</td><td>${p.category}</td>
-            <td>${p.stock}</td><td>${status}</td>
+  // Chế độ 1: Tồn kho
+  if (mode === 'stock') {
+    cols[0].innerText = 'Tồn kho';
+    cols[1].innerText = 'Tình trạng';
+    cols.slice(0,2).forEach(c => c.style.display = '');
+    cols.slice(2).forEach(c => c.style.display = 'none');
+
+    products.forEach((p, i) => {
+      const status = p.stock > 5
+        ? '<span class="status-active">Đầy đủ</span>'
+        : '<span class="status-warning">Sắp hết hàng</span>';
+
+      tableBody.innerHTML += `
+        <tr>
+          <td>${i+1}</td>
+          <td>${p.name}</td>
+          <td>${p.category}</td>
+          <td>${p.stock}</td>
+          <td>${status}</td>
+        </tr>`;
+    });
+  }
+
+  // Chế độ 2: Cảnh báo sắp hết hàng
+  else if (mode === 'warning') {
+    cols[0].innerText = 'Tồn kho';
+    cols[1].innerText = 'Tình trạng';
+    cols.slice(0,2).forEach(c => c.style.display = '');
+    cols.slice(2).forEach(c => c.style.display = 'none');
+
+    products
+      .filter(p => p.stock <= 5)
+      .forEach((p, i) => {
+        tableBody.innerHTML += `
+          <tr>
+            <td>${i+1}</td>
+            <td>${p.name}</td>
+            <td>${p.category}</td>
+            <td>${p.stock}</td>
+            <td><span class="status-warning">Sắp hết hàng</span></td>
           </tr>`;
-        });
-      } 
-      else if (mode === 'report') {
-        cols[0].innerText = 'Tồn đầu kỳ';
-        cols[1].innerText = 'Nhập trong kỳ';
-        cols[2].innerText = 'Xuất trong kỳ';
-        cols[5].innerText = 'Tồn cuối kỳ';
-        [0,1,2,5].forEach(i => cols[i].style.display = '');
-        [3,4].forEach(i => cols[i].style.display = 'none');
+      });
+  }
 
-        products.forEach((p, i) => {
-          const opening = p.stock - p.import + p.export;
-          tableBody.innerHTML += `<tr>
-            <td>${i+1}</td><td>${p.name}</td><td>${p.category}</td>
-            <td>${opening}</td><td>${p.import}</td><td>${p.export}</td><td>${p.stock}</td>
-          </tr>`;
-        });
-      }
+  // Chế độ 3: Báo cáo xuất nhập tồn
+  else if (mode === 'report') {
+    cols[0].innerText = 'Tồn đầu kỳ';
+    cols[1].innerText = 'Nhập';
+    cols[2].innerText = 'Xuất';
+    cols[5].innerText = 'Tồn cuối kỳ';
 
-      if (!tableBody.innerHTML) {
-        tableBody.innerHTML = `<tr><td colspan="9" class="no-data">Không có dữ liệu.</td></tr>`;
-      }
-    }
+    [0,1,2,5].forEach(i => cols[i].style.display = '');
+    [3,4].forEach(i => cols[i].style.display = 'none');
 
-    function setActiveMode(newMode, btn) {
-      mode = newMode;
-      document.querySelectorAll('.report-buttons button')
-              .forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('dateFilter').style.display =
-        newMode === 'report' ? 'flex' : 'none';
-      renderTable();
-    }
+    products.forEach((p, i) => {
+      const opening = p.stock - p.import + p.export;
 
-    document.getElementById('btnStock').onclick = () => setActiveMode('stock', document.getElementById('btnStock'));
-    document.getElementById('btnWarning').onclick = () => setActiveMode('warning', document.getElementById('btnWarning'));
-    document.getElementById('btnReport').onclick = () => setActiveMode('report', document.getElementById('btnReport'));
+      tableBody.innerHTML += `
+        <tr>
+          <td>${i+1}</td>
+          <td>${p.name}</td>
+          <td>${p.category}</td>
+          <td>${opening}</td>
+          <td>${p.import}</td>
+          <td>${p.export}</td>
+          <td>${p.stock}</td>
+        </tr>`;
+    });
+  }
 
-    renderTable();
+  if (!tableBody.innerHTML.trim()) {
+    tableBody.innerHTML = `<tr><td colspan="9" class="no-data">Không có dữ liệu.</td></tr>`;
+  }
+}
+
+// Công tắc chế độ
+function setActiveMode(newMode, btn) {
+  mode = newMode;
+  document.querySelectorAll('.report-buttons button')
+    .forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+// Gắn sự kiện nút
+document.getElementById('btnStock').onclick =
+  () => setActiveMode('stock', document.getElementById('btnStock'));
+
+document.getElementById('btnWarning').onclick =
+  () => setActiveMode('warning', document.getElementById('btnWarning'));
+
+document.getElementById('btnReport').onclick =
+  () => setActiveMode('report', document.getElementById('btnReport'));
+
+renderTable();
+
   </script>
 </body>
 </html>

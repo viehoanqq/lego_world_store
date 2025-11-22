@@ -134,11 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (age) params.append('age', age);
     if (priceMin) params.append('min', priceMin);
     if (priceMax) params.append('max', priceMax);
-
-    const url = params.toString()
-      ? `/user/product/search.html?${params.toString()}`
-      : '/user/product/search.html';
-
-    window.location.href = url;
+    window.location.href = path("/user/product/search.html");
   });
 });

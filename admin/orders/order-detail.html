@@ -3,24 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chi tiết đơn hàng - LEGO Store Admin</title>
+  <title>Chi tiết đơn hàng #DH003 - LEGO Store Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link href="../../assets/css/admin/order-management.css" rel="stylesheet">
-    <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
-  <script src="../../assets/js/main.js" defer></script>
+  <link href="../../assets/css/admin/dashboard.css" rel="stylesheet">
+   <script src="../../assets/js/main.js" defer></script>
+  <style>
+    .order-detail { background:#fff; border-radius:16px; padding:32px; box-shadow:0 4px 20px rgba(0,0,0,0.06); margin:20px; }
+    .order-detail h2 { font-size:22px; margin:0 0 20px; color:#1a1a1a; border-bottom:2px solid #6366f1; padding-bottom:10px; }
+    .info-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; margin-bottom:30px; }
+    .info-card { background:#f8f9fa; padding:18px; border-radius:12px; border-left:4px solid #6366f1; }
+    .info-card h3 { margin:0 0 12px; font-size:16px; color:#6366f1; }
+    .info-card p { margin:6px 0; font-size:14.5px; color:#333; }
+    .info-card p strong { color:#1a1a1a; }
+    table { width:100%; border-collapse:collapse; margin:25px 0; background:#fff; }
+    table th, table td { padding:14px; text-align:left; border-bottom:1px solid #eee; font-size:14.5px; }
+    table th { background:#6366f1; color:white; }
+    table img { border-radius:8px; }
+    .total-box { text-align:right; padding:20px 0; font-size:20px; font-weight:700; color:#6366f1; }
+    .status-history, .feedback-section { margin-top:30px; background:#f9f9f9; padding:20px; border-radius:12px; }
+    .status-item { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #ddd; font-size:14.5px; }
+    .status-item:last-child { border:none; }
+    .feedback-box { background:white; padding:18px; border-radius:10px; border:1px solid #eee; }
+    .feedback-box p { margin:8px 0; }
+    .stars { color:#ffa500; }
+    .save-btn {
+      background:linear-gradient(135deg,#6366f1,#6366f1); color:white; border:none; padding:14px 32px;
+      border-radius:10px; font-weight:600; cursor:pointer; font-size:16px; margin-top:20px;
+      box-shadow:0 4px 12px rgba(180,63,63,0.3);
+    }
+    .save-btn:hover { transform:translateY(-2px); }
+    select { padding:8px 12px; border-radius:8px; border:1.5px solid #6366f1; font-size:14.5px; }
+  </style>
 </head>
 <body>
 
 <aside class="side-bar">
-  <div class="logo"><h2><a href="/admin/dashboard.html">LEGO STORE</a></h2></div>
-  <nav class="menu">
-    <ul class="system">
+    <div class="logo">
+      <h2><a href="/admin/dashboard.html">LEGO STORE </a></h2>
+    </div>
+    <nav class="menu">
+      <ul class="system">
                 <li > <a href="/admin/dashboard.html"><i class="fa-solid fa-house"></i>Tổng quan</a></li>
                 <li><a href="/admin/messages.html"><i class="fa-solid fa-envelope"></i>Tin nhắn <span class="message">2</span></a></li>
-                <li><a href="/admin/products/products.html" ><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
+                <li><a href="/admin/products/products.html"><i class="fa-solid fa-box"></i>Sản phẩm</a></li>
                 <li><a href="/admin/product-types/list.html"><i class="fa-solid fa-tags"></i>Danh mục</a></li>
                 <li><a href="/admin/orders/orders.html" class="active"><i class="fa-solid fa-receipt"></i>Đơn hàng</a></li>
                 <li><a href="/admin/imports/imports.html"><i class="fa-solid fa-truck"></i>Nhập hàng</a></li>
@@ -32,14 +60,13 @@
             <ul class="support">
                 <li><a href="/admin/login.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
             </ul>
-  </nav>
-</aside>
+    </nav>
+  </aside>
 
 <div class="main-content">
   <header class="admin-header">
-    <h1>Chi tiết đơn hàng</h1>
+    <h1>Chi tiết đơn hàng #DH003</h1>
     <div class="admin-info">
-
       <span class="info">
         <i class="fa-solid fa-bell"><span class="noti">3</span></i>
         <img src="/assets/images/avt.png" alt="Admin" />
@@ -50,30 +77,55 @@
   </header>
 
   <div class="order-detail">
-    
-    <h2>Chi tiết đơn hàng #DH003</h2>
-    <div class="info">
-      <p><strong>Khách hàng:</strong> Phạm Văn C</p>
-      <p><strong>Ngày đặt:</strong> 2025-10-21</p>
-      <p><strong>Trạng thái:</strong>
-        <select>
-          <option value="new">Mới</option>
-          <option value="processing">Đang xử lý</option>
-          <option value="shipped" selected>Đã gửi</option>
-          <option value="cancel">Đã hủy</option>
-        </select>
-      </p>
+
+    <!-- THÔNG TIN CHUNG -->
+    <h2>Thông tin đơn hàng</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3><i class="fa-solid fa-user"></i> Thông tin khách hàng</h3>
+        <p><strong>Họ tên:</strong> Phạm Văn C</p>
+        <p><strong>Số điện thoại:</strong> 0905 678 123</p>
+        <p><strong>Email:</strong> phamvanc@gmail.com</p>
+      </div>
+      <div class="info-card">
+        <h3><i class="fa-solid fa-truck"></i> Địa chỉ giao hàng</h3>
+        <p>273 An Dương Vương, Phường 3, Quận 5</p>
+        <p>TP. Hồ Chí Minh</p>
+        <p><strong>Ghi chú:</strong> Giao buổi chiều, gọi trước 15 phút</p>
+      </div>
+      <div class="info-card">
+        <h3><i class="fa-solid fa-calendar"></i> Thời gian & trạng thái</h3>
+        <p><strong>Mã đơn hàng:</strong> #DH003</p>
+        <p><strong>Ngày đặt:</strong> 21/10/2025 14:32</p>
+        <p><strong>Trạng thái hiện tại:</strong><br>
+          <select style="margin-top:8px; width:100%;">
+            <option value="new">Mới</option>
+            <option value="confirmed">Đã xác nhận</option>
+            <option value="processing">Đang xử lý</option>
+            <option value="shipped" selected>Đã gửi hàng</option>
+            <option value="delivered">Đã giao</option>
+            <option value="cancel">Đã hủy</option>
+          </select>
+        </p>
+      </div>
+      <div class="info-card">
+        <h3><i class="fa-solid fa-credit-card"></i> Thanh toán</h3>
+        <p><strong>Phương thức:</strong> Thanh toán khi nhận hàng (COD)</p>
+        <p><strong>Tình trạng:</strong> <span style="color:#e67e22;">Đã thanh toán</span></p>
+        <p><strong>Mã vận đơn:</strong> GHN987654321</p>
+      </div>
     </div>
 
-    <h2>Sản phẩm trong đơn</h2>
+    <!-- DANH SÁCH SẢN PHẨM -->
+    <h2>Sản phẩm trong đơn hàng</h2>
     <table>
       <thead>
         <tr>
-          <th>Mã</th>
+          <th>Mã SP</th>
           <th>Ảnh</th>
           <th>Tên sản phẩm</th>
           <th>Danh mục</th>
-          <th>Số lượng</th>
+          <th>SL</th>
           <th>Giá</th>
           <th>Thành tiền</th>
         </tr>
@@ -81,22 +133,62 @@
       <tbody>
         <tr>
           <td>#41704</td>
-          <td><img src="/assets/images/product3.webp" alt="LEGO Friends Thành phố Heartlake 41704" style="width:80px; border-radius:8px;"></td>
+          <td><img src="/assets/images/product3.webp" alt="LEGO Friends Thành phố Heartlake" style="width:80px; border-radius:8px;"></td>
           <td>Bộ xếp hình LEGO Friends Thành phố Heartlake 41704</td>
           <td>Thành phố hiện đại</td>
           <td>1</td>
           <td>1.800.000₫</td>
           <td>1.800.000₫</td>
         </tr>
+        <tr>
+          <td>#75257</td>
+          <td><img src="../../assets/images/product1.webp" alt="Millennium Falcon" style="width:80px; border-radius:8px;"></td>
+          <td>Bộ xếp hình LEGO Star Wars Tàu Millennium Falcon 75257</td>
+          <td>Tàu vũ trụ</td>
+          <td>1</td>
+          <td>2.500.000₫</td>
+          <td>2.500.000₫</td>
+        </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6" style="text-align:right; font-weight:700;">Tổng cộng:</td>
+          <td style="font-weight:700; color:#6366f1; font-size:18px;">4.300.000₫</td>
+        </tr>
+      </tfoot>
     </table>
 
-    <div class="total-box">
-      <p><strong>Tổng tiền:</strong> <span class="grand">1.800.000₫</span></p>
+    <!-- LỊCH SỬ TRẠNG THÁI -->
+    <div class="status-history">
+      <h2><i class="fa-solid fa-history"></i> Lịch sử trạng thái đơn hàng</h2>
+      <div class="status-item"><span>21/10/2025 14:32</span> <strong>→ Đơn hàng mới</strong></div>
+      <div class="status-item"><span>21/10/2025 15:10</span> <strong>→ Đã xác nhận</strong></div>
+      <div class="status-item"><span>21/10/2025 16:45</span> <strong>→ Đang xử lý</strong></div>
+      <div class="status-item"><span>22/10/2025 09:20</span> <strong>→ Đã gửi hàng (GHN)</strong></div>
     </div>
 
-    <button class="save-btn">Cập nhật trạng thái</button>
-    
+    <!-- FEEDBACK / ĐÁNH GIÁ CỦA KHÁCH -->
+    <div class="feedback-section">
+      <h2><i class="fa-solid fa-comment-dots"></i> Đánh giá của khách hàng</h2>
+      <div class="feedback-box">
+        <p><strong>Phạm Văn C</strong> <span style="color:#888; font-size:13px;">– 23/10/2025 11:15</span></p>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (5/5)</p>
+        <p>Sản phẩm đóng gói cẩn thận, giao hàng nhanh, hộp nguyên seal. Rất hài lòng! Sẽ tiếp tục ủng hộ shop.</p>
+      </div>
+    </div>
+
+    <!-- NÚT HÀNH ĐỘNG -->
+    <div style="text-align:right; margin-top:30px;">
+      <button class="save-btn">
+        <i class="fa-solid fa-floppy-disk"></i> Cập nhật trạng thái đơn hàng
+      </button>
+         <a href="/admin/orders/orders.html">
+    <button type="button" class="save-btn" 
+            style="background:#6c757d; box-shadow:0 4px 12px rgba(108,117,125,0.3);">
+      <i class="fa-solid fa-arrow-left"></i> Quay lại
+    </button>
+  </a>
+    </div>
   </div>
 </div>
 
